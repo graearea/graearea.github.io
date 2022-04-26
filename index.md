@@ -1,4 +1,4 @@
-#GraeArea's Pedal Extension Plugs FAQ
+# GraeArea's Pedal Extension Plugs FAQ
 ![plugs](/img/plugs.png)
 
 ## What have I got?
