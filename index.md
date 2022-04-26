@@ -56,3 +56,6 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 ![S3](/img/measure-s3.png)
 ####  S3 chassis with 15mm
 ![S3 feet](/img/feet.png)
+
+#### Some video 
+[![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
