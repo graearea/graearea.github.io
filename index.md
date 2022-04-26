@@ -29,21 +29,24 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 ### FAQ
 - How heavy are they?
   - 24g with a steel bolt
-- How strong is it	
-  - Strong enough. You're not driving a transit van in steel toecaps.
+- How strong is it?	
+  - Strong enough. You're not driving a transit van in steel toecaps. they're printed with a honeycomb infil and 6 layers of PLA walls. tap them, they sound high pitched. 
 - I don't want to take my pedal out. 
-  - If you cut down an allen key you can probably just about get in there to fit it. I've done it twice, but it's a pain in the shoulder.
+  - If you cut down an allen key you can probably just about get in there to fit it. I've done it twice, but it's a pain in the shoulder. Seriously, just take the pedal out for the fitting.
 - I think it's rubbish, I want my money back. 	
   - OK, send it back and I'll refund you.
 - I want a custom colour. 	
   - OK. It'll cost you another £5
 - I want a custom size width or height	
-- OK. It'll cost you another £5
-- How tight do I make it. Not very. Tweak it up a bit, when you hear cracking noises, stop!. use a bit of threalock on the thread. it doesn't take any stress.
+  - OK. It'll cost you another £5
+- How tight do I make it? 
+  - Not very. Tweak it up a bit, when you hear cracking noises, stop!. use a bit of loctite on the thread. 
 - Do I need to bolt it? Will it friction fit?	
   - Maybe. I suspect a bit of superglue would fix it in place as the plugs have deep insertion but I haven't tried this.
 - What size do I get?
   - I'm currently sending out a 20mm to SV owners and 10mm & 15mm to S3 owners. This may change following feedback.
+- How eco-friendly are they?
+  - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based and it is eventually biodegradeable. the bags I use are 100% recycled and recyclable.
 - I want to give you some feedback
   - please do! just email me.
 
