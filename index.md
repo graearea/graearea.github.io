@@ -1,32 +1,32 @@
 #GraeArea's Pedal Extension Plugs FAQ
 ![plugs](/img/plugs.png)
-#Please read the below
 
 ## What have I got?
 You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 or 20 mm extension plugs. 
 
-##Fitting
-
-**Firstly, this is easiest with the pedal off**. to do this:
+## Fitting
+**Firstly, this is easiest with the pedal off:**
 * Undo the top of the pedal box (6 screws and one bolt (on mine)) 
 * Detach the throttle cable 
 * Undo the bolt of the accelerator pivot (13mm open spanner)
 * Remove pedal
 * Congratulations, you've not dislocated your shoulder like you will trying to do this with the pedal on the car.
 ![pedal](/img/pedal.png)
+* 
 NB. All pedals on caterhams are _slightly_ different so either I get you to measure your pedal with a set of calipers or I send you a plug that _might_ need 5 minutes of filing for it to fit. 
 
-**Fit the plugs on the pedals**
+**Fit the plugs into the pedals**
 * If you struggle getting them in, try spinning them a bit. the plugs are slightly oval as many pedals are oval.
-* If they still won't fit, find the spot where they almost go in and then file the widest part of the insertion part on opposite sides of the plug like this:![this](/img/filed.png) (note the pattern of the part is not indicative of the wide bit)
-* First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove. Once it's in, give it a bit of a test, see if it's too wide/narrow. try the other option (if I sent you one). If it's not right at this point, send me a message and sort you out.
+* If they still won't fit, find the spot where they almost go in and then file a little off the widest part of the insertion part on opposite sides of the plug like this:
+*![this](/img/filed.png) (note the pattern of the part is not indicative of the wide bit)
+* First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove.
 * Press fit the 5mm/10mm plug into the right hand side. This should go in with a bit of a shove. Most of these I sent out are round so should fit easily
 * Once they're both in, put the bolt through the 5mm and then tighten down finger tight. Don't overtighten it, the bolt just needs to hold it together not take any stress if you hear cracking noises you're tight enough (this is fine). If you're worried about it backing out, stick some loctite in 
 
 **Refit your pedal**
 * Same but in reverse. Refitting the throttle cable can be easier if you relieve the tension from the throttle body.
 
-###FAQ
+### FAQ
 - How heavy are they?
   - 24g with a steel bolt
 - How strong is it	
@@ -47,9 +47,9 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 - I want to give you some feedback
   - please do! just email me.
 
-####SV with 25mm in (possibly too wide)
+#### SV with 25mm in (possibly too wide)
 ![SV](/img/SV%20with%2025mm.png)
-####S3 chassis
+#### S3 chassis
 ![S3](/img/measure-s3.png)
-####S3 chassis with 15mm
+####  S3 chassis with 15mm
 ![S3 feet](/img/feet.png)
