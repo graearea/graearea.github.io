@@ -18,7 +18,9 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 **Fit the plugs into the pedals**
 * If you struggle getting them in, try spinning them a bit. the plugs are slightly oval as many pedals are oval.
 * If they still won't fit, find the spot where they almost go in and then file a little off the widest part of the insertion part on opposite sides of the plug like this:
-*![this](/img/filed.png) (note the pattern of the part is not indicative of the wide bit)
+* 
+![this](/img/filed.png) 
+* (note the printing pattern of the part is not indicative of the wide bit)
 * First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove. If you have the (S3) 15mm and 10mm, try the 15mm as that's what I'm using.
 * Press fit the 5mm/10mm plug into the right hand side. This should go in with a bit of a shove. Most of these I sent out are round so should fit easily
 * Once they're both in, put the bolt through the 5mm and then tighten down finger tight. Don't overtighten it, the bolt just needs to hold it together not take any stress if you hear cracking noises you're tight enough (this is fine). If you're worried about it backing out, stick some loctite in 
@@ -40,7 +42,7 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 - I want a custom size width or height	
   - OK. It'll cost you another £5
 - How tight do I make it? 
-  - Not very. Tweak it up a bit, if you hear cracking noises, stop!. use a bit of loctite on the thread if you have it. 
+  - Not very. Tweak it up a bit, if you hear cracking noises, stop!   
 - Do I need to bolt it? Will it friction fit?	
   - Maybe. I suspect a bit of superglue or epoxy would fix it in place as the plugs have deep insertion but I haven't tried this.
 - What size do I get?
@@ -52,7 +54,10 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 - Did you enjoy making these?
   - I did. The idea, design and print was fun, but the posting out 20 packages SUCKS. I should charge more for the postage.
 - I think this is the best thing ever, how do I ever repay you?
-  - firstly, get a grip. secondly I accept beer money tips. thirdly, leave a review on the forum page.
+  - Firstly, get a grip. 
+  - Secondly I accept beer money tips. 
+  - Thirdly, leave a review on the forum page.
+  - Fourthly, get out and kick some downshifts!
 
 ### Some example pictures here:
   
@@ -65,3 +70,6 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 
 #### Some video 
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
+
+####  Aren't Caterhams great???
+![cat](/img/bedford.png)
