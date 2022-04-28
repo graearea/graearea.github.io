@@ -63,12 +63,12 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
   
 #### SV with 25mm in (possibly too wide)
 ![SV](/img/SV%20with%2025mm.png)
-#### S3 chassis
+#### S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
 ![S3](/img/measure-s3.png)
-####  S3 chassis with 15mm
+####  S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
 ![S3 feet](/img/feet.png)
 
-#### Some video (click it)
+#### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
 
 ####  Aren't Caterhams great???
