@@ -11,15 +11,17 @@ You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 o
 * Undo the bolt of the accelerator pivot (13mm open spanner)
 * Remove pedal
 * Congratulations, you've not dislocated your shoulder like you will trying to do this with the pedal on the car.
+<br/>
 ![pedal](/img/pedal.png)
-* 
+<br/>
 NB. All pedals on caterhams are _slightly_ different so either I get you to measure your pedal with a set of calipers or I send you a plug that _might_ need 5 minutes of filing for it to fit. 
 
 **Fit the plugs into the pedals**
 * If you struggle getting them in, try spinning them a bit. the plugs are slightly oval as many pedals are oval.
 * If they still won't fit, find the spot where they almost go in and then file a little off the widest part of the insertion part on opposite sides of the plug like this:
-* 
-![this](/img/filed.png) 
+<br/>
+![this](/img/filed.png)
+<br/>
 * (note the printing pattern of the part is not indicative of the wide bit)
 * First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove. If you have the (S3) 15mm and 10mm, try the 15mm as that's what I'm using.
 * Press fit the 5mm/10mm plug into the right hand side. This should go in with a bit of a shove. Most of these I sent out are round so should fit easily
@@ -56,7 +58,7 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 - Did you enjoy making these?
   - I did. The idea, design and print was fun, but the posting out 20 packages SUCKS. I should charge more for the postage.
 - I think this is the best thing ever, how do I ever repay you?
-  - Firstly, send me an email. 
+  - Firstly, send me a photo of it on your car. 
   - Secondly I accept beer money tips. 
   - Thirdly, leave a review on the forum page.
   - Fourthly, get out and kick some downshifts!
