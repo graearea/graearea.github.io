@@ -1,5 +1,5 @@
 ![plugs](/img/plugs.png)
-
+for what did I buy, click here:
 
 ## What are you selling?
 I'm selling 3D printed plugs that will fit into your Caterham's pedal to make it wider so you can easily "heel and toe". this is especially difficult in SV chassis cars where the gap can be up to 75mm.

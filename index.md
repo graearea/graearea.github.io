@@ -1,11 +1,17 @@
 # GraeArea's Pedal Extension Plugs FAQ
 ![plugs](/img/plugs.png)
 
-##
-For orders, please email 3d@johnrae.com
 
 ## What have I got?
 You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 or 20, 25, 30 mm extension plugs. or an empty plastic bag, care of yodel. 
+
+## What are they for?
+They are to help your heal-and-toeing by making it easier to reach the accelerator pedal whilst hard on the brake pedal.
+
+## How much are they?
+£20 + £4 p+p
+
+## For orders, please email [3d@johnrae.com]()
 
 ## Fitting
 **Firstly, this is easiest with the pedal off:**
@@ -80,3 +86,9 @@ NB. All pedals on caterhams are _slightly_ different so either I get you to meas
 
 ####  Aren't Caterhams great???
 ![cat](/img/bedford.png)
+
+### Some Happy Customers' pedals
+
+![nigel](/img/collage/nigel.jpg)<br>
+![richard](/img/collage/richard.JPG)<br>
+![someone](/img/collage/someone.png)<br>
