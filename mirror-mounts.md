@@ -19,9 +19,8 @@ It still vibrates with your side screen, but much less than the original Eccles.
 The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback and then they'll be £80+£4. All my mounts are unique as every hole drilled for Caterham mirrors is different, which means they're all custom. Left side, right side, all custom. But because I can print them each individually, it's the time spent with custom editing my design that you're paying for, not the materials and tooling and all that. You're buying a service, not £3 of plastic.
 
 ## Are they any good?
-https://youtu.be/K4T1gzWC7LM
-https://youtu.be/swGlpLUnF-Q
-ROCK. SOLID.
+[![ROCK](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
+[![SOLID](https://img.youtube.com/vi/swGlpLUnF-Q/0.jpg)](https://www.youtube.com/watch?v=swGlpLUnF-Q)
 I've been running them for a few months now and done 3000 miles. 
 
 ## Are they strong?
