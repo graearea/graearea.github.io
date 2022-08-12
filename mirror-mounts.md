@@ -6,8 +6,8 @@ Eccles Mounts. They can take Spa convex mirrors, which means you can change lane
 but they're a bit wobbly. Too much vibration.
 
 #My solution
-Rip off Eccles' mounts but make them better and supply them _as a service_, at a "reasonable" price. 
-
+Rip off Eccles' mounts but make them better and supply them _as a service_, at a "reasonable" price.
+![eckles](/img/eccles.png)
 #How are they better?
 They are mounted to your screens at 3 points, not 2. That's 300% better. They use the same hinge mounts as Eccles's mounts, but I offer a third mount, which hooks into the previously drilled hole that your crappy Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. 
 
