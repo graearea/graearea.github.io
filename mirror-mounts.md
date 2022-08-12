@@ -36,30 +36,29 @@ The best way to do this is with calipers, the second best is with a tape-measure
 I've probably sent them to you without charging you. Just send them back, don't pay any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
 
 ## What comes in the kit?
-2x custom mounts
-2x M4 countersunk bolts.
-2x other M4 bolts. 
+* 2x custom mounts
+* 2x M4 countersunk bolts.
+* 2x other M4 bolts. 
 
 ## What do I need?
-2x Spa mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors )
-2x Side screens that have been drilled. 
-4x original bolts for your screen mounts. 
-2x original caterham brass door hinge pivots (if you have screens on your car you already have these)
+* 2x Spa mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors )
+* 2x Side screens that have been drilled. 
+* 4x original bolts for your screen mounts. 
+* 2x original caterham brass door hinge pivots (if you have screens on your car you already have these)
 some loctite
 
 ## How do I fit them?
-Drink 1 beer (your choice. My preference is something hoppy like a Beavertown or a Landlord)
-unscrew lower hinge from screen.
-test fit mounts, just drop the bolts through and check it all lines up. 
-tap out brass hinge pivot (it's knurled on the end) like this: 
+* Drink 1 beer (your choice. My preference is something hoppy like a Beavertown or a Landlord)
+* unscrew lower hinge from screen.
+* test fit mounts, just drop the bolts through and check it all lines up. 
+* tap out brass hinge pivot (it's knurled on the end) like this: 
+* take brass hinge pivot and tap it into my mount, like this:
 
-take brass hinge pivot and tap it into my mount, like this:
-
-don't tap it in upside down!
-attach Spa mirror. Offer it up to the car and get the angle absolutely perfect first time (don't worry, this is impossible. It'll take 15 attempts over the next 6 months. Blame the SPA mirrors.)
-once mirror is perfect (lol) attach mount to side screen.
-enjoy worrying why your rear view mirror vibrates more than your side screens.
-enjoy ignoring everything behind you.
+* don't tap it in upside down!
+* attach Spa mirror. Offer it up to the car and get the angle absolutely perfect first time (don't worry, this is impossible. It'll take 15 attempts over the next 6 months. Blame the SPA mirrors.)
+* once mirror is perfect (lol) attach mount to side screen.
+* enjoy worrying why your rear view mirror vibrates more than your side screens.
+* enjoy ignoring everything behind you.
 
 ## Do you do different colours from black?
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue) if you want some silly filament colour I can do it for the cost of the filament (usually 20/30 quid) but these include flip colours, rusting copper, wood, your mum's favourite colour and carbon fibre PLA. I'm not going to match the filament to your 1986 Rover paint code. If you care that much, send me the filament after you've checked it yourself.
