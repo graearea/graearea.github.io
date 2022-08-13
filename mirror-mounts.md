@@ -3,10 +3,10 @@ Caterham's mirrors are shite. Seriously. They're not convex, you can't see anyth
 
 ## The Previous Solution
 Eccles Mounts. They can take Spa convex mirrors, which means you can change lane without just guessing if you're going to die.
-but they're a bit wobbly. Too much vibration.
+but they're a bit wobbly. I found they had too much vibration.
 
 ## My solution
-Rip off Eccles' mounts but make them better and supply them _as a service_, at a "reasonable" price.
+Rip off Eccles' mounts but make them better and supply them at a "reasonable" price.
 ![eckles](/img/eccles.png)
 
 ## How are they better?
@@ -19,21 +19,27 @@ It still vibrates with your side screen, but much less than the original Eccles.
 The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback and then they'll be £80+£4. All my mounts are unique as every hole drilled for Caterham mirrors is different, which means they're all custom. Left side, right side, all custom. But because I can print them each individually, it's the time spent with custom editing my design that you're paying for, not the materials and tooling and all that. You're buying a service, not £3 of plastic.
 
 ## Are they any good?
+click the videos:
 [![ROCK](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
+
 [![SOLID](https://img.youtube.com/vi/swGlpLUnF-Q/0.jpg)](https://www.youtube.com/watch?v=swGlpLUnF-Q)
 I've been running them for a few months now and done 3000 miles. 
 
 ## Are they strong?
-Yes. I've snapped one with a hammer, but it took sticking it in a bench vice. PLA is much stronger than you'd think.
+Yes. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. PLA is much stronger than you'd think.
+
+## How do they compare to the Aluminium Eccles?
+I've seen the aluminium ones and they're the real deal. They're very nice and I think the extra mass helps stop them from vibrating. These are 3D printed so they have the usual issues of not being smooth, but they look like this:
+
 
 ## How do I order?
-send me a message, I'll send them out. If you're happy, you send me the money. If you're not, you return them.
 you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
 
-The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong and you need a slightly different version, I'll ask you for £10 (which covers some of the time, materials and postage) 
+The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong and you need a slightly different version, I'll ask you for £10 (which covers some of the time, materials and postage)
+Send me a message, I'll send them out. If you're happy, you send me the money. If you're not, you return them.
 
-## What if I think they're shit?
-I've probably sent them to you without charging you. Just send them back, don't pay any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
+## What if you think they're shit?
+I've probably sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
 
 ## What comes in the kit?
 * 2x custom mounts
