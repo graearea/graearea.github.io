@@ -36,8 +36,9 @@ Front: ![Front](/img/front.png)
 ## How do I order?
 you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
 ![Caliper](/img/calipers.png)
-The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out
-Send me a message, I'll send them out. If you're happy, you send me the money. If you're not, you return them.
+The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out.
+
+Once you have the measurements, send me an email, I'll post them out. If you're happy, you send me the money. If you're not, you return them.
 
 ## What if you think they're shit?
 I've sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
@@ -48,9 +49,9 @@ I've sent them to you without charging you. Just send them back, don't pay me an
 * 2x 25mm M4 bolts. 
 
 ## What do I need?
-* 2x Spa mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors )
+* 2x Spa mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or the motamecs here: https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
 * 2x Side screens that have been drilled. 
-* 2x original caterham brass door hinge pivots (if you have screens on your car you already have these)
+* 2x original caterham brass door hinge pivots (if you have side-screens on your car you already have these)
 * your 6 original nuts
 * some loctite
 
