@@ -1,38 +1,39 @@
+# GraeArea's custom mirror mounts
+
 ## The Problem.
 Caterham's mirrors are shite. Seriously. They're not convex, you can't see anything and they're enormous. 
 
 ## The Previous Solution
-Eccles Mounts. They can take Spa convex mirrors, which means you can change lane without just guessing if you're going to die.
+Eccles' Mounts. They can take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
 but they're a bit wobbly. I found they had too much vibration.
 
-## My solution
-Rip off Eccles' mounts but make them better and supply them at a "reasonable" price.
+## My improved solution
+They're _inspired by_ (Ripped off from) Eccles' mounts but I can make them better and supply them at a "reasonable" price.
 ![eckles](/img/eccles.png)
 
 ## How are they better?
-They are mounted to your screens at 3 points, not 2. That's 300% better. They use the same hinge mounts as Eccles's mounts, but I offer a third mount, which hooks into the previously drilled hole that your crappy Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. 
+They are mounted to your screens at 3 points, not 2. That's 300% better. They use the same hinge mounts as Eccles's mounts, but they have a third mount, which hooks into the previously drilled hole that your standard crappy Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. 
 
 ## So it's perfect?
-It still vibrates with your side screen, but much less than the original Eccles. See the videos below. 
+It still vibrates with your side screen, but much less than the original Eccles. See the video below. 
 
 ## How much are they?
-The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback and then they'll be £80+£4. All my mounts are unique as every hole drilled for Caterham mirrors is different, which means they're all custom. Left side, right side, all custom. But because I can print them each individually, it's the time spent with custom editing my design that you're paying for, not the materials and tooling and all that. You're buying a service, not £3 of plastic.
+All my mounts are unique as every hole drilled for Caterham mirrors is different, which means they're all custom. Left side, right side, all custom. The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback and then they'll be £80+£4.
 
 ## Are they any good?
-click the videos:
+click the video:
 
-[![ROCK](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
+[![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
 
-[![SOLID](https://img.youtube.com/vi/swGlpLUnF-Q/0.jpg)](https://www.youtube.com/watch?v=swGlpLUnF-Q)
-
-I've been running them for a few months now and done 3000 miles. 
+I've been running them for a few months now and done 3000 miles and no problems. There is a hole so you can access the tightening screw for the mirrors. 
 
 ## Are they strong?
-Yes. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. PLA is much stronger than you'd think.
+Yes. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. They're much stronger than you'd think.
 
 ## How do they compare to the Aluminium Eccles?
-I've seen the aluminium ones and they're the real deal. They're very nice and I think the extra mass helps stop them from vibrating. These are 3D printed so they have the usual issues of not being smooth, but they look like this:
-
+I've seen the aluminium ones and they're the real deal. They're very nice and I think the extra mass might help stop them from vibrating. These are 3D printed so they have the usual issues of not being as pretty, but they typically look like this:
+Back: ![Back](/img/back.png)
+Front: ![Front](/img/front.png)
 
 ## How do I order?
 you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
