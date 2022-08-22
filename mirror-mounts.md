@@ -1,15 +1,15 @@
 # GraeArea's custom mirror mounts
 
 ## The Problem.
-Caterham's mirrors are terrible. Seriously. They're not convex, you can't see anything and they're enormous. 
+Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. 
 
 ## My solution
-They can take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
+My mounts take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
 They're _inspired by_ (ripped off from) Eccles' mounts (shown below mine here) but I can make them better and still supply them at a "reasonable" price.
 ![eccles](/img/eccles.png)
 
 ## How are they better?
-They are mounted to your side-screens at 3 points, not 2. That's 150% better. They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
+They are mounted to your side-screens at 3 points, not 2. That's 150% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
 
 ## So it's perfect?
 It still vibrates a little with your side screen, but much less than the original Eccles. See the video below. 
@@ -18,11 +18,9 @@ It still vibrates a little with your side screen, but much less than the origina
 As every hole drilled for Caterham mirrors is different, all the mounts are unique. Left side, right side, both different and custom. The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback, fix any problems and then they'll be _£80+£4 p+p_.
 
 ## Are they any good?
-click the video:
+I've been running them for a few months now and have done >2000 miles and no problems. click the video:
 
 [![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
-
-I've been running them for a few months now and have done >2000 miles and no problems.  
 
 ## Are they strong?
 Yes. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. They're much stronger than you'd think.
@@ -32,16 +30,6 @@ I've seen the aluminium ones and they're the real deal, nicely CNC'd. These are 
 
 Back: ![Back](/img/back.png)
 Front: ![Front](/img/front.png)
-
-## How do I order?
-you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
-![Caliper](/img/calipers.png)
-The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out.
-
-Once you have the measurements, send me an email, I'll post them out. If you're happy, you send me the money. If you're not, you return them.
-
-## What if you think they're shit?
-I've sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
 
 ## What comes in the kit?
 * 2x custom mounts
@@ -67,6 +55,16 @@ I've sent them to you without charging you. Just send them back, don't pay me an
 * once mirror is perfect, tighten the spa mirror down hard and the bolt mount to side screen with your nyloc nuts.
 * enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors (fix the rear-view with 3M VHB, it's much better than the foam crap people use).
 * enjoy ignoring everything behind you anyway.
+
+## How do I order?
+you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
+![Caliper](/img/calipers.png)
+The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out.
+
+Once you have the measurements, send me an email, I'll post them out. If you're happy, you send me the money. If you're not, you return them.
+
+## What if you think they're shit?
+I've sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested.
 
 ## Do you do different colours from black?
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). If you want some silly filament colour I can do it for the cost of the filament (usually 20/30 quid), these include flip colours, rusting copper, wood, your mum's favourite colour and carbon fibre PLA. I'm not going to match the filament to your 1986 Rover paint code. If you care that much, send me the filament after you've checked it yourself.
