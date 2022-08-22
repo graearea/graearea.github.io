@@ -1,80 +1,79 @@
 # GraeArea's custom mirror mounts
 
 ## The Problem.
-Caterham's mirrors are shite. Seriously. They're not convex, you can't see anything and they're enormous. 
+Caterham's mirrors are terrible. Seriously. They're not convex, you can't see anything and they're enormous. 
 
-## The Previous Solution
-Eccles' Mounts. They can take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
-but they're a bit wobbly. I found they had too much vibration.
-
-## My improved solution
-They're _inspired by_ (Ripped off from) Eccles' mounts but I can make them better and supply them at a "reasonable" price.
-![eckles](/img/eccles.png)
+## My solution
+They can take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
+They're _inspired by_ (ripped off from) Eccles' mounts (shown below mine here) but I can make them better and still supply them at a "reasonable" price.
+![eccles](/img/eccles.png)
 
 ## How are they better?
-They are mounted to your screens at 3 points, not 2. That's 300% better. They use the same hinge mounts as Eccles's mounts, but they have a third mount, which hooks into the previously drilled hole that your standard crappy Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. 
+They are mounted to your side-screens at 3 points, not 2. That's 150% better. They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
 
 ## So it's perfect?
-It still vibrates with your side screen, but much less than the original Eccles. See the video below. 
+It still vibrates a little with your side screen, but much less than the original Eccles. See the video below. 
 
 ## How much are they?
-All my mounts are unique as every hole drilled for Caterham mirrors is different, which means they're all custom. Left side, right side, all custom. The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback and then they'll be £80+£4.
+As every hole drilled for Caterham mirrors is different, all the mounts are unique. Left side, right side, both different and custom. The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback, fix any problems and then they'll be _£80+£4 p+p_.
 
 ## Are they any good?
 click the video:
 
 [![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
 
-I've been running them for a few months now and done 3000 miles and no problems. There is a hole so you can access the tightening screw for the mirrors. 
+I've been running them for a few months now and have done >2000 miles and no problems.  
 
 ## Are they strong?
 Yes. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. They're much stronger than you'd think.
 
 ## How do they compare to the Aluminium Eccles?
-I've seen the aluminium ones and they're the real deal. They're very nice and I think the extra mass might help stop them from vibrating. These are 3D printed so they have the usual issues of not being as pretty, but they typically look like this:
+I've seen the aluminium ones and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
+
 Back: ![Back](/img/back.png)
 Front: ![Front](/img/front.png)
 
 ## How do I order?
 you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
-
-The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong and you need a slightly different version, I'll ask you for £10 (which covers some of the time, materials and postage)
+![Caliper](/img/calipers.png)
+The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out
 Send me a message, I'll send them out. If you're happy, you send me the money. If you're not, you return them.
 
 ## What if you think they're shit?
-I've probably sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
+I've sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested. 
 
 ## What comes in the kit?
 * 2x custom mounts
-* 2x M4 countersunk bolts.
-* 2x other M4 bolts. 
+* 4x 16mm M4 countersunk bolts.
+* 2x 25mm M4 bolts. 
 
 ## What do I need?
 * 2x Spa mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors )
 * 2x Side screens that have been drilled. 
-* 4x original bolts for your screen mounts. 
 * 2x original caterham brass door hinge pivots (if you have screens on your car you already have these)
-some loctite
+* your 6 original nuts
+* some loctite
 
 ## How do I fit them?
 * Drink 1 beer (your choice. My preference is something hoppy like a Beavertown or a Landlord)
 * unscrew lower hinge from screen.
-* test fit mounts, just drop the bolts through and check it all lines up. 
-* tap out brass hinge pivot (it's knurled on the end) like this: 
+* test fit mounts, just drop the bolts through and check it all lines up. if a mistake has been made, this is the time to find out.
+* tap out brass hinge pivot (it's knurled on the end that is inserted) by putting the hole above a gap in a vice or on the edge of a bench and tapping it out by the pointy end. 
 * take brass hinge pivot and tap it into my mount, like this:
 
 * don't tap it in upside down!
-* attach Spa mirror. Offer it up to the car and get the angle absolutely perfect first time (don't worry, this is impossible. It'll take 15 attempts over the next 6 months. Blame the SPA mirrors.)
-* once mirror is perfect (lol) attach mount to side screen.
-* enjoy worrying why your rear view mirror vibrates more than your side screens.
-* enjoy ignoring everything behind you.
+* With the screws inserted, offer up the Spa mirror to the car and set the angle of the mirror correct. This is easier with someone inside the car directing you.  
+* once mirror is perfect, tighten the spa mirror down hard and the bolt mount to side screen with your nyloc nuts.
+* enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors (fix the rear-view with 3M VHB, it's much better than the foam crap people use).
+* enjoy ignoring everything behind you anyway.
 
 ## Do you do different colours from black?
-Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue) if you want some silly filament colour I can do it for the cost of the filament (usually 20/30 quid) but these include flip colours, rusting copper, wood, your mum's favourite colour and carbon fibre PLA. I'm not going to match the filament to your 1986 Rover paint code. If you care that much, send me the filament after you've checked it yourself.
+Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). If you want some silly filament colour I can do it for the cost of the filament (usually 20/30 quid), these include flip colours, rusting copper, wood, your mum's favourite colour and carbon fibre PLA. I'm not going to match the filament to your 1986 Rover paint code. If you care that much, send me the filament after you've checked it yourself.
 
-## how can you ask for this much money for so little?
-this isn't my job. 
-I just made a thing which I think is a massive improvement.
-feel free to compete with me.
+## How can you ask for this much money for so little?
+I just made a thing which I think is a massive improvement over the alternatives.
+It takes time to modify the designs for each mount.
+I stand by the product's quality.
+Feel free to compete with me.
 
-anything else, contact me 7@johnrae.com
+Any questions or anything else, contact me 7@naughtyserver.com
