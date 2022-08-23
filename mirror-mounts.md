@@ -9,7 +9,7 @@ They're _inspired by_ (ripped off from) Eccles' mounts (shown below mine here) b
 ![eccles](/img/eccles.png)
 
 ## How are they better?
-They are mounted to your side-screens at 3 points, not 2. That's 150% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
+They are mounted to your side-screens at 3 points, not 2. That's 300% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
 
 ## So it's perfect?
 It still vibrates a little with your side screen, but much less than the original Eccles. See the video below. 
@@ -70,9 +70,9 @@ I've sent them to you without charging you. Just send them back, don't pay me an
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). If you want some silly filament colour I can do it for the cost of the filament (usually 20/30 quid), these include flip colours, rusting copper, wood, your mum's favourite colour and carbon fibre PLA. I'm not going to match the filament to your 1986 Rover paint code. If you care that much, send me the filament after you've checked it yourself.
 
 ## How can you ask for this much money for so little?
-I just made a thing which I think is a massive improvement over the alternatives.
 It takes time to modify the designs for each mount.
 I stand by the product's quality.
+I just made a thing which I think is a massive improvement over the alternatives.
 Feel free to compete with me.
 
 Any questions or anything else, contact me 7@naughtyserver.com
