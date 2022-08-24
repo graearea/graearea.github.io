@@ -57,11 +57,11 @@ Front: ![Front](/img/front.png)
 * enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors (fix the rear-view with 3M VHB, it's much better than the foam crap people use).
 * enjoy ignoring everything behind you anyway.
 
-## How do I order?
+## How do I order? 
 you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
 ![Caliper](/img/calipers.png)
 The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out.
-![goto this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)
+use [this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)
 
 Once you have the measurements, send me an email, I'll post them out. If you're happy, you send me the money. If you're not, you return them.
 
