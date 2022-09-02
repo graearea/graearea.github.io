@@ -16,7 +16,7 @@ They are mounted to your side-screens at 3 points, not 2. That's 300% better! Th
 They still vibrate a little with your side screen, but much less than the original Eccles as they're attached to the metal frame of the window. See the video below. 
 
 ## How much are they?
-The first 5 sets will be £60+£4, I'll make them, send them out, receive feedback, fix any problems and then they'll be **£80+£4 p+p**.
+The first 5 sets will be £60+£6, I'll make them, send them out, receive feedback, fix any problems, and then I'll be re-evaluating the price upwards.
 
 ## Are they any good?
 I've been running them for a few months now and have done >2000 miles and no problems. click the video:

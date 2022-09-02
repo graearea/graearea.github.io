@@ -8,7 +8,7 @@ You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 o
 They are to help your heal-and-toeing by making it easier to reach the accelerator pedal whilst hard on the brake pedal.
 
 ## How much are they?
-£20 + £4 p+p
+£20 + £6 p+p
 
 ## For orders, please [Use this Form](https://docs.google.com/forms/d/e/1FAIpQLScvEn9w14sNNWIsTC3S2cNHySxAnjtrse_3nG2ZHDB76wcffg/viewform?usp=sf_link)
 any problems email 7@naughtyserver.com
