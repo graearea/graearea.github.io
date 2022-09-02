@@ -63,7 +63,7 @@ any problems email 7@naughtyserver.com
 - How eco-friendly are they?
   - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable and it is eventually biodegradeable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
 - I want to give you some feedback
-  - please do! just email me at 24@johnrae.com
+  - please do! just email me at 7@naughtyserver.com
 - Did you enjoy making these?
   - I did. The idea, design and print was fun, but the posting out 20 packages SUCKS. I should charge more for the postage.
 - I think this is the best thing ever, how do I ever repay you?
