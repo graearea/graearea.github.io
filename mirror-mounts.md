@@ -1,6 +1,5 @@
 # GraeArea's custom mirror mounts
 ![eccles](/img/eccles.png)
-[TOC]
 
 ## The Problem.
 Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. 
