@@ -1,4 +1,4 @@
-# GraeArea's custom mirror mounts
+# Custom Mirror Mounts
 ![eccles](/img/eccles.png)
 
 ## The Problem.
