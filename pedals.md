@@ -35,7 +35,7 @@ any problems email 7@naughtyserver.com
 * (note the printing pattern of the part is not indicative of the wide bit)
 * First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove. If you have the (S3) 15mm and 10mm, try the 15mm as that's what I'm using.
 * Press fit the 5mm/10mm plug into the right hand side. This should go in with a bit of a shove. Most of these I sent out are round so should fit easily
-* Once they're both in, put the bolt through the 5mm and then tighten down finger tight. Don't overtighten it, the bolt just needs to hold it together not take any stress if you hear cracking noises you're tight enough (this is fine). If you're worried about it backing out, stick some loctite in
+* Once they're both in, put the bolt through the 5mm, apply some loctite and then tighten down finger tight. Don't overtighten it, the bolt just needs to hold it together not take any stress. if you hear cracking noises you're tight enough (this is fine). 
 
 **Refit your pedal**
 * Same but in reverse. Refitting the throttle cable can be easier if you relieve the tension from the throttle body.
