@@ -1,6 +1,6 @@
 # GraeArea's Pedal Extension Plugs FAQ
 ![plugs](/img/plugs.png)
-
+[TOC]
 
 ## What have I got?
 You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 or 20, 25, 30 mm extension plugs. or an empty plastic bag, care of yodel.
