@@ -1,5 +1,5 @@
 # Custom Mirror Mounts
-![eccles](/img/mounted.png)
+![mounted](/img/mounted.png)
 
 ## The Problem.
 Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. 
@@ -37,9 +37,9 @@ Front: ![Front](/img/front.png)
 * 2x 14mm M5 countersunk bolts
 
 ## What do I need?
-* 2x Spa/Motomec/CBS mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or the motamecs here: https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
+* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
 * 2x Side screens that have been drilled. 
-* 2x original caterham brass door hinge pivots (if you have side-screens on your car you already have these, just gently tap them out, or you can get them [here](https://caterhamparts.co.uk/fittings/599-wind-protector-hinge.html) or [here](http://www.kitcardirect.co.uk/shop-kit-car/weather-protection/wet-weather-side-door-hinges-each.html))
+* 2x original caterham brass door hinge pivots (just gently tap them out of the existing pivots by the pointy end. The end that is inserted is knurled, or you can get them [here](https://caterhamparts.co.uk/fittings/599-wind-protector-hinge.html) or [here](http://www.kitcardirect.co.uk/shop-kit-car/weather-protection/wet-weather-side-door-hinges-each.html))
 * your 6 original nyloc nuts and washers
 
 ## How do I order?
