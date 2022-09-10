@@ -1,5 +1,5 @@
 # Custom Mirror Mounts
-![mounted](/img/mounted.png)
+![mounted](/img/mounted.jpeg)
 
 ## The Problem.
 Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. 
@@ -8,7 +8,7 @@ Caterham's mirrors are terrible. Seriously. They're enormous and because they're
 My mounts take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
 They're _inspired by_ (ripped off from) Eccles' mounts (shown below) but I can make them better and still supply them at a "reasonable" price.
 As all holes drilled for Caterham mirrors are different, all the mounts need to be unique. Left side, right side, both different and custom.
-![eccles](/img/eccles.png)
+![eccles](/img/eccles.jpeg)
 
 ## How are they better?
 They are mounted to your side-screens at 3 points, not 2. That's 300% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
@@ -27,8 +27,8 @@ Yes. They're much stronger than you'd think. I've snapped one, but it took me st
 ## How do they compare to the Aluminium Eccles?
 I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
 
-Back: ![Back](/img/back.png)
-Front: ![Front](/img/front.png)
+Back: ![Back](/img/back.jpeg)
+Front: ![Front](/img/front.jpeg)
 
 ## What comes in the kit?
 * 2x custom mounts
@@ -44,7 +44,7 @@ Front: ![Front](/img/front.png)
 
 ## How do I order?
 you need to measure the distance between your two hinge mount holes and the first hole on your current mirrors. Here is an example of measuring the bottom distance:
-![Caliper](/img/calipers.png)
+![Caliper](/img/calipers.jpeg)
 The best way to do this is with calipers.
 Once you have the measurements, use [this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link), I'll post them out. If you're happy, you send me the money, If you're not, you return them.
 
@@ -61,7 +61,7 @@ Once you have the measurements, use [this form to order](https://docs.google.com
 * enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors (fix the rear-view with 3M VHB, it's much better than the foam crap people use).
 * enjoy ignoring everything behind you anyway.
 
-![Back](/img/back mounted.png)
+![Back](/img/back mounted.jpeg)
 
 ## What if you think they're shit?
 Just send them back, I'll refund you. 

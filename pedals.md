@@ -1,5 +1,5 @@
 # Pedal Extension Plugs
-![plugs](/img/plugs.png)
+![plugs](/img/plugs.jpeg)
 
 ## What have I got?
 You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 or 20, 25, 30 mm extension plugs. or an empty plastic bag, care of yodel.
@@ -21,7 +21,7 @@ any problems email 7@naughtyserver.com
 * Remove pedal
 * Congratulations, you've not dislocated your shoulder like you will trying to do this with the pedal on the car.
   <br/>
-  ![pedal](/img/pedal.png)
+  ![pedal](/img/pedal.jpeg)
   <br/>
   NB. All pedals on caterhams are _slightly_ different so either I get you to measure your pedal with a set of calipers or I send you a plug that _might_ need 5 minutes of filing for it to fit.
 
@@ -29,7 +29,7 @@ any problems email 7@naughtyserver.com
 * If you struggle getting them in, try spinning them a bit. the plugs are slightly oval as many pedals are oval.
 * If they still won't fit, find the spot where they almost go in and then file a little off the widest part of the insertion part on opposite sides of the plug like this:
   <br/>
-  ![this](/img/filed.png)
+  ![this](/img/filed.jpeg)
   <br/>
 * (note the printing pattern of the part is not indicative of the wide bit)
 * First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove. If you have the (S3) 15mm and 10mm, try the 15mm as that's what I'm using.
@@ -75,20 +75,20 @@ any problems email 7@naughtyserver.com
 ### Some example pictures here:
 
 #### SV with 25mm in (possibly too wide)
-![SV](/img/SV%20with%2025mm.png)
+![SV](/img/SV%20with%2025mm.jpeg)
 #### S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3](/img/measure-s3.png)
+![S3](/img/measure-s3.jpeg)
 ####  S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3 feet](/img/feet.png)
+![S3 feet](/img/feet.jpeg)
 
 #### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
 
 ####  Aren't Caterhams great???
-![cat](/img/bedford.png)
+![cat](/img/bedford.jpeg)
 
 ### Some Happy Customers' pedals
 
 ![nigel](/img/collage/nigel.jpg)<br>
 ![richard](/img/collage/richard.JPG)<br>
-![someone](/img/collage/someone.png)<br>
+![someone](/img/collage/someone.jpeg)<br>

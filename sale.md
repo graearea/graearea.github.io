@@ -1,4 +1,4 @@
-![plugs](/img/plugs.png)
+![plugs](/img/plugs.jpeg)
 for what did I buy, click here:
 
 ## What are you selling?
@@ -10,14 +10,14 @@ In my S3 chassis I have a 50mm gap in which I use a 15mm plug and in my size 8 d
 
 ## how do I order?
 first, look at your pedals. 
-is it like the old style ![old](/img/old.png)  \
-or the new style ![new](/img/new.png)  
+is it like the old style ![old](/img/old.jpeg)  \
+or the new style ![new](/img/new.jpeg)  
 
 what is the distance between your brake and your accelerator?  
-![new](/img/measure-s3.png)  
+![new](/img/measure-s3.jpeg)  
 
 I think 35mm is about right in really narrow driving shoes. if you use wider ones, tell me.
-![feet](/img/feet.png)
+![feet](/img/feet.jpeg)
 
 * for an S3 chassis, 90% of people are happy with a 10-15mm plug so I'll send you a 10 and a 15.  
 * for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 15 and a 25 or something similar
@@ -61,14 +61,14 @@ For orders, please email 3d@johnrae.com
 ### Some example pictures here:
 
 #### SV with 25mm in (possibly too wide)
-![SV](/img/SV%20with%2025mm.png)
+![SV](/img/SV%20with%2025mm.jpeg)
 #### S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3](/img/measure-s3.png)
+![S3](/img/measure-s3.jpeg)
 ####  S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3 feet](/img/feet.png)
+![S3 feet](/img/feet.jpeg)
 
 #### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
 
 ####  Aren't Caterhams great???
-![cat](/img/bedford.png)
+![cat](/img/bedford.jpeg)
