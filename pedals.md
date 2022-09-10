@@ -1,4 +1,4 @@
-## Pedal Extension Plugs
+# Pedal Extension Plugs
 ![plugs](/img/plugs.png)
 
 ## What have I got?
