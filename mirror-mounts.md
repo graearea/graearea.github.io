@@ -1,13 +1,14 @@
 # Custom Mirror Mounts
-![eccles](/img/eccles.png)
+![eccles](/img/mounted.png)
 
 ## The Problem.
 Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. 
 
 ## My solution
 My mounts take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
-They're _inspired by_ (ripped off from) Eccles' mounts (shown below mine here) but I can make them better and still supply them at a "reasonable" price.
+They're _inspired by_ (ripped off from) Eccles' mounts (shown below) but I can make them better and still supply them at a "reasonable" price.
 As all holes drilled for Caterham mirrors are different, all the mounts need to be unique. Left side, right side, both different and custom.
+![eccles](/img/eccles.png)
 
 ## How are they better?
 They are mounted to your side-screens at 3 points, not 2. That's 300% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
@@ -33,12 +34,19 @@ Front: ![Front](/img/front.png)
 * 2x custom mounts
 * 4x 16mm M5 countersunk bolts.
 * 2x 25mm M5 bolts. 
+* 2x 14mm M5 countersunk bolts
 
 ## What do I need?
 * 2x Spa/Motomec/CBS mirrors (buy the convex ones here: http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html or the motamecs here: https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
 * 2x Side screens that have been drilled. 
-* 2x original caterham brass door hinge pivots (if you have side-screens on your car you already have these)
-* your 6 original nuts
+* 2x original caterham brass door hinge pivots (if you have side-screens on your car you already have these, just gently tap them out, or you can get them [here](https://caterhamparts.co.uk/fittings/599-wind-protector-hinge.html) or [here](http://www.kitcardirect.co.uk/shop-kit-car/weather-protection/wet-weather-side-door-hinges-each.html))
+* your 6 original nyloc nuts and washers
+
+## How do I order?
+you need to measure the distance between your two hinge mount holes and the first hole on your current mirrors. Here is an example of measuring the bottom distance:
+![Caliper](/img/calipers.png)
+The best way to do this is with calipers.
+Once you have the measurements, use [this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link), I'll post them out. If you're happy, you send me the money, If you're not, you return them.
 
 ## How do I fit them?
 * Drink 1 beer (Your choice. My preference is something hoppy like a Beavertown or a Landlord)
@@ -53,23 +61,12 @@ Front: ![Front](/img/front.png)
 * enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors (fix the rear-view with 3M VHB, it's much better than the foam crap people use).
 * enjoy ignoring everything behind you anyway.
 
-## How do I order? 
-you need to measure the distance between your two hinge mounts and the first hole on your current mirrors. Here is an example:
-![Caliper](/img/calipers.png)
-The best way to do this is with calipers, the second best is with a tape-measure. If you get it wrong, and you need a slightly different version, I'll ask you for £10 each mount (which covers some of the time, materials and postage) and I'll redo it and send it out.
-
-Once you have the measurements, use [this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link), I'll post them out. If you're happy, you send me the money, If you're not, you return them.
+![Back](/img/back mounted.png)
 
 ## What if you think they're shit?
-I've sent them to you without charging you. Just send them back, don't pay me any money. Same as my pedal extension plugs. I'm currently at 50 sets of plugs and zero refunds requested.
+Just send them back, I'll refund you. 
 
 ## Do you do different colours from black?
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). I can do others but cost will be more. I'm not guaranteeing colour tone.
-
-## How can you ask for this much money for so little?
-It takes time to modify the designs for each mount.<br>
-I stand by the product's quality.<br>
-I just made a thing which I think is a massive improvement over the alternatives.<br>
-Feel free to compete with me.<br>
 
 Any questions or anything else, contact me 7@naughtyserver.com
