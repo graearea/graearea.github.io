@@ -12,9 +12,6 @@ As all holes drilled for Caterham mirrors are different, all the mounts need to 
 ## How are they better?
 They are mounted to your side-screens at 3 points, not 2. That's 300% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
 
-## So they're perfect?
-They still vibrate a little with your side screen, but much less than the original Eccles as they're attached to the metal frame of the window. See the video below. 
-
 ## How much are they?
 The first 5 sets will be £60+£6, I'll make them, send them out, receive feedback, fix any problems, and then I'll be re-evaluating the price upwards.
 
@@ -23,11 +20,11 @@ I've been running them for a few months now and have done >2000 miles and no pro
 
 [![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
 
-## Are they strong?
+## Are they strong enough?
 Yes. They're much stronger than you'd think. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. 
 
 ## How do they compare to the Aluminium Eccles?
-I've seen the aluminium ones and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
+I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
 
 Back: ![Back](/img/back.png)
 Front: ![Front](/img/front.png)
