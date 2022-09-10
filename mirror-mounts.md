@@ -11,7 +11,7 @@ As all holes drilled for Caterham mirrors are different, all the mounts need to 
 ![eccles](/img/eccles.jpeg)
 
 ## How much are they?
-The first 5 sets will be £60+£6, I'll make them, send them out, receive feedback, fix any problems, and then I'll be re-evaluating the price upwards.
+The first 5 sets will be £60+£6, but you pay me after you're happy. I'll make them, send them out, receive feedback, fix any problems, and then I'll be re-evaluating the price upwards.
 
 ## Are they any good?
 I've been running them for a few months now and have done >2000 miles including 3 track days and no problems. click the video:
