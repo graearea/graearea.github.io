@@ -74,8 +74,6 @@ any problems email 7@naughtyserver.com
 
 ### Some example pictures here:
 
-#### SV with 25mm in (possibly too wide)
-![SV](/img/SV%20with%2025mm.jpeg)
 #### S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
 ![S3](/img/measure-s3.jpeg)
 ####  S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
@@ -83,9 +81,6 @@ any problems email 7@naughtyserver.com
 
 #### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
-
-####  Aren't Caterhams great???
-![cat](/img/bedford.jpeg)
 
 ### Some Happy Customers' pedals
 

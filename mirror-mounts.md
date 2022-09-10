@@ -6,25 +6,21 @@ Caterham's mirrors are terrible. Seriously. They're enormous and because they're
 
 ## My solution
 My mounts take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die.
-They're _inspired by_ (ripped off from) Eccles' mounts (shown below) but I can make them better and still supply them at a "reasonable" price.
+They're _inspired by_ (ripped off from) Eccles' mounts (shown below), but they are mounted to your side-screens at 3 points, not 2. That's 300% better! They use the same hinge design as Eccles's mounts, but with the third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts and stops the vibration of the mirror. There is also an access hole so you can access the tightening screw for the Spa mirrors.
 As all holes drilled for Caterham mirrors are different, all the mounts need to be unique. Left side, right side, both different and custom.
 ![eccles](/img/eccles.jpeg)
-
-## How are they better?
-They are mounted to your side-screens at 3 points, not 2. That's 300% better! They use the same hinge design as Eccles's mounts, but they have a third screw, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts. There is also an access hole so you can access the tightening screw for the mirrors. 
 
 ## How much are they?
 The first 5 sets will be £60+£6, I'll make them, send them out, receive feedback, fix any problems, and then I'll be re-evaluating the price upwards.
 
 ## Are they any good?
-I've been running them for a few months now and have done >2000 miles and no problems. click the video:
-
+I've been running them for a few months now and have done >2000 miles including 3 track days and no problems. click the video:
 [![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
 
 ## Are they strong enough?
 Yes. They're much stronger than you'd think. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. 
 
-## How do they compare to the Aluminium Eccles?
+## How do they compare to the aluminium Eccles?
 I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
 
 Back: ![Back](/img/back.jpeg)
