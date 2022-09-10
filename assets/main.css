@@ -1,0 +1,18 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+header {
+  display: none;
+}
+
+.page-heading {
+  display: none;
+}
+.bob {
+  display: none;
+}
+.post-header {
+  display: none;
+}
