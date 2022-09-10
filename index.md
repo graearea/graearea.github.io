@@ -4,11 +4,14 @@
 [![Pedal Plugs](/img/measure-s3.png)](/pedals)
 <br>
 [Mirror Mounts](/mirror-mounts)
-[![Mirror Mounts](/img/mounted.png)](/mirror-mounts)
-<br>
-<img src="/img/mounted.png" width="200" />
+[![Mirror Mounts](/img/shallow.png)](/mirror-mounts)
 
-<a href="/mirror-mounts"> <img src="/img/mounted.png" width="200" /></a>
+[//]: # (<br>)
+
+[//]: # (<img src="/img/shallow.png" height="200" />)
+
+[//]: # ()
+[//]: # (<a href="/mirror-mounts"> <img src="/img/shallow.png" height="200" /></a>)
 
 [//]: # ([GoPro Mount]&#40;/gopro-mounts&#41;)
 
