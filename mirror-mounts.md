@@ -28,8 +28,10 @@ Yes. They're much stronger than you'd think. I've snapped one, but it took me st
 ## How do they compare to the aluminium Eccles?
 I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
 
-Back: ![Back](/img/back.jpeg)
-Front: ![Front](/img/front.jpeg)
+Back: 
+![Back](/img/back.jpeg)
+Front: 
+![Front](/img/front.jpeg)
 
 ## What comes in the kit?
 * 2x custom mounts
