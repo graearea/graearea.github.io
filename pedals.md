@@ -1,11 +1,24 @@
 # Pedal Extension Plugs
 ![plugs](/img/plugs.jpeg)
 
-## What have I got?
-You should have a 3D printed, 5mm or 10mm threadless plug and then some 10, 15 or 20, 25, 30 mm extension plugs. or an empty plastic bag, care of yodel.
 
-## What are they for?
-They are to help your heal-and-toeing by making it easier to reach the accelerator pedal whilst hard on the brake pedal.
+## What are you selling?
+3D printed plugs that will fit into your Caterham's pedal to make it wider so that you can more easily "heel and toe". This is especially difficult in SV chassis cars where the gap can be up to 75mm.
+
+I supply a 5mm plug on the right side, and two of 10, 15 or 20, 25, 30 mm extension plugs on the left to tune the gap.
+
+In my S3 chassis I have a 50mm gap in which I use a 15mm plug and in my size 8 driving boots, it's perfect. 35mm seems pretty good to me and is about 1/3 of the width of my foot.
+
+## how do I order?
+first, look at your pedals.
+is it like the old style ![old](/img/old.jpeg)  \
+or the new style ![new](/img/new.jpeg)
+
+what is the distance between your brake and your accelerator?  
+![new](/img/measure-s3.jpeg)
+
+* for an S3 chassis, 90% of people are happy with a 10-15mm plug so I'll send you a 10 and a 15.
+* for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 15 and a 25 or something similar
 
 ## How much are they?
 £20 + £6 p+p
@@ -64,13 +77,6 @@ any problems email 7@naughtyserver.com
   - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable and it is eventually biodegradeable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
 - I want to give you some feedback
   - please do! just email me at 7@naughtyserver.com
-- Did you enjoy making these?
-  - I did. The idea, design and print was fun, but the posting out 20 packages SUCKS. I should charge more for the postage.
-- I think this is the best thing ever, how do I ever repay you?
-  - Firstly, send me a photo of it on your car.
-  - Secondly I accept beer money tips.
-  - Thirdly, leave a review on the forum page.
-  - Fourthly, get out and kick some downshifts!
 
 ### Some example pictures here:
 
