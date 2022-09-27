@@ -52,7 +52,7 @@ you need to measure the distance between your top and bottom hinge mount holes a
 ![Caliper](/img/calipers.jpeg)
 The best way to do this is with calipers or a ruler. I need the measurements in mm.
 
-Once you have the measurements, <b>  [use this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link), </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
+Once you have the measurements, <b>-->[use this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
 
 ## How do I fit them?
 * Drink 1 beer (Your choice. My preference is something hoppy like a Siren or a Landlord)
