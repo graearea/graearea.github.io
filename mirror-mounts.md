@@ -47,7 +47,7 @@ Front:<br>
 * your 6 original nyloc nuts and washers
 
 ## How do I order?
-you need to measure the distance between your two hinge mount holes and the first hole on your current mirrors. Here is an example of measuring the bottom distance:
+you need to measure the distance between your top and bottom hinge mount holes and the first hole on your current mirrors. Here is an example of measuring the bottom distance:
 ![Caliper](/img/calipers.jpeg)
 The best way to do this is with calipers or a ruler. I need the measurements in mm.
 
