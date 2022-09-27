@@ -23,7 +23,8 @@ I've been running them for a few months now and have done >2000 miles including 
 [![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
 
 ## Are they strong enough?
-Yes. They're much stronger than you'd think. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. 
+Yes. They're much stronger than you'd think. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. they look like this inside:
+![Honeycomb](/img/honey.jpeg)
 
 ## How do they compare to the aluminium Eccles?
 I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
@@ -58,7 +59,7 @@ Once you have the measurements, <b>  [use this form to order](https://docs.googl
 * unscrew lower hinge from screen.
 * test fit mounts, just drop the bolts through and check it all lines up. if a mistake has been made, this is the time to find out.
 * tap out brass hinge pivot (it's knurled on the end that is inserted) by putting the hole above a gap in a vice or on the edge of a bench and tapping it out by the pointy end. 
-* take brass hinge pivot and tap it into your new mount.
+* take brass hinge pivot and tap it into your new mount. it goes in smooth, pointy end first and should grip onto the knurled end.
 * don't tap it in upside down!
 * With the screws inserted, offer up the Spa mirror to the car and set the angle of the mirror correct.  
 * once mirror is perfect, tighten the spa mirror down hard and the bolt mount to side screen with your nyloc nuts.
