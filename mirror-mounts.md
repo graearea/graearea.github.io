@@ -28,13 +28,14 @@ Yes. They're much stronger than you'd think. I've snapped one, but it took me st
 
 ## How do they compare to the aluminium Eccles?
 I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
-
 ![Both](/img/both.jpeg)
+
+The back side (bottom in this picture), often has some small irregularities, but this is the face that you can't see so it's not so big an issue. The front side has a pattern from the printing which you can make out in bright light.  
 
 ## How do I order?
 you need to _very carefully_ measure the distance between _the centres_ of your top and bottom hinge mount holes and _the centre_ of the first hole on your current mirrors. Here is an example of measuring the bottom distance:
 ![Caliper](/img/calipers.jpeg)
-The best way to do this is with calipers or a ruler. I need the measurements in mm.
+The best way to do this is with calipers or a ruler, NOT a tape-measure. I need the measurements in mm.
 
 Once you have the measurements, <b>-->[use this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
 
