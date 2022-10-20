@@ -69,6 +69,6 @@ Once you have the measurements, <b>-->[use this form to order](https://docs.goog
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). I can do others but cost will be more. I'm not guaranteeing colour tone.
 
 ## What if you think they're shit?
-Just send them back, I'll refund you.
+cut them in half with a saw, photo them, and I'll refund you anything charged.
 
 **Any questions or anything else, contact me 7@naughtyserver.com**
