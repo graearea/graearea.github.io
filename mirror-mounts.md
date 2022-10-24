@@ -2,12 +2,13 @@
 ![mounted](/img/mounted.jpeg)
 
 ## The Problem.
-Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. 
+Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking. 
 
 ## My solution
-My mounts take Spa/Motamec convex mirrors, which means you can change lane without just guessing if you're going to die. They're _inspired by_ (ripped off from) Eccles' mounts (shown below), but they are mounted to your side-screens at 3 points, not 2. That's 300% better! 
+My mounts take Spa or Motamec convex mirrors, which means you can change lane without just guessing if you're going to die. They're _inspired by_ (ripped off from) Eccles' mounts (shown below), but they are mounted to your side-screens at 3 points, not 2. That's 300% better! 
+I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though. 
 
-They use the same hinge design as Eccles's mounts, but with the third bolt, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts and stops the vibration of the mirror. 
+The mounts use the same hinge design as Eccles's mounts, but with the third bolt, which hooks into the previously drilled hole that your standard Caterham mirrors mounted into. This creates much, much more stiffness than the original mounts and stops the vibration of the mirror. 
 
 There is also an access hole so that you can access the tightening screw for the Spa mirrors.
 
@@ -26,18 +27,16 @@ I've been running them for a few months now and have done >2000 miles including 
 Yes. They're much stronger than you'd think. I've snapped one, but it took me sticking it in a bench vice and smacking it with a hammer. they look like this inside:
 ![Honeycomb](/img/honey.jpeg)
 
-## How do they compare to the aluminium Eccles?
-I've seen the aluminium ones, and they're the real deal, nicely CNC'd. These are 3D printed, so they typically look like this:
+## What are they like?
+These are 3D printed, so they typically look like this:
 ![Both](/img/both.jpeg)
 
-The back side (bottom in this picture), often has some small irregularities, but this is the face that you can't see so it's not so big an issue. The front side has a pattern from the printing which you can make out in bright light.  
+The back side (bottom in this picture), often has some small irregularities, but this is the face that you can't see so it's not so big an issue. The front side has a pattern from the printing which you can make out in bright light.
+
 
 ## How do I order?
-you need to _very carefully_ measure the distance between _the centres_ of your top and bottom hinge mount holes and _the centre_ of the first hole on your current mirrors. Here is an example of measuring the bottom distance:
-![Caliper](/img/calipers.jpeg)
-The best way to do this is with calipers or a ruler, NOT a tape-measure. I need the measurements in mm.
-
-Once you have the measurements, <b>-->[use this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
+You'll need to take some measurements, then fill in the form. The instructions are in the form.  
+<b>-->[use this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
 
 ## What comes in the kit?
 * 2x custom mounts
@@ -69,6 +68,6 @@ Once you have the measurements, <b>-->[use this form to order](https://docs.goog
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). I can do others but cost will be more. I'm not guaranteeing colour tone.
 
 ## What if you think they're shit?
-cut them in half with a saw, photo them, and I'll refund you anything charged.
+cut them in half with a saw, photo them, I'll not ask you for any money.
 
 **Any questions or anything else, contact me 7@naughtyserver.com**
