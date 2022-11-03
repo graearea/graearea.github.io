@@ -12,7 +12,6 @@ The mounts use the same hinge design as the Eccles mounts, but with the **third 
 There is also an access hole so that you can access the tightening screw for the Spa mirrors.
 
 As all holes drilled for Caterham mirrors are different, all the mounts need to be unique. Left side, right side, both different and custom.
-![eccles](/img/eccles.jpeg)
 
 ## How much are they?
 **£60+£6, but you pay me after you're happy**. I'll make them, send them out, fix any problems, and then you pay.
@@ -21,6 +20,7 @@ As all holes drilled for Caterham mirrors are different, all the mounts need to 
 I've been running them for a few months now and have done >2000 miles including 3 track days and no problems. I've sold a few and everyone has paid! 
 
 Video here:
+
 [![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
 
 ## Are they strong enough?
@@ -31,7 +31,7 @@ Yes. They're much stronger than you'd think. I've snapped one, but it took a ben
 These are 3D printed, so they typically look like this:
 ![Both](/img/both.jpeg)
 
-The back side (bottom in this picture), often has some small irregularities, but this is the face that you can't see so it's not so big an issue. The front side has a pattern from the printing which you can make out in bright light, but you don't really notice it on the car.
+The back side (bottom in this picture), often has some small irregularities, but this is the face that you don't see. The front side has a pattern from the printing which you can make out in bright light.
 
 ## How do I order?
 The instructions are in the form.  
@@ -70,8 +70,7 @@ Yes! for £5 more I can do a colour that I have filament for (currently Orange, 
 Yes, although I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though.
 I don't supply bolts correct for the Motamecs as I don't think they're as good (although I do have them on my car at the moment), but bolts are easily sorted. 
 
-
-## What if you think they're shit?
+## What if you think they're rubbish?
 cut them in half with a saw, send me a photo them, I'll not ask you for any money.
 
 **Any questions or anything else, contact me 7@naughtyserver.com**
