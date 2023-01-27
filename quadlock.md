@@ -7,6 +7,6 @@
 
 ![dimensions](/img/quad-dim.jpeg)
 
-£10+ £6 p+p
+£13+ £3 p+p
 
 To order, click [here](https://forms.gle/WPmsiwcxM3baA25NA)
