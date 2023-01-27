@@ -5,6 +5,8 @@
 * Printed in PLA to be tough and stiff.
 * Slots for fitting a range of bolt dimensions
 
+![dimensions](/img/quad-dim.jpeg)
+
 £10+ £6 p+p
 
 To order, click [here](https://forms.gle/WPmsiwcxM3baA25NA)
