@@ -1,4 +1,4 @@
-# Quadlock mount
+# Quadlock
 ![stl](/img/quadlock.jpeg)
 
 * Collaboration with [Chris Leete](https://www.instagram.com/chrisl3ete/) on the design. 
