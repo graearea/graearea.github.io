@@ -9,7 +9,9 @@
 [Quadlock Mount](/quadlock)
 [![Quadlock Mount](/img/quaddie.jpeg)](/quadlock)
 
-[//]: # ([Random Other Stuff])
+[Random Other Stuff](/other-stuff)
+[![Random Other Stuff](/img/aero Large.jpeg)](/other-stuff)
+
 [//]: # ([GoPro Mount]&#40;/gopro-mounts&#41;
 [//]: # ([![GoPro Mount]&#40;/img/gopro.jpeg&#41;]&#40;/gopro-mounts&#41;)
 
