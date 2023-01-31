@@ -1,4 +1,4 @@
-# Pedal Extension Plugs
+# Pedal Extensions
 ![plugs](/img/plugs.jpeg)
 
 

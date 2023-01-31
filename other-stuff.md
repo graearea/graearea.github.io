@@ -1,4 +1,4 @@
-## Other Stuff
+# Stuff
 
 ## Gopro Ziptie Mount
 fixes using a reusable Ziptie. add a bit of rubber and it's going nowhere.
