@@ -7,8 +7,9 @@
 [![Mirror Mounts](/img/shallow.jpeg)](/mirror-mounts)
 
 [Quadlock Mount](/quadlock)
-[![Quadlock Mount](/img/quadlock.jpeg)](/quadlock)
+[![Quadlock Mount](/img/quaddie.jpeg)](/quadlock)
 
+[//]: # ([Random Other Stuff])
 [//]: # ([GoPro Mount]&#40;/gopro-mounts&#41;
 [//]: # ([![GoPro Mount]&#40;/img/gopro.jpeg&#41;]&#40;/gopro-mounts&#41;)
 
