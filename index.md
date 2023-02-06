@@ -1,5 +1,9 @@
 # Uber Niche Parts
 
+Hi! I made some stuff that I thought improved my car. I showed some people they liked them, so I'm selling them. 
+If you have a problem, if no one else can help, maybe I can.
+You can find me on https://www.instagram.com/uber.niche/
+
 [Pedal Extension Plugs](/pedals)
 [![Pedal Extension Plugs](/img/measure-s3.jpeg)](/pedals)
 
@@ -11,7 +15,3 @@
 
 [Random Other Stuff](/other-stuff)
 [![Random Other Stuff](/img/aero Large.jpeg)](/other-stuff)
-
-[//]: # ([GoPro Mount]&#40;/gopro-mounts&#41;
-[//]: # ([![GoPro Mount]&#40;/img/gopro.jpeg&#41;]&#40;/gopro-mounts&#41;)
-
