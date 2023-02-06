@@ -17,9 +17,10 @@ fixed on with zipties and/or doublesided tape.
 provide 100kg of downforce at 140mph*<br/>
 £15 delivered
 
-## Curved gaskets for Aero Screen mirrors
-![Aero](/img/gasket.jpeg)<br/>
-Fitting flat metal mirror brackets to a curved screen doesn't work without putting undue stress on the screen. A selection of these gaskets relieves that stress<br/>
-£10 delivered
+## Curved shims for Aero Screen mirrors
+![gaskets](/img/gasket.jpeg)<br/>
+![gaskets](/img/three-gaskets.jpeg)
+Fitting flat metal mirror brackets to a curved screen doesn't work without putting undue stress on the screen. A selection of these shims relieves that stress<br/>
+3 pairs in different thicknesses £10 delivered 
 
 for any of these things please [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6)
