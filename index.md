@@ -1,4 +1,4 @@
-# GraeArea's Printed Products
+# Uber Niche Parts
 
 [Pedal Extension Plugs](/pedals)
 [![Pedal Extension Plugs](/img/measure-s3.jpeg)](/pedals)
