@@ -11,8 +11,10 @@ In my S3 chassis I have a 50mm gap in which I use a 15mm plug and in my size 8 d
 
 ## how do I order?
 first, look at your pedals.
-is it like the old style ![old](/img/old.jpeg)  \
-or the new style ![new](/img/new.jpeg)
+is it like the old style <br/>
+![old](/img/old.jpeg)<br/>
+or the new style<br/> 
+![new](/img/new.jpeg)<br/>
 
 what is the distance between your brake and your accelerator?  
 ![new](/img/measure-s3.jpeg)
