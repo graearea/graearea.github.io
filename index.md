@@ -1,10 +1,9 @@
 # Uber Niche Parts
 
-Hi! I made some stuff that I thought improved my car. I showed some people they liked them, so I'm selling them. 
-If you have a problem, if no one else can help, if you can find me, maybe I can.
+Hi! I made some stuff that I thought improved my car. I showed some people the parts, and they liked them, so I'm selling these parts. 
 
 You can find me on [Instagram](https://www.instagram.com/uber.niche/)
-I've sent packages to France, Germany and even Ireland :D
+I've sent packages to France, Germany, Ireland, England and the US :D
 
 [Pedal Extension Plugs](/pedals)
 [![Pedal Extension Plugs](/img/measure-s3.jpeg)](/pedals)
