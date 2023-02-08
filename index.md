@@ -12,7 +12,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [![Mirror Mounts](/img/shallow.jpeg)](/mirror-mounts)
 
 [Quadlock Mount](/quadlock)
-[![Quadlock Mount](/img/quaddie.jpeg)](/quadlock)
+[![Quadlock Mount](/img/quad-v2-front.jpeg)](/quadlock)
 
 [Random Other Stuff](/other-stuff)
 [![Random Other Stuff](/img/aero Large.jpeg)](/other-stuff)
