@@ -9,6 +9,6 @@
 * Slots for fitting a range of bolt dimensions in the scuttle panel and allowing rotation. they are around 57-69mm 
 
 V2 
-£13+ £3 p+p
+£16+ £3 p+p +3 for non black colours
 
 To order, click [here](https://forms.gle/WPmsiwcxM3baA25NA)
