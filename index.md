@@ -1,6 +1,6 @@
 # Uber Niche Parts
 
-Hi! I made some stuff that I thought improved my car. I showed some people the parts, and they liked them, so I'm selling these parts. 
+Hi! I made some stuff that I thought improved my Caterham 7. I showed some people the parts, and they liked them, so I'm selling them below. 
 
 You can find me on [Instagram](https://www.instagram.com/uber.niche/)
 I've sent packages to France, Germany, Ireland, England and the US :D
