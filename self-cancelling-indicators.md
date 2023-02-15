@@ -9,4 +9,6 @@ so I had a bit of a think and came up with an idea.
 * some logic for handling the on/off state
 * an interface with the car
 
-
+First off, I'm a software developer and so I know _just_ enough to be dangerous with technology. I knew nothing about electronics, hadn't ever used a microcontroller and didn't really know how to do any of this. all of my knowledge came from the ability to use google and youtube :D. 
+my first prototyoe was a prototype board with some buttons and LEDs
+![img.png](img/proto.jpeg)
