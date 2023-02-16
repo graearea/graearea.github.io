@@ -1,7 +1,7 @@
 # Quadlock
 
-![Quadlock Mount](/img/v2-front.jpeg)
-![Quadlock Mount](/img/v2-back.jpeg)
+![Quadlock Mount](img/v2-front.jpeg)
+![Quadlock Mount](img/v2-back.jpeg)
 
 * Original was a Collaboration with [Chris Leete](https://www.instagram.com/chrisl3ete/) on the design.
 * V2 my redesign for easier and stronger printing.

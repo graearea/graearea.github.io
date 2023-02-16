@@ -1,5 +1,5 @@
 # Pedal Extensions
-![plugs](/img/plugs.jpeg)
+![plugs](img/plugs.jpeg)
 
 
 ## What are you selling?
@@ -12,12 +12,12 @@ In my S3 chassis I have a 50mm gap in which I use a 15mm plug and in my size 8 d
 ## how do I order?
 first, look at your pedals.
 is it like the old style <br/>
-![old](/img/old.jpeg)<br/>
+![old](img/old.jpeg)<br/>
 or the new style<br/> 
-![new](/img/new.jpeg)<br/>
+![new](img/new.jpeg)<br/>
 
 what is the distance between your brake and your accelerator?  
-![new](/img/measure-s3.jpeg)
+![new](img/measure-s3.jpeg)
 
 * for an S3 chassis, 90% of people are happy with a 10-15mm plug so I'll send you a 10 and a 15.
 * for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 15 and a 25 or something similar
@@ -36,7 +36,7 @@ any problems email 7@naughtyserver.com
 * Remove pedal
 * Congratulations, you've not dislocated your shoulder like you will trying to do this with the pedal on the car.
   <br/>
-  ![pedal](/img/pedal.jpeg)
+  ![pedal](img/pedal.jpeg)
   <br/>
   NB. All pedals on caterhams are _slightly_ different so either I get you to measure your pedal with a set of calipers or I send you a plug that _might_ need 5 minutes of filing for it to fit.
 
@@ -44,7 +44,7 @@ any problems email 7@naughtyserver.com
 * If you struggle getting them in, try spinning them a bit. the plugs are slightly oval as many pedals are oval.
 * If they still won't fit, find the spot where they almost go in and then file a little off the widest part of the insertion part on opposite sides of the plug like this:
   <br/>
-  ![this](/img/filed.jpeg)
+  ![this](img/filed.jpeg)
   <br/>
 * (note the printing pattern of the part is not indicative of the wide bit)
 * First press the 10/15/20/etc extension plug into the left side. This should go in with a bit of a shove. If you have the (S3) 15mm and 10mm, try the 15mm as that's what I'm using.
@@ -83,15 +83,15 @@ any problems email 7@naughtyserver.com
 ### Some example pictures here:
 
 #### S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3](/img/measure-s3.jpeg)
+![S3](img/measure-s3.jpeg)
 ####  S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3 feet](/img/feet.jpeg)
+![S3 feet](img/feet.jpeg)
 
 #### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
 
 ### Some Happy Customers' pedals
 
-![nigel](/img/collage/nigel.jpg)<br>
-![richard](/img/collage/richard.JPG)<br>
-![someone](/img/collage/someone.jpeg)<br>
+![nigel](img/collage/nigel.jpg)<br>
+![richard](img/collage/richard.JPG)<br>
+![someone](img/collage/someone.jpeg)<br>

@@ -1,5 +1,5 @@
 # Custom Mirror Mounts
-![mounted](/img/mounted.jpeg)
+![mounted](img/mounted.jpeg)
 
 ## The Problem.
 Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking. 
@@ -25,11 +25,11 @@ Video here:
 
 ## Are they strong enough?
 Yes. They're much stronger than you'd think. I've snapped one, but it took a bench vice and a hammer. They look like this inside:
-![Honeycomb](/img/honey.jpeg)
+![Honeycomb](img/honey.jpeg)
 
 ## What do they look like?
 These are 3D printed, so they typically look like this:
-![Both](/img/both.jpeg)
+![Both](img/both.jpeg)
 
 The back side (bottom in this picture), often has some small irregularities, but this is the face that you don't see. The front side has a pattern from the printing which you can make out in bright light.
 
@@ -61,7 +61,7 @@ The instructions are in the form.
 * enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors.
 * enjoy ignoring everything behind you anyway.
 
-![Back](/img/back mounted.jpeg)
+![Back](img/back mounted.jpeg)
 
 ## Do you do different colours from black?
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). I can do others but cost will be more. I'm not guaranteeing colour tone.

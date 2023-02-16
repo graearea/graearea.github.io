@@ -6,13 +6,13 @@ You can find me on [Instagram](https://www.instagram.com/uber.niche/)
 I've sent packages to France, Germany, Ireland, England and the US :D
 
 [Pedal Extension Plugs](/pedals) - to assist with Heel-and-Toeing
-[![Pedal Extension Plugs](/img/measure-s3.jpeg)](/pedals)
+[![Pedal Extension Plugs](img/measure-s3.jpeg)](/pedals)
 
 [Mirror Mounts](/mirror-mounts) - fit to the holes of your old mirrors.
-[![Mirror Mounts](/img/shallow.jpeg)](/mirror-mounts)
+[![Mirror Mounts](img/shallow.jpeg)](/mirror-mounts)
 
 [Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
-[![Quadlock Mount](/img/quad-v2-front.jpeg)](/quadlock)
+[![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
-[![Random Other Stuff](/img/aero Large.jpeg)](/other-stuff)
+[![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
