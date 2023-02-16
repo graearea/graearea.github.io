@@ -1,4 +1,4 @@
-#Self Cancelling Indicators
+# Self Cancelling Indicators
 
 I totally HATE the indicating system on the Caterham. I was forever forgetting to stop the indicator and it was just a matter of time before somebody pulled out on me as they thought I was indicating to turn before them. 
 
