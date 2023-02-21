@@ -17,4 +17,4 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
 [![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
 
-to contact me, either email to <24@uberniche.co.uk> or hit me up on [Instagram](https://www.instagram.com/uber.niche/
+to contact me, either email to <24@uberniche.co.uk> or hit me up on [Instagram](https://www.instagram.com/uber.niche/)
