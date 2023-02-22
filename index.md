@@ -1,4 +1,4 @@
-# Uber Niche Parts
+# ![Logo](logo-32.png) Uber Niche Parts
 
 Hi! I made some stuff that I thought improved my Caterham 7. I showed some people the parts, and they liked them, so I'm selling them below. 
 
