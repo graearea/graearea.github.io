@@ -7,6 +7,7 @@
 * V2 my redesign for easier and stronger printing.
 * Printed in PLA to be tough and stiff.
 * Slots for fitting a range of bolt dimensions in the scuttle panel and allowing rotation. they are around 57-69mm 
+* Or blank (not winkie shaped slots, seriously Chris....) for using VHB tape (my preference).
 
 V2 
 £16+ £3 p+p +3 for non black colours
