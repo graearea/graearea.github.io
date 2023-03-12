@@ -35,7 +35,7 @@ The back side (bottom in this picture), often has some small irregularities, but
 
 ## How do I order?
 The instructions are in the form.  
-<b>-->[use this form to order](https://docs.google.com/forms/d/e/1FAIpQLSdEiVhoQxi8kPbPvGLiXffP9oAIh_V-uYGKmPjTSUhbPW-OPA/viewform?usp=sf_link)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
+<b>-->[use this form to order](https://forms.gle/tmJhrhNtBkxiYoQS9)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, you return them.
 
 ## What comes in the kit?
 * 2x custom mounts
