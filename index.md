@@ -18,7 +18,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
 
 [Motorsport Mirror Mount](/momimo) - small, light, cheap and strong attachment to your rollcage
-[![Motorsport Mirror Mount](img/momimo.jpeg)](/maglock)
+[![Motorsport Mirror Mount](img/momimo.jpeg)](/momimo)
 
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
 [![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
