@@ -14,6 +14,12 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
 [![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
+[Maglock Mount](/maglock) - uses the magic of magnets
+[![Maglock Mount](img/maglock.jpeg)](/maglock)
+
+[Motorsport Mirror Mount](/momimo) - uses the magic of magnets
+[![Motorsport Mirror Mount](img/momimo.jpeg)](/maglock)
+
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
 [![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
 

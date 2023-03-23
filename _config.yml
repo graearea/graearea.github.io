@@ -1,2 +1,4 @@
 theme: minima
 name: GraeArea's Printed Products
+header_files:
+  - index.md
