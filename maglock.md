@@ -5,3 +5,5 @@ Magnetic phone mount, I use this myself, and it is VERY solid. it uses 2x magnet
 [Video here of what it looks like](https://youtu.be/bOc9bqDt7ds)
 
 £20 +£3 p+p +3 for non-black colours
+
+For any of these things please [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6) and **I can do various colours.**
