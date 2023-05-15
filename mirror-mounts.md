@@ -19,9 +19,9 @@ As all holes drilled for Caterham mirrors are different, all the mounts need to 
 ## Are they any good?
 I've been running them for a few months now and have done >2000 miles including 3 track days and no problems. I've sold a few and everyone has paid! 
 
-Video here:
+Video here from the Karussell. if that doesn't make your mirrors shake nothing will. click on it:
 
-[![ROCK SOLID](https://img.youtube.com/vi/K4T1gzWC7LM/0.jpg)](https://www.youtube.com/watch?v=K4T1gzWC7LM)
+[![ROCK SOLID](https://img.youtube.com/vi/1NCZ1FxKUE0/0.jpg)](https://youtu.be/1NCZ1FxKUE0)
 
 ## Are they strong enough?
 Yes. They're much stronger than you'd think. I've snapped one, but it took a bench vice and a hammer. They look like this inside:
