@@ -5,6 +5,9 @@ Hi! I made some stuff that I thought improved my Caterham 7. I showed some peopl
 You can find me on [Instagram](https://www.instagram.com/uber.niche/)
 I've sent packages to France, Germany, Ireland, England and the US :D
 
+[Large Pedal Extension](/go-pedals) - to assist with Heel-and-Toeing and comfort
+[![Large Pedal Extension](img/footwell wide.jpeg)](/pedals)
+
 [Pedal Extension Plugs](/pedals) - to assist with Heel-and-Toeing
 [![Pedal Extension Plugs](img/measure-s3.jpeg)](/pedals)
 
