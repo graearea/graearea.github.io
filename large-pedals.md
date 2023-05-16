@@ -6,10 +6,10 @@ These are 3D printed extensions that will fit into your Caterham's pedal to make
 
 if you're not familiar with my other basic pedal extensions, have a look here:
 [Pedal Extension Plugs](/pedals) as there's a lot of overlap.
-![pedal-back.jpeg](img%2Fpedal-back.jpeg)
-![pedal-front.jpeg](img%2Fpedal-front.jpeg)
+![pedal-back.jpeg](img/pedal-back.jpeg)
+![pedal-front.jpeg](img/pedal-front.jpeg)
 I supply a 10, 15 or 20 or 25mm pedal extension to tune the gap. I also supply some black or orange skateboard grip tape if you want. 
-In addition to making heel-and-toeing much easier, the pedal contact area is MUCH MUCH bigger than the stock caterham pedal. this makes it much more comfortable on long journeys (like to the Nurburgring and back....) 
+In addition to making heel-and-toeing much easier, the pedal contact area is MUCH, MUCH bigger than the stock Caterham pedal. this makes it much more comfortable on long journeys (like to the Nurburgring and back....) 
 As shown below, I've just got back from 2000 miles of driving and 4 trackdays including the Nurburgring:<br/>
 ![plugs](img/go-pedal-front.jpeg)
 
@@ -26,7 +26,7 @@ first, look at your pedals, I only make extensions for the new style pedals<br/>
 measure the distance between your brake and your accelerator?  
 ![new](img/measure-s3.jpeg)
 * for an S3 chassis, I recommend a 10 or 15mm extension.
-* for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 20 or 25 or something similar
+* for an SV chassis it is extremely variable. you need to tell me what you want, and I'll send you a 20 or 25 or something similar
 
 ## How much are they?
 £40 + £6 p+p
@@ -35,7 +35,7 @@ measure the distance between your brake and your accelerator?
 any problems email 7@naughtyserver.com
 
 ## Fitting
-**Firstly, this is easiest with the pedal off, (it's a 30 minute job in total):**
+**Firstly, this is easiest with the pedal off, (it's a 30-minute job in total):**
 * Undo the top of the pedal box (6 screws and one bolt (on mine))
 * Detach the throttle cable
 * Undo the bolt of the accelerator pivot (13mm open spanner)
@@ -45,7 +45,7 @@ any problems email 7@naughtyserver.com
   <br/>
 
 **Fit the plugs into the pedals**
-* NB. All pedals on caterhams are _slightly_ different so there _might_ need 5 minutes of filing for it to fit.
+* NB. All pedals on Caterhams are _slightly_ different so there _might_ need 5 minutes of filing for it to fit.
 * If you struggle getting them in, try spinning them a bit. the plugs are slightly oval as many pedals are oval.
 * If they still won't fit, find the spot where they almost go in and then file a little off the widest part of the insertion part on opposite sides of the plug like this:
   <br/>
@@ -64,13 +64,13 @@ any problems email 7@naughtyserver.com
 
 ### FAQ
 - How strong is it?
-  - Strong enough. You're not driving a transit van in steel toecaps, you're wearing ballet shoes. they're printed with a honeycomb infill and 6 layers of PLA walls. tap them, they sound high pitched cos they're so stiff.
+  - Strong enough. You're not driving a transit van in steel toecaps, you're wearing ballet shoes. they're printed with a honeycomb infill and 6 layers of PLA walls. tap them, they sound high-pitched cos they're so stiff.
 - What happens if it snaps and I crash my car
   - This product is used entirely at your own risk. again, it's not your brake pedal.
 - I don't want to take my pedal out.
   - If you cut down an allen key you can just about get in there to fit it. I've done it twice, but it's a pain in the shoulder. Seriously, just take the pedal out for the fitting.
 - I think it's rubbish, I want my money back.
-  - OK, send it back and I'll refund you.
+  - OK, send it back, and I'll refund you.
 - I want a custom colour.
   - OK. It'll cost you another £5
 - I want a custom size width or height
@@ -78,10 +78,10 @@ any problems email 7@naughtyserver.com
 - How tight do I make it?
   - Not very. Tweak it up a bit, if you hear cracking noises, stop!
 - Do I need to bolt it? Will it friction fit?
-  - Maybe. I suspect a bit of superglue or epoxy would fix it in place as the plugs have deep insertion but I haven't tried this.
+  - Maybe. I suspect a bit of superglue or epoxy would fix it in place as the plugs have deep insertion, but I haven't tried this.
 - What size do I get?
   - measure your gap between the pedal. I _estimate_ it should be around 35-40mm get a plug that fits to that
 - How eco-friendly are they?
-  - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable and it is eventually biodegradeable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
+  - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable, and it is eventually biodegradable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
 - I want to give you some feedback
   - please do! just email me at 7@naughtyserver.com I especially like pictures of customers pedals fitted and to know what size they fitted.
