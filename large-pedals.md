@@ -6,7 +6,8 @@ These are 3D printed extensions that will fit into your Caterham's pedal to make
 
 if you're not familiar with my other basic pedal extensions, have a look here:
 [Pedal Extension Plugs](/pedals) as there's a lot of overlap.
-
+![pedal-back.jpeg](img%2Fpedal-back.jpeg)
+![pedal-front.jpeg](img%2Fpedal-front.jpeg)
 I supply a 10, 15 or 20 or 25mm pedal extension to tune the gap. I also supply some black or orange skateboard grip tape if you want. 
 In addition to making heel-and-toeing much easier, the pedal contact area is MUCH MUCH bigger than the stock caterham pedal. this makes it much more comfortable on long journeys (like to the Nurburgring and back....) 
 As shown below, I've just got back from 2000 miles of driving and 4 trackdays including the Nurburgring:<br/>
@@ -19,13 +20,11 @@ I've been running them a few months and they've been great.
 ![plugs](img/go-pedal-back.jpeg)
 
 ## how do I order?
-first, look at your pedals.
-I only make these for the new style pedals<br/> 
+first, look at your pedals, I only make extensions for the new style pedals<br/> 
 ![new](img/new.jpeg)<br/>
 
 measure the distance between your brake and your accelerator?  
 ![new](img/measure-s3.jpeg)
-
 * for an S3 chassis, I recommend a 10 or 15mm extension.
 * for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 20 or 25 or something similar
 
