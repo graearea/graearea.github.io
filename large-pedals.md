@@ -30,9 +30,9 @@ measure the distance between your brake and your accelerator?
 * for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 20 or 25 or something similar
 
 ## How much are they?
-£40 + £4 p+p
+£40 + £6 p+p
 
-## For orders, please [Use this Form](https://docs.google.com/forms/d/e/1FAIpQLScvEn9w14sNNWIsTC3S2cNHySxAnjtrse_3nG2ZHDB76wcffg/viewform?usp=sf_link)
+## For orders, please [Use this Form](https://forms.gle/sPQRxxCLE6LbUPCn9)
 any problems email 7@naughtyserver.com
 
 ## Fitting
