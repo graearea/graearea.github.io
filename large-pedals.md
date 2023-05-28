@@ -32,7 +32,7 @@ measure the distance between your brake and your accelerator?
 £40 + £6 p+p
 
 ## For orders, please [Use this Form](https://forms.gle/sPQRxxCLE6LbUPCn9)
-any problems email 7@naughtyserver.com
+any problems email 7@uberniche.co.uk
 
 ## Fitting
 **Firstly, this is easiest with the pedal off, (it's a 30-minute job in total):**
@@ -84,4 +84,4 @@ any problems email 7@naughtyserver.com
 - How eco-friendly are they?
   - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable, and it is eventually biodegradable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
 - I want to give you some feedback
-  - please do! just email me at 7@naughtyserver.com I especially like pictures of customers pedals fitted and to know what size they fitted.
+  - please do! just email me at 7@uberniche.co.uk I especially like pictures of customers pedals fitted and to know what size they fitted.
