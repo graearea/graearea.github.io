@@ -1,4 +1,4 @@
-# Caterham to Spa/Motamec mirror adapters 
+# Caterham to Spa & Motamec mirror adapters 
 
 ![adapter-fitted.png](img/adapter-fitted.jpeg)
 
