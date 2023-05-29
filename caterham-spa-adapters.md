@@ -23,7 +23,7 @@ they use a brass insert to give a strong anchor and the front bolt goes all the 
 * 2x 14mm M5 countersunk bolts 
 
 ## What do I need?
-* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
+* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
 * 2x Side screens that have been drilled.
 * 4x original nyloc nuts and washers from hinge and mirrors.
 
