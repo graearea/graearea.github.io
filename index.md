@@ -11,8 +11,8 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Pedal Extension Plugs](/pedals) - to assist with Heel-and-Toeing
 [![Pedal Extension Plugs](img/measure-s3.jpeg)](/pedals)
 
-[Mirror Adapters](/caterham-spa-adapters.md) - adapts caterham bolt holes to Spa or Motamec mirrors
-[![Mirror Adapters](img/adapter-fitted.jpeg)](/caterham-spa-adapters.md)
+[Mirror Adapters](/caterham-spa-adapters) - adapts caterham bolt holes to Spa or Motamec mirrors
+[![Mirror Adapters](img/adapter-fitted.jpeg)](/caterham-spa-adapters)
 
 [Mirror Mounts](/mirror-mounts) - fit to the holes of your old mirrors.
 [![Mirror Mounts](img/shallow.jpeg)](/mirror-mounts)
