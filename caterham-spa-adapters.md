@@ -3,15 +3,18 @@
 ![adapter-fitted.png](img/adapter-fitted.jpeg)
 
 ## The Problem.
-Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking. 
+Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking because of the leverage on the 10cm long part. 
 
 ## My solution
-These adapters are a simple solution to allow a Spa or Motamec convex mirror to be fitted, which means you can change lane without just guessing if you're going to die.
+These adapters are a simple solution to allow a Spa or Motamec convex mirror to be fitted in the original holes of the caterham mirrors.
 they use a brass insert to give a strong anchor and the front bolt goes all the way through.  
 ![img/adapter.jpeg](img/adapter.jpeg)
 
+## How do they compare to my custom mirrors?
+they're half the price and no measuring needed! They attach nice and tightly 
+
 ## How much are they?
-**£30 delivered
+**£30 + £3 delivery
 
 ## How do I order?
 <b>-->[use this form to order](https://forms.gle/e7RHGoqUPPPhi9fa9)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, return them.
