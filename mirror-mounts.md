@@ -13,6 +13,9 @@ There is also an access hole so that you can access the tightening screw for the
 
 As all holes drilled for Caterham mirrors are different, all the mounts need to be unique. Left side, right side, both different and custom.
 
+## How do they compare to my cheaper caterham adapters?
+[These adapters ](https://uberniche.co.uk/caterham-spa-adapters) are half the price and no measuring needed! The custom ones are a little stiffer as they're braced in 2 dimensions, but there's not a lot in it.
+
 ## How much are they?
 **£60+£6, but you pay me after you're happy**. I'll make them, send them out, fix any problems, and then you pay.
 

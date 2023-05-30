@@ -11,7 +11,7 @@ they use a brass insert to give a strong anchor and the front bolt goes all the 
 ![img/adapter.jpeg](img/adapter.jpeg)
 
 ## How do they compare to my custom mirrors?
-they're half the price and no measuring needed! They attach nice and tightly 
+they're half the price and no measuring needed! They attach nice and tightly. I think the custom ones are a little stiffer as they're braced in 2 dimensions but I doubt there's a lot in it. 
 
 ## How much are they?
 **£30 + £3 delivery
