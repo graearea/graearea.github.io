@@ -6,7 +6,7 @@ You can find me on [Instagram](https://www.instagram.com/uber.niche/)
 I've sent packages to France, Germany, Ireland, England and the US :D
 
 [Large Pedal Extension](/large-pedals) - to assist with Heel-and-Toeing and comfort
-[![Large Pedal Extension](img/footwell wide.jpeg)](/pedals)
+[![Large Pedal Extension](img/footwell wide.jpeg)](/large-pedals)
 
 [Pedal Extension Plugs](/pedals) - to assist with Heel-and-Toeing
 [![Pedal Extension Plugs](img/measure-s3.jpeg)](/pedals)
