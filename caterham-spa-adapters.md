@@ -24,6 +24,7 @@ they're half the price and no measuring needed! They attach nice and tightly
 * 2x 25mm M5 countersunk bolts 
 * 2x 6mm M5 countersunk bolts 
 * 2x 14mm M5 countersunk bolts 
+* 2x friction shims for Spa mirrors (if you're ordering spa mirrors) as found [here](https://uberniche.co.uk/other-stuff)
 
 ## What do I need?
 * 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
