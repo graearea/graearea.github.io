@@ -12,10 +12,11 @@ they use a brass insert to give a strong anchor and the front bolt goes all the 
 
 ## How do they compare to my custom mirrors?
 they're half the price and no measuring needed! They attach nice and tightly. I think the custom ones are a little stiffer as they're braced in 2 dimensions but I doubt there's a lot in it.
-The only problem I've found is that the original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge)
+The only problem I've found is that the original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge) for an extra fiver.
 
 ## How much are they?
 **£30 + £3 delivery but you pay when you're happy with them**
+it is an extra 5 quid if you want the hinge replacement (it comes with bolts).
 
 ## How do I order?
 <b>-->[use this form to order](https://forms.gle/e7RHGoqUPPPhi9fa9)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, return them.
