@@ -14,20 +14,17 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Mirror Adapters](/caterham-spa-adapters) - adapts caterham bolt holes to Spa or Motamec mirrors
 [![Mirror Adapters](img/adapter-fitted.jpeg)](/caterham-spa-adapters)
 
-[Mirror Mounts](/mirror-mounts) - fit to the holes of your old mirrors.
+[Mirror Mounts](/mirror-mounts) - super-stiff and fit to the holes of your old mirrors.
 [![Mirror Mounts](img/shallow.jpeg)](/mirror-mounts)
 
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
 
-[Hinge](/door-limit-hinge) - attaches to your existing scuttle holes
+[Hinge](/door-limit-hinge) - stops the door opening enough to bump your mirrors.
 [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge)
 
 [Motorsport Mirror Mount](/momimo) - small, light, cheap and strong attachment to your rollcage
 [![Motorsport Mirror Mount](img/momimo.jpeg)](/momimo)
-
-[Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
-[![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
 [![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
