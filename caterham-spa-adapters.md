@@ -15,8 +15,8 @@ they're half the price and no measuring needed! They attach nice and tightly. I 
 The only problem I've found is that the original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge) for an extra fiver.
 
 ## How much are they?
-**£30 + £3 delivery but you pay when you're happy with them**
-It is an extra 5 quid if you want the hinge replacement (it comes with bolts).
+**£25 + £3 delivery but you pay when you're happy with them**
+It is an extra 10 quid if you want the hinge replacement (it comes with bolts).
 
 ## How do I order?
 <b>-->[use this form to order](https://forms.gle/e7RHGoqUPPPhi9fa9)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, return them.
