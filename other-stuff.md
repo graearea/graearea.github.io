@@ -15,7 +15,7 @@ These fit into the crappy Spa and Motamec sockets to increase friction and adjus
 ![gaskets](img/gasket.jpeg)<br/>
 ![gaskets](img/three-gaskets.jpeg)<br/>
 Fitting flat metal mirror brackets to a curved screen doesn't work without putting undue stress on the screen. A selection of these shims relieves that stress. available in black or white<br/>
-3 pairs in different curved profiles<br/>
+2 pairs in different curved profiles<br/>
 £7
 
 ## Gopro Ziptie Mount
