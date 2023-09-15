@@ -23,6 +23,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Hinge](/door-limit-hinge) - stops the door opening enough to bump your mirrors.
 [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge)
 
+[Fuel filler neck wedge shims](/fuel-neck-shim) - small, light, cheap and strong attachment to your rollcage
+[![Fuel filler neck wedge shims](img/fuel-shim.jpeg)](/fuel-neck-shim)
+
 [Motorsport Mirror Mount](/momimo) - small, light, cheap and strong attachment to your rollcage
 [![Motorsport Mirror Mount](img/momimo.jpeg)](/momimo)
 
