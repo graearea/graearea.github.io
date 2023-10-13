@@ -12,4 +12,4 @@ on my car, the end result is much better (yes, it desperately needs a clean):
 
 £20 +£3 p+p 
 
-For any of these things please **[USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6)**
+To order, please **[USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6)**

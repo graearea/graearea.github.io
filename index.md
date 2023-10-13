@@ -29,6 +29,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Motorsport Mirror Mount](/momimo) - small, light, cheap and strong attachment to your rollcage
 [![Motorsport Mirror Mount](img/momimo.jpeg)](/momimo)
 
+[Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
+[![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
+
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
 [![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
 
