@@ -1,5 +1,5 @@
 # Jamaican Bacon Clip
-![plugs](img/footwell.jpeg)
+![plugs](img/bacon.jpg)
 
 
 The Jamaican Bacon Clip
@@ -14,11 +14,12 @@ The Jamaican Bacon Clip
 - if you say "bacon" in a Jamaican accent ...
 
 how secure is it?
-this is from sheet trails last jump:
+this is midair over sheet trails last jump which has a 6 foot takeoff:
 ![sheet](img/Beer%20can%20jump.jpg)
 which is from this video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Dp522QPF-HY?si=Jwde1ShAq1-ExYmz" frameborder="0" allowfullscreen></iframe>
 
+First time I finished the line, I smashed a beer! 
 
 
 so decide:

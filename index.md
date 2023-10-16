@@ -29,6 +29,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Motorsport Mirror Mount](/momimo) - small, light, cheap and strong attachment to your rollcage
 [![Motorsport Mirror Mount](img/momimo.jpeg)](/momimo)
 
+[Beer Can Clip](/jamaican-bacon) - attaches beer cans to your bike or roll-cage
+[![Beer Can Clip](img/bacon.jpg)](/jamaican-bacon)
+
 [Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
 [![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
