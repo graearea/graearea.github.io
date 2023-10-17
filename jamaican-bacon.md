@@ -1,23 +1,16 @@
 # Jamaican Bacon Clip
 ![plugs](img/bacon.jpg)
 
-photo of multiple on the bike
- 
-
-
-
-The Jamaican Bacon Clip
-- Precision quick release clip for post-trail-line smashing
+- Precision quick release clip for post-trail-line smashing or road-beer sipping
 - Tested and proven to cope with riding Sheet trails and Sandwich trails
-- Fits standard bottle cage mounts.
-- Can also accept dual zipties and/or vhb tape.
-- comes with a strip of VHB to stop it moving about laterally whilst the zipties take the weight
-- rear is curved to fit snugly to 34mm tube but will happily cope with BMX tube dia or slightly bigger.
-- secure hold of your favourite 330ml/440ml drink (n.b. Guinness cans are weird sized due to widget.)
-- I can do any colour that I have the filament for, so just ask
-- if you say "bacon" in a Jamaican accent ...
+- Comes with a strip of VHB to stop it moving about laterally whilst 2 zipties take the weight
+- Or can fit standard bottle cage mounts.
+- Rear is curved to fit snugly to 34mm tube but will happily cope with BMX seattube or slightly bigger.
+- Secure hold of your favourite 330ml/440ml drink (also Guinness cans but they are weird sized due to widget.)
+- Any colour that I have the filament for, so just ask
+- If you say "bacon" in a Jamaican accent ...
 
-how secure is it?
+# How secure is it?
 this is midair over sheet trails last jump which has a 6 foot takeoff:
 ![sheet](img/Beer%20can%20jump.jpg)
 which is from this video:
@@ -25,7 +18,7 @@ which is from this video:
 
 First time I finished the line, I smashed a beer! 
 
-so decide:
+So decide:
 - with or without bottle boss holes
 - colour
 - 330: £12 + £3 p&p
