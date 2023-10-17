@@ -1,6 +1,10 @@
 # Jamaican Bacon Clip
 ![plugs](img/bacon.jpg)
 
+photo of multiple on the bike
+ 
+
+
 
 The Jamaican Bacon Clip
 - Precision quick release clip for post-trail-line smashing
@@ -21,11 +25,16 @@ which is from this video:
 
 First time I finished the line, I smashed a beer! 
 
-
 so decide:
 - with or without bottle boss holes
 - colour
 - 330: £12 + £3 p&p
 - 440: £14 + £3 p&p
 
-For any of these things please [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6) and **I can do various colours.**
+discount for multiples (including delivery):
+- 1=£15
+- 2=£25
+- 3=£33
+- 4=£39
+
+To order [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6) and ** remember, I can do various colours.**
