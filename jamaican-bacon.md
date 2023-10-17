@@ -37,7 +37,7 @@ discount for multiples (including delivery):
 - 3=£33
 - 4=£39
 
-but you really don't need 4 :D
+but you really don't need 4 :D (ridiculous maybe, but I needed to test them)
 ![too-many](img/too-many-beers.jpeg)
 
-To order [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6) and ** remember, I can do various colours.**
+To order [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6)
