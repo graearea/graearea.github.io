@@ -36,6 +36,6 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
 [Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
-[![Random Other Stuff](img/aero Large.jpeg)](/other-stuff)
+[![Random Other Stuff](img/darth.webp)](/other-stuff)
 
 to contact me, either email <24@uberniche.co.uk> or hit me up on [Instagram](https://www.instagram.com/uber.niche/)
