@@ -11,12 +11,12 @@ I HATE dust caps that you have to screw on your fingers get filthy so I just chu
 £10
 
 ## Increased friction fit for spa mirrors
-from
+from 0.00005mm^2 contact
 ![cup](img/no-cup.jpeg)<br/>
-to
+to 10000m^2 contact (lol)
 ![no-cup](img/cup.jpeg)<br/>
 These fit into the crappy Spa and Motamec sockets to increase friction and adjustability<br/>
-£7
+£7 or free with any of my mirror mounts
 
 ## Curved shims for Aero Screen mirrors
 ![gaskets](img/gasket.jpeg)<br/>
@@ -25,7 +25,7 @@ Fitting flat metal mirror brackets to a curved screen doesn't work without putti
 2 pairs in different curved profiles<br/>
 £7
 
-## Gopro Ziptie Mount
+## Ziptie Gopro Mount
 ![stl](img/gopro stl.jpeg)<br/>
 fixes to rollbar/cage using a reusable Ziptie and a bit of rubber.<br/>
 32mm (rollcage) and 38mm (rollbar)<br/>
