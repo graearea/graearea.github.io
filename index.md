@@ -18,7 +18,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [![Mirror Mounts](img/shallow.jpeg)](/mirror-mounts)
 
 [Harness Strap Clips](/harness-strap-clips) - Stops your straps flapping about
-[![Harness Strap Clips](img/clip.jpeg)](/harness-strap-clips)
+[![Harness Strap Clips](img/sideclip.jpeg)](/harness-strap-clips)
 
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
