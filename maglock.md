@@ -12,3 +12,5 @@ Video here from the Karussell. if that doesn't make your phone drop off, nothing
 ![maglock](img/maglock.jpeg)
 
 For any of these things please [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6) and **I can do various colours.**
+
+{% include_relative delivery.md %}

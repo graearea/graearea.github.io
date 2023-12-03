@@ -43,4 +43,4 @@ fixed on with zipties and/or doublesided tape.
 provide 100kg of downforce at 140mph*<br/>
 £15 
 
-
+{% include_relative delivery.md %}

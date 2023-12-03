@@ -26,7 +26,7 @@ what is the distance between your brake and your accelerator?
 £20 + £6 p+p
 
 ## For orders, please [Use this Form](https://docs.google.com/forms/d/e/1FAIpQLScvEn9w14sNNWIsTC3S2cNHySxAnjtrse_3nG2ZHDB76wcffg/viewform?usp=sf_link)
-any problems email 7@uberniche.co.uk
+any problems email john@uberniche.co.uk
 
 ## Fitting
 **Firstly, this is easiest with the pedal off:**
@@ -78,7 +78,7 @@ any problems email 7@uberniche.co.uk
 - How eco-friendly are they?
   - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable and it is eventually biodegradeable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
 - I want to give you some feedback
-  - please do! just email me at 7@uberniche.co.uk
+  - please do! just email me at john@uberniche.co.uk
 
 ### Some example pictures here:
 
@@ -89,6 +89,8 @@ any problems email 7@uberniche.co.uk
 
 #### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
+
+{% include_relative delivery.md %}
 
 ### Some Happy Customers' pedals
 

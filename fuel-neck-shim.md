@@ -13,3 +13,5 @@ on my car, the end result is much better (yes, it desperately needs a clean):
 £20 +£3 p+p 
 
 To order, please **[USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6)**
+
+{% include_relative delivery.md %}

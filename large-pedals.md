@@ -33,7 +33,7 @@ measure the distance between your brake and your accelerator?
 if you want 2 sizes, it's £10 for each extra width extension
 
 ## For orders, please [Use this Form](https://forms.gle/sPQRxxCLE6LbUPCn9)
-any problems email 7@uberniche.co.uk
+any problems email john@uberniche.co.uk
 
 ## Fitting
 **Firstly, this is easiest with the pedal off, (it's a 30-minute job in total):**
@@ -85,4 +85,6 @@ any problems email 7@uberniche.co.uk
 - How eco-friendly are they?
   - apart from the fact your car runs on fermented dinosaurs... the plastic itself is plant-based, renewable, and it is eventually biodegradable. The bags I use are 100% recycled and recyclable. the delivery man runs on pies.
 - I want to give you some feedback
-  - please do! just email me at 7@uberniche.co.uk I especially like pictures of customers pedals fitted and to know what size they fitted.
+  - please do! just email me at john@uberniche.co.uk I especially like pictures of customers pedals fitted and to know what size they fitted.
+
+{% include_relative delivery.md %}

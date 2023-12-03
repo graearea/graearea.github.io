@@ -76,4 +76,4 @@ I don't supply bolts correct for the Motamecs as I don't think they're as good (
 ## What if you think they're rubbish?
 cut them in half with a saw, send me a photo them, I'll not ask you for any money.
 
-**Any questions or anything else, contact me 7@uberniche.co.uk**
+{% include_relative delivery.md %}

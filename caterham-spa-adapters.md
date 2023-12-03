@@ -34,6 +34,6 @@ It is an extra 10 quid if you want the hinge replacement (it comes with bolts).
 * 4x original nyloc nuts and washers from hinge and mirrors.
 
 ## Do you do different colours from black?
-Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue, Purple). I can do others but cost will be more. I'm not guaranteeing colour tone.
+Yes! for £5 more.
 
-**Any questions or anything else, contact me 7@uberniche.co.uk**
+{% include_relative delivery.md %}

@@ -14,3 +14,5 @@ you can see that the mirror fits OVER the stock mirror in case you want to have 
 £25 +£3 p+p +3 for non-black colours
 
 For any of these things please [USE THIS FORM](https://forms.gle/5vtitZ7rHnNgAx4Y6) and **I can do various colours.**
+
+{% include_relative delivery.md %}

@@ -15,3 +15,5 @@ V2
 £16+ £3 p+p +3 for non black colours
 
 To order, click [here](https://forms.gle/WPmsiwcxM3baA25NA)
+
+{% include_relative delivery.md %}
