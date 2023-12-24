@@ -20,6 +20,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Harness Strap Clips](/harness-strap-clips) - Stops your straps flapping about
 [![Harness Strap Clips](img/multicolour-strap.jpeg)](/harness-strap-clips)
 
+[Big Knob](/big-knob) - longer heater knob for easier reaching
+[![Big Knob](img/big-knob.jpeg)](/big-knob)
+
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
 
