@@ -4,7 +4,7 @@ Usually delivery is within a week, sometimes it is a little more, sometimes it's
 I have many colours available in PLA. In PETG generally only black and grey. not all products are available in PLA as it is not stable under high temperature. if you have a special request, just ask as I may be able to help.
 
 ## Surface Finish: 
-These are 3D printed parts and for some of them the finish can be either carbon-fibre effect, triangles, textured or plain as seen here: [Surface Finish](/finish) 
+These are 3D printed parts and for some of them the finish of the outward facing side can be either carbon-fibre effect, triangles, textured or plain as seen here: [Surface Finish](/finish) 
 I make it carbon by default. If you want something else, please let me know. 
 
 ## Contact:
