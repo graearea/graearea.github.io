@@ -13,4 +13,6 @@ They tightly fit the standard Caterham (Luke?) 3" harness top straps. simply ben
 
 To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
 
+please note, the finish of this has to be flat as pictured to keep strength in the clips. printing them to have a carbon/patterned would make them super weak. 
+
 {% include_relative delivery.md %}
