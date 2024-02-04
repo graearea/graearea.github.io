@@ -25,7 +25,7 @@ what is the distance between your brake and your accelerator?
 ## How much are they?
 £20 + £6 p+p
 
-## For orders, please [Use this Form](https://docs.google.com/forms/d/e/1FAIpQLScvEn9w14sNNWIsTC3S2cNHySxAnjtrse_3nG2ZHDB76wcffg/viewform?usp=sf_link)
+## For orders, please [Use this Form](https://forms.gle/UBwf8uiUNVjn1jJa9)
 any problems email john@uberniche.co.uk
 
 ## Fitting
