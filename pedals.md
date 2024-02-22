@@ -23,7 +23,7 @@ what is the distance between your brake and your accelerator?
 * for an SV chassis it is extremely variable. you need to tell me what you want and I'll send you a 15 and a 25 or something similar
 
 ## How much are they?
-£20 + £6 p+p
+£26 delivered
 
 ## For orders, please [Use this Form](https://forms.gle/UBwf8uiUNVjn1jJa9)
 any problems email john@uberniche.co.uk
