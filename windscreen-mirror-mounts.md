@@ -23,10 +23,14 @@ all screws are included
 To order [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 
 ## What comes in the kit?
+* 2x adapters
 * 2x hinges (stop the sidescreens from opening too much and resting on the mirrors ) these can be mounted either top or bottom
 * 4x 20mm M5 countersunk bolts for the hinge attachment
 * 2x 25mm M5 countersunk bolts for the bottom attachment
-* 2x 'captive nuts' 
+* 2x 'captive nuts'
+
+![bom](img/quick-bom.jpg)
+
 
 
 ## What do I need?
