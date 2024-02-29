@@ -7,7 +7,9 @@ A couple of people asked me if I could supply mounts that would attach to the si
 
 
 ## How to fit:
-https://www.youtube.com/shorts/DnMYgejbhPY
+[![Demo]
+(https://img.youtube.com/vi/DnMYgejbhPY/maxresdefault.jpg)]
+(https://www.youtube.com/watch?v=DnMYgejbhPY)
 
 The hinge has the normal geometry so that sidescreens fit into it as usual. it replaces one of the hinges on the windscreen. it comes with a captive d nut holder so that you don't need a spanner to swap the mirror/door. 
 
