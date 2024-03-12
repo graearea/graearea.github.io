@@ -7,7 +7,7 @@ this means your mirrors are bumped every time you open your door fully.
 I've designed some hinge replacements which limit the amount of opening so that the doors don't hit the windscreen.
 ![mirror-door](img/mirror-door.jpeg)
 
-These are compatible with [Quick Swap Windscreen Mirror Mounts](/windscreen-mirror-mounts.md)
+These are compatible with [Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts)
 
 £10 +£3 p+p for 1 pair, £20 for 2 pairs all bolts included.
 

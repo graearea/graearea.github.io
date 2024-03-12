@@ -29,7 +29,7 @@ Fitting flat metal mirror brackets to a curved screen doesn't work without putti
 ![stl](img/gopro stl.jpeg)<br/>
 fixes to rollbar/cage using a reusable Ziptie and a bit of rubber.<br/>
 32mm (rollcage) and 38mm (rollbar)<br/>
-£10
+£10 
 
 ## Wheel Hook
 ![hook-cupboard](img/hook-cupboard.jpeg)<br/>
