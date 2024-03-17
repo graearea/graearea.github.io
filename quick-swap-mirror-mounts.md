@@ -7,6 +7,7 @@ A couple of people asked me if I could supply mounts that would attach to the si
 
 
 ## How to fit:
+Youtube video:
 [![Demo](https://img.youtube.com/vi/e8CnpPYo6i8/0.jpg)](https://youtu.be/e8CnpPYo6i8)
 
 The hinge has the normal geometry so that sidescreens fit into it as usual. it replaces one of the hinges on the windscreen. it comes with a captive nut holder so that you don't need a spanner to swap the mirror/door. 
@@ -30,11 +31,12 @@ To order [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 * 2x sidescreen brackets (optional)
 * 2x mirror adapters
 * 2x hinges (stop the sidescreens from opening too much and resting on the mirrors ) these can be mounted either top or bottom
+* 2x 'captive nuts'
+* 2x friction shims for spa mirrors
+* 2x wingnuts
 * 4x 20mm M5 countersunk bolts for the hinge attachment
 * 2x 30mm M5 countersunk bolts for the sidescreen bracket
 * 2x 16mm M5 countersunk bolts for the sidescreen bracket
-* 2x 'captive nuts'
-* 2x wingnuts
 
 ![bom](img/quick-bom.jpg)
 

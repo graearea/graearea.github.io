@@ -29,7 +29,7 @@ It is an extra 10 quid if you want the hinge replacement, these are compatible w
 * 2x friction shims for Spa mirrors (if you're ordering spa mirrors) as found [here](https://uberniche.co.uk/other-stuff)
 
 ## What do I need?
-* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
+* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or [here](https://www.demon-tweeks.com/uk/spa-design-formula-high-impact-nylon-race-mirror-246438/) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
 * 2x Side screens that have been drilled.
 * 4x original nyloc nuts and washers from hinge and mirrors.
 
