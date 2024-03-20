@@ -43,7 +43,8 @@ To order [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 
 
 ## What do I need?
-* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
+* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or [here](https://www.demon-tweeks.com/uk/spa-design-formula-high-impact-nylon-race-mirror-246438/) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html ) (note that https://www.kitcardirect.co.uk/spa-style-formula-f1-wing-mirror-carbon-pair.html seem to be motamecs)
+
 
 ## Can I use either Motamec or Spa mirrors
 Yes, although I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though. you'll need to countersink the bolt holes on your motamec mounts for the bolts to be the right length.

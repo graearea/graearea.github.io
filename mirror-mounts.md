@@ -47,7 +47,8 @@ The instructions are in the form.
 * 2x 14mm M5 countersunk bolts for the mount-mirror bolt
 
 ## What do I need?
-* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](http://www.kitcardirect.co.uk/spa-formula-f1-mirror.html) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html )
+* 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or [here](https://www.demon-tweeks.com/uk/spa-design-formula-high-impact-nylon-race-mirror-246438/) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html ) (note that https://www.kitcardirect.co.uk/spa-style-formula-f1-wing-mirror-carbon-pair.html seem to be motamecs)
+
 * 2x Side screens that have been drilled.
 * 2x original Caterham brass door hinge pivots (just gently tap them out of the existing pivots by the pointy end. The end that is inserted is knurled, or you can get them [here](https://caterhamparts.co.uk/fittings/599-wind-protector-hinge.html) or [here](http://www.kitcardirect.co.uk/shop-kit-car/weather-protection/wet-weather-side-door-hinges-each.html))
 * 8x original nyloc nuts and washers from hinge and mirrors.
@@ -70,8 +71,7 @@ The instructions are in the form.
 Yes! for £5 more I can do a colour that I have filament for (currently Orange, Red, Green, Grey, Blue). I can do others but cost will be more. I'm not guaranteeing colour tone.
 
 ## Can I use either Motamec or Spa mirrors
-Yes, although I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though.
-I don't supply bolts correct for the Motamecs as I don't think they're as good (although I do have them on my car at the moment), but bolts are easily sorted. 
+Yes, although I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though. you'll need to countersink the bolt holes on your motamec mounts for the bolts to be the right length.
 
 ## What if you think they're rubbish?
 cut them in half with a saw, send me a photo them, I'll not ask you for any money.
