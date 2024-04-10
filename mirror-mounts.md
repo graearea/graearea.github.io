@@ -17,7 +17,7 @@ As all holes drilled for Caterham mirrors are different, all the mounts need to 
 [These adapters ](https://uberniche.co.uk/caterham-spa-adapters) are half the price and no measuring needed! The custom ones are a little stiffer as they're braced in 2 dimensions, but there's not a lot in it.
 
 ## How much are they?
-**£60+£6, but you pay me after you're happy**. I'll make them, send them out, fix any problems, and then you pay.
+**£66 including delivery, but you pay me after you're happy**. I'll make them, send them out, fix any problems, and then you pay.
 
 ## Are they any good?
 I've been running them for a few months now and have done >2000 miles including 3 track days and no problems. I've sold a few and everyone has paid! 
@@ -26,15 +26,15 @@ Video here from the Karussell. if that doesn't make your mirrors shake nothing w
 
 [![ROCK SOLID](https://img.youtube.com/vi/1NCZ1FxKUE0/0.jpg)](https://youtu.be/1NCZ1FxKUE0)
 
+## What do they look like?
+These are 3D printed, so they typically look like this:
+![Both](img/custom-mount.jpg)
+
 ## Are they strong enough?
 Yes. They're much stronger than you'd think. I've snapped one, but it took a bench vice and a hammer. They look like this inside:
 ![Honeycomb](img/honey.jpeg)
 
-## What do they look like?
-These are 3D printed, so they typically look like this:
-![Both](img/both.jpeg)
-
-The back side (bottom in this picture), often has some small irregularities, but this is the face that you don't see. The front side has a pattern from the printing which you can make out in bright light.
+ The front side has a pattern from the printing which you can make out in bright light, the back side is dull.
 
 ## How do I order?
 The instructions are in the form.  
@@ -42,7 +42,7 @@ The instructions are in the form.
 
 ## What comes in the kit?
 * 2x custom mounts
-* 4x 20mm M5 countersunk bolts for the hinge attachment
+* 4x 25mm M5 countersunk bolts for the hinge attachment
 * 2x 25mm M5 countersunk bolts for the bottom attachment
 * 2x 14mm M5 countersunk bolts for the mount-mirror bolt
 

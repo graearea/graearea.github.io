@@ -26,6 +26,14 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Big Knob](/big-knob) - longer heater knob for easier reaching
 [![Big Knob](img/big-knob.jpeg)](/big-knob)
 
+[//]: # ()
+[//]: # ([Rear LED Cluster Cowl]&#40;/led-cowl&#41; - longer heater knob for easier reaching)
+
+[//]: # ([![Rear LED Cluster Cowl]&#40;img/led-cowl.jpeg&#41;]&#40;/led-cowl&#41;)
+
+[Lapbelt Bung](/lapbelt-bung) - longer heater knob for easier reaching
+[![Lapbelt Bung](img/lapbelt-bung.jpeg)](/lapbelt-bung)
+
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
 
