@@ -31,8 +31,8 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 
 [//]: # ([![Rear LED Cluster Cowl]&#40;img/led-cowl.jpeg&#41;]&#40;/led-cowl&#41;)
 
-[Lapbelt Bung](/lapbelt-bung) - longer heater knob for easier reaching
-[![Lapbelt Bung](img/lapbelt-bung.jpeg)](/lapbelt-bung)
+[Lapbelt Bung](/lapbelt-bung) - Fills the hole of your chassis for the lap belt
+[![Lapbelt Bung](img/lap-belt-wide.jpg)](/lapbelt-bung)
 
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
