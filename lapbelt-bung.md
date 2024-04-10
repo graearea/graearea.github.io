@@ -18,7 +18,7 @@ Have I got good news for you!
 The threads have cuts to clear out grot as you screw it in. 
 screw it gently in a couple of times to clear the thread then just tweak it up and it should stay where it is. don't overtighten it and it should stay where it is for years to come as the plastic is pretty solid. you can always loctite it if needed. 
 
-£15 delivered
+£13 delivered
 
 To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 
