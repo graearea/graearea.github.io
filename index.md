@@ -32,7 +32,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [//]: # ([![Rear LED Cluster Cowl]&#40;img/led-cowl.jpeg&#41;]&#40;/led-cowl&#41;)
 
 [Lapbelt Bung](/lapbelt-bung) - Fills the hole of your chassis for the lap belt
-[![Lapbelt Bung](img/lap-belt-wide.jpg)](/lapbelt-bung)
+[![Lapbelt Bung](img/cap.jpg)](/lapbelt-bung)
 
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
