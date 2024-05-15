@@ -10,7 +10,7 @@ they fit between the filler neck and the rear skin and so can't be seen and the 
 on my car, the end result is much better (yes, it desperately needs a clean):
 ![img/fixed.jpg](img/fixed.jpg)
 
-£20 +£3 p+p 
+£25 +£3 p+p 
 
 To order, please **[USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)**
 

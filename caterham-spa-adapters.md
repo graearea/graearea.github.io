@@ -12,11 +12,11 @@ they use a brass insert to give a strong anchor and the front bolt goes all the 
 
 ## How do they compare to my custom mirrors?
 they're half the price and no measuring needed! They attach nice and tightly. I think the custom ones are a little stiffer as they're braced in 2 dimensions but I doubt there's a lot in it.
-The original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge) for an extra £10.
+The original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge)
 
 ## How much are they?
-**£28 delivery but you pay when you're happy with them**
-It is an extra 10 quid if you want the hinge replacement, these are compatible with [Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts) (bolts included).
+**£45 delivery but you pay when you're happy with them**
+The hinges that come with them are compatible with [Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts) (bolts included).
 
 ## How do I order?
 <b>-->[use this form to order](https://forms.gle/FJKRT4qnbn325dPs6)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, return them.
@@ -37,6 +37,6 @@ It is an extra 10 quid if you want the hinge replacement, these are compatible w
 Yes, although I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though. you'll need to countersink the bolt holes on your motamec mounts for the bolts to be the right length.
 
 ## Do you do different colours from black?
-Yes! for £5 more.
+Yes! for £5 more. 
 
 {% include_relative delivery.md %}

@@ -9,7 +9,7 @@ I can also print them in multiple colours (not all shown here) in PLA or black i
 
 They tightly fit the standard Caterham (Luke?) 3" harness top straps. simply bend the straps to get them in, and then slide them down to clamp the straps. they are designed with arms that pinch the straps and with teeth in the arms that will hold nice and tight.
 
-£15 for drivers pair, 20 for both + £3 p+p
+£20 for drivers pair, 25 for both + £3 p+p
 
 To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
 

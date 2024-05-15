@@ -7,7 +7,7 @@ Video here from the Karussell. if that doesn't make your phone drop off, nothing
 
 [![ROCK SOLID](https://img.youtube.com/vi/1NCZ1FxKUE0/0.jpg)](https://youtu.be/1NCZ1FxKUE0)
 
-£20 +£3 p+p +3 for non-black colours
+£25 +£3 p+p +3 for non-black colours
 
 ![maglock](img/maglock.jpeg)
 

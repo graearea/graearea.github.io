@@ -21,9 +21,8 @@ to swap back, simply remove the longer screw, unclip the mirror and replace the 
 all screws are included and are black, not the Titanium ones shown in the video.
 
 ## How much are they?
-**£50 delivered, but you pay me after you're happy**. I'll make them, send them out, and then you pay. 
+**£60 delivered, but you pay me after you're happy**. I'll make them, send them out, and then you pay. 
 if you don't need hinges (as you got them with my mirror adapters) it's 10 off.
-if you don't want the sidescreen brackets, it's £35 delivered.
 
 To order [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 

@@ -17,7 +17,8 @@ I've designed some very stiff, _articulated_ mirror mounts that can fit the myri
 I've modified Convex Black Lifeline mirrors and replaced the imperial grub screws with M3 grub screws which are much bigger stronger and are a standard metric hex size.
 
 ## How much are they?
-£130 including delivery for everything. Modified mirrors and adapters. 
+£130 including delivery for everything. Modified mirrors and adapters.
+££50 including delivery for the mounts
 
 ## How do I order?
 <b>-->[use this form to order](https://forms.gle/athdrwR55KYqTNVB6)<-- </b> I'll post them out. If you're happy, you send me the money, If you're not, return them.

@@ -12,7 +12,7 @@
 Please be aware, solidly mounting phones to vehicles can damage them. I've heard of camera stabilisation being destroyed by attaching them to motorbikes. I do know Chris has been using his for a year. 
 
 V2 
-£19 delivered +3 for non black colours
+£25 delivered +3 for non black colours
 
 To order, click [here](https://forms.gle/DpTGsNrgPXGaVSZi8)
 

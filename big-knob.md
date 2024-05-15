@@ -11,7 +11,7 @@ they're PETG and so they'll take the heat under the dash and they have a brass i
 
 black only, I could probably do you a custom 100mm one, but I reckon the 70mm looks massive in my hands.
 
-£15 for either size + £3 p+p
+£20 for either size + £3 p+p
 
 To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 

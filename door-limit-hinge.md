@@ -9,7 +9,7 @@ I've designed some hinge replacements which limit the amount of opening so that 
 
 These are compatible with [Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts)
 
-£10 +£3 p+p for 1 pair, £20 for 2 pairs all bolts included.
+£15 +£3 p+p for 1 pair, £25 for 2 pairs all bolts included.
 
 To order [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
 

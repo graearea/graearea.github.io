@@ -17,7 +17,7 @@ As all holes drilled for Caterham mirrors are different, all the mounts need to 
 [These adapters ](https://uberniche.co.uk/caterham-spa-adapters) are half the price and no measuring needed! The custom ones are a little stiffer as they're braced in 2 dimensions, but there's not a lot in it.
 
 ## How much are they?
-**£66 including delivery, but you pay me after you're happy**. I'll make them, send them out, fix any problems, and then you pay.
+**£70 including delivery, but you pay me after you're happy**. I'll make them, send them out, fix any problems, and then you pay.
 
 ## Are they any good?
 I've been running them for a few months now and have done >2000 miles including 3 track days and no problems. I've sold a few and everyone has paid! 
