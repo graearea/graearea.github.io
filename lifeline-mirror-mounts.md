@@ -17,13 +17,12 @@ I've modified Convex Black Lifeline mirrors and replaced the imperial grub screw
 ![lifeline-hand.jpg](img/lifeline-hand.jpeg)
 
 ## How much are they?
-£130 including delivery for everything. Modified mirrors and adapters.
-£60 including delivery for the mounts.
-if you want different mirrors from Lifeline, I can get them for you, or you can buy them yourself.
+£150 including delivery for everything, modified mirrors, mounts and all bolts.
+£70 including delivery for the mounts.
+if you want different mirrors from Lifeline, I can get them for you but I'll need to give you a price.
 
 ## How do I order?
-<b>-->[use this form to order](https://forms.gle/athdrwR55KYqTNVB6)<-- </b> 
-
+<b>-->[use this form to order](https://forms.gle/athdrwR55KYqTNVB6)<-- </b>
 
 ## What comes in the kit?
 * 2x black MSA convex mirrors modified with larger M3 metric grub screws and caphead bolts
