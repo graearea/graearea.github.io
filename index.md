@@ -8,8 +8,11 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts) - quickly and easily attach mirrors to Windscreen's hinges
 [![Quick Swap Windscreen Mirror Mounts](img/quick-swap-title.jpg)](/quick-swap-mirror-mounts)
 
+[Lifeline Mirror Mounts](/lifeline-mirror-mounts.md) - solidly attach convex adjustable mirrors to any sidescreen
+[![Lifeline Mirror Mounts](img/lifeline-wide.jpg)](/lifeline-mirror-mounts.md)
+
 [Large Pedal Extension](/large-pedals) - to assist with Heel-and-Toeing and comfort
-[![Large Pedal Extension](img/footwell wide.jpeg)](/large-pedals)
+[![Large Pedal Extension](img/footwell-wide.jpeg)](/large-pedals)
 
 [Pedal Extension Plugs](/pedals) - to assist with Heel-and-Toeing
 [![Pedal Extension Plugs](img/measure-s3.jpeg)](/pedals)
