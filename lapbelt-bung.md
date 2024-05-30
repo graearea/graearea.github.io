@@ -7,7 +7,7 @@ You want a bung to neaten up the hole of your lap belt boss, but it's full of gr
 
 So the bung needs to tap the thread into the grot and clean it out?
 
-it shouldn't be ugly, maybe a nice carbon fibre weave appearance?
+it shouldn't be ugly, maybe a nice carbon fiber weave appearance?
 
 you don't care if it's billet aluminium and you don't want it to cost £40?
 

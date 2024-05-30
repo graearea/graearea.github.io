@@ -24,10 +24,11 @@ Here they are compared to the £520 version. they're big enough to cover the hol
 * you may need to replace your flasher relay with an LED relay if you've not done this yet.
 * you may need to add a subloom to the indicator tell-tale if it has a common ground [here](https://www.classiccarleds.co.uk/products/diode-harness-kit-for-led-indicator-turn-signal-warning-light-fix-kit?_pos=1&_sid=4bf7c148f&_ss=r_)
 
-## But I have a carbon-fibre fetish...
+## But I have a carbon-fiber fetish...
 Ok, then wrap them in carbon vinyl:
 ![col-carbon.png](col-carbon.png)
 
+## How to order:
 To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 
 
