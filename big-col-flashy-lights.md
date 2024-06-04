@@ -16,8 +16,9 @@ Here they are compared to the £520 version. they're big enough to cover the hol
 ## How to fit them:
 * unbolt the old lights removing the cables.
 * reattach the grommets to the new lights.
-* measure and drill two 10mm holes 90mm apart (use masking tape to get it all central)
-* fit the lights with the supplied nuts and bolts. make sure you get them the right orientation as the indicator is animated (small arrow points outwards). The hex nuts attach the light to the cowl. then the wedge adaptors and the washers then the flanged M6 bolts.
+* measure and drill two 10mm holes 90mm apart to the sides of the central hole. (use masking tape to get it all central and level)
+* get some loctite ready
+* fit the lights with the supplied nuts and bolts. make sure you get them the right orientation as the indicator is animated (small arrow on face points outwards). The hex nuts attach the light to the cowl. then the wedge adaptors and the washers then the flanged M6 bolts.
 * reconnect the econoseals through the rear panel.
 
 ## Gotchas:
