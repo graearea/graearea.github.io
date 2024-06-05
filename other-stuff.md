@@ -1,14 +1,7 @@
-# Stuff
+# Aeroscreen Stuff
 
 delivery for all these things is £3, so if you've ordered something else, p&p is included 
 For any of these things please [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
-
-## Darth Schrader:  
-_"I find your lack of dust-caps disturbing"_ 
-<br/> 
-I HATE dust caps that you have to screw on your fingers get filthy so I just chuck em. These are push fit so miiiiiiiles better and 
-![darth](img/darth.webp)<br/>
-£12
 
 ## Increased friction fit for spa mirrors
 from 0.00005mm^2 contact

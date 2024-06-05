@@ -46,6 +46,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Fuel filler neck wedge shims](/fuel-neck-shim) - small, light, cheap and strong attachment to your rollcage
 [![Fuel filler neck wedge shims](img/fuel-shim.jpeg)](/fuel-neck-shim)
 
+[Aeroscreen Stuff](/other-stuff) - aero shims, etc
+[![Aeroscreen Stuff](img/darth.webp)](/other-stuff)
+
 [Motorsport Mirror Mount](/momimo) - small, light, cheap and strong attachment to your rollcage
 [![Motorsport Mirror Mount](img/momimo.jpeg)](/momimo)
 
@@ -55,7 +58,5 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
 [![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
-[Random Other Stuff](/other-stuff) - aero, brackets, hooks, etc
-[![Random Other Stuff](img/darth.webp)](/other-stuff)
 
 {% include_relative delivery.md %}
