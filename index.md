@@ -29,7 +29,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Big Knob](/big-knob) - longer heater knob for easier reaching
 [![Big Knob](img/big-knob.jpeg)](/big-knob)
 
-[Rear LED Cluster](/big-col-flashy-lights) - Bright drop-in replacement for Caterham caravan lights     
+[Rear LED Cluster](/big-col-flashy-lights) - Bright drop-in replacement for Caterham's caravan lights     
 [![Rear LED Cluster Cowl](img/big-col.jpeg)](/big-col-flashy-lights)
 
 [Lapbelt Bung](/lapbelt-bung) - Fills the hole of your chassis for the lap belt
