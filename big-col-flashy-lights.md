@@ -1,12 +1,12 @@
 # BigCol's Flashy LED Lights
 ![big-col](img/big-col.jpeg)
 
-Caterham standard caravan rear lights are pretty terrible. the LED versions are excellent, I have a pair, but they're currently £520 and rarely in stock. One of my friend's (BigCol) bought some of these: [here](https://fristom.com/en/offer/rear-lamps/ft-320-led/) which look great and have animated sequential indicators (video [here](https://www.youtube.com/watch?v=D6HZJRQdKpQ)). 
+Caterham standard caravan rear lights are pretty terrible. Their LED versions are excellent, I have a pair, but they're currently £520 and rarely in stock. One of my friend's (BigCol) bought some of these: [here](https://fristom.com/en/offer/rear-lamps/ft-320-led/) which look great and have animated sequential indicators (video [here](https://www.youtube.com/watch?v=D6HZJRQdKpQ)). 
 ![back-cowl](img/back-cowl.jpg) and he wanted them to fit his car properly. so here is the solution.
 
 ## How much?
-* The cowls on their own are £80 including bolts and washers.
-* lamp units from Bowers are about £75 delivered.
+* The cowls on their own are £80 including bolts and washers needed to fit them.
+* lamp units from Bowers are about £75 delivered in the UK if you want to crimp the cables yourself. if you're outside the UK the units are available and I'd rather not try to export them as you can get them easier locally. 
 * I can supply the lot with the econoseal connectors fitted for £180 delivered which are drop-in replacements for the caterham clusters. 
 
 ## What are they like size-wise?
@@ -18,8 +18,9 @@ They're about the same size as the caterham caravan lights. Here they are compar
 * reattach the grommets to the new lights.
 * measure and drill two 10mm holes 90mm apart to the sides of the central hole. (use masking tape to get it all central and level)
 * get some loctite ready
-* fit the lights with the supplied nuts and bolts. make sure you get them the right orientation as the indicator is animated (small arrow on face points outwards). The hex nuts attach the light to the cowl. then the wedge adaptors and the washers then the flanged M6 bolts.
+* fit the lights with the supplied nuts and bolts. make sure you get them the right orientation as the indicator is animated (small arrow on face points outwards, if you get it wrong, just undo the bolts and flip the light unit). The hex nuts attach the light to the cowl. then the wedge adaptors and the washers then the flanged M6 bolts. use loctite on everything.
 * reconnect the econoseals through the rear panel.
+* go out and drive!
 
 ![customer-led](img/customer-led.jpeg)
 
@@ -27,6 +28,7 @@ They're about the same size as the caterham caravan lights. Here they are compar
 ## Gotchas:
 * you may need to replace your flasher relay with an LED relay if you've not done this yet.
 * you may need to add a subloom to the indicator tell-tale if it has a common ground [here](https://www.classiccarleds.co.uk/products/diode-harness-kit-for-led-indicator-turn-signal-warning-light-fix-kit?_pos=1&_sid=4bf7c148f&_ss=r_)
+* MOT requires a reflector which these units don't have, however the units ARE homologated for EU market. but realistically, who is going to notice or care.
 
 ## But I have a carbon-fiber fetish...
 Ok, then wrap them in carbon vinyl:
