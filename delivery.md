@@ -5,4 +5,4 @@ I have many colours available in PLA. In PETG generally only black and grey. not
 ## Contact:
 to contact me, either email <john@uberniche.co.uk> or hit me up on [Instagram](https://www.instagram.com/uber.niche/)
 ## Payment: 
-paypal money to john@uberniche.com or get in touch and you can send a bank transfer.
+paypal money to john@uberniche.co.uk or get in touch and you can send a bank transfer.
