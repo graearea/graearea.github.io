@@ -23,6 +23,8 @@ The hinges that come with them are compatible with [Quick Swap Windscreen Mirror
 
 ## What comes in the kit?
 * 2x adapters, Spa or Motamec fitting
+* 2x hinges
+* 4x 20mm bolts
 * 2x 25mm M5 countersunk bolts 
 * 2x 6mm M5 countersunk bolts 
 * 2x 14mm M5 countersunk bolts 
