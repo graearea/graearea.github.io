@@ -2,16 +2,18 @@
 ![momimo-hand.jpeg](img/momimo-hand.jpeg)
 
 These are for attaching your rollcage mirror (longacre or similar) to your rollcage.
-Included is a pair of mounts and a pair of re-useable zip-ties to be cut down. slot range is 30-65mm. cage tube size is 32mm (can do other sizes if needed)
+Included is 3 mounts, 2 large, 1 small, a pair of re-useable zip-ties to be cut down and some grip tape for friction. slot range is around 30-65mm. cage tube size is 32mm or 38 and 
 
 Here's two, one in orange (so you can see it!) and the other in black
 ![img/momimo.jpeg](img/momimo.jpeg) 
 
-you can see that the mirror fits OVER the stock mirror in case you want to have the option to run either.  
-
 [Video here of what they look like](https://youtu.be/YTZIwV7VNT0)
 
-£28 delivered for non-black colours
+I've also designed some to mount directly to your windscreen using 3M VHB 
+
+![screen mount](img/screen-mount.jpeg)
+
+£28 delivered
 
 For any of these things please [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
 
