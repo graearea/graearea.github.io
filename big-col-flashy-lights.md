@@ -5,9 +5,8 @@ Caterham standard caravan rear lights are pretty terrible. Their LED versions ar
 ![back-cowl](img/back-cowl.jpg) and he wanted them to fit his car properly. so here is the solution.
 
 ## How much?
-* The cowls on their own are £80 including bolts and washers needed to fit them.
-* lamp units from Bowers are about £75 delivered in the UK if you want to crimp the cables yourself. if you're outside the UK the units are available and I'd rather not try to export them as you can get them easier locally. 
-* I can supply the lot with the econoseal connectors fitted for £180 delivered which are drop-in replacements for the caterham clusters. 
+* I can supply the cowls & led lamps with the econoseal connectors fitted for £180 delivered which are drop-in replacements for the caterham clusters. 
+* if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £80
 
 ## What are they like size-wise?
 They're about the same size as the caterham caravan lights. Here they are compared to the £520 version (which as slightly smaller). they're big enough to cover the holes from the original caravan lights
@@ -18,7 +17,7 @@ They're about the same size as the caterham caravan lights. Here they are compar
 * reattach the grommets to the new lights.
 * measure and drill two 10mm holes 90mm apart to the sides of the central hole. (use masking tape to get it all central and level)
 * get some loctite ready
-* fit the lights with the supplied nuts and bolts. make sure you get them the right orientation as the indicator is animated (small arrow on face points outwards, if you get it wrong, just undo the bolts and flip the light unit). The hex nuts attach the light to the cowl. then the wedge adaptors and the washers then the flanged M6 bolts. use loctite on everything.
+* fit the lights with the supplied nuts and bolts. make sure you get them the right orientation as the indicator is animated (small arrow on face points outwards, if you get it wrong, just undo the bolts and flip the light unit). The hex nuts attach the light to the cowl. then the wedge adaptors and the stainless washers then the flanged M6 bolts. use loctite on everything.
 * reconnect the econoseals through the rear panel.
 * go out and drive!
 
