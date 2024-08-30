@@ -56,7 +56,8 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Quadlock Mount](/quadlock) - attaches to your existing scuttle holes
 [![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
-[Darth Schrader](/darth) - attaches to your existing scuttle holes
+[Darth Schrader](/darth) - push-on dust caps
+
 [![Darth Schrader](img/darth.webp)](/darth)
 
 
