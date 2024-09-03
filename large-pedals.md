@@ -29,8 +29,8 @@ measure the distance between your brake and your accelerator?
 * for an SV chassis it is extremely variable. you need to tell me what you want, and I'll send you a 20 or 25 or something similar
 
 ## How much are they?
-£45 delivered
-if you want 2 sizes, it's £10 for each extra.
+£45 delivered<br>
+if you want 2 or more sizes, it's £10 for each extra.
 
 ## For orders, please [Use this Form](https://forms.gle/Bi147cGau4G2gFRY8)
 any problems email john@uberniche.co.uk
@@ -75,7 +75,7 @@ any problems email john@uberniche.co.uk
 - I want a custom colour.
   - OK. It'll cost you another £3
 - I want a custom size width or height
-  - it might be possible. get in touch
+  - get in touch
 - How tight do I make it?
   - Not very. Tweak it up a bit, if you hear cracking noises, stop!
 - Do I need to bolt it? Will it friction fit?
