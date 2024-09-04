@@ -17,8 +17,8 @@ I've modified Convex Black Lifeline mirrors and replaced the imperial grub screw
 ![lifeline-hand.jpg](img/lifeline-hand.jpeg)
 
 ## How much are they?
-£140 including delivery for everything, modified mirrors, mounts and all bolts. (mirrors from elsewhere will cost around 60quid delivered)
-£70 including delivery for the mounts.
+£140 including delivery for everything, modified mirrors, mounts and all bolts. (mirrors from elsewhere will cost around 60quid delivered and you'll need to fix the grubscrews yourself)
+£70 including delivery for just the mounts.
 if you want different mirrors from Lifeline, I can get them for you, but I'll need to give you a price.
 
 ## How do I order?
@@ -27,7 +27,8 @@ if you want different mirrors from Lifeline, I can get them for you, but I'll ne
 ## What comes in the kit?
 * 2x black MSA convex mirrors modified with larger M3 metric grub screws and caphead bolts
 * 2x articulated mounts
-* 6x 20mm M5 countersunk bolts
+* 4x 25mm M5 countersunk bolts
+* 2x 20mm M5 countersunk bolts
   ![lifeline-boxes.jpg](img/lifeline-boxes.jpeg)
 
 ## What do I need?
@@ -36,9 +37,9 @@ if you want different mirrors from Lifeline, I can get them for you, but I'll ne
 * loctite
 
 ## Fitting instructions
-* remove your hinge
-* unscrew the outer fitting of the base
-* offer up the articulated mount to the sidescreen and push the bolts through to line it all up. You can fit the small screw in the pivot (loctite it!) now tighten up the inner part of the base. you can tighten up the inner part of the base using a spanner. if it spins, take it off and tighten, being careful to not move the parts. this can be tightened tightly.
+* remove your lower hinge, keep the washers and bolts.
+* unscrew the outer fitting of the base if it is attached.
+* offer up the articulated mount to the sidescreen and push the bolts through to line it all up. You can fit the small screw in the pivot (loctite it!). then tighten up the inner part of the base with a spanner and hex-key (loctite it first), being careful to not move the parts. this can be tightened tightly.
 * refit the outer with the mirror. you can tighten down the mirror with a 19mm spanner until the mirror is nice and tight but still adjustable. once you have this tight enough, screw in a grub/caphead screw to lock the mirror in place. don't over-tighten this as it's only aluminium and will strip.
 
 
