@@ -32,6 +32,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Rear LED Cluster](/big-col-flashy-lights) - Bright drop-in replacement for Caterham's caravan lights     
 [![Rear LED Cluster Cowl](img/big-col.jpeg)](/big-col-flashy-lights)
 
+[Rear LED Cluster For Westfields](/ian-westie-flashy-lights) - Bright drop-in replacement for Westfield's caravan lights     
+[![Rear LED Cluster For Westfields](img/west2.jpeg)](/ian-westie-flashy-lights)
+
 [Lapbelt Bung](/lapbelt-bung) - Fills the hole of your chassis for the lap belt
 [![Lapbelt Bung](img/cap.jpg)](/lapbelt-bung)
 
