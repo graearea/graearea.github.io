@@ -1,7 +1,7 @@
 # Yellow_Super_Seven's Flashy LED Lights for Westfields
 ![west1](img/west5.jpeg)
 
-Westfield's standard caravan rear lights are pretty terrible.  After seeing the caterham replacements I make, Ian [Yellow_Super_Seven](https://www.instagram.com/yellowsuperseven/) wanted some that would fit the flat part of his Westfield's wing and here they are
+Westfield's standard caravan rear lights are pretty terrible.  After seeing the caterham replacements I make, Ben [Yellow_Super_Seven](https://www.instagram.com/yellowsuperseven/) wanted some that would fit the flat part of his Westfield's wing and here they are
 
 ## How much?
 * I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for £140 delivered which are drop-in replacements for the caterham clusters. 
