@@ -5,8 +5,8 @@ Caterham standard caravan rear lights are pretty terrible. Their LED versions ar
 ![back-cowl](img/back-cowl.jpg) and he wanted them to fit his car properly. so here is the solution.
 
 ## How much?
-* I can supply the cowls & led lamps with the econoseal connectors fitted for £180 delivered which are drop-in replacements for the caterham clusters. 
-* if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £80
+* I can supply the cowls & led lamps with the econoseal connectors fitted for £160 delivered which are drop-in replacements for the caterham clusters. 
+* if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and all the fittings for £70
 
 ## What are they like size-wise?
 They're about the same size as the caterham caravan lights. Here they are compared to the £520 version (which as slightly smaller). they're big enough to cover the holes from the original caravan lights
