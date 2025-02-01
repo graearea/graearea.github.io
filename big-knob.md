@@ -7,7 +7,7 @@ no, me neither. I thought I was gonna do myself a right whoopsie trying to reach
 
 so I made myself a bigger knob. in fact, I've now got 2 knobs. a big (50mm) one and an uber (70mm) and then I got asked for a f'uber one (110mm) for people with arms like a T-Rex.
 
-they're PETG and so they'll take the heat under the dash and they have a brass insert (just like the original) but they are much longer.
+they're made of PETG, so they'll take the heat under the dash, and they have a brass insert (just like the original) but they are much, much longer.
 
 black only, I can probably do you any size, but I reckon the 70mm looks massive in my hands.
 

@@ -15,7 +15,7 @@ As shown below, I've just got back from 2000 miles of driving and 4 trackdays in
 
 
 In my S3 chassis I have a 45mm gap in which I use a 10mm plug and in my size 8 driving boots, it's perfect. 35mm seems pretty good to me and is about 1/3 of the width of my foot.
-To stop the pedal extensions rotating, they have a notch to increase the friction fit and a marking on the back of the pedal for drilling a hole for a small self-tapping screw.
+To stop the pedal extensions rotating, they have a notch to increase the friction fit and if they still twist, there is a marking on the back of the pedal for drilling a hole for a small self-tapping screw.
 I've been running them a few months and they've been great. 
 ![plugs](img/go-pedal-back.jpeg)
 

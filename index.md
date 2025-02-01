@@ -60,8 +60,14 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [![Quadlock Mount](img/quad-v2-front.jpeg)](/quadlock)
 
 [Darth Schrader](/darth) - push-on dust caps
-
 [![Darth Schrader](img/darth.webp)](/darth)
+
+[//]: # ([Hi Level Brake Light Mounts]&#40;/hi-level&#41; - High Level univesal brake mounts )
+
+[//]: # ([![Hi Level Brake Light Mounts]&#40;img/hi-level.webp&#41;]&#40;/hi-level&#41;)
+
+[Self Cancelling Indicators](/self-cancelling-indicators) - a bit of fun, not for sale as it's too much soldering
+[![Self Cancelling Indicators](img/d)](/self-cancelling-indicators)
 
 
 {% include_relative delivery.md %}
