@@ -4,7 +4,7 @@
 ## Pedal Extensions to improve heel-and-toeing and comfort
 These are 3D printed extensions that will fit into your Caterham's pedal to make it wider so that you can more easily "heel and toe". This is especially difficult in SV chassis cars where the gap can be up to 75mm.
 
-As the accelerator is extended downwards and sideways, they make it easier to twist your foot to hit the accelerator pedal whilst hard on your brake. They come in different sizes to bridge the gap between the your foot whilst on the brake and accelerator.
+As the accelerator is extended downwards and sideways, they make it easier to twist your foot to hit the accelerator pedal whilst hard on your brake. They come in different sizes to bridge the gap between the your foot whilst on the brake and accelerator. Importantly, it can be rotated on its interface with the OE pedal so that it doesn't hit the firewall.
 
 I've done close to 10,000 miles including a trip to the nurburgring, a dozen or so trackdays and various tours.
 
@@ -12,6 +12,7 @@ I've done close to 10,000 miles including a trip to the nurburgring, a dozen or 
 In my S3 chassis I have a 45mm gap in which I use a 10mm plug and in my size 8 driving boots, it's perfect. 35mm seems pretty good to me and is about 1/3 of the width of my foot.
 
 To stop the pedal extensions rotating, they have a notch to increase the friction fit and if they still twist, there is a marking on the back of the pedal for drilling a hole for a small self-tapping screw, but a bit of loctite should be more than enough.
+![reinforced.jpg](img/reinforced.jpg)
 
 I've been running them a few years and they've been great. 
 ![large-pedal-back.jpg](img/large-pedal-back.jpg)
