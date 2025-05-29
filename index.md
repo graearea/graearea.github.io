@@ -1,5 +1,5 @@
 # ![Logo](logo-32.png) Uber Niche Parts
-
+![jump-low.jpeg](img/jump-low.jpeg)
 Hi! I made some stuff that I thought improved my Caterham 7. I showed some people the parts, and they liked them, so I'm selling them below. 
 
 You can find me on [Instagram](https://www.instagram.com/uber.niche/)
@@ -12,7 +12,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [![Lifeline Mirror Mounts](img/lifeline-wide.jpg)](/lifeline-mirror-mounts)
 
 [Large Pedal Extension](/large-pedals) - to assist with Heel-and-Toeing and comfort
-[![Large Pedal Extension](img/footwell-wide.jpeg)](/large-pedals)
+[![Large Pedal Extension](img/pedal-box-header.jpg)](/large-pedals)
 
 [Pedal Extension Plugs](/pedals) - to assist with Heel-and-Toeing
 [![Pedal Extension Plugs](img/measure-s3.jpeg)](/pedals)
