@@ -38,6 +38,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Lapbelt Bung](/lapbelt-bung) - Fills the hole of your chassis for the lap belt
 [![Lapbelt Bung](img/cap.jpg)](/lapbelt-bung)
 
+[Apple Magsafe Mount](/magsafe) - uses the magic of magnets to securely hold a phone.
+[![Apple Magsafe Mount](img/magsafe-dash.jpg)](/magsafe)
+
 [Maglock Mount](/maglock) - uses the magic of magnets to securely hold a phone.
 [![Maglock Mount](img/maglock.jpeg)](/maglock)
 
