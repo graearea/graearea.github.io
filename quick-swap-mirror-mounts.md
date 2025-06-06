@@ -6,36 +6,35 @@ A couple of people asked me if I could supply mounts that would attach to the si
 ![mounted](img/with nutholder.jpg)
 
 
-## How to fit:
+## How to work:
 Youtube video:
 [![Demo](https://img.youtube.com/vi/e8CnpPYo6i8/0.jpg)](https://youtu.be/e8CnpPYo6i8)
 
-The hinge has the normal geometry so that sidescreens fit into it as usual. it replaces one of the hinges on the windscreen. it comes with a captive nut holder so that you don't need a spanner to swap the mirror/door. 
+The hinge has the normal geometry so that sidescreens fit into it as usual. it replaces one of the hinges on the windscreen. it comes with a clever double captive nut holder so that you don't need a spanner to swap the mirror/door. 
 
-The mirror bracket clips into the bottom of the hinge and then bolts through the bracket, hinge and windscreen stanchion to hold it all together nice and strong. all the weight is held by the steel bolt. 
+The mirror carrier clips into the bottom of the hinge and then bolts through the carrier, hinge and windscreen stanchion to hold it all together nice and tight. all the weight is held by the steel bolt that goes all the way through. 
 
-The sidescreen bracket accepts the mirror carrier and then bolts through the bracket and the sidescreen to hold it all together nice and strong. all the weight is held by the steel bolt. it comes with a wingnut so that you don't need a spanner to swap the mirror out.
+The sidescreen bracket accepts the mirror carrier and the bolt goes through the carrier, bracket and the sidescreen to hold it all together nice and tight. all the weight is again held by the steel bolt. it comes with a wingnut so that you don't need a spanner to swap the mirror out.
 
-to swap back, simply remove the longer screw, unclip the mirror and replace the short screw.
+to swap back, simply remove the longer screw, unclip the mirror and replace the short screw (or just use the longer screw).
 
-all screws are included and are black, not the Titanium ones shown in the video.
+all screws are included and are black, not the Titanium ones shown in the video. I can supply stainless steel instead if that's 
 
 ## How much are they?
-**£60 delivered, but you pay me after you're happy**. I'll make them, send them out, and then you pay. 
-if you don't need hinges (as you got them with my mirror adapters) it's 10 off.
+**£70 delivered, but you pay me after you're happy**. I'll make them, send them out, and then you pay.
 
 To order [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
 
 ## What comes in the kit?
-* 2x sidescreen brackets (optional)
+* 2x sidescreen brackets 
 * 2x mirror adapters
-* 2x hinges (stop the sidescreens from opening too much and resting on the mirrors ) these can be mounted either top or bottom
+* 2x hinges (which also stop the sidescreens from opening too much and resting on the mirrors ) these can be mounted either top or bottom hinge.
 * 2x 'captive nuts'
 * 2x friction shims for spa mirrors
 * 2x wingnuts
-* 4x 20mm M5 countersunk bolts for the hinge attachment
+* 4x 25mm M5 countersunk bolts for the hinge attachment
 * 2x 30mm M5 countersunk bolts for the sidescreen bracket
-* 2x 16mm M5 countersunk bolts for the sidescreen bracket
+* 2x 20mm M5 countersunk bolts for the sidescreen bracket
 
 ![bom](img/quick-bom.jpg)
 

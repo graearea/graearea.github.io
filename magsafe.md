@@ -12,6 +12,8 @@ Video here from the me sliding off at Oulton park and the mount holding on:
 £3 extra for non-black
 £3 for p&p
 
+I can probably supply a decent (non-apple branded) magsafe charger as well. ask about this.
+
 For any of these things please [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
 
 {% include_relative delivery.md %}
