@@ -9,7 +9,7 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 [Lifeline Mirror Mounts](/lifeline-mirror-mounts.md) - solidly attach convex adjustable mirrors to any sidescreen
 [![Lifeline Mirror Mounts](img/lifeline-wide.jpg)](/lifeline-mirror-mounts)
 
-[Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts) - quickly and easily attach mirrors to Windscreen's hinges
+[Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts) - quickly switch attach mirrors between sidescreens and windscreen mounted for driving with no doors.
 [![Quick Swap Windscreen Mirror Mounts](img/quick-swap-title.jpg)](/quick-swap-mirror-mounts)
 
 [Mirror Adapters](/caterham-spa-adapters) - adapts Caterham bolt holes to Spa or Motamec mirrors
