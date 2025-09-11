@@ -13,12 +13,12 @@ They are convex, externally adjustable, very sturdy and have short arms. The lar
 ## My Solution
 I've designed some very stiff, _articulated_ mirror mounts that can fit the myriad dimensions of holes in Caterham side-screens. They have 2 pivots and can span a large range which should fit any set of side screens. the mount also stops the mirrors from clouting the windscreen when you open the door.
 
-I've modified Convex Black Lifeline mirrors and replaced the imperial grub screws with M3 grub screws which are much bigger stronger and are a standard metric hex size.
+I include one of the 1.27mm allen wrenches to deal with the silly grub screws.
 ![lifeline-hand.jpg](img/lifeline-hand.jpeg)
 
 ## How much are they?
 £150 including delivery for everything, modified mirrors, mounts and all bolts. (mirrors from elsewhere will cost around 60quid delivered and you'll need to fix the grubscrews yourself)
-£80 including delivery for just the mounts.
+£90 including delivery for just the mounts.
 if you want different mirrors from Lifeline, I can get them for you, but I'll need to give you a price.
 
 ## How do I order?
