@@ -4,7 +4,7 @@
 Do your harness straps flap about in the wind and annoy you? They certainly annoyed my friend Colin, so he asked me to make these!
 ![clip folded](img/fold-clip.jpeg) 
 
-I can also print them in multiple colours (not all shown here) in PLA or black in PETG. 
+I can also print them in multiple colours (not all shown here) in PLA or black in CF-ASA. coloured PLA will warp a little if left in the sun, they'll still work fine but they may end up bending a little. ASA-CF will not. 
 ![side clip](img/chest-strap.jpeg)
 
 They tightly fit the standard Caterham (Luke?) 3" harness top straps. simply bend the straps to get them in, and then slide them down to clamp the straps. they are designed with arms that pinch the straps and with teeth in the arms that will hold nice and tight.
