@@ -1,9 +1,8 @@
 # ![Logo](img/UN-02.png) 
 ![jump-low.jpeg](img/jump-low.jpeg)
-Hi! I made some stuff that I thought improved my Caterham 7. I showed some people the parts, and they liked them, so I'm selling them below. 
+I make and design improvements for my Caterham 7 which I have tested from the Nurburgring to Cadwell Park and the Stelvio pass. All profits are spent on super-unleaded and R888Rs. 
 
-You can find me on [Instagram](https://www.instagram.com/uber.niche/)
-I've sent packages to France, Germany, Ireland, England and the US :D
+You can find me on [Instagram](https://www.instagram.com/uber.niche/) and [Youtube](https://www.youtube.com/@GraeArea) 
 
 # Mirrors
 [Lifeline Mirror Mounts](/lifeline-mirror-mounts.md) - solidly attach convex adjustable mirrors to any sidescreen
@@ -72,8 +71,9 @@ I've sent packages to France, Germany, Ireland, England and the US :D
 
 [//]: # ([![Hi Level Brake Light Mounts]&#40;img/hi-level.webp&#41;]&#40;/hi-level&#41;)
 
-[Self Cancelling Indicators](/self-cancelling-indicators) - a bit of fun, not for sale as it's too much soldering
-[![Self Cancelling Indicators](img/d)](/self-cancelling-indicators)
+[//]: # ([Self Cancelling Indicators]&#40;/self-cancelling-indicators&#41; - a bit of fun, not for sale as it's too much soldering)
+
+[//]: # ([![Self Cancelling Indicators]&#40;img/d&#41;]&#40;/self-cancelling-indicators&#41;)
 
 
 {% include_relative delivery.md %}
