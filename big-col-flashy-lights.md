@@ -25,15 +25,14 @@ They're about the same size as the Caterham caravan lights. Here they are compar
 
 
 ## Gotchas:
-* you may need to replace your flasher relay with an LED relay if you've not done this yet.
-* you may need to add a subloom to the indicator tell-tale if it has a common ground [here](https://www.classiccarleds.co.uk/products/diode-harness-kit-for-led-indicator-turn-signal-warning-light-fix-kit?_pos=1&_sid=4bf7c148f&_ss=r_)
-* MOT requires a reflector which these units don't have, however the units ARE homologated for EU market. but realistically, who is going to notice or care.
+* as with any LED solution, you may need to replace your flasher relay with an LED relay if you've not done this yet and you may need to add a subloom to the indicator tell-tale if it has a common ground [here](https://www.classiccarleds.co.uk/products/diode-harness-kit-for-led-indicator-turn-signal-warning-light-fix-kit?_pos=1&_sid=4bf7c148f&_ss=r_)
+* MOT requires a reflector which these units don't have, however the units ARE homologated for EU market.
 
 ## But I have a carbon-fiber fetish...
 Ok, then wrap them in carbon vinyl:
 ![col-carbon.png](img/col-carbon.png)
 
 ## How to order:
-To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8)
+To order,  [Pay via Stripe](https://buy.stripe.com/4gMeVc6SXgF9c7I4jXbQY04)
 
 {% include_relative delivery.md %}
