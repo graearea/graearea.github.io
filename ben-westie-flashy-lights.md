@@ -7,8 +7,10 @@ Westfield's standard caravan rear lights are pretty terrible.  After seeing the 
 <script async src="//www.instagram.com/embed.js"></script> 
 
 ## How much?
-* I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for £140 delivered which are drop-in replacements for the Caterham clusters. 
-* if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £50
+* I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for 150 delivered. 
+Pay here: https://buy.stripe.com/7sYdR81yDagL2x83fTbQY0b
+* if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £70
+Pay here: https://buy.stripe.com/28E3cugtx0Gbb3E5o1bQY0c
 
 ## What are they like size-wise?
 They're about the same size as the westfield caravan lights, but they have a cut-away to fit the edge of the westfield wing
