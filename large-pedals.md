@@ -18,10 +18,32 @@ To stop the pedal extensions rotating, they have a notch to increase the frictio
 for an S3 chassis, I recommend a 10 or 15mm extension. for an SV chassis I'd recommend a 20 or 30 or something similar. put your foot on the brake pedal and judge the gap to your pedal.
 
 ## How much are they?
-£45 if you want extra sizes, it's £10 for each extra. 
+£45 if you want extra sizes, it's £10 for each extra.
 
-## [ORDER HERE](https://buy.stripe.com/cNifZga59dsX2x8aIlbQY03)
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £45 delivered</button>
+
 any problems email john@uberniche.co.uk
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 ## Fitting
 * Fit the cap into the right hand side of the pedal (gogo-gadget arms help here)

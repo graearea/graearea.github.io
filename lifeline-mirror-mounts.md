@@ -12,9 +12,30 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 
 ![lifeline-hand2.png](img/lifeline-hand2.png)
 
-£150+£4 delivery 
+£150+£4 delivery
 
-I'm using Stripe for payments now as it's less stress and time for me: <b>[ORDER HERE](https://buy.stripe.com/dRm3cuelp60v9ZAcQtbQY02)</b>
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £150+P&P</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 ## Fitting instructions
 * tap the brass hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)

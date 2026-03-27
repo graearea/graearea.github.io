@@ -17,8 +17,28 @@ The original Caterham hinges allow the doors to open too far so that the mirrors
 ## How much are they?
 **£45 inc delivery and they come with hinges that stop your mirrors bouncing off your windscreen**
 
-## How do I order?
-<b>-->[use this form to order](https://buy.stripe.com/5kQ3cu5OT3Sn1t4eYBbQY07)<-- </b>
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £45 delivered</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 ## What comes in the kit?
 * 2x adapters, Spa or Motamec fitting

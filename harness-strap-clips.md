@@ -9,9 +9,30 @@ I can also print them in multiple colours (not all shown here) in ABS. +3 quid f
 
 They tightly fit the standard Caterham (Luke?) 3" harness top straps. They are designed with arms that pinch the straps and with teeth in the arms that will hold nice and tight.
 
-30 for 2 pairs + £3 p+p (+£3 for different colours)
+£30 for 2 pairs + £3 p+p (+£3 for different colours)
 
-To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) 
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £30+P&P</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 please note, the finish of this has to be flat as pictured, not carbon-fibre effect.  
 

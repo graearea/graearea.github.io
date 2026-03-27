@@ -10,8 +10,29 @@ They look like this, this one is in orange so you can see it!
 
 [Video here of what they look like](https://youtu.be/YTZIwV7VNT0)
 
-£30 delivered inc jubilees 
+£30 delivered inc jubilees
 
-To order [USE THIS FORM](https://buy.stripe.com/28EeVc5OT1Kf7Rs3fTbQY08) and **I can do various colours.**
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £30 delivered</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 {% include_relative delivery.md %}

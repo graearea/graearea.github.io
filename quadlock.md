@@ -11,9 +11,30 @@
 
 Please be aware, solidly mounting phones to vehicles can damage them. I've heard of camera stabilisation being destroyed by attaching them to motorbikes. I do know Chris has been using his for a year. 
 
-V2 
+V2
 £25 delivered +3 for non black colours
 
-To order, click [here](https://forms.gle/DpTGsNrgPXGaVSZi8)
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £25 delivered</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 {% include_relative delivery.md %}

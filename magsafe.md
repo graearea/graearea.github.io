@@ -14,6 +14,28 @@ Video here from the me sliding off at Oulton park and the mount holding on:
 
 I can probably supply a decent (non-apple branded) magsafe charger as well. ask about this.
 
-For any of these things please [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) and **I can do various colours.**
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_FIXED')">Buy Fixed – £20+P&P</button>
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_SWIVEL')">Buy Swivel – £25+P&P</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 {% include_relative delivery.md %}

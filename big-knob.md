@@ -13,6 +13,27 @@ I can do a bunch of colours
 
 £20 for either size + £4 p+p
 
-To order,  [Pay via Stripe](https://buy.stripe.com/dRm5kC2CHagL4Fgg2FbQY05)
+<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £20+P&P</button>
+
+<script>
+async function checkout(btn, priceId) {
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Loading...';
+  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ priceId })
+  });
+  const { url } = await res.json();
+  if (url) {
+    window.location.href = url;
+  } else {
+    alert('Something went wrong, please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+</script>
 
 {% include_relative delivery.md %}
