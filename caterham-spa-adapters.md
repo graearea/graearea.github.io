@@ -17,7 +17,7 @@ The original Caterham hinges allow the doors to open too far so that the mirrors
 ## How much are they?
 **£45 inc delivery and they come with hinges that stop your mirrors bouncing off your windscreen**
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £45 delivered</button>
+<button onclick="checkout(this, 'price_1SlqaAAhb23PF7gKKE5K7lgz')">Buy – £45 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

@@ -12,7 +12,7 @@ They look like this, this one is in orange so you can see it!
 
 £30 delivered inc jubilees
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £30 delivered</button>
+<button onclick="checkout(this, 'price_1SlrJLAhb23PF7gKMdIa34H4')">Buy – £30 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

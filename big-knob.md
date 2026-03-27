@@ -13,7 +13,7 @@ I can do a bunch of colours
 
 £20 for either size + £4 p+p
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £20+P&P</button>
+<button onclick="checkout(this, 'price_1SVuOPAhb23PF7gK8RDgaBd5')">Buy – £20+P&P</button>
 
 <script>
 async function checkout(btn, priceId) {

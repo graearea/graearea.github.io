@@ -8,10 +8,10 @@ Westfield's standard caravan rear lights are pretty terrible.  After seeing the 
 
 ## How much?
 * I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for £150 delivered.
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_FULL')">Buy cowls + LEDs – £150 delivered</button>
+<button onclick="checkout(this, 'price_1Ss8b1Ahb23PF7gKjcfJSPb0')">Buy cowls + LEDs – £150 delivered</button>
 
 * if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £70
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_COWLS')">Buy cowls only – £70 delivered</button>
+<button onclick="checkout(this, 'price_1Ss8bfAhb23PF7gKjnJBYMI5')">Buy cowls only – £70 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

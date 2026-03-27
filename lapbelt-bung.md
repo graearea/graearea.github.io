@@ -14,7 +14,7 @@ screw it gently in a couple of times to clear the thread then just tweak it up a
 
 £20 delivered
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £20 delivered</button>
+<button onclick="checkout(this, 'price_1RT2geAhb23PF7gKoUtoSgRb')">Buy – £12 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

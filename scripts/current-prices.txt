@@ -1,0 +1,29 @@
+Fetching prices from Stripe...
+
+Product                                       Price ID                        Amount
+----------------------------------------------------------------------------------------------
+add an extra size                             price_1STn8eAhb23PF7gKNsvIe9KX  £10.00
+Big Knob                                      price_1SVuOPAhb23PF7gK8RDgaBd5  £20.00
+Custom Colour                                 price_1STme5Ahb23PF7gKorxPGejW  £5.00
+Harness-Strap Clips                           price_1SPU67Ahb23PF7gKUp5OYxAd  £25.00
+Lap-belt bung                                 price_1RT2geAhb23PF7gKoUtoSgRb  £12.00
+Large Pedal Extensions                        price_1RT2eAAhb23PF7gKZJcplwOP  £45.00
+LED lights with Cowls and econoseals          price_1Ss8YrAhb23PF7gKhWIb7cWu  £90.00
+LED lights with Cowls and econoseals          price_1SUXT9Ahb23PF7gKMKcSGgyE  £170.00
+Lifeline Mirrors and Adapters                 price_1SfgVFAhb23PF7gKZw0QrPSM  £100.00
+Lifeline Mirrors and Adapters                 price_1SS3yuAhb23PF7gK409khEPH  £150.00
+Lifeline Mirrors and Adapters                 price_1SGdLUAhb23PF7gK760qaRWo  £150.00
+Pedal Plugs                                   price_1RTVj6Ahb23PF7gKZ2yZZ66C  £30.00
+Pedal Plugs                                   price_1RT2fyAhb23PF7gKxTWzw6tT  £30.00
+Quick Swap Windscreen Mirror mounts           price_1RT2fIAhb23PF7gKQDByKPnP  £60.00
+Rollcage Mirror Brackets                      price_1SlrJLAhb23PF7gKMdIa34H4  £30.00
+Spa Mirror Adaptor                            price_1SlqaAAhb23PF7gKKE5K7lgz  £45.00
+Stainless Steel Bolts                         price_1STl6cAhb23PF7gKvE4ZCJGr  £0.00
+Steel hinge pins (SV) fitting                 price_1STl5JAhb23PF7gK6vnS4dYb  £0.00
+Test Prod 1                                   price_1T3k8OAhb23PF7gKtsmMmpJi  £0.00
+test prod 2                                   price_1T3kAhAhb23PF7gKJGh44Ah7  £0.00
+test prod 2                                   price_1T3k90Ahb23PF7gKrkIlUpiR  £0.00
+Westfield LED lights with Cowls and fittings  price_1Ss8bfAhb23PF7gKjnJBYMI5  £70.00
+Westfield LED lights with Cowls and fittings  price_1Ss8b1Ahb23PF7gKjcfJSPb0  £150.00
+
+23 price(s) found.

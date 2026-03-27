@@ -6,10 +6,10 @@ Caterham standard caravan rear lights are pretty terrible. Their LED versions ar
 
 ## How much?
 * I can supply the cowls & led lamps with the econoseal connectors fitted for £170 delivered which are drop-in replacements for the Caterham clusters.
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_FULL')">Buy cowls + LEDs – £170 delivered</button>
+<button onclick="checkout(this, 'price_1SUXT9Ahb23PF7gKMKcSGgyE')">Buy cowls + LEDs – £170 delivered</button>
 
 * I can also just send you the cowls and all the fittings for £90
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_COWLS')">Buy cowls only – £90 delivered</button>
+<button onclick="checkout(this, 'price_1Ss8YrAhb23PF7gKhWIb7cWu')">Buy cowls only – £90 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

@@ -23,7 +23,7 @@ all screws are included and are black or stainless, not the Titanium ones shown 
 ## How much are they?
 **£70 delivered**.
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £70 delivered</button>
+<button onclick="checkout(this, 'price_1RT2fIAhb23PF7gKQDByKPnP')">Buy – £60 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

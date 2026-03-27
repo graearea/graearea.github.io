@@ -12,11 +12,10 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 
 ![lifeline-hand2.png](img/lifeline-hand2.png)
 
-£150+£4 delivery
-<button id="buy-btn" onclick="checkout()">Buy – £150+P&P</button>
+£100+£4 delivery (adapters only) / £150+£4 delivery (with Lifeline mirrors)
 
-I'm using Stripe for payments now as it's less stress and time for me: <b>[ORDER HERE](https://buy.stripe.com/dRm3cuelp60v9ZAcQtbQY02)</b>
-<button id="buy-btn" onclick="checkout()">Buy – £150+P&P</button>
+<button onclick="checkout(this, 'price_1SfgVFAhb23PF7gKZw0QrPSM')">Buy adapters only – £100+P&P</button>
+<button onclick="checkout(this, 'price_1SS3yuAhb23PF7gK409khEPH')">Buy with Lifeline mirrors – £150+P&P</button>
 
 ## Fitting instructions
 * tap the brass hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)
@@ -29,24 +28,22 @@ I'm using Stripe for payments now as it's less stress and time for me: <b>[ORDER
 {% include_relative delivery.md %}
 
 <script>
-async function checkout() {
-  const btn = document.getElementById('buy-btn');
+async function checkout(btn, priceId) {
   btn.disabled = true;
+  const orig = btn.textContent;
   btn.textContent = 'Loading...';
-  
   const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId: 'price_1SGdLUAhb23PF7gK760qaRWo' })
+    body: JSON.stringify({ priceId })
   });
-
-  const { url, error } = await res.json();
+  const { url } = await res.json();
   if (url) {
     window.location.href = url;
   } else {
     alert('Something went wrong, please try again.');
     btn.disabled = false;
-    btn.textContent = 'Buy – £12.99';
+    btn.textContent = orig;
   }
 }
 </script>

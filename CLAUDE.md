@@ -19,5 +19,39 @@ The Stripe secret key is stored as an encrypted environment variable (`STRIPE_SE
 - Shows a loading state and error alert on failure
 
 **Stripe price IDs** are found in the Stripe dashboard under Products. Each product page uses its own `priceId`.
+Run `STRIPE_SECRET_KEY=sk_live_xxx node scripts/stripe-prices.js` to list all active prices and IDs.
 
 **Success page:** `thanks.md` in the repo root.
+
+---
+
+## Stripe → Click & Drop automation
+
+**File:** `cloudflare/webhook-worker.js` — a second Cloudflare Worker (deployed separately).
+
+**Flow:**
+1. Customer completes Stripe checkout
+2. Stripe fires `checkout.session.completed` webhook to this worker
+3. Worker verifies Stripe signature, fetches full session (line items + shipping address)
+4. Worker POSTs order to Royal Mail Click & Drop API
+5. Order appears in Click & Drop ready to label and ship
+
+**Required environment variables** (set in Cloudflare Workers dashboard, never in code):
+- `STRIPE_SECRET_KEY` — same key as the checkout worker
+- `STRIPE_WEBHOOK_SECRET` — from Stripe Dashboard → Webhooks → your endpoint → Signing secret
+- `CLICK_AND_DROP_API_KEY` — from Click & Drop → Settings → Integrations → Click & Drop API
+
+**Deployment steps:**
+1. Deploy `cloudflare/webhook-worker.js` as a new Cloudflare Worker and note its URL
+2. In Stripe Dashboard: Webhooks → Add endpoint → set URL to the worker → listen for `checkout.session.completed` → copy the Signing secret
+3. Add all three env vars to the Cloudflare Worker settings
+
+**Note on weights:** The webhook worker uses a default of 500g per item. Update `unitWeightInGrams` in `buildClickAndDropOrder()` per product if Click & Drop needs accurate weights for postage selection.
+
+---
+
+## Scripts
+
+**`scripts/stripe-prices.js`** — lists all active Stripe prices with product names and IDs.
+Usage: `STRIPE_SECRET_KEY=sk_live_xxx node scripts/stripe-prices.js`
+No npm install needed — uses Node.js built-in `fetch`.

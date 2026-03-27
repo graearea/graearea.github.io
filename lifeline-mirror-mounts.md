@@ -12,9 +12,10 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 
 ![lifeline-hand2.png](img/lifeline-hand2.png)
 
-£150+£4 delivery
+£100+£4 delivery (adapters only) / £150+£4 delivery (with Lifeline mirrors)
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £150+P&P</button>
+<button onclick="checkout(this, 'price_1SfgVFAhb23PF7gKZw0QrPSM')">Buy adapters only – £100+P&P</button>
+<button onclick="checkout(this, 'price_1SS3yuAhb23PF7gK409khEPH')">Buy with Lifeline mirrors – £150+P&P</button>
 
 <script>
 async function checkout(btn, priceId) {

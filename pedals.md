@@ -20,7 +20,7 @@ what is the distance between your brake and your accelerator?
 ## How much are they?
 £35 delivered for 2 sizes + £5 for extra sizes
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £35 delivered</button>
+<button onclick="checkout(this, 'price_1RTVj6Ahb23PF7gKZ2yZZ66C')">Buy – £30 delivered</button>
 
 <script>
 async function checkout(btn, priceId) {

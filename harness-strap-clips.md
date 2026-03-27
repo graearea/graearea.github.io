@@ -11,7 +11,7 @@ They tightly fit the standard Caterham (Luke?) 3" harness top straps. They are d
 
 £30 for 2 pairs + £3 p+p (+£3 for different colours)
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £30+P&P</button>
+<button onclick="checkout(this, 'price_1SPU67Ahb23PF7gKUp5OYxAd')">Buy – £25+P&P</button>
 
 <script>
 async function checkout(btn, priceId) {

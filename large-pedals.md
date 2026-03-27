@@ -20,7 +20,7 @@ for an S3 chassis, I recommend a 10 or 15mm extension. for an SV chassis I'd rec
 ## How much are they?
 £45 if you want extra sizes, it's £10 for each extra.
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £45 delivered</button>
+<button onclick="checkout(this, 'price_1RT2eAAhb23PF7gKZJcplwOP')">Buy – £45 delivered</button>
 
 any problems email john@uberniche.co.uk
 
