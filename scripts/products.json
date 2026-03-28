@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Darth Schrader Dust Caps",
+    "description": "Push-fit valve dust caps",
+    "amount": 1200,
+    "currency": "gbp"
+  },
+  {
+    "name": "Fuel Filler Neck Shims",
+    "description": "Wedge-shaped shims to correct a misaligned fuel filler neck",
+    "amount": 2800,
+    "currency": "gbp"
+  },
+  {
+    "name": "iPhone MagSafe Mount",
+    "description": "MagSafe phone mount for Caterham scuttle",
+    "amount": 2800,
+    "currency": "gbp"
+  },
+  {
+    "name": "Maglock Phone Mount",
+    "description": "Magnetic phone mount for Caterham scuttle",
+    "amount": 2800,
+    "currency": "gbp"
+  },
+  {
+    "name": "Apple MagSafe Mount",
+    "description": "Apple MagSafe phone mount for Caterham",
+    "prices": [
+      { "label": "Fixed",  "amount": 2300 },
+      { "label": "Swivel", "amount": 2800 }
+    ],
+    "currency": "gbp"
+  },
+  {
+    "name": "Quadlock Mount",
+    "description": "Quadlock phone mount for Caterham scuttle",
+    "amount": 2800,
+    "currency": "gbp"
+  },
+  {
+    "name": "Jamaican Bacon Clip",
+    "description": "Quick-release can holder for bikes",
+    "prices": [
+      { "label": "330ml", "amount": 1500 },
+      { "label": "440ml", "amount": 1700 }
+    ],
+    "currency": "gbp"
+  },
+  {
+    "name": "Spa Mirror Friction Cups",
+    "description": "Friction cups for Spa/Motamec mirror sockets",
+    "amount": 1500,
+    "currency": "gbp"
+  },
+  {
+    "name": "Aeroscreen Curved Shims",
+    "description": "Curved shims for fitting flat mirror brackets to aero screens",
+    "amount": 1500,
+    "currency": "gbp"
+  }
+]

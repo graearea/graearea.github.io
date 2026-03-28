@@ -9,10 +9,29 @@ Usage:
 
 import json
 import os
+import subprocess
 import sys
 import urllib.request
 
 STRIPE_BASE = "https://api.stripe.com/v1"
+
+
+def get_key():
+    """Read STRIPE_SECRET_KEY from env, falling back to macOS Keychain."""
+    key = os.environ.get("STRIPE_SECRET_KEY")
+    if key:
+        return key
+    try:
+        result = subprocess.run(
+            ["security", "find-generic-password", "-a", os.environ["USER"], "-s", "stripe-secret-key", "-w"],
+            capture_output=True, text=True, check=True,
+        )
+        return result.stdout.strip()
+    except subprocess.CalledProcessError:
+        print("Error: STRIPE_SECRET_KEY not set and not found in macOS Keychain.", file=sys.stderr)
+        print("Store it with:", file=sys.stderr)
+        print('  security add-generic-password -a "$USER" -s "stripe-secret-key" -w "sk_live_xxx"', file=sys.stderr)
+        sys.exit(1)
 
 
 def stripe_get(path, key):
@@ -42,11 +61,7 @@ def get_all_pages(path, key):
 
 
 def main():
-    key = os.environ.get("STRIPE_SECRET_KEY")
-    if not key:
-        print("Error: STRIPE_SECRET_KEY environment variable not set.", file=sys.stderr)
-        print("Usage: STRIPE_SECRET_KEY=sk_live_xxx python3 scripts/stripe-prices.py", file=sys.stderr)
-        sys.exit(1)
+    key = get_key()
 
     print("Fetching prices from Stripe...\n")
 

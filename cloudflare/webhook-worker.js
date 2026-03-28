@@ -51,18 +51,34 @@ export default {
       env.STRIPE_SECRET_KEY
     );
 
-    const shipping = fullSession.shipping_details;
-    if (!shipping || !shipping.address) {
-      console.error("No shipping address on session", session.id);
-      return new Response("No shipping address", { status: 422 });
+    // Stripe 2025-03-31.basil moves shipping into collected_information.shipping_details.
+    // Fall back through older top-level field, then billing address as last resort.
+    const shipping =
+      fullSession.collected_information?.shipping_details?.address
+        ? fullSession.collected_information.shipping_details
+        : fullSession.shipping_details?.address
+          ? fullSession.shipping_details
+          : fullSession.customer_details?.address
+            ? { name: fullSession.customer_details.name, address: fullSession.customer_details.address }
+            : null;
+
+    if (!shipping) {
+      // Can't create a shipment without an address — log and ack so Stripe doesn't retry
+      console.error("No address on session", session.id, JSON.stringify(fullSession));
+      return new Response("No address — skipped", { status: 200 });
     }
 
     // 3. Build Click & Drop order
-    const order = buildClickAndDropOrder(fullSession);
+    const order = buildClickAndDropOrder(fullSession, shipping);
 
-    const result = await createClickAndDropOrder(order, env.CLICK_AND_DROP_API_KEY);
+    try {
+      const result = await createClickAndDropOrder(order, env.CLICK_AND_DROP_API_KEY);
+      console.log("Click & Drop order created:", JSON.stringify(result));
+    } catch (err) {
+      // Log the failure but still return 200 — Stripe must not retry fulfilled payments
+      console.error("Click & Drop failed:", err.message);
+    }
 
-    console.log("Click & Drop order created:", JSON.stringify(result));
     return new Response("OK", { status: 200 });
   },
 };
@@ -122,32 +138,58 @@ async function verifyStripeSignature(payload, header, secret) {
 // Order builder
 // ---------------------------------------------------------------------------
 
-function buildClickAndDropOrder(session) {
-  const addr = session.shipping_details.address;
-  const name = session.shipping_details.name || session.customer_details?.name || "Unknown";
+function buildClickAndDropOrder(session, shipping) {
+  const addr = shipping.address;
+  const name = shipping.name || session.customer_details?.name || "Unknown";
   const email = session.customer_details?.email;
 
   // Stripe amounts are in pence
+  const subtotal = (session.amount_subtotal ?? session.amount_total) / 100;
+  const shippingCost = (session.shipping_cost?.amount_total ?? 0) / 100;
   const total = session.amount_total / 100;
 
-  // Build a readable order reference from Stripe session ID (last 8 chars)
+  // orderReference max 40 chars — keep it short
   const orderRef = `stripe-${session.id.slice(-8)}`;
 
-  // Summarise line items for the order label
-  const items = (session.line_items?.data || []).map((item) => ({
+  // Put custom field values (size selection, notes) into specialInstructions (max 500 chars)
+  const customFields = session.custom_fields ?? [];
+  const specialInstructions = customFields
+    .map((f) => {
+      const label = f.label?.custom ?? f.key;
+      const value = f.type === "dropdown" ? f.dropdown?.value : f.text?.value;
+      return value ? `${label}: ${value}` : null;
+    })
+    .filter(Boolean)
+    .join(" | ") || undefined;
+
+  // Click & Drop wants ISO 8601 without milliseconds
+  const orderDate = new Date(session.created * 1000).toISOString().replace(/\.\d{3}Z$/, "Z");
+
+  // Line items for parcel contents — only included if expanded by Stripe
+  const lineItems = session.line_items?.data ?? [];
+  const contents = lineItems.map((item) => ({
     name: item.description || item.price?.product?.name || "Item",
     quantity: item.quantity,
-    unitValue: item.amount_total / 100 / item.quantity,
-    unitWeightInGrams: 500, // default — adjust per product if needed
+    unitValue: Math.round((item.amount_subtotal ?? item.amount_total) / item.quantity) / 100,
+    unitWeightInGrams: 500,
   }));
+
+  const pkg = {
+    weightInGrams: contents.length
+      ? contents.reduce((sum, i) => sum + i.unitWeightInGrams * i.quantity, 0)
+      : 500,
+    packageFormatIdentifier: "parcel",
+  };
+  // Only include contents if we have something — empty array upsets Click & Drop
+  if (contents.length) pkg.contents = contents;
 
   return {
     orderReference: orderRef,
-    orderDate: new Date(session.created * 1000).toISOString(),
-    subtotal: total,
-    shippingCostCharged: 0,
-    total: total,
-    ...(email && { emailAddress: email }),
+    orderDate,
+    subtotal,
+    shippingCostCharged: shippingCost,
+    total,
+    ...(specialInstructions && { specialInstructions }),
     recipient: {
       name,
       addressLine1: addr.line1,
@@ -156,19 +198,10 @@ function buildClickAndDropOrder(session) {
       ...(addr.state && { county: addr.state }),
       postcode: addr.postal_code,
       countryCode: addr.country,
+      // emailAddress belongs in recipient, not top-level
+      ...(email && { emailAddress: email }),
     },
-    packages: [
-      {
-        weightInGrams: items.reduce((sum, i) => sum + i.unitWeightInGrams * i.quantity, 0) || 500,
-        packageFormatIdentifier: "parcel", // change to "parcel" if needed
-        contents: items.map((i) => ({
-          name: i.name,
-          quantity: i.quantity,
-          unitValue: i.unitValue,
-          unitWeightInGrams: i.unitWeightInGrams,
-        })),
-      },
-    ],
+    packages: [pkg],
   };
 }
 
@@ -177,19 +210,23 @@ function buildClickAndDropOrder(session) {
 // ---------------------------------------------------------------------------
 
 async function createClickAndDropOrder(order, apiKey) {
+  const payload = JSON.stringify({ items: [order] });
+  console.log("Sending to Click & Drop:", payload);
+
   const res = await fetch(`${CLICK_AND_DROP_BASE}/orders`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify([order]), // Click & Drop accepts an array of orders
+    body: payload,
   });
 
   const text = await res.text();
+  console.log(`Click & Drop response ${res.status}:`, text);
 
   if (!res.ok) {
-    throw new Error(`Click & Drop error ${res.status}: ${text}`);
+    throw new Error(`Click & Drop ${res.status}: ${text}`);
   }
 
   return JSON.parse(text);
