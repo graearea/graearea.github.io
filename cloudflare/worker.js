@@ -15,7 +15,22 @@ export default {
       return new Response("Method not allowed", { status: 405 });
     }
 
-    const { priceId } = await req.json();
+    const { items } = await req.json();
+    if (!Array.isArray(items) || items.length === 0) {
+      return new Response(JSON.stringify({ error: "No items" }), { status: 400, headers });
+    }
+
+    const params = new URLSearchParams({
+      "payment_method_types[]": "card",
+      "mode": "payment",
+      "success_url": "https://uberniche.co.uk/thanks",
+      "cancel_url": "https://uberniche.co.uk",
+      "shipping_address_collection[allowed_countries][]": "GB",
+    });
+    items.forEach(({ priceId, quantity }, i) => {
+      params.set(`line_items[${i}][price]`, priceId);
+      params.set(`line_items[${i}][quantity]`, String(quantity ?? 1));
+    });
 
     const stripeRes = await fetch("https://api.stripe.com/v1/checkout/sessions", {
       method: "POST",
@@ -23,15 +38,7 @@ export default {
         "Authorization": `Bearer ${env.STRIPE_SECRET_KEY}`,
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams({
-        "payment_method_types[]": "card",
-        "line_items[0][price]": priceId,
-        "line_items[0][quantity]": "1",
-        "mode": "payment",
-        "success_url": "https://uberniche.co.uk/thanks",
-        "cancel_url": "https://uberniche.co.uk",
-        "shipping_address_collection[allowed_countries][]": "GB",
-      }),
+      body: params,
     });
 
     const session = await stripeRes.json();

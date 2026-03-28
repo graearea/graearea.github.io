@@ -20,28 +20,7 @@ what is the distance between your brake and your accelerator?
 ## How much are they?
 £35 delivered for 2 sizes + £5 for extra sizes
 
-<button onclick="checkout(this, 'price_1RTVj6Ahb23PF7gKZ2yZZ66C')">Buy – £30 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1RTVj6Ahb23PF7gKZ2yZZ66C', 'Pedal Extensions', 30)">Add to basket – £30 delivered</button>
 
 ## Fitting
 * Fit the cap into the right hand side of the pedal (gogo-gadget arms help here)

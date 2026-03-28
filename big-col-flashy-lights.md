@@ -6,31 +6,10 @@ Caterham standard caravan rear lights are pretty terrible. Their LED versions ar
 
 ## How much?
 * I can supply the cowls & led lamps with the econoseal connectors fitted for £170 delivered which are drop-in replacements for the Caterham clusters.
-<button onclick="checkout(this, 'price_1SUXT9Ahb23PF7gKMKcSGgyE')">Buy cowls + LEDs – £170 delivered</button>
+<button onclick="addToBasket('price_1SUXT9Ahb23PF7gKMKcSGgyE', 'BigCol LED Lights', 170, 'Cowls + LEDs')">Add to basket – £170 delivered</button>
 
 * I can also just send you the cowls and all the fittings for £90
-<button onclick="checkout(this, 'price_1Ss8YrAhb23PF7gKhWIb7cWu')">Buy cowls only – £90 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1Ss8YrAhb23PF7gKhWIb7cWu', 'BigCol LED Lights', 90, 'Cowls only')">Add to basket – £90 delivered</button>
 
 ## What are they like size-wise?
 They're about the same size as the Caterham caravan lights. Here they are compared to the £520 version (which as slightly smaller). They're big enough to cover the holes from the original caravan lights, (unlike the 500 quid Caterham LEDs)

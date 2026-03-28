@@ -8,31 +8,10 @@ Westfield's standard caravan rear lights are pretty terrible.  After seeing the 
 
 ## How much?
 * I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for £150 delivered.
-<button onclick="checkout(this, 'price_1Ss8b1Ahb23PF7gKjcfJSPb0')">Buy cowls + LEDs – £150 delivered</button>
+<button onclick="addToBasket('price_1Ss8b1Ahb23PF7gKjcfJSPb0', 'Westie LED Lights', 150, 'Cowls + LEDs')">Add to basket – £150 delivered</button>
 
 * if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £70
-<button onclick="checkout(this, 'price_1Ss8bfAhb23PF7gKjnJBYMI5')">Buy cowls only – £70 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1Ss8bfAhb23PF7gKjnJBYMI5', 'Westie LED Lights', 70, 'Cowls only')">Add to basket – £70 delivered</button>
 
 ## What are they like size-wise?
 They're about the same size as the westfield caravan lights, but they have a cut-away to fit the edge of the westfield wing

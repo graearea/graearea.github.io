@@ -13,27 +13,6 @@ I can do a bunch of colours
 
 £20 for either size + £4 p+p
 
-<button onclick="checkout(this, 'price_1SVuOPAhb23PF7gK8RDgaBd5')">Buy – £20+P&P</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1SVuOPAhb23PF7gK8RDgaBd5', 'Big Knob', 20)">Add to basket – £20+P&P</button>
 
 {% include_relative delivery.md %}

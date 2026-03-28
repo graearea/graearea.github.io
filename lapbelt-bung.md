@@ -14,27 +14,6 @@ screw it gently in a couple of times to clear the thread then just tweak it up a
 
 £20 delivered
 
-<button onclick="checkout(this, 'price_1RT2geAhb23PF7gKoUtoSgRb')">Buy – £12 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1RT2geAhb23PF7gKoUtoSgRb', 'Lap-belt Bung', 12)">Add to basket – £12 delivered</button>
 
 {% include_relative delivery.md %}

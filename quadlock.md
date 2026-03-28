@@ -14,27 +14,6 @@ Please be aware, solidly mounting phones to vehicles can damage them. I've heard
 V2
 £25 delivered +3 for non black colours
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £25 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Quadlock Mount', 25)">Add to basket – £25 delivered</button>
 
 {% include_relative delivery.md %}

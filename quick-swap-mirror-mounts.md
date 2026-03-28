@@ -23,28 +23,7 @@ all screws are included and are black or stainless, not the Titanium ones shown 
 ## How much are they?
 **£70 delivered**.
 
-<button onclick="checkout(this, 'price_1RT2fIAhb23PF7gKQDByKPnP')">Buy – £60 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1RT2fIAhb23PF7gKQDByKPnP', 'Quick Swap Mirror Mounts', 60)">Add to basket – £60 delivered</button>
 
 ## What comes in the kit?
 * 2x sidescreen brackets 

@@ -33,28 +33,7 @@ discount for multiples (including delivery):
 but you really don't need 4 :D (ridiculous maybe, but I needed to test them)
 ![too-many](img/too-many-beers.jpeg)
 
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_330')">Buy 330ml – £15 delivered</button>
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER_440')">Buy 440ml – £17 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_330', 'Jamaican Bacon Clip', 15, '330ml')">Add to basket – £15 delivered</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_440', 'Jamaican Bacon Clip', 17, '440ml')">Add to basket – £17 delivered</button>
 
 {% include_relative delivery.md %}

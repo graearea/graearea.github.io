@@ -20,30 +20,9 @@ for an S3 chassis, I recommend a 10 or 15mm extension. for an SV chassis I'd rec
 ## How much are they?
 £45 if you want extra sizes, it's £10 for each extra.
 
-<button onclick="checkout(this, 'price_1RT2eAAhb23PF7gKZJcplwOP')">Buy – £45 delivered</button>
+<button onclick="addToBasket('price_1RT2eAAhb23PF7gKZJcplwOP', 'Large Pedal Extension', 45)">Add to basket – £45 delivered</button>
 
 any problems email john@uberniche.co.uk
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
 
 ## Fitting
 * Fit the cap into the right hand side of the pedal (gogo-gadget arms help here)

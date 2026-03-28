@@ -12,27 +12,6 @@ They look like this, this one is in orange so you can see it!
 
 £30 delivered inc jubilees
 
-<button onclick="checkout(this, 'price_1SlrJLAhb23PF7gKMdIa34H4')">Buy – £30 delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('price_1SlrJLAhb23PF7gKMdIa34H4', 'Rollcage Mirror Mounts', 30)">Add to basket – £30 delivered</button>
 
 {% include_relative delivery.md %}

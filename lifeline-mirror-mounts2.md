@@ -14,8 +14,8 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 
 £100+£4 delivery (adapters only) / £150+£4 delivery (with Lifeline mirrors)
 
-<button onclick="checkout(this, 'price_1SfgVFAhb23PF7gKZw0QrPSM')">Buy adapters only – £100+P&P</button>
-<button onclick="checkout(this, 'price_1SS3yuAhb23PF7gK409khEPH')">Buy with Lifeline mirrors – £150+P&P</button>
+<button onclick="addToBasket('price_1SfgVFAhb23PF7gKZw0QrPSM', 'Lifeline Mirror Mounts', 100, 'Adapters only')">Add to basket – £100+P&P</button>
+<button onclick="addToBasket('price_1SS3yuAhb23PF7gK409khEPH', 'Lifeline Mirror Mounts', 150, 'With Lifeline mirrors')">Add to basket – £150+P&P</button>
 
 ## Fitting instructions
 * tap the brass hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)
@@ -27,23 +27,3 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 
 {% include_relative delivery.md %}
 
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
