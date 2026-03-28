@@ -2,3 +2,8 @@ theme: minima
 name: Uber Niche Printed Products for Caterhams
 header_pages:
   - index.md
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
