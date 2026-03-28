@@ -178,7 +178,7 @@ function buildClickAndDropOrder(session, shipping) {
     weightInGrams: contents.length
       ? contents.reduce((sum, i) => sum + i.unitWeightInGrams * i.quantity, 0)
       : 500,
-    packageFormatIdentifier: "parcel",
+    packageFormatIdentifier: "smallParcel",
   };
   // Only include contents if we have something — empty array upsets Click & Drop
   if (contents.length) pkg.contents = contents;
@@ -191,17 +191,23 @@ function buildClickAndDropOrder(session, shipping) {
     total,
     ...(specialInstructions && { specialInstructions }),
     recipient: {
-      name,
-      addressLine1: addr.line1,
-      ...(addr.line2 && { addressLine2: addr.line2 }),
-      city: addr.city,
-      ...(addr.state && { county: addr.state }),
-      postcode: addr.postal_code,
-      countryCode: addr.country,
-      // emailAddress belongs in recipient, not top-level
       ...(email && { emailAddress: email }),
+      address: {
+        fullName: name,
+        addressLine1: addr.line1,
+        ...(addr.line2 && { addressLine2: addr.line2 }),
+        city: addr.city,
+        ...(addr.state && { county: addr.state }),
+        postcode: addr.postal_code,
+        countryCode: addr.country,
+      },
     },
     packages: [pkg],
+    postageDetails: {
+      serviceCode: "TOLP48",
+      sendNotificationsTo: "recipient",
+      receiveEmailNotification: true,
+    },
   };
 }
 

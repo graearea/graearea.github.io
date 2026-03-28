@@ -34,7 +34,7 @@ function getKey() {
 // ---------------------------------------------------------------------------
 // Minimal payload — just the documented required fields, nothing else
 const order = {
-  orderReference: "test-001",
+  orderReference: "test-002",
   orderDate: new Date().toISOString().replace(/\.\d{3}Z$/, "Z"),
   subtotal: 30,
   shippingCostCharged: 4,
@@ -54,7 +54,7 @@ const order = {
   packages: [
     {
       weightInGrams: 500,
-      packageFormatIdentifier: "parcel",
+      packageFormatIdentifier: "smallParcel",
       contents: [
         {
           name: "Pedal Plugs",
@@ -65,6 +65,11 @@ const order = {
       ],
     },
   ],
+  postageDetails: {
+    serviceCode: "TOLP48",
+    sendNotificationsTo: "recipient",
+    receiveEmailNotification: true,
+  },
 };
 // ---------------------------------------------------------------------------
 
