@@ -1,6 +1,6 @@
 # Aeroscreen Stuff
 
-delivery for all these things is £3, so if you've ordered something else, p&p is included
+All prices + £3 P&P
 
 ## Increased friction fit for spa mirrors
 from 0.00005mm^2 contact
@@ -8,9 +8,9 @@ from 0.00005mm^2 contact
 to 10000m^2 contact (lol)
 ![no-cup](img/cup.jpeg)<br/>
 These fit into the crappy Spa and Motamec sockets to increase friction and adjustability<br/>
-£15 inc delivery or free with any of my mirror mounts
+£15 + £3 P&P (or free with any of my mirror mounts)
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_FRICTION_CUPS', 'Friction Cups', 15)">Add to basket – £15 delivered</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_FRICTION_CUPS', 'Friction Cups', 15)">Add to basket – £15 + £3 P&P</button>
 
 ## Curved shims for Aero Screen mirrors
 ![gaskets](img/gasket.jpeg)<br/>
@@ -18,8 +18,8 @@ These fit into the crappy Spa and Motamec sockets to increase friction and adjus
 Fitting flat metal mirror brackets to a curved screen doesn't work without putting undue stress on the screen. A selection of these shims relieves that stress. available in black or white<br/>
 2 pairs in different curved profiles<br/>
 I can make them with the curve lengthways like in the photos, or widthways (be sure to mention which you want)
-£15 inc delivery
+£15 + £3 P&P
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_SHIMS', 'Curved Shims', 15)">Add to basket – £15 delivered</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_SHIMS', 'Curved Shims', 15)">Add to basket – £15 + £3 P&P</button>
 
 {% include_relative delivery.md %}

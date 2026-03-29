@@ -18,9 +18,9 @@ what is the distance between your brake and your accelerator?
 * for an SV chassis it is more variable. you need to tell me what you want and I'll send you a 20 and a 30 or something similar. 
 
 ## How much are they?
-£35 delivered for 2 sizes + £5 for extra sizes
+£30 + £3 P&P for 2 sizes, + £5 for extra sizes
 
-<button onclick="addToBasket('price_1RTVj6Ahb23PF7gKZ2yZZ66C', 'Pedal Extensions', 30)">Add to basket – £30 delivered</button>
+<button onclick="addToBasket('price_1RTVj6Ahb23PF7gKZ2yZZ66C', 'Pedal Extensions', 30)">Add to basket – £30 + £3 P&P</button>
 
 ## Fitting
 * Fit the cap into the right hand side of the pedal (gogo-gadget arms help here)

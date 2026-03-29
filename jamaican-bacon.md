@@ -21,8 +21,8 @@ First time I finished the line, I smashed a beer!
 So decide:
 - with or without bottle boss holes
 - colour
-- 330: £12 + £3 p&p
-- 440: £14 + £3 p&p
+- 330: £15 + £3 P&P
+- 440: £17 + £3 P&P
 
 discount for multiples (including delivery):
 - 1=£15
@@ -33,7 +33,7 @@ discount for multiples (including delivery):
 but you really don't need 4 :D (ridiculous maybe, but I needed to test them)
 ![too-many](img/too-many-beers.jpeg)
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_330', 'Jamaican Bacon Clip', 15, '330ml')">Add to basket – £15 delivered</button>
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_440', 'Jamaican Bacon Clip', 17, '440ml')">Add to basket – £17 delivered</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_330', 'Jamaican Bacon Clip', 15, '330ml')">Add to basket – £15 + £3 P&P</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_440', 'Jamaican Bacon Clip', 17, '440ml')">Add to basket – £17 + £3 P&P</button>
 
 {% include_relative delivery.md %}

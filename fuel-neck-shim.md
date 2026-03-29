@@ -10,8 +10,8 @@ they fit between the filler neck and the rear skin and so can't be seen and the 
 on my car, the end result is much better (yes, it desperately needs a clean):
 ![img/fixed.jpg](img/fixed.jpg)
 
-£25 +£3 p+p
+£25 + £3 P&P
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Fuel Filler Neck Shims', 25)">Add to basket – £25+P&P</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Fuel Filler Neck Shims', 25)">Add to basket – £25 + £3 P&P</button>
 
 {% include_relative delivery.md %}

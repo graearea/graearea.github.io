@@ -12,8 +12,8 @@
 Please be aware, solidly mounting phones to vehicles can damage them. I've heard of camera stabilisation being destroyed by attaching them to motorbikes. I do know Chris has been using his for a year. 
 
 V2
-£25 delivered +3 for non black colours
+£25 + £3 P&P (+£3 for non-black colours)
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Quadlock Mount', 25)">Add to basket – £25 delivered</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Quadlock Mount', 25)">Add to basket – £25 + £3 P&P</button>
 
 {% include_relative delivery.md %}

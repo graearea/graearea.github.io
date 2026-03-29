@@ -12,10 +12,10 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 
 ![lifeline-hand2.png](img/lifeline-hand2.png)
 
-£100+£4 delivery (adapters only) / £150+£4 delivery (with Lifeline mirrors)
+£100 + £3 P&P (adapters only) / £150 + £3 P&P (with Lifeline mirrors)
 
-<button onclick="addToBasket('price_1SfgVFAhb23PF7gKZw0QrPSM', 'Lifeline Mirror Mounts', 100, 'Adapters only')">Add to basket – £100+P&P</button>
-<button onclick="addToBasket('price_1SS3yuAhb23PF7gK409khEPH', 'Lifeline Mirror Mounts', 150, 'With Lifeline mirrors')">Add to basket – £150+P&P</button>
+<button onclick="addToBasket('price_1SfgVFAhb23PF7gKZw0QrPSM', 'Lifeline Mirror Mounts', 100, 'Adapters only')">Add to basket – £100 + £3 P&P</button>
+<button onclick="addToBasket('price_1SS3yuAhb23PF7gK409khEPH', 'Lifeline Mirror Mounts', 150, 'With Lifeline mirrors')">Add to basket – £150 + £3 P&P</button>
 
 ## Fitting instructions
 * tap the brass hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)

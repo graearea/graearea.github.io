@@ -18,9 +18,9 @@ To stop the pedal extensions rotating, they have a notch to increase the frictio
 for an S3 chassis, I recommend a 10 or 15mm extension. for an SV chassis I'd recommend a 20 or 30 or something similar. put your foot on the brake pedal and judge the gap to your pedal.
 
 ## How much are they?
-£45 if you want extra sizes, it's £10 for each extra.
+£45 + £3 P&P, extra sizes £10 each.
 
-<button onclick="addToBasket('price_1RT2eAAhb23PF7gKZJcplwOP', 'Large Pedal Extension', 45)">Add to basket – £45 delivered</button>
+<button onclick="addToBasket('price_1RT2eAAhb23PF7gKZJcplwOP', 'Large Pedal Extension', 45)">Add to basket – £45 + £3 P&P</button>
 
 any problems email john@uberniche.co.uk
 

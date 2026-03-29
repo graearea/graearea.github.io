@@ -7,14 +7,13 @@ Video here from the me sliding off at Oulton park and the mount holding on:
 
 [![ROCK SOLID](img/code-brown.jpg)](https://youtu.be/33wN7WtJzs0)
 
-£20 for fixed
-£25 for swivel
-£3 extra for non-black
-£3 for p&p
+£20 + £3 P&P (fixed)
+£25 + £3 P&P (swivel)
++£3 for non-black
 
 I can probably supply a decent (non-apple branded) magsafe charger as well. ask about this.
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_FIXED', 'Magsafe Phone Mount', 20, 'Fixed')">Add to basket – £20+P&P</button>
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_SWIVEL', 'Magsafe Phone Mount', 25, 'Swivel')">Add to basket – £25+P&P</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_FIXED', 'Magsafe Phone Mount', 20, 'Fixed')">Add to basket – £20 + £3 P&P</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_SWIVEL', 'Magsafe Phone Mount', 25, 'Swivel')">Add to basket – £25 + £3 P&P</button>
 
 {% include_relative delivery.md %}
