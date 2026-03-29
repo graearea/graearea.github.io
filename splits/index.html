@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uber.Niche.Splits</title>
+
+<!-- CDN Libraries -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+#header { background: #16213e; padding: 8px 16px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #0f3460; flex-shrink: 0; }
+#header h1 { font-size: 1.1rem; color: #e94560; letter-spacing: 2px; }
+#header .status { font-size: 0.75rem; color: #888; }
+#header .status span { color: #4ecca3; }
+
+#main { display: grid; grid-template-columns: 420px 1fr; flex: 1; overflow: hidden; gap: 0; }
+
+/* LEFT PANEL */
+#left-panel { display: flex; flex-direction: column; background: #16213e; border-right: 1px solid #0f3460; overflow: hidden; }
+
+#map { flex: 1; min-height: 0; }
+
+#controls { padding: 10px; background: #0f3460; border-top: 1px solid #16213e; flex-shrink: 0; }
+
+#drop-zone {
+  border: 2px dashed #4ecca3;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: #4ecca3;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+#drop-zone.drag-over { background: rgba(78,204,163,0.15); }
+#drop-zone input[type=file] { display: none; }
+
+#file-list { font-size: 0.72rem; color: #888; margin-bottom: 6px; max-height: 50px; overflow-y: auto; }
+#file-list div { color: #4ecca3; }
+
+#lap-buttons { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.lap-btn {
+  padding: 3px 8px; font-size: 0.72rem; border-radius: 4px;
+  border: 1px solid #4ecca3; background: transparent; color: #4ecca3;
+  cursor: pointer; transition: all 0.15s;
+}
+.lap-btn:hover, .lap-btn.active { background: #4ecca3; color: #1a1a2e; }
+.lap-btn.multi-active { background: #e94560; border-color: #e94560; color: #fff; }
+.lap-btn.inlap  { border-color: #f5a623; color: #f5a623; }
+.lap-btn.outlap { border-color: #9b59b6; color: #9b59b6; }
+
+#lap-controls { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; font-size: 0.72rem; }
+#lap-controls label { color: #888; }
+#compare-mode-btn {
+  padding: 2px 8px; border-radius: 4px; border: 1px solid #e94560;
+  background: transparent; color: #e94560; cursor: pointer; font-size: 0.72rem;
+}
+#compare-mode-btn.active { background: #e94560; color: #fff; }
+
+#offset-control { display: none; align-items: center; gap: 6px; font-size: 0.72rem; margin-bottom: 6px; }
+#offset-control label { color: #888; }
+#offset-slider { flex: 1; height: 6px; }
+
+#scrubber-wrap { margin-top: 6px; }
+#scrubber-label { font-size: 0.7rem; color: #888; margin-bottom: 4px; display: flex; justify-content: space-between; }
+#timeline-slider { height: 8px; }
+
+/* RIGHT PANEL — tab switcher */
+#right-panel { display: flex; flex-direction: column; overflow: hidden; background: #1a1a2e; }
+#panel-tabs { display: flex; background: #16213e; border-bottom: 1px solid #0f3460; flex-shrink: 0; }
+.panel-tab { padding: 6px 14px; font-size: 0.72rem; color: #888; cursor: pointer; border-bottom: 2px solid transparent; letter-spacing: 1px; }
+.panel-tab.active { color: #4ecca3; border-bottom-color: #4ecca3; }
+#panel-graphs { display: flex; flex-direction: column; overflow-y: auto; flex: 1; }
+#panel-analysis { display: none; flex-direction: column; overflow-y: auto; flex: 1; padding: 12px; gap: 12px; }
+#panel-analysis.visible { display: flex; }
+
+/* Graph containers */
+.graph-container { flex-shrink: 0; position: relative; border-bottom: 1px solid #0f3460; }
+.graph-container .graph-title {
+  position: absolute; top: 4px; left: 10px; font-size: 0.7rem; color: #888; z-index: 10; pointer-events: none;
+}
+.plotly-graph { width: 100%; }
+
+/* Analysis cards */
+.analysis-card { background: #16213e; border: 1px solid #0f3460; border-radius: 6px; padding: 10px; }
+.analysis-card h3 { font-size: 0.72rem; color: #888; letter-spacing: 1px; margin-bottom: 8px; }
+.analysis-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.analysis-table { width: 100%; border-collapse: collapse; font-size: 0.7rem; }
+.analysis-table th { color: #555; font-weight: normal; text-align: left; padding: 3px 6px; border-bottom: 1px solid #0f3460; }
+.analysis-table td { padding: 3px 6px; border-bottom: 1px solid #0f2040; color: #ccc; }
+.analysis-table tr:hover td { background: rgba(78,204,163,0.05); cursor: pointer; }
+.score-bar { display: inline-block; height: 8px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+.badge { display: inline-block; padding: 1px 5px; border-radius: 3px; font-size: 0.65rem; font-weight: bold; }
+.badge-warn { background: rgba(233,69,96,0.25); color: #e94560; }
+.badge-ok   { background: rgba(78,204,163,0.15); color: #4ecca3; }
+.badge-info { background: rgba(245,166,35,0.15); color: #f5a623; }
+.stat-box { background: #0f3460; border-radius: 4px; padding: 6px 10px; text-align: center; min-width: 80px; }
+.stat-box .val { font-size: 1.1rem; color: #4ecca3; font-weight: bold; }
+.stat-box .lbl { font-size: 0.62rem; color: #666; margin-top: 2px; }
+
+/* noUiSlider theme override */
+.noUi-target { background: #0f3460; border: none; box-shadow: none; }
+.noUi-connect { background: #4ecca3; }
+.noUi-handle { background: #4ecca3; border: none; box-shadow: none; width: 14px !important; height: 14px !important; right: -7px !important; top: -4px !important; border-radius: 50%; }
+.noUi-handle::before, .noUi-handle::after { display: none; }
+
+#empty-state {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px; color: #555; font-size: 0.85rem; pointer-events: none;
+}
+#empty-state svg { opacity: 0.3; }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>UBER.NICHE.SPLITS</h1>
+  <div class="status">session: <span id="hdr-session">—</span></div>
+  <div class="status">points: <span id="hdr-points">—</span></div>
+  <div class="status">duration: <span id="hdr-duration">—</span></div>
+  <div class="status">laps: <span id="hdr-laps">—</span></div>
+  <div class="status" style="margin-left:auto">cursor: <span id="hdr-cursor">—</span></div>
+</div>
+
+<div id="main">
+  <!-- LEFT -->
+  <div id="left-panel">
+    <div id="map">
+      <div id="empty-state">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        Drop a CSV to begin
+      </div>
+    </div>
+    <div id="controls">
+      <div id="drop-zone" id="dz">
+        <input type="file" id="file-input" multiple accept=".csv">
+        <div>Drop CSV files here or <u>click to browse</u></div>
+        <div style="font-size:0.65rem;color:#888;margin-top:2px">CatBus + RaceBox formats supported</div>
+      </div>
+      <div id="file-list"></div>
+      <div id="lap-controls">
+        <label>Laps:</label>
+        <button id="compare-mode-btn">Compare</button>
+        <button id="clear-laps-btn" style="padding:2px 8px;border-radius:4px;border:1px solid #555;background:transparent;color:#888;cursor:pointer;font-size:0.72rem">All</button>
+        <span id="overlay-controls" style="display:none;gap:4px;align-items:center">
+          <button id="overlay-time-btn" class="lap-btn active" data-align="time">Time</button>
+          <button id="overlay-dist-btn" class="lap-btn" data-align="dist">Dist</button>
+        </span>
+      </div>
+      <div id="lap-buttons"></div>
+      <div id="offset-control">
+        <label>RaceBox offset: <span id="offset-val">0s</span></label>
+        <div id="offset-slider"></div>
+      </div>
+      <div id="scrubber-wrap">
+        <div id="scrubber-label"><span id="scrub-t0">—</span><span id="scrub-t1">—</span></div>
+        <div id="timeline-slider"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div id="right-panel">
+    <div id="panel-tabs">
+      <div class="panel-tab active" data-panel="graphs">TELEMETRY</div>
+      <div class="panel-tab" data-panel="analysis">ANALYSIS</div>
+    </div>
+    <div id="panel-graphs">
+      <div class="graph-container" style="height:140px"><div class="graph-title">SPEED · RPM · COOLANT · VOLTAGE</div><div id="g-speed" class="plotly-graph" style="height:140px"></div></div>
+      <div class="graph-container" style="height:160px"><div class="graph-title">G-FORCES · INDICATORS</div><div id="g-gforce" class="plotly-graph" style="height:160px"></div></div>
+      <div class="graph-container" style="height:120px"><div class="graph-title">WHEEL SPEEDS</div><div id="g-wheels" class="plotly-graph" style="height:120px"></div></div>
+      <div class="graph-container" style="height:110px"><div class="graph-title">FUEL</div><div id="g-fuel" class="plotly-graph" style="height:110px"></div></div>
+    </div>
+    <div id="panel-analysis">
+      <!-- Summary stats -->
+      <div class="analysis-card">
+        <h3>SESSION SUMMARY</h3>
+        <div class="analysis-row" id="an-summary"></div>
+      </div>
+      <!-- Traction circle -->
+      <div class="analysis-card">
+        <h3>TRACTION CIRCLE</h3>
+        <div id="g-traction" style="height:280px"></div>
+      </div>
+      <!-- Braking events -->
+      <div class="analysis-card">
+        <h3>BRAKING ZONES — ranked by peak deceleration</h3>
+        <div id="an-braking"></div>
+      </div>
+      <!-- Corner analysis -->
+      <div class="analysis-card">
+        <h3>CORNERS <span id="an-corner-count" style="color:#555;font-weight:normal;letter-spacing:0"></span></h3>
+        <div style="display:flex;gap:6px;margin-bottom:8px;font-size:0.7rem">
+          <span style="color:#666">Show:</span>
+          <label style="color:#888;cursor:pointer"><input type="radio" name="corner-metric" value="minSpd" checked style="margin-right:3px">Min Speed</label>
+          <label style="color:#888;cursor:pointer"><input type="radio" name="corner-metric" value="peakG" style="margin-right:3px">Peak G</label>
+        </div>
+        <div id="an-corners"></div>
+      </div>
+      <!-- Wheel events -->
+      <div class="analysis-card">
+        <h3>WHEEL EVENTS</h3>
+        <div id="an-wheels"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── Known Tracks (keep in sync with /CatBus/tracks.json) ──────────────────
+const KNOWN_TRACKS = [
+  { name: "Snetterton 300",       lat: 52.4634,  lng:  0.9441,  sf_lat: 52.4634078, sf_lng:  0.9441319,
+    corners: ["Riches","Sear","Agostini","Hamilton","Coram","Russell","Chicago","Bomb Hole","Montreal","Murray's","Oggies"] },
+  { name: "Silverstone GP",       lat: 52.0685,  lng: -1.0169,  sf_lat: 52.0685,    sf_lng: -1.0169    },
+  { name: "Silverstone National", lat: 52.0786,  lng: -1.0169,  sf_lat: 52.0786,    sf_lng: -1.0169    },
+  { name: "Brands Hatch",         lat: 51.3600,  lng:  0.2600,  sf_lat: 51.3600,    sf_lng:  0.2600    },
+  { name: "Donington Park",       lat: 52.8308,  lng: -1.3754,  sf_lat: 52.8308,    sf_lng: -1.3754    },
+  { name: "Oulton Park",          lat: 53.1800,  lng: -2.6130,  sf_lat: 53.1800,    sf_lng: -2.6130    },
+  { name: "Croft Circuit",        lat: 54.4550,  lng: -1.5560,  sf_lat: 54.4550,    sf_lng: -1.5560    },
+  { name: "Knockhill",            lat: 56.1310,  lng: -3.5070,  sf_lat: 56.1310,    sf_lng: -3.5070    },
+  { name: "Thruxton",             lat: 51.2080,  lng: -1.6090,  sf_lat: 51.2080,    sf_lng: -1.6090    },
+  { name: "Cadwell Park",         lat: 53.3100,  lng: -0.0590,  sf_lat: 53.3100,    sf_lng: -0.0590    },
+  { name: "Castle Combe",         lat: 51.4930,  lng: -2.2160,  sf_lat: 51.4930,    sf_lng: -2.2160    },
+  { name: "Mallory Park",         lat: 52.5990,  lng: -1.3370,  sf_lat: 52.5990,    sf_lng: -1.3370    },
+  { name: "Anglesey",             lat: 53.1880,  lng: -4.4960,  sf_lat: 53.1880,    sf_lng: -4.4960    },
+  { name: "Bedford Autodrome",    lat: 52.2350,  lng: -0.4700,  sf_lat: 52.2350,    sf_lng: -0.4700    },
+  { name: "Blyton Park",          lat: 53.4590,  lng: -0.6890,  sf_lat: 53.4590,    sf_lng: -0.6890    },
+  { name: "Pembrey",              lat: 51.7060,  lng: -4.3240,  sf_lat: 51.7060,    sf_lng: -4.3240    },
+  { name: "Goodwood",             lat: 50.8580,  lng: -0.7530,  sf_lat: 50.8580,    sf_lng: -0.7530    },
+  { name: "Lydden Hill",          lat: 51.1770,  lng:  1.1980,  sf_lat: 51.1770,    sf_lng:  1.1980    },
+  { name: "Curborough",           lat: 52.6931,  lng: -1.8022,  sf_lat: 52.6931,    sf_lng: -1.8022    },
+  { name: "Three Sisters",        lat: 53.5060,  lng: -2.6330,  sf_lat: 53.5060,    sf_lng: -2.6330    },
+  { name: "Rockingham",           lat: 52.5150,  lng: -0.6620,  sf_lat: 52.5150,    sf_lng: -0.6620    },
+  { name: "Llandow",              lat: 51.4320,  lng: -3.4990,  sf_lat: 51.4320,    sf_lng: -3.4990    },
+  { name: "Kirkistown",           lat: 54.4603,  lng: -5.5131,  sf_lat: 54.4603,    sf_lng: -5.5131    },
+  { name: "Bishopscourt",         lat: 54.4181,  lng: -5.6539,  sf_lat: 54.4181,    sf_lng: -5.6539    },
+  { name: "Nurburgring GP",       lat: 50.3356,  lng:  6.9475,  sf_lat: 50.3356,    sf_lng:  6.9475    },
+  { name: "Nordschleife",         lat: 50.3378,  lng:  6.9567,  sf_lat: 50.3378,    sf_lng:  6.9567    },
+  { name: "Bilsterberg",          lat: 51.5639,  lng:  8.5478,  sf_lat: 51.5639,    sf_lng:  8.5478    },
+  { name: "Spa-Francorchamps",    lat: 50.4372,  lng:  5.9714,  sf_lat: 50.4372,    sf_lng:  5.9714    },
+  { name: "Zolder",               lat: 50.9894,  lng:  5.2569,  sf_lat: 50.9894,    sf_lng:  5.2569    },
+  { name: "Mettet",               lat: 50.3256,  lng:  4.6997,  sf_lat: 50.3256,    sf_lng:  4.6997    },
+  { name: "Chimay",               lat: 50.0467,  lng:  4.3181,  sf_lat: 50.0467,    sf_lng:  4.3181    },
+  { name: "Dijon-Prenois",        lat: 47.3625,  lng:  4.8992,  sf_lat: 47.3625,    sf_lng:  4.8992    },
+  { name: "Magny-Cours",          lat: 46.8633,  lng:  3.1633,  sf_lat: 46.8633,    sf_lng:  3.1633    },
+  { name: "Mas du Clos",          lat: 45.8994,  lng:  2.3389,  sf_lat: 45.8994,    sf_lng:  2.3389    },
+  { name: "Zandvoort",            lat: 52.3888,  lng:  4.5408,  sf_lat: 52.3888,    sf_lng:  4.5408    },
+  { name: "TT Assen",             lat: 52.9617,  lng:  6.5239,  sf_lat: 52.9617,    sf_lng:  6.5239    },
+];
+
+function haversineM(lat1, lng1, lat2, lng2) {
+  const R = 6371000, r = Math.PI / 180;
+  const dLat = (lat2 - lat1) * r, dLng = (lng2 - lng1) * r;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*r)*Math.cos(lat2*r)*Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+function matchKnownTrack(data) {
+  const valid = data.filter(r => r.lat !== 0);
+  if (valid.length === 0) return null;
+  const mLat = valid[Math.floor(valid.length / 2)].lat;
+  const mLng = valid[Math.floor(valid.length / 2)].lng;
+  let best = null, bestD = Infinity;
+  for (const t of KNOWN_TRACKS) {
+    const d = haversineM(mLat, mLng, t.lat, t.lng);
+    if (d < bestD) { bestD = d; best = t; }
+  }
+  return bestD < 3000 ? best : null; // within 3km
+}
+
+// ─── State ─────────────────────────────────────────────────────────────────
+const state = {
+  catbus: [],       // [{...row}]
+  racebox: [],
+  laps: [],         // [{start, end, idx0, idx1}]
+  selectedLaps: new Set(),
+  compareMode: false,
+  viewRange: [0, 1], // fraction 0–1 of current dataset
+  cursorIdx: 0,
+  sfZone: null,     // {lat, lng} — start/finish
+  raceboxOffset: 0, // seconds
+  map: null,
+  routeLayer: null,
+  markerLayer: null,
+  sfMarker: null,
+  raceboxLayer: null,
+};
+
+// ─── Map Init ──────────────────────────────────────────────────────────────
+function initMap() {
+  state.map = L.map('map', { zoomControl: true, attributionControl: false })
+    .setView([52.46, 0.94], 14);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    subdomains: 'abcd',
+  }).addTo(state.map);
+
+  state.map.on('click', onMapClick);
+}
+
+// ─── CSV Parsing ───────────────────────────────────────────────────────────
+function detectFormat(headers) {
+  const h = headers.map(x => x.trim().toLowerCase());
+  if (h.includes('timestamp_utc')) return 'catbus';
+  if (h.includes('this file is created using racechrono')) return 'racechrono';
+  if (h.some(x => x.includes('latitude')) || h.some(x => x.includes('accx'))) return 'racebox';
+  return 'unknown';
+}
+
+function parseCatbusRow(row) {
+  return {
+    ts: new Date(row.timestamp_utc),
+    lat: parseFloat(row.lat) || 0,
+    lng: parseFloat(row.lng) || 0,
+    alt: parseFloat(row.alt) || 0,
+    speed_mph: parseFloat(row.speed_mph) || 0,
+    speed_kmh: parseFloat(row.speed_kmh) || 0,
+    distance_km: parseFloat(row.distance_km) || 0,
+    fuel_1: parseFloat(row.fuel_level_1min) || 0,
+    fuel_5: parseFloat(row.fuel_level_5min) || 0,
+    wfl: parseFloat(row.wheel_speed_fl) || 0,
+    wfr: parseFloat(row.wheel_speed_fr) || 0,
+    wrl: parseFloat(row.wheel_speed_rl) || 0,
+    wrr: parseFloat(row.wheel_speed_rr) || 0,
+    rpm: parseFloat(row.rpm) || 0,
+    coolant: parseFloat(row.coolant_temp) || 0,
+    lockup: parseFloat(row.wheel_lockup) || 0,
+    voltage: parseFloat(row.voltage) || 0,
+    lat_g: parseFloat(row.lateral_g) || 0,
+    lon_g: parseFloat(row.longitudinal_g) || 0,
+    btn_l: parseFloat(row.button_left) || 0,
+    btn_r: parseFloat(row.button_right) || 0,
+    led_l: parseFloat(row.led_left) || 0,
+    led_r: parseFloat(row.led_right) || 0,
+    led_w: parseFloat(row.led_wiper) || 0,
+    led_s: parseFloat(row.led_signal) || 0,
+    _src: 'catbus',
+  };
+}
+
+function parseRaceboxRow(row, headers) {
+  // Find columns by fuzzy match
+  const h = headers.map(x => x.trim().toLowerCase());
+  const get = (keys) => {
+    for (const k of keys) {
+      const idx = h.findIndex(x => x.includes(k));
+      if (idx >= 0) return parseFloat(Object.values(row)[idx]) || 0;
+    }
+    return 0;
+  };
+  const tsRaw = Object.values(row)[0]; // first column usually time
+  return {
+    ts: new Date(tsRaw),
+    lat: get(['latitude', 'lat']),
+    lng: get(['longitude', 'lon', 'lng']),
+    speed_kmh: get(['speed']),
+    speed_mph: get(['speed']) * 0.621371,
+    accx: get(['accx', 'acc_x', 'accel_x', 'lateral']),
+    accy: get(['accy', 'acc_y', 'accel_y', 'longitudinal']),
+    accz: get(['accz', 'acc_z', 'accel_z']),
+    alt: get(['altitude', 'alt']),
+    heading: get(['heading', 'course']),
+    _src: 'racebox',
+  };
+}
+
+function filterGpsOutliers(data) {
+  const pts = data.filter(r => r.lat !== 0);
+  if (pts.length < 10) return data;
+  // Median lat/lng of all valid points
+  const lats = pts.map(r => r.lat).sort((a,b) => a-b);
+  const lngs = pts.map(r => r.lng).sort((a,b) => a-b);
+  const medLat = lats[Math.floor(lats.length/2)];
+  const medLng = lngs[Math.floor(lngs.length/2)];
+  // Keep points within 1 degree of median (≈111km), or exactly 0,0 (no-fix rows kept for timeline)
+  return data.filter(r => {
+    if (r.lat === 0 && r.lng === 0) return true;
+    return Math.abs(r.lat - medLat) < 1.0 && Math.abs(r.lng - medLng) < 1.0;
+  });
+}
+
+function loadFiles(files) {
+  let pending = files.length;
+  const newCatbus = [], newRacebox = [];
+
+  const finish = () => {
+    if (--pending > 0) return;
+    state.catbus = [...state.catbus, ...newCatbus]
+      .filter(r => !isNaN(r.ts.getTime()) && r.ts.getFullYear() >= 2020)
+      .sort((a, b) => a.ts - b.ts);
+    state.catbus = filterGpsOutliers(state.catbus);
+    state.racebox = [...state.racebox, ...newRacebox].sort((a, b) => a.ts - b.ts);
+    onDataLoaded();
+  };
+
+  for (const file of files) {
+    // Peek at first 200 bytes to detect format without reading the whole file
+    const peekReader = new FileReader();
+    peekReader.onload = (e) => {
+      if (e.target.result.startsWith('This file is created using RaceChrono')) {
+        // RaceChrono needs full text for custom parser
+        const fullReader = new FileReader();
+        fullReader.onload = (ev) => {
+          addFileTag(file.name, 'racechrono');
+          parseRacechronoCSV(ev.target.result).forEach(r => newCatbus.push(r));
+          finish();
+        };
+        fullReader.readAsText(file);
+      } else {
+        // Use PapaParse streaming directly on the File object (non-blocking)
+        Papa.parse(file, {
+          header: true,
+          skipEmptyLines: true,
+          complete(results) {
+            const headers = results.meta.fields || [];
+            const fmt = detectFormat(headers);
+            addFileTag(file.name, fmt);
+            if (fmt === 'catbus') {
+              for (const row of results.data) {
+                const p = parseCatbusRow(row);
+                if (p.lat !== 0 || p.lng !== 0) newCatbus.push(p);
+              }
+            } else if (fmt === 'racebox') {
+              for (const row of results.data) newRacebox.push(parseRaceboxRow(row, headers));
+            } else {
+              console.warn('Unknown CSV format', file.name, headers.slice(0, 5));
+            }
+            finish();
+          }
+        });
+      }
+    };
+    peekReader.readAsText(file.slice(0, 200));
+  }
+}
+
+function parseRacechronoCSV(text) {
+  const lines = text.split('\n');
+
+  // Find the column header row (starts with "timestamp,")
+  let headerIdx = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith('timestamp,')) { headerIdx = i; break; }
+  }
+  if (headerIdx < 0) return [];
+
+  // Rows: headerIdx = col names, +1 = units, +2 = sources, +3 onwards = data
+  const dataLines = lines.slice(headerIdx + 3).filter(l => l.trim());
+
+  const rows = [];
+  for (const line of dataLines) {
+    // Split carefully — values are numeric so no quoting in data rows
+    const c = line.split(',');
+    if (c.length < 20) continue;
+    const tsUnix = parseFloat(c[0]);
+    if (isNaN(tsUnix)) continue;
+    const lat = parseFloat(c[11]);
+    const lng = parseFloat(c[12]);
+    const speed_ms = parseFloat(c[14]) || 0;
+    rows.push({
+      ts:          new Date(tsUnix * 1000),
+      lat:         isNaN(lat) ? 0 : lat,
+      lng:         isNaN(lng) ? 0 : lng,
+      alt:         parseFloat(c[6])  || 0,
+      speed_mph:   speed_ms * 2.23694,
+      speed_kmh:   speed_ms * 3.6,
+      distance_km: (parseFloat(c[4]) || 0) / 1000,
+      lat_g:       parseFloat(c[17]) || 0,   // lateral_acc (G)
+      lon_g:       parseFloat(c[19]) || 0,   // longitudinal_acc (G)
+      rpm: 0, coolant: 0, voltage: 0,
+      fuel_1: 0, fuel_5: 0,
+      wfl: 0, wfr: 0, wrl: 0, wrr: 0,
+      wheel_lockup: 0,
+      btn_l: 0, btn_r: 0, led_l: 0, led_r: 0, led_w: 0, led_s: 0,
+      _src: 'racechrono',
+    });
+  }
+  return rows;
+}
+
+function addFileTag(name, fmt) {
+  const el = document.createElement('div');
+  el.textContent = `✓ ${name} (${fmt})`;
+  document.getElementById('file-list').appendChild(el);
+}
+
+// ─── Main data-loaded handler ──────────────────────────────────────────────
+function onDataLoaded() {
+  if (state.catbus.length === 0) return;
+
+  detectLaps();
+  buildScrubber();
+  renderMap();
+  renderAllGraphs();
+  updateHeader();
+  updateLapButtons();
+  if (document.getElementById('panel-analysis').classList.contains('visible')) renderAnalysis();
+
+  // Show RaceBox offset if needed
+  if (state.racebox.length > 0) {
+    document.getElementById('offset-control').style.display = 'flex';
+    buildOffsetSlider();
+    renderRaceboxLayer();
+  }
+
+  document.getElementById('empty-state').style.display = 'none';
+}
+
+// ─── Lap Detection ─────────────────────────────────────────────────────────
+function detectLaps() {
+  const data = state.catbus;
+  if (data.length === 0) return;
+
+  const track = matchKnownTrack(data);
+  if (track) {
+    state.sfZone = { lat: track.sf_lat, lng: track.sf_lng, name: track.name };
+    state.laps = detectLapsByClosestApproach(data, track.sf_lat, track.sf_lng);
+    document.getElementById('hdr-session').dataset.track = track.name;
+  } else {
+    state.sfZone = null;
+    state.laps = [{ start: data[0].ts, end: data[data.length-1].ts, idx0: 0, idx1: data.length-1, num: 1 }];
+  }
+}
+
+function detectLapsByClosestApproach(data, sfLat, sfLng) {
+  const ZONE_M = 50;   // enter zone within 50m
+  const MIN_LAP_S = 30, MAX_LAP_S = 600;
+
+  const laps = [];
+  let lapStart = 0;
+  let inZone = false;
+  let minDist = Infinity, minIdx = -1;
+
+  for (let i = 0; i < data.length; i++) {
+    const r = data[i];
+    if (r.lat === 0 && r.lng === 0) continue;
+    const dist = haversineM(r.lat, r.lng, sfLat, sfLng);
+
+    if (dist < ZONE_M) {
+      inZone = true;
+      if (dist < minDist) { minDist = dist; minIdx = i; }
+    } else if (inZone) {
+      // Just left the zone — use closest approach point as the lap boundary
+      if (minIdx > lapStart + 10) {
+        const dur = (data[minIdx].ts - data[lapStart].ts) / 1000;
+        if (dur >= MIN_LAP_S && dur <= MAX_LAP_S) {
+          laps.push({ start: data[lapStart].ts, end: data[minIdx].ts, idx0: lapStart, idx1: minIdx, num: laps.length + 1, type: 'flying' });
+        }
+        // Always advance lapStart — even if lap was rejected by duration (e.g. outlap from pits)
+        lapStart = minIdx;
+      }
+      inZone = false;
+      minDist = Infinity;
+      minIdx = -1;
+    }
+  }
+
+  // Final partial lap
+  const lastIdx = data.length - 1;
+  if (lapStart < lastIdx) {
+    const dur = (data[lastIdx].ts - data[lapStart].ts) / 1000;
+    if (dur >= MIN_LAP_S) {
+      laps.push({ start: data[lapStart].ts, end: data[lastIdx].ts, idx0: lapStart, idx1: lastIdx, num: laps.length + 1, type: 'flying' });
+    }
+  }
+
+  if (laps.length === 0) {
+    return [{ start: data[0].ts, end: data[lastIdx].ts, idx0: 0, idx1: lastIdx, num: 1, type: 'flying' }];
+  }
+
+  // Classify outlap/inlap: check if car was slow (< 10mph) for a stretch just before/after the lap
+  const SLOW_MPH = 10, SLOW_WINDOW_S = 20;
+  function hasSlowPeriod(idxCenter, lookBack) {
+    // Scan up to SLOW_WINDOW_S seconds before (lookBack=true) or after (lookBack=false) idxCenter
+    let slowCount = 0, totalCount = 0;
+    for (let i = idxCenter; lookBack ? i >= 0 : i < data.length; lookBack ? i-- : i++) {
+      const dt = Math.abs((data[i].ts - data[idxCenter].ts) / 1000);
+      if (dt > SLOW_WINDOW_S) break;
+      totalCount++;
+      if ((data[i].speed_mph || 0) < SLOW_MPH) slowCount++;
+    }
+    return totalCount > 5 && slowCount / totalCount > 0.7;
+  }
+
+  for (const lap of laps) {
+    const slowBefore = hasSlowPeriod(lap.idx0, true);
+    const slowAfter  = hasSlowPeriod(lap.idx1, false);
+    if (slowBefore && slowAfter) lap.type = 'outlap'; // full out-and-in, shouldn't happen but cover it
+    else if (slowBefore) lap.type = 'outlap';
+    else if (slowAfter)  lap.type = 'inlap';
+  }
+
+  return laps;
+}
+
+// ─── Map Rendering ─────────────────────────────────────────────────────────
+const LAP_COLORS = ['#4ecca3','#e94560','#f5a623','#9b59b6','#3498db','#e67e22','#2ecc71','#e74c3c'];
+
+function lonGColor(lon_g) {
+  const maxG = 0.8;
+  const t = Math.max(-1, Math.min(1, lon_g / maxG));
+  if (t >= 0) {
+    const g = Math.round(60 + 195 * t);
+    return `rgb(0,${g},0)`;
+  } else {
+    const r = Math.round(60 + 195 * (-t));
+    return `rgb(${r},0,0)`;
+  }
+}
+
+function renderMap() {
+  if (state.routeLayer) { state.map.removeLayer(state.routeLayer); state.routeLayer = null; }
+  if (state.markerLayer) { state.map.removeLayer(state.markerLayer); state.markerLayer = null; }
+  if (state.sfMarker) { state.map.removeLayer(state.sfMarker); state.sfMarker = null; }
+
+  const data = state.catbus;
+  if (data.length === 0) return;
+
+  const validPts = data.filter(r => r.lat !== 0);
+  if (validPts.length === 0) return;
+
+  // Draw route as colored segments by lap or by longitudinal G (green=accel, red=brake)
+  state.routeLayer = L.layerGroup().addTo(state.map);
+
+  if (state.laps.length > 1) {
+    state.laps.forEach((lap, li) => {
+      const pts = data.slice(lap.idx0, lap.idx1+1).filter(r => r.lat !== 0).map(r => [r.lat, r.lng]);
+      if (pts.length < 2) return;
+      L.polyline(pts, { color: LAP_COLORS[li % LAP_COLORS.length], weight: 2, opacity: 0.7 }).addTo(state.routeLayer);
+    });
+  } else {
+    // Longitudinal-G coloured route: green=accelerating, red=braking
+    const valid = data.filter(r => r.lat !== 0);
+    const step = Math.max(1, Math.floor(valid.length / 600));
+    for (let i = step; i < valid.length; i += step) {
+      const prev = valid[i - step], cur = valid[i];
+      const avgLonG = (prev.lon_g + cur.lon_g) / 2;
+      L.polyline([[prev.lat, prev.lng],[cur.lat, cur.lng]], {
+        color: lonGColor(avgLonG), weight: 3, opacity: 0.85
+      }).addTo(state.routeLayer);
+    }
+  }
+
+  // SF marker
+  if (state.sfZone) {
+    state.sfMarker = L.circleMarker([state.sfZone.lat, state.sfZone.lng], {
+      radius: 8, color: '#fff', fillColor: '#e94560', fillOpacity: 1, weight: 2
+    }).bindTooltip(`S/F — ${state.sfZone.name || ''}`).addTo(state.map);
+  }
+
+  // Moving cursor marker
+  const icon = L.divIcon({ className: '', html: `<div style="width:12px;height:12px;background:#fff;border:2px solid #e94560;border-radius:50%;transform:translate(-50%,-50%)"></div>`, iconSize: [0,0] });
+  state.markerLayer = L.marker([validPts[0].lat, validPts[0].lng], { icon }).addTo(state.map);
+
+  // Fit bounds
+  state.map.fitBounds(L.latLngBounds(validPts.map(r => [r.lat, r.lng])).pad(0.1));
+}
+
+function renderRaceboxLayer() {
+  if (state.raceboxLayer) { state.map.removeLayer(state.raceboxLayer); state.raceboxLayer = null; }
+  const rb = state.racebox.filter(r => r.lat !== 0);
+  if (rb.length === 0) return;
+  const pts = rb.map(r => [r.lat, r.lng]);
+  state.raceboxLayer = L.polyline(pts, { color: '#3498db', weight: 2, opacity: 0.6, dashArray: '4,4' }).addTo(state.map);
+}
+
+// ─── Scrubber ──────────────────────────────────────────────────────────────
+// Scrubber works in elapsed seconds (0 → duration) to avoid large-number issues
+let sliderInst = null;
+
+function buildScrubber() {
+  const data = state.catbus;
+  state._t0ms = data[0].ts.getTime();
+  state._t1ms = data[data.length-1].ts.getTime();
+  const durSec = (state._t1ms - state._t0ms) / 1000;
+
+  const el = document.getElementById('timeline-slider');
+  if (sliderInst) { sliderInst.destroy(); sliderInst = null; }
+  noUiSlider.create(el, {
+    start: [0, durSec],
+    connect: true,
+    range: { min: 0, max: Math.max(durSec, 1) },
+    step: 0.2,
+  });
+  sliderInst = el.noUiSlider;
+  sliderInst.on('update', vals => {
+    const loSec = parseFloat(vals[0]), hiSec = parseFloat(vals[1]);
+    const loMs = state._t0ms + loSec * 1000;
+    const hiMs = state._t0ms + hiSec * 1000;
+    const range = state._t1ms - state._t0ms;
+    state.viewRange = [loSec * 1000 / range, hiSec * 1000 / range];
+    document.getElementById('scrub-t0').textContent = new Date(loMs).toISOString().substr(11,8);
+    document.getElementById('scrub-t1').textContent = new Date(hiMs).toISOString().substr(11,8);
+    state.cursorIdx = findNearestIdx((loMs + hiMs) / 2);
+    updateMapMarker();
+    updateGraphCursor(loMs, hiMs);
+    updateHeader();
+  });
+}
+
+let offsetSliderInst = null;
+function buildOffsetSlider() {
+  const el = document.getElementById('offset-slider');
+  if (offsetSliderInst) { offsetSliderInst.destroy(); offsetSliderInst = null; }
+  noUiSlider.create(el, {
+    start: [0],
+    range: { min: -300, max: 300 },
+    step: 1,
+  });
+  offsetSliderInst = el.noUiSlider;
+  offsetSliderInst.on('update', vals => {
+    state.raceboxOffset = parseFloat(vals[0]);
+    document.getElementById('offset-val').textContent = `${state.raceboxOffset}s`;
+    renderAllGraphs();
+  });
+}
+
+function findNearestIdx(tsMs) {
+  const data = state.catbus;
+  let lo = 0, hi = data.length - 1;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (data[mid].ts.getTime() < tsMs) lo = mid + 1; else hi = mid;
+  }
+  return lo;
+}
+
+// ─── Map Marker Update ─────────────────────────────────────────────────────
+function updateMapMarker() {
+  if (!state.markerLayer) return;
+  const r = state.catbus[state.cursorIdx];
+  if (r && r.lat !== 0) state.markerLayer.setLatLng([r.lat, r.lng]);
+}
+
+function onMapClick(e) {
+  const { lat, lng } = e.latlng;
+  const data = state.catbus;
+  let best = 0, bestD = Infinity;
+  for (let i = 0; i < data.length; i++) {
+    const d = (data[i].lat-lat)**2 + (data[i].lng-lng)**2;
+    if (d < bestD) { bestD = d; best = i; }
+  }
+  state.cursorIdx = best;
+  if (sliderInst) {
+    const elapsedSec = (data[best].ts.getTime() - state._t0ms) / 1000;
+    const durSec = (state._t1ms - state._t0ms) / 1000;
+    const vals = sliderInst.get().map(parseFloat);
+    const halfSpan = (vals[1] - vals[0]) / 2;
+    sliderInst.set([
+      Math.max(0, elapsedSec - halfSpan),
+      Math.min(durSec, elapsedSec + halfSpan)
+    ]);
+  }
+}
+
+// ─── Graphs ────────────────────────────────────────────────────────────────
+const PLOT_LAYOUT_BASE = {
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(0,0,0,0)',
+  font: { color: '#888', size: 10 },
+  margin: { t: 32, b: 30, l: 50, r: 50 },
+  xaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, showticklabels: true, tickformat: '%H:%M:%S' },
+  legend: { font: { size: 9 }, bgcolor: 'rgba(0,0,0,0)', orientation: 'h', x: 0, y: 1.18, xanchor: 'left', yanchor: 'top' },
+};
+
+function makeLayout(extra = {}) {
+  return Object.assign({}, PLOT_LAYOUT_BASE, extra, {
+    xaxis: Object.assign({}, PLOT_LAYOUT_BASE.xaxis, extra.xaxis || {}),
+  });
+}
+
+let graphsInitialized = false;
+
+// ─── Lap Overlay ───────────────────────────────────────────────────────────
+let overlayAlign = 'time'; // 'time' | 'dist'
+
+function renderLapOverlay() {
+  const lapNums = [...state.selectedLaps].sort((a, b) => a - b);
+  const laps = lapNums.map(n => state.laps.find(l => l.num === n)).filter(Boolean);
+  if (laps.length === 0) return;
+
+  const cfg = { responsive: true, displayModeBar: false };
+  const speedT = [], gfT = [], wheelT = [], fuelT = [];
+
+  laps.forEach((lap, li) => {
+    const ld = state.catbus.slice(lap.idx0, lap.idx1 + 1);
+    const col = LAP_COLORS[li % LAP_COLORS.length];
+    const lbl = `L${lap.num}`;
+
+    let xs;
+    if (overlayAlign === 'dist') {
+      const d0 = ld[0].distance_km;
+      xs = ld.map(r => (r.distance_km - d0).toFixed(3) * 1);
+    } else {
+      const t0 = ld[0].ts.getTime();
+      xs = ld.map(r => ((r.ts.getTime() - t0) / 1000));
+    }
+
+    speedT.push({ x: xs, y: ld.map(r => r.speed_mph),  name: lbl,          line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
+    speedT.push({ x: xs, y: ld.map(r => r.rpm / 100),  name: `${lbl} RPM÷100`, line: { color: col, width: 0.8, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
+    gfT.push(   { x: xs, y: ld.map(r => r.lat_g),      name: `${lbl} Lat`, line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
+    gfT.push(   { x: xs, y: ld.map(r => r.lon_g),      name: `${lbl} Lon`, line: { color: col, width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
+    wheelT.push({ x: xs, y: ld.map(r => (r.wfl + r.wfr) / 2), name: `${lbl} Front`, line: { color: col, width: 1 }, type: 'scattergl', mode: 'lines' });
+    wheelT.push({ x: xs, y: ld.map(r => (r.wrl + r.wrr) / 2), name: `${lbl} Rear`,  line: { color: col, width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
+    fuelT.push( { x: xs, y: ld.map(r => r.fuel_1),     name: `${lbl} Fuel`, line: { color: col, width: 1 }, type: 'scattergl', mode: 'lines' });
+  });
+
+  const xLabel = overlayAlign === 'dist' ? 'Distance (km)' : 'Elapsed (s)';
+  const xaxis  = { color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: xLabel, titlefont: { size: 9 } };
+
+  Plotly.react('g-speed',  speedT,  makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: 'mph', titlefont: { size: 9 } } }), cfg);
+  Plotly.react('g-gforce', gfT,     makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333' } }), cfg);
+  Plotly.react('g-wheels', wheelT,  makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
+  Plotly.react('g-fuel',   fuelT,   makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
+
+  graphsInitialized = true;
+  setupGraphSync(); // reuses existing sync — applyXRange handles numeric ranges too
+}
+
+function renderAllGraphs() {
+  if (state.compareMode && state.selectedLaps.size > 1) {
+    renderLapOverlay();
+    return;
+  }
+
+  const data = visibleData();
+  if (data.length === 0) return;
+
+  const xs = data.map(r => r.ts);
+
+  // Speed graph
+  const speedTraces = [
+    { x: xs, y: data.map(r => r.speed_mph), name: 'Speed (mph)', line: { color: '#4ecca3', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
+    { x: xs, y: data.map(r => r.rpm / 100), name: 'RPM÷100', line: { color: '#f5a623', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
+    { x: xs, y: data.map(r => r.coolant), name: 'Coolant°C', line: { color: '#e94560', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y2' },
+    { x: xs, y: data.map(r => r.voltage), name: 'Voltage', line: { color: '#9b59b6', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y2' },
+  ];
+  if (state.racebox.length > 0) {
+    const rb = raceboxVisible();
+    speedTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.speed_mph), name: 'RB Speed', line: { color: '#3498db', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
+  }
+
+  const speedLayout = makeLayout({
+    yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: 'mph', titlefont: { size: 9 } },
+    yaxis2: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, overlaying: 'y', side: 'right', title: '°C / V', titlefont: { size: 9 } },
+    showlegend: true,
+  });
+
+  // G-force graph (with indicators overlaid on secondary axis)
+  const missedCancelXs = [], missedCancelYs = [];
+  for (let i = 0; i < data.length; i++) {
+    const singleIndicator = (data[i].led_l > 0) !== (data[i].led_r > 0);
+    if (Math.abs(data[i].lat_g) > 0.3 && singleIndicator) {
+      missedCancelXs.push(data[i].ts); missedCancelYs.push(1.1);
+    }
+  }
+  const gfTraces = [
+    { x: xs, y: data.map(r => r.lat_g), name: 'Lateral G', line: { color: '#4ecca3', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
+    { x: xs, y: data.map(r => r.lon_g), name: 'Long G', line: { color: '#e94560', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
+    { x: xs, y: data.map(r => r.led_l), name: 'LED Left', fill: 'tozeroy', fillcolor: 'rgba(78,204,163,0.25)', line: { color: '#4ecca3', width: 1 }, type: 'scatter', mode: 'lines', yaxis: 'y2' },
+    { x: xs, y: data.map(r => r.led_r * 1.05), name: 'LED Right', fill: 'tozeroy', fillcolor: 'rgba(245,166,35,0.25)', line: { color: '#f5a623', width: 1 }, type: 'scatter', mode: 'lines', yaxis: 'y2' },
+  ];
+  if (missedCancelXs.length > 0) {
+    gfTraces.push({ x: missedCancelXs, y: missedCancelYs, name: 'Missed cancel?', mode: 'markers', marker: { color: '#e94560', size: 4, symbol: 'circle' }, type: 'scatter', yaxis: 'y2' });
+  }
+  if (state.racebox.length > 0) {
+    const rb = raceboxVisible();
+    gfTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.accx), name: 'RB AccX', line: { color: '#3498db', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines', yaxis: 'y' });
+    gfTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.accy), name: 'RB AccY', line: { color: '#f5a623', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines', yaxis: 'y' });
+  }
+
+  // Wheel speeds
+  const wheelTraces = [
+    { x: xs, y: data.map(r => r.wfl), name: 'FL', line: { color: '#4ecca3', width: 1 }, type: 'scattergl', mode: 'lines' },
+    { x: xs, y: data.map(r => r.wfr), name: 'FR', line: { color: '#e94560', width: 1 }, type: 'scattergl', mode: 'lines' },
+    { x: xs, y: data.map(r => r.wrl), name: 'RL', line: { color: '#f5a623', width: 1 }, type: 'scattergl', mode: 'lines' },
+    { x: xs, y: data.map(r => r.wrr), name: 'RR', line: { color: '#9b59b6', width: 1 }, type: 'scattergl', mode: 'lines' },
+  ];
+  // Lockup highlight
+  const lockupSegs = buildFillTrace(xs, data.map(r => r.lockup > 0 ? 1 : null), 'rgba(233,69,96,0.25)', 'Lockup');
+  if (lockupSegs) wheelTraces.push(lockupSegs);
+
+  // Fuel
+  const fuelTraces = [
+    { x: xs, y: data.map(r => r.fuel_1), name: 'Fuel 1min', line: { color: '#4ecca3', width: 1.5 }, type: 'scattergl', mode: 'lines' },
+    { x: xs, y: data.map(r => r.fuel_5), name: 'Fuel 5min', line: { color: '#f5a623', width: 1, dash: 'dash' }, type: 'scattergl', mode: 'lines' },
+  ];
+
+  const cfg = { responsive: true, displayModeBar: false };
+
+  Plotly.react('g-speed', speedTraces, speedLayout, cfg);
+  Plotly.react('g-gforce', gfTraces, makeLayout({
+    yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333' },
+    yaxis2: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, overlaying: 'y', side: 'right', range: [-0.1, 1.3], showticklabels: false },
+    showlegend: true,
+  }), cfg);
+  Plotly.react('g-wheels', wheelTraces, makeLayout({ showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
+  Plotly.react('g-fuel', fuelTraces, makeLayout({ showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
+
+  graphsInitialized = true;
+  setupGraphSync();
+}
+
+function buildFillTrace(xs, ys, fillcolor, name) {
+  // Returns a filled area trace for binary data
+  return { x: xs, y: ys, name, fill: 'tozeroy', fillcolor, line: { width: 0 }, type: 'scatter', mode: 'lines', showlegend: true };
+}
+
+// ─── Visible Data Filtering ────────────────────────────────────────────────
+function visibleData() {
+  const data = state.catbus;
+  if (data.length === 0) return [];
+
+  if (state.compareMode && state.selectedLaps.size > 1) {
+    // Return concatenated (all selected laps — caller handles time-shifting)
+    const out = [];
+    for (const lapNum of state.selectedLaps) {
+      const lap = state.laps.find(l => l.num === lapNum);
+      if (lap) out.push(...data.slice(lap.idx0, lap.idx1+1));
+    }
+    return out;
+  }
+
+  if (state.selectedLaps.size === 1) {
+    const lapNum = [...state.selectedLaps][0];
+    const lap = state.laps.find(l => l.num === lapNum);
+    if (lap) return data.slice(lap.idx0, lap.idx1+1);
+  }
+
+  // Apply timeline range
+  const t0 = data[0].ts.getTime(), t1 = data[data.length-1].ts.getTime();
+  const lo = t0 + state.viewRange[0] * (t1 - t0);
+  const hi = t0 + state.viewRange[1] * (t1 - t0);
+  return data.filter(r => { const t = r.ts.getTime(); return t >= lo && t <= hi; });
+}
+
+function raceboxVisible() {
+  const rb = state.racebox;
+  const offsetMs = state.raceboxOffset * 1000;
+  return rb.map(r => ({ ...r, ts: new Date(r.ts.getTime() + offsetMs) }));
+}
+
+// ─── Graph Sync ────────────────────────────────────────────────────────────
+const GRAPH_IDS = ['g-speed', 'g-gforce', 'g-wheels', 'g-fuel'];
+// Use a generation counter instead of a boolean lock.
+// Each programmatic sync increments syncGen; event handlers ignore events
+// that were triggered by our own Plotly.relayout calls.
+let syncGen = 0;
+let activeSyncGen = -1;
+
+function applyXRange(x0, x1, sourceId) {
+  const gen = ++syncGen;
+  activeSyncGen = gen;
+
+  // Detect overlay mode (numeric elapsed/distance axis) vs normal datetime axis.
+  // Datetime values from Plotly come as strings like "2025-10-13 09:00:14" or
+  // as Date objects; numeric overlay values come as plain numbers.
+  // We distinguish by checking whether the parsed timestamp falls in a plausible
+  // real-world year range (2000–2100). Small elapsed seconds / km values won't.
+  const t0 = new Date(x0).getTime(), t1 = new Date(x1).getTime();
+  const isDatetime = !isNaN(t0) && t0 > 9.46e11 && t0 < 4.10e12; // ~2000–2100
+
+  if (isDatetime) {
+    const lo = Math.min(t0, t1), hi = Math.max(t0, t1);
+    if (lo >= hi) { activeSyncGen = -1; return; }
+    GRAPH_IDS.forEach(id => {
+      if (id === sourceId) return;
+      Plotly.relayout(id, { 'xaxis.range[0]': new Date(lo), 'xaxis.range[1]': new Date(hi) });
+    });
+    // Update map marker to midpoint
+    state.cursorIdx = findNearestIdx((lo + hi) / 2);
+    updateMapMarker();
+    updateHeader();
+  } else {
+    // Numeric overlay sync — pass values through as-is
+    const lo = Math.min(+x0, +x1), hi = Math.max(+x0, +x1);
+    if (lo >= hi) { activeSyncGen = -1; return; }
+    GRAPH_IDS.forEach(id => {
+      if (id === sourceId) return;
+      Plotly.relayout(id, { 'xaxis.range[0]': lo, 'xaxis.range[1]': hi });
+    });
+  }
+
+  setTimeout(() => { if (activeSyncGen === gen) activeSyncGen = -1; }, 300);
+}
+
+function setupGraphSync() {
+  if (state._syncSetup) return;
+  state._syncSetup = true;
+
+  GRAPH_IDS.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || !el._fullLayout) return;
+
+    el.on('plotly_relayout', evt => {
+      if (activeSyncGen === syncGen) return;
+      const x0 = evt['xaxis.range[0]'], x1 = evt['xaxis.range[1]'];
+      if (x0 !== undefined && x1 !== undefined) applyXRange(x0, x1, id);
+      if (evt['xaxis.autorange'] === true) {
+        const gen = ++syncGen; activeSyncGen = gen;
+        GRAPH_IDS.filter(g => g !== id).forEach(g => Plotly.relayout(g, { 'xaxis.autorange': true }));
+        setTimeout(() => { if (activeSyncGen === gen) activeSyncGen = -1; }, 300);
+      }
+    });
+
+    el.on('plotly_hover', evt => {
+      if (!evt.points || !evt.points.length) return;
+      const x = evt.points[0].x;
+      // Datetime mode: x is a string/Date — find nearest catbus point
+      const ts = new Date(x).getTime();
+      if (isNaN(ts) || ts < 9.46e11) return; // skip overlay mode (numeric x)
+      state.cursorIdx = findNearestIdx(ts);
+      updateMapMarker();
+      updateHeader();
+    });
+  });
+}
+
+function updateGraphCursor(lo, hi) {
+  if (!graphsInitialized) return;
+  if (state.compareMode && state.selectedLaps.size > 1) return; // overlay uses elapsed/dist axis
+  const gen = ++syncGen;
+  activeSyncGen = gen;
+  GRAPH_IDS.forEach(id => {
+    Plotly.relayout(id, { 'xaxis.range[0]': new Date(lo), 'xaxis.range[1]': new Date(hi) });
+  });
+  setTimeout(() => { if (activeSyncGen === gen) activeSyncGen = -1; }, 300);
+}
+
+// ─── Header / Status ───────────────────────────────────────────────────────
+function updateHeader() {
+  const data = state.catbus;
+  if (data.length === 0) return;
+  document.getElementById('hdr-points').textContent = data.length.toLocaleString();
+  const dur = (data[data.length-1].ts - data[0].ts) / 1000;
+  document.getElementById('hdr-duration').textContent = `${(dur/60).toFixed(1)}min`;
+  document.getElementById('hdr-laps').textContent = state.laps.length;
+  const trackName = state.sfZone ? state.sfZone.name : 'unknown track';
+  document.getElementById('hdr-session').textContent = `${data[0].ts.toISOString().substr(0,10)} · ${trackName}`;
+  const r = data[state.cursorIdx];
+  if (r) {
+    document.getElementById('hdr-cursor').textContent = `${r.ts.toISOString().substr(11,8)} ${r.speed_mph.toFixed(0)}mph`;
+  }
+}
+
+// ─── Lap Buttons ───────────────────────────────────────────────────────────
+function updateLapButtons() {
+  const wrap = document.getElementById('lap-buttons');
+  wrap.innerHTML = '';
+  state.laps.forEach(lap => {
+    const btn = document.createElement('button');
+    btn.className = 'lap-btn';
+    if (lap.type === 'inlap')  btn.classList.add('inlap');
+    if (lap.type === 'outlap') btn.classList.add('outlap');
+    const dur = (lap.end - lap.start) / 1000;
+    const tag = lap.type === 'inlap' ? ' IN' : lap.type === 'outlap' ? ' OUT' : '';
+    btn.textContent = `L${lap.num} ${dur.toFixed(0)}s${tag}`;
+    btn.dataset.lap = lap.num;
+    btn.onclick = () => toggleLap(lap.num, btn);
+    wrap.appendChild(btn);
+  });
+}
+
+function toggleLap(num, btn) {
+  if (state.compareMode) {
+    if (state.selectedLaps.has(num)) {
+      state.selectedLaps.delete(num);
+      btn.classList.remove('multi-active');
+    } else {
+      state.selectedLaps.add(num);
+      btn.classList.add('multi-active');
+    }
+  } else {
+    // Single select
+    document.querySelectorAll('.lap-btn').forEach(b => b.classList.remove('active'));
+    if (state.selectedLaps.has(num)) {
+      state.selectedLaps.clear();
+    } else {
+      state.selectedLaps.clear();
+      state.selectedLaps.add(num);
+      btn.classList.add('active');
+    }
+  }
+  renderAllGraphs();
+  renderMap();
+  if (document.getElementById('panel-analysis').classList.contains('visible')) renderAnalysis();
+}
+
+document.getElementById('compare-mode-btn').onclick = function() {
+  state.compareMode = !state.compareMode;
+  this.classList.toggle('active', state.compareMode);
+  state.selectedLaps.clear();
+  document.querySelectorAll('.lap-btn').forEach(b => { b.classList.remove('active','multi-active'); });
+  document.getElementById('overlay-controls').style.display = state.compareMode ? 'flex' : 'none';
+  renderAllGraphs();
+};
+
+document.getElementById('overlay-time-btn').onclick = function() {
+  overlayAlign = 'time';
+  document.getElementById('overlay-time-btn').classList.add('active');
+  document.getElementById('overlay-dist-btn').classList.remove('active');
+  if (state.compareMode && state.selectedLaps.size > 1) renderAllGraphs();
+};
+document.getElementById('overlay-dist-btn').onclick = function() {
+  overlayAlign = 'dist';
+  document.getElementById('overlay-dist-btn').classList.add('active');
+  document.getElementById('overlay-time-btn').classList.remove('active');
+  if (state.compareMode && state.selectedLaps.size > 1) renderAllGraphs();
+};
+
+document.getElementById('clear-laps-btn').onclick = () => {
+  state.selectedLaps.clear();
+  document.querySelectorAll('.lap-btn').forEach(b => { b.classList.remove('active','multi-active'); });
+  renderAllGraphs();
+  renderMap();
+};
+
+// ─── File drop / input ─────────────────────────────────────────────────────
+const dz = document.getElementById('drop-zone');
+dz.addEventListener('click', () => document.getElementById('file-input').click());
+dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+dz.addEventListener('drop', e => {
+  e.preventDefault();
+  dz.classList.remove('drag-over');
+  loadFiles([...e.dataTransfer.files]);
+});
+document.getElementById('file-input').addEventListener('change', e => {
+  loadFiles([...e.target.files]);
+  e.target.value = '';
+});
+
+// Also allow dropping anywhere on the page
+document.body.addEventListener('dragover', e => e.preventDefault());
+document.body.addEventListener('drop', e => {
+  e.preventDefault();
+  const files = [...e.dataTransfer.files].filter(f => f.name.endsWith('.csv'));
+  if (files.length > 0) loadFiles(files);
+});
+
+// ─── Panel Tabs ────────────────────────────────────────────────────────────
+document.querySelectorAll('.panel-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.panel-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = tab.dataset.panel;
+    document.getElementById('panel-graphs').style.display = panel === 'graphs' ? 'flex' : 'none';
+    document.getElementById('panel-analysis').classList.toggle('visible', panel === 'analysis');
+    if (panel === 'analysis' && state.catbus.length > 0) renderAnalysis();
+  });
+});
+
+// ─── Analysis ──────────────────────────────────────────────────────────────
+function renderAnalysis() {
+  const data = visibleData();
+  if (data.length === 0) return;
+
+  // For corners, use active laps (or all laps if none selected)
+  const activeLaps = state.laps.filter(l =>
+    state.selectedLaps.size === 0 || state.selectedLaps.has(l.num)
+  );
+
+  const braking       = detectBrakingEvents(data);
+  const cornerSummary = detectCornerEvents(data);  // for summary stats
+  const wheelEvt      = detectWheelEvents(data);
+  const { canonical, byLap } = buildCornerAnalysis(activeLaps, state.catbus);
+
+  renderSummary(data, braking, cornerSummary, wheelEvt, canonical.length);
+  renderTractionCircle(data);
+  renderBrakingTable(braking);
+  renderCornerMatrix(canonical, byLap, activeLaps);
+  renderWheelTable(wheelEvt);
+}
+
+// ── Event Detection ────────────────────────────────────────────────────────
+function detectBrakingEvents(data) {
+  const ENTRY_G   = -0.25;  // start of braking zone
+  const EXIT_G    = -0.10;  // end of braking zone
+  const MIN_DUR_S = 0.3;
+  const events = [];
+  let inBrake = false, start = 0;
+  let peakG = 0, lockupCount = 0, trailCount = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    const r = data[i];
+    if (!inBrake && r.lon_g < ENTRY_G) {
+      inBrake = true; start = i; peakG = r.lon_g; lockupCount = 0; trailCount = 0;
+    } else if (inBrake) {
+      if (r.lon_g < peakG) peakG = r.lon_g;
+      if (r.wheel_lockup > 0 || wheelLockupFromSpeeds(r)) lockupCount++;
+      if (r.lon_g < EXIT_G && Math.abs(r.lat_g) > 0.25) trailCount++; // braking while turning
+      if (r.lon_g >= EXIT_G || i === data.length - 1) {
+        const dur = (data[i].ts - data[start].ts) / 1000;
+        if (dur >= MIN_DUR_S) {
+          events.push({
+            idx: start, ts: data[start].ts,
+            peakG: Math.abs(peakG),
+            dur, lockup: lockupCount > 2,
+            trailSamples: trailCount, dur_samples: i - start,
+          });
+        }
+        inBrake = false;
+      }
+    }
+  }
+
+  // Score 0–10 relative to session best
+  const best = Math.max(...events.map(e => e.peakG), 0.01);
+  events.forEach(e => { e.score = Math.round((e.peakG / best) * 10); });
+  events.sort((a, b) => b.peakG - a.peakG);
+  return events;
+}
+
+function detectCornerEvents(data, idxOffset = 0) {
+  const ENTRY_G   = 0.30;  // raised to filter minor bends
+  const EXIT_G    = 0.18;
+  const MIN_DUR   = 0.8;   // must last at least 0.8s
+  const MERGE_GAP = 2.5;   // merge same-dir corners within 2.5s (chicane complexes)
+
+  const raw = [];
+  let inCorner = false, start = 0, peakG = 0, minSpd = Infinity;
+  let trailSamples = 0, sumLat = 0, sumLng = 0, gpsCnt = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    const r = data[i];
+    const absLat = Math.abs(r.lat_g);
+    if (!inCorner && absLat > ENTRY_G) {
+      inCorner = true; start = i;
+      peakG = r.lat_g; minSpd = r.speed_mph;
+      trailSamples = 0; sumLat = 0; sumLng = 0; gpsCnt = 0;
+    } else if (inCorner) {
+      if (Math.abs(r.lat_g) > Math.abs(peakG)) peakG = r.lat_g;
+      if (r.speed_mph < minSpd && r.speed_mph > 0) minSpd = r.speed_mph;
+      if (r.lon_g < -0.15) trailSamples++;
+      if (r.lat !== 0) { sumLat += r.lat; sumLng += r.lng; gpsCnt++; }
+      if (absLat < EXIT_G || i === data.length - 1) {
+        const dur = (data[i].ts - data[start].ts) / 1000;
+        if (dur >= MIN_DUR) {
+          raw.push({
+            idx: start + idxOffset, ts: data[start].ts, endTs: data[i].ts,
+            peakG: Math.abs(peakG), dir: peakG > 0 ? 'L' : 'R',
+            dur, minSpd, trailSamples, trailBraking: trailSamples > 2,
+            cLat: gpsCnt > 0 ? sumLat / gpsCnt : 0,
+            cLng: gpsCnt > 0 ? sumLng / gpsCnt : 0,
+          });
+        }
+        inCorner = false;
+      }
+    }
+  }
+
+  // Merge same-direction corners within MERGE_GAP (chicanes, long sweepers)
+  const events = [];
+  for (const c of raw) {
+    if (events.length > 0) {
+      const prev = events[events.length - 1];
+      const gap = (c.ts - prev.endTs) / 1000;
+      if (gap < MERGE_GAP && gap >= 0 && c.dir === prev.dir) {
+        prev.peakG    = Math.max(prev.peakG, c.peakG);
+        prev.minSpd   = Math.min(prev.minSpd, c.minSpd);
+        prev.dur      = (c.endTs - prev.ts) / 1000;
+        prev.endTs    = c.endTs;
+        prev.trailBraking = prev.trailBraking || c.trailBraking;
+        if (c.cLat !== 0 && prev.cLat !== 0) { prev.cLat = (prev.cLat + c.cLat) / 2; prev.cLng = (prev.cLng + c.cLng) / 2; }
+        continue;
+      }
+    }
+    events.push({ ...c });
+  }
+
+  const best = Math.max(...events.map(e => e.peakG), 0.01);
+  events.forEach(e => { e.score = Math.round((e.peakG / best) * 10); });
+  return events;
+}
+
+// Build canonical corners from all laps — returns { canonical, byLap }
+function buildCornerAnalysis(laps, data) {
+  if (laps.length === 0) return { canonical: [], byLap: {} };
+
+  // Detect corners per lap with fractional position
+  const lapResults = laps.map(lap => {
+    const lapData = data.slice(lap.idx0, lap.idx1 + 1);
+    const corners = detectCornerEvents(lapData, 0); // idx relative to lapData
+    const span = lapData.length - 1 || 1;
+    corners.forEach(c => {
+      c.globalIdx = c.idx + lap.idx0;
+      c.fracPos   = c.idx / span;
+      c.lapNum    = lap.num;
+    });
+    return { lap, corners };
+  });
+
+  // Reference: the lap with the most corners
+  const refResult = lapResults.reduce((b, r) => r.corners.length > b.corners.length ? r : b, lapResults[0]);
+  if (refResult.corners.length === 0) return { canonical: [], byLap: {} };
+
+  // Build canonical list from reference lap
+  const track = state.sfZone;
+  const trackEntry = track ? KNOWN_TRACKS.find(t => t.name === track.name) : null;
+  const knownNames = trackEntry?.corners || [];
+
+  const canonical = refResult.corners.map((c, i) => ({
+    num:  i + 1,
+    name: knownNames[i] || `C${i + 1}`,
+    dir:  c.dir,
+    fracPos: c.fracPos,
+    cLat: c.cLat,
+    cLng: c.cLng,
+  }));
+
+  // Match each lap's corners to canonical by nearest fracPos
+  const byLap = {};
+  for (const { lap, corners } of lapResults) {
+    byLap[lap.num] = {};
+    for (const canon of canonical) {
+      let best = null, bestDist = Infinity;
+      for (const c of corners) {
+        const d = Math.abs(c.fracPos - canon.fracPos);
+        if (d < bestDist) { bestDist = d; best = c; }
+      }
+      if (best && bestDist < 0.15) byLap[lap.num][canon.num] = best;
+    }
+  }
+
+  return { canonical, byLap };
+}
+
+function wheelLockupFromSpeeds(r) {
+  const spd = r.speed_mph;
+  if (spd < 5) return false;
+  // Any wheel at less than 40% of GPS speed during braking counts as lockup
+  return [r.wfl, r.wfr, r.wrl, r.wrr].some(w => w > 0.1 && w < spd * 0.4);
+}
+
+function detectWheelEvents(data) {
+  const events = [];
+  let lockupActive = false, spinActive = false, lStart = 0, sStart = 0;
+  let lockupWheels = new Set(), maxSpinRatio = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    const r = data[i];
+    const spd = r.speed_mph;
+
+    // ── Lockup: front or rear wheel drops to near 0 vs GPS speed
+    const frontLock = spd > 5 && (r.wfl < spd * 0.4 || r.wfr < spd * 0.4);
+    const rearLock  = spd > 5 && (r.wrl < spd * 0.4 || r.wrl > 0.1 || r.wrr < spd * 0.4 || r.wrr > 0.1) &&
+                      (r.wrl < spd * 0.4 || r.wrr < spd * 0.4);
+    const anyLock = r.wheel_lockup > 0 || frontLock || rearLock;
+
+    if (!lockupActive && anyLock) {
+      lockupActive = true; lStart = i; lockupWheels = new Set();
+      if (r.wfl < spd * 0.4) lockupWheels.add('FL');
+      if (r.wfr < spd * 0.4) lockupWheels.add('FR');
+      if (r.wrl < spd * 0.4) lockupWheels.add('RL');
+      if (r.wrr < spd * 0.4) lockupWheels.add('RR');
+    } else if (lockupActive && !anyLock) {
+      const dur = (data[i].ts - data[lStart].ts) / 1000;
+      events.push({ type: 'lockup', idx: lStart, ts: data[lStart].ts, dur, wheels: [...lockupWheels], speed: data[lStart].speed_mph });
+      lockupActive = false;
+    }
+
+    // ── Wheelspin: rears faster than fronts during acceleration
+    const avgFront = (r.wfl + r.wfr) / 2;
+    const avgRear  = (r.wrl + r.wrr) / 2;
+    const spinRatio = avgFront > 2 ? avgRear / avgFront : 1;
+    const isSpin = r.lon_g > 0.1 && spinRatio > 1.2 && avgRear > 5;
+
+    if (!spinActive && isSpin) {
+      spinActive = true; sStart = i; maxSpinRatio = spinRatio;
+    } else if (spinActive) {
+      if (spinRatio > maxSpinRatio) maxSpinRatio = spinRatio;
+      if (!isSpin) {
+        const dur = (data[i].ts - data[sStart].ts) / 1000;
+        events.push({ type: 'spin', idx: sStart, ts: data[sStart].ts, dur, ratio: maxSpinRatio, speed: data[sStart].speed_mph });
+        spinActive = false;
+      }
+    }
+  }
+
+  return events.sort((a, b) => a.ts - b.ts);
+}
+
+// ── Rendering ──────────────────────────────────────────────────────────────
+function renderSummary(data, braking, corners, wheelEvt, detectedCorners) {
+  const lockups = wheelEvt.filter(e => e.type === 'lockup');
+  const spins   = wheelEvt.filter(e => e.type === 'spin');
+  const peakLonG = Math.max(...braking.map(e => e.peakG), 0);
+  const peakLatG = Math.max(...corners.map(e => e.peakG), 0);
+  const trailCount = corners.filter(e => e.trailBraking).length;
+
+  // Corner count vs known
+  const trackEntry = state.sfZone ? KNOWN_TRACKS.find(t => t.name === state.sfZone.name) : null;
+  const knownCount = trackEntry?.corners?.length;
+  const cornerVal  = detectedCorners != null ? detectedCorners : corners.length;
+  const cornerLbl  = knownCount ? `CORNERS (${knownCount} named)` : 'CORNERS';
+  const cornerColor = knownCount && cornerVal !== knownCount ? '#e94560' : '#4ecca3';
+
+  const el = document.getElementById('an-corner-count');
+  if (el && knownCount) {
+    el.textContent = cornerVal === knownCount
+      ? `— ${cornerVal} detected ✓`
+      : `— ${cornerVal} detected, ${knownCount} named`;
+    el.style.color = cornerColor;
+  }
+
+  const stats = [
+    { val: peakLonG.toFixed(2) + 'G', lbl: 'PEAK BRAKE' },
+    { val: peakLatG.toFixed(2) + 'G', lbl: 'PEAK CORNER' },
+    { val: braking.length,             lbl: 'BRAKE ZONES' },
+    { val: `${cornerVal}`,             lbl: cornerLbl, color: cornerColor },
+    { val: lockups.length,             lbl: 'LOCKUPS' },
+    { val: spins.length,               lbl: 'SPINS' },
+    { val: trailCount,                 lbl: 'TRAIL BRAKING' },
+  ];
+
+  document.getElementById('an-summary').innerHTML = stats.map(s =>
+    `<div class="stat-box"><div class="val" style="color:${s.color || '#4ecca3'}">${s.val}</div><div class="lbl">${s.lbl}</div></div>`
+  ).join('');
+}
+
+function renderTractionCircle(data) {
+  // Downsample for perf
+  const step = Math.max(1, Math.floor(data.length / 1500));
+  const xs = [], ys = [], cols = [];
+  const maxSpd = Math.max(...data.map(r => r.speed_mph), 1);
+  for (let i = 0; i < data.length; i += step) {
+    xs.push(data[i].lat_g);
+    ys.push(data[i].lon_g);
+    cols.push(data[i].speed_mph / maxSpd);
+  }
+
+  // Reference circle at max observed combined G
+  const maxCombined = Math.max(...data.map(r => Math.sqrt(r.lat_g**2 + r.lon_g**2)), 0.5);
+  const circleN = 60;
+  const cxs = [], cys = [];
+  for (let i = 0; i <= circleN; i++) {
+    const a = (i / circleN) * 2 * Math.PI;
+    cxs.push(maxCombined * Math.cos(a));
+    cys.push(maxCombined * Math.sin(a));
+  }
+
+  const traces = [
+    {
+      x: cxs, y: cys, mode: 'lines', type: 'scatter',
+      line: { color: 'rgba(255,255,255,0.08)', width: 1 }, name: 'Limit', showlegend: false,
+    },
+    {
+      x: xs, y: ys, mode: 'markers', type: 'scattergl',
+      marker: {
+        size: 3, opacity: 0.7,
+        color: cols,
+        colorscale: [[0,'#1a3a5c'],[0.5,'#4ecca3'],[1,'#e94560']],
+        showscale: true,
+        colorbar: { title: 'Speed', thickness: 8, len: 0.6, tickfont: { size: 8, color: '#555' }, titlefont: { size: 8, color: '#555' } },
+      },
+      name: 'G-trace', showlegend: false,
+    },
+  ];
+
+  const layout = {
+    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+    font: { color: '#888', size: 9 },
+    margin: { t: 10, b: 40, l: 50, r: 60 },
+    xaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333', title: 'Lateral G  (left +)', titlefont: { size: 9 } },
+    yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333', title: 'Long G  (accel +)', titlefont: { size: 9 }, scaleanchor: 'x' },
+  };
+
+  Plotly.react('g-traction', traces, layout, { responsive: true, displayModeBar: false });
+}
+
+function scoreBar(score, color) {
+  return `<span class="score-bar" style="width:${score*8}px;background:${color}"></span>${score}/10`;
+}
+
+function fmtTime(ts) {
+  return ts.toISOString().substr(11, 8);
+}
+
+function renderBrakingTable(events) {
+  if (events.length === 0) { document.getElementById('an-braking').innerHTML = '<p style="color:#555;font-size:0.72rem">No braking events detected.</p>'; return; }
+
+  const rows = events.slice(0, 50).map((e, i) => {
+    const barColor = e.lockup ? '#e94560' : '#4ecca3';
+    const trailPct = e.dur_samples > 0 ? Math.round((e.trailSamples / e.dur_samples) * 100) : 0;
+    return `<tr data-idx="${e.idx}">
+      <td>${i + 1}</td>
+      <td>${scoreBar(e.score, barColor)}</td>
+      <td>${e.peakG.toFixed(2)}G</td>
+      <td>${e.dur.toFixed(1)}s</td>
+      <td>${e.lockup ? '<span class="badge badge-warn">LOCKUP</span>' : '<span class="badge badge-ok">CLEAN</span>'}</td>
+      <td>${trailPct > 20 ? `<span class="badge badge-info">TRAIL ${trailPct}%</span>` : '—'}</td>
+      <td style="color:#555">${fmtTime(e.ts)}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('an-braking').innerHTML = `
+    <table class="analysis-table">
+      <thead><tr><th>#</th><th>Score</th><th>Peak G</th><th>Dur</th><th>Lockup</th><th>Trail</th><th>Time</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+  // Click row → scrub to that point
+  document.querySelectorAll('#an-braking tr[data-idx]').forEach(tr => {
+    tr.addEventListener('click', () => scrubToIdx(parseInt(tr.dataset.idx)));
+  });
+}
+
+function renderCornerMatrix(canonical, byLap, laps) {
+  const el = document.getElementById('an-corners');
+  if (canonical.length === 0) {
+    el.innerHTML = '<p style="color:#555;font-size:0.72rem">No corners detected — need at least one full lap.</p>';
+    return;
+  }
+
+  const metric = document.querySelector('input[name="corner-metric"]:checked')?.value || 'minSpd';
+
+  // Per-corner min/max across laps for colour scaling
+  const range = {};
+  for (const c of canonical) {
+    const vals = laps.map(l => byLap[l.num]?.[c.num]).filter(Boolean).map(e => metric === 'minSpd' ? e.minSpd : e.peakG);
+    if (vals.length === 0) { range[c.num] = { min: 0, max: 1 }; continue; }
+    range[c.num] = { min: Math.min(...vals), max: Math.max(...vals) };
+  }
+
+  // Colour: green=best, red=worst (for minSpd: high=green; for peakG: high=green)
+  const cellColor = (val, r) => {
+    const spread = r.max - r.min;
+    const t = spread > 0.1 ? (val - r.min) / spread : 0.5;
+    const g = Math.round(30 + 150 * t), red = Math.round(30 + 150 * (1 - t));
+    return `rgba(${red},${g},0,0.25)`;
+  };
+
+  let html = '<table class="analysis-table" style="font-size:0.68rem"><thead><tr>';
+  html += '<th>Corner</th><th>Dir</th>';
+  for (const lap of laps) {
+    const dur = ((lap.end - lap.start) / 1000).toFixed(0);
+    html += `<th>L${lap.num}<br><span style="color:#444;font-weight:normal">${dur}s</span></th>`;
+  }
+  html += '</tr></thead><tbody>';
+
+  for (const c of canonical) {
+    const dirColor = c.dir === 'L' ? '#4ecca3' : '#f5a623';
+    html += `<tr><td style="color:#aaa">${c.name}</td><td style="color:${dirColor}">${c.dir}</td>`;
+    const r = range[c.num];
+    for (const lap of laps) {
+      const evt = byLap[lap.num]?.[c.num];
+      if (!evt) { html += `<td style="color:#333">—</td>`; continue; }
+      const val = metric === 'minSpd' ? evt.minSpd : evt.peakG;
+      const display = metric === 'minSpd' ? `${val.toFixed(0)}` : `${val.toFixed(2)}`;
+      const trail = evt.trailBraking ? ' <span style="color:#f5a623;font-size:0.6rem">T</span>' : '';
+      const lock  = evt.trailBraking ? '' : (evt.lockup ? ' <span style="color:#e94560;font-size:0.6rem">L</span>' : '');
+      html += `<td style="background:${cellColor(val, r)};cursor:pointer" data-idx="${evt.globalIdx}">${display}${trail}${lock}</td>`;
+    }
+    html += '</tr>';
+  }
+
+  html += '</tbody></table>';
+  html += `<div style="margin-top:6px;font-size:0.65rem;color:#444">T = trail braking &nbsp; L = lockup &nbsp; values: ${metric === 'minSpd' ? 'min speed mph' : 'peak lateral G'}</div>`;
+  el.innerHTML = html;
+
+  el.querySelectorAll('td[data-idx]').forEach(td => {
+    td.addEventListener('click', () => scrubToIdx(parseInt(td.dataset.idx)));
+  });
+}
+
+// Wire up metric toggle to re-render
+document.addEventListener('change', e => {
+  if (e.target.name === 'corner-metric' &&
+      document.getElementById('panel-analysis').classList.contains('visible')) {
+    renderAnalysis();
+  }
+});
+
+function renderWheelTable(events) {
+  if (events.length === 0) { document.getElementById('an-wheels').innerHTML = '<p style="color:#555;font-size:0.72rem">No wheel events detected.</p>'; return; }
+
+  const rows = events.map((e, i) => {
+    if (e.type === 'lockup') {
+      return `<tr data-idx="${e.idx}">
+        <td><span class="badge badge-warn">LOCKUP</span></td>
+        <td>${e.wheels.join(', ') || '—'}</td>
+        <td>${e.dur.toFixed(2)}s</td>
+        <td>${e.speed.toFixed(0)} mph</td>
+        <td style="color:#555">${fmtTime(e.ts)}</td>
+      </tr>`;
+    } else {
+      return `<tr data-idx="${e.idx}">
+        <td><span class="badge badge-info">SPIN</span></td>
+        <td>Rear ×${e.ratio.toFixed(2)}</td>
+        <td>${e.dur.toFixed(2)}s</td>
+        <td>${e.speed.toFixed(0)} mph</td>
+        <td style="color:#555">${fmtTime(e.ts)}</td>
+      </tr>`;
+    }
+  }).join('');
+
+  document.getElementById('an-wheels').innerHTML = `
+    <table class="analysis-table">
+      <thead><tr><th>Type</th><th>Detail</th><th>Dur</th><th>Speed</th><th>Time</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+  document.querySelectorAll('#an-wheels tr[data-idx]').forEach(tr => {
+    tr.addEventListener('click', () => scrubToIdx(parseInt(tr.dataset.idx)));
+  });
+}
+
+function scrubToIdx(idx) {
+  const data = state.catbus;
+  if (idx >= data.length) return;
+  state.cursorIdx = idx;
+  updateMapMarker();
+  updateHeader();
+  // Pan map to the point without changing zoom
+  const r = data[idx];
+  if (r && r.lat !== 0 && state.map) state.map.panTo([r.lat, r.lng]);
+}
+
+// ─── Init ───────────────────────────────────────────────────────────────────
+initMap();
+</script>
+</body>
+</html>
