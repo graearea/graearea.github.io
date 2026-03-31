@@ -321,6 +321,7 @@ const state = {
   viewRange: [0, 1], // fraction 0–1 of current dataset
   cursorIdx: 0,
   sfZone: null,     // {lat, lng} — start/finish
+  vboSf:  null,     // S/F extracted from VBO [laptiming] section
   raceboxOffset: 0, // seconds
   map: null,
   routeLayer: null,
@@ -459,7 +460,9 @@ function loadFiles(files) {
         const fullReader = new FileReader();
         fullReader.onload = (ev) => {
           addFileTag(file.name, 'vbo');
-          parseVBOFile(ev.target.result).forEach(r => newCatbus.push(r));
+          const { rows, vboSf } = parseVBOFile(ev.target.result);
+          rows.forEach(r => newCatbus.push(r));
+          if (vboSf) state.vboSf = vboSf;
           finish();
         };
         fullReader.readAsText(file);
@@ -679,6 +682,23 @@ function parseVBOFile(text) {
     }
   }
 
+  // Extract S/F line from [laptiming]: two points defining the line
+  // e.g. "Start  +03147.81285 -000056.68664 +03147.79775 -000056.68777 ¬  Start / Finish"
+  let vboSf = null;
+  section = '';
+  for (const line of lines) {
+    if (line.startsWith('[')) { section = line; continue; }
+    if (section === '[laptiming]' && line) {
+      const m = line.match(/([+-]\d+\.\d+)\s+([+-]\d+\.\d+)\s+([+-]\d+\.\d+)\s+([+-]\d+\.\d+)/);
+      if (m) {
+        const lat = (parseFloat(m[1]) + parseFloat(m[3])) / 2 / 60;
+        const lng = -((parseFloat(m[2]) + parseFloat(m[4])) / 2) / 60;
+        const label = line.replace(/.*¬\s*/, '').trim() || 'Start / Finish';
+        vboSf = { lat, lng, label };
+      }
+    }
+  }
+
   // Find [column names] — single space-separated line after the section header
   let colNames = null;
   section = '';
@@ -686,7 +706,7 @@ function parseVBOFile(text) {
     if (line.startsWith('[')) { section = line; continue; }
     if (section === '[column names]' && line) { colNames = line.split(/\s+/); break; }
   }
-  if (!colNames) return [];
+  if (!colNames) return { rows: [], vboSf };
 
   const ci = name => colNames.indexOf(name);
   const iTime = ci('time'), iLat = ci('lat'), iLng = ci('lng');
@@ -735,7 +755,7 @@ function parseVBOFile(text) {
       _src: 'vbo',
     });
   }
-  return rows;
+  return { rows, vboSf };
 }
 
 function addFileTag(name, fmt) {
@@ -770,6 +790,17 @@ function onDataLoaded() {
 function detectLaps() {
   const data = state.catbus;
   if (data.length === 0) return;
+
+  // VBO files embed a precise S/F line — use it preferentially
+  if (state.vboSf) {
+    const { lat, lng, label } = state.vboSf;
+    const track = matchKnownTrack(data);
+    const name = track ? track.name : label;
+    state.sfZone = { lat, lng, name };
+    state.laps = detectLapsByClosestApproach(data, lat, lng);
+    document.getElementById('hdr-session').dataset.track = name;
+    return;
+  }
 
   const track = matchKnownTrack(data);
   if (track) {
