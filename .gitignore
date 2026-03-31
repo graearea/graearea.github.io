@@ -2,3 +2,5 @@
 /_site/
 /.jekyll-cache/
 .DS_Store
+/cloudflare/.wrangler/
+/scripts/_site/

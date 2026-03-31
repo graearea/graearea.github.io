@@ -1,11 +1,10 @@
-# ![Logo](img/UN-02.png) 
 ![jump-low.jpeg](img/jump-low.jpeg)
 I make and design improvements for my Caterham 7 which I have tested from the Nurburgring to Cadwell Park and the Stelvio pass. All profits are spent on super-unleaded and R888Rs. 
 
 You can find me on [Instagram](https://www.instagram.com/uber.niche/) and [Youtube](https://www.youtube.com/@GraeArea) 
 
 # Mirrors
-[Lifeline Mirror Mounts](/lifeline-mirror-mounts.md) - solidly attach convex adjustable mirrors to any sidescreen
+[Lifeline Mirror Mounts](/lifeline-mirror-mounts) - solidly attach convex adjustable mirrors to any sidescreen
 [![Lifeline Mirror Mounts](img/lifeline-wide.jpg)](/lifeline-mirror-mounts)
 
 [Quick Swap Windscreen Mirror Mounts](/quick-swap-mirror-mounts) - quickly switch attach mirrors between sidescreens and windscreen mounted for driving with no doors.
