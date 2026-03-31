@@ -119,9 +119,39 @@ body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0;
   flex-direction: column; gap: 8px; color: #555; font-size: 0.85rem; pointer-events: none;
 }
 #empty-state svg { opacity: 0.3; }
+
+/* Lap picker modal */
+#lap-picker-modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.78); z-index: 1000;
+  display: none; align-items: center; justify-content: center;
+}
+#lap-picker-box {
+  background: #16213e; border: 1px solid #4ecca3; border-radius: 8px;
+  padding: 20px; max-width: 540px; width: 90%; max-height: 80vh; overflow-y: auto;
+}
+#lap-picker-box .lp-title { font-size: 0.7rem; color: #888; letter-spacing: 1px; margin-bottom: 4px; }
+#lap-picker-box .lp-filename { font-size: 0.82rem; color: #e0e0e0; margin-bottom: 4px; word-break: break-all; }
+#lap-picker-box .lp-meta { font-size: 0.7rem; color: #555; margin-bottom: 14px; }
+#lap-picker-box .lp-laps { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+.lp-lap-btn {
+  padding: 4px 10px; border-radius: 4px; border: 1px solid #4ecca3;
+  background: transparent; color: #4ecca3; cursor: pointer; font-size: 0.78rem;
+  transition: all 0.12s;
+}
+.lp-lap-btn.selected { background: #4ecca3; color: #1a1a2e; }
+.lp-lap-btn.inlap  { border-color: #f5a623; color: #f5a623; }
+.lp-lap-btn.inlap.selected  { background: #f5a623; color: #1a1a2e; }
+.lp-lap-btn.outlap { border-color: #9b59b6; color: #9b59b6; }
+.lp-lap-btn.outlap.selected { background: #9b59b6; color: #fff; }
+#lap-picker-box .lp-hint { font-size: 0.67rem; color: #444; margin-bottom: 12px; }
+#lap-picker-box .lp-footer { display: flex; gap: 8px; justify-content: flex-end; }
 </style>
 </head>
 <body>
+
+<div id="lap-picker-modal">
+  <div id="lap-picker-box"></div>
+</div>
 
 <div id="header">
   <h1>UBER.NICHE.SPLITS</h1>
@@ -145,7 +175,7 @@ body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0;
     </div>
     <div id="controls">
       <div id="drop-zone" id="dz">
-        <input type="file" id="file-input" multiple accept=".csv">
+        <input type="file" id="file-input" multiple accept=".csv,.vbo">
         <div>Drop CSV files here or <u>click to browse</u></div>
         <div style="font-size:0.65rem;color:#888;margin-top:2px">CatBus + RaceBox formats supported</div>
       </div>
@@ -160,6 +190,7 @@ body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0;
         </span>
       </div>
       <div id="lap-buttons"></div>
+      <div id="compare-hint" style="display:none;font-size:0.7rem;color:#888;padding:4px 0 2px 2px"></div>
       <div id="offset-control">
         <label>RaceBox offset: <span id="offset-val">0s</span></label>
         <div id="offset-slider"></div>
@@ -409,12 +440,26 @@ function loadFiles(files) {
     // Peek at first 200 bytes to detect format without reading the whole file
     const peekReader = new FileReader();
     peekReader.onload = (e) => {
-      if (e.target.result.startsWith('This file is created using RaceChrono')) {
-        // RaceChrono needs full text for custom parser
+      const peek = e.target.result;
+      if (peek.startsWith('This file is created using RaceChrono')) {
+        if (file.size > LARGE_FILE_BYTES) {
+          finish();
+          prescanLargeFile(file);
+          return;
+        }
         const fullReader = new FileReader();
         fullReader.onload = (ev) => {
           addFileTag(file.name, 'racechrono');
           parseRacechronoCSV(ev.target.result).forEach(r => newCatbus.push(r));
+          finish();
+        };
+        fullReader.readAsText(file);
+      } else if (peek.startsWith('File created on') || peek.includes('[header]')) {
+        // Racelogic VBO format
+        const fullReader = new FileReader();
+        fullReader.onload = (ev) => {
+          addFileTag(file.name, 'vbo');
+          parseVBOFile(ev.target.result).forEach(r => newCatbus.push(r));
           finish();
         };
         fullReader.readAsText(file);
@@ -446,45 +491,248 @@ function loadFiles(files) {
   }
 }
 
+function parseRacechronoRow(c) {
+  const tsUnix = parseFloat(c[0]);
+  if (isNaN(tsUnix)) return null;
+  const lat = parseFloat(c[11]);
+  const lng = parseFloat(c[12]);
+  const speed_ms = parseFloat(c[14]) || 0;
+  return {
+    ts:          new Date(tsUnix * 1000),
+    lat:         isNaN(lat) ? 0 : lat,
+    lng:         isNaN(lng) ? 0 : lng,
+    alt:         parseFloat(c[6])  || 0,
+    speed_mph:   speed_ms * 2.23694,
+    speed_kmh:   speed_ms * 3.6,
+    distance_km: (parseFloat(c[4]) || 0) / 1000,
+    lat_g:       parseFloat(c[17]) || 0,
+    lon_g:       parseFloat(c[19]) || 0,
+    rpm: 0, coolant: 0, voltage: 0,
+    fuel_1: 0, fuel_5: 0,
+    wfl: 0, wfr: 0, wrl: 0, wrr: 0,
+    wheel_lockup: 0,
+    btn_l: 0, btn_r: 0, led_l: 0, led_r: 0, led_w: 0, led_s: 0,
+    _src: 'racechrono',
+  };
+}
+
 function parseRacechronoCSV(text) {
   const lines = text.split('\n');
-
-  // Find the column header row (starts with "timestamp,")
   let headerIdx = -1;
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].startsWith('timestamp,')) { headerIdx = i; break; }
   }
   if (headerIdx < 0) return [];
-
-  // Rows: headerIdx = col names, +1 = units, +2 = sources, +3 onwards = data
   const dataLines = lines.slice(headerIdx + 3).filter(l => l.trim());
-
   const rows = [];
   for (const line of dataLines) {
-    // Split carefully — values are numeric so no quoting in data rows
     const c = line.split(',');
     if (c.length < 20) continue;
-    const tsUnix = parseFloat(c[0]);
-    if (isNaN(tsUnix)) continue;
-    const lat = parseFloat(c[11]);
-    const lng = parseFloat(c[12]);
-    const speed_ms = parseFloat(c[14]) || 0;
+    const r = parseRacechronoRow(c);
+    if (r) rows.push(r);
+  }
+  return rows;
+}
+
+// ─── Large file lap picker ─────────────────────────────────────────────────
+const LARGE_FILE_BYTES = 10 * 1024 * 1024;
+const lpSelected = new Set();
+
+function prescanLargeFile(file) {
+  const box = document.getElementById('lap-picker-box');
+  box.innerHTML = `
+    <div class="lp-title">LARGE FILE</div>
+    <div class="lp-filename">${file.name}</div>
+    <div class="lp-meta">${(file.size / 1024 / 1024).toFixed(0)} MB — scanning for laps…</div>
+    <div style="color:#4ecca3;font-size:0.8rem">⏳ Reading…</div>
+  `;
+  document.getElementById('lap-picker-modal').style.display = 'flex';
+
+  const scanRows = [];
+  Papa.parse(file, {
+    header: false,
+    skipEmptyLines: true,
+    step(result) {
+      const c = result.data;
+      if (!c || c.length < 15) return;
+      const tsUnix = parseFloat(c[0]);
+      if (isNaN(tsUnix)) return; // skip header/unit/source rows
+      const lat = parseFloat(c[11]);
+      const lng = parseFloat(c[12]);
+      const speed_ms = parseFloat(c[14]) || 0;
+      scanRows.push({ ts: new Date(tsUnix * 1000), lat: isNaN(lat) ? 0 : lat, lng: isNaN(lng) ? 0 : lng, speed_mph: speed_ms * 2.23694 });
+    },
+    complete() {
+      const track = matchKnownTrack(scanRows);
+      const laps  = track ? detectLapsByClosestApproach(scanRows, track.sf_lat, track.sf_lng) : [];
+      renderLapPicker(file, laps, track);
+    }
+  });
+}
+
+function renderLapPicker(file, laps, track) {
+  lpSelected.clear();
+  const box = document.getElementById('lap-picker-box');
+  const trackName = track ? track.name : 'Unknown track';
+
+  let lapsHtml = '';
+  if (laps.length === 0) {
+    lapsHtml = '<div style="color:#888;font-size:0.8rem">No laps detected — use Load All to load raw data.</div>';
+  } else {
+    for (const lap of laps) {
+      const dur = ((lap.end - lap.start) / 1000).toFixed(0);
+      const typeClass = lap.type === 'inlap' ? 'inlap' : lap.type === 'outlap' ? 'outlap' : '';
+      const tag = lap.type === 'inlap' ? ' IN' : lap.type === 'outlap' ? ' OUT' : '';
+      lapsHtml += `<button class="lp-lap-btn ${typeClass}" data-num="${lap.num}">L${lap.num} ${dur}s${tag}</button>`;
+    }
+  }
+
+  box.innerHTML = `
+    <div class="lp-title">LARGE FILE — SELECT LAPS TO LOAD</div>
+    <div class="lp-filename">${file.name}</div>
+    <div class="lp-meta">${trackName} &middot; ${laps.length} laps &middot; ${(file.size/1024/1024).toFixed(0)} MB</div>
+    <div class="lp-laps">${lapsHtml}</div>
+    <div class="lp-hint">Click to select · click again to deselect · multiple laps OK</div>
+    <div class="lp-footer">
+      <button id="lp-cancel" style="padding:4px 12px;border-radius:4px;border:1px solid #555;background:transparent;color:#888;cursor:pointer;font-size:0.72rem">Cancel</button>
+      <button id="lp-load-all" style="padding:4px 12px;border-radius:4px;border:1px solid #555;background:transparent;color:#888;cursor:pointer;font-size:0.72rem">Load all (slow)</button>
+      <button id="lp-load-sel" style="padding:4px 12px;border-radius:4px;border:1px solid #4ecca3;background:#4ecca3;color:#1a1a2e;cursor:pointer;font-size:0.72rem;font-weight:bold" disabled>Load selected (0)</button>
+    </div>
+  `;
+
+  box.querySelectorAll('.lp-lap-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const num = parseInt(btn.dataset.num);
+      if (lpSelected.has(num)) { lpSelected.delete(num); btn.classList.remove('selected'); }
+      else                      { lpSelected.add(num);    btn.classList.add('selected'); }
+      const loadBtn = document.getElementById('lp-load-sel');
+      loadBtn.disabled = lpSelected.size === 0;
+      loadBtn.textContent = `Load selected (${lpSelected.size})`;
+    });
+  });
+
+  document.getElementById('lp-cancel').onclick = () => {
+    document.getElementById('lap-picker-modal').style.display = 'none';
+  };
+
+  document.getElementById('lp-load-all').onclick = () => {
+    document.getElementById('lap-picker-modal').style.display = 'none';
+    const fullReader = new FileReader();
+    fullReader.onload = ev => {
+      addFileTag(file.name, 'racechrono');
+      const rows = parseRacechronoCSV(ev.target.result);
+      mergeAndRender(rows);
+    };
+    fullReader.readAsText(file);
+  };
+
+  document.getElementById('lp-load-sel').onclick = () => {
+    if (lpSelected.size === 0) return;
+    document.getElementById('lap-picker-modal').style.display = 'none';
+    const sel = laps.filter(l => lpSelected.has(l.num));
+    const BUFFER_S = 30;
+    const t0 = Math.min(...sel.map(l => l.start.getTime() / 1000)) - BUFFER_S;
+    const t1 = Math.max(...sel.map(l => l.end.getTime()   / 1000)) + BUFFER_S;
+    loadRacechronoRange(file, t0, t1);
+  };
+}
+
+function loadRacechronoRange(file, t0Unix, t1Unix) {
+  const rows = [];
+  Papa.parse(file, {
+    header: false,
+    skipEmptyLines: true,
+    step(result) {
+      const c = result.data;
+      if (!c || c.length < 20) return;
+      const tsUnix = parseFloat(c[0]);
+      if (isNaN(tsUnix) || tsUnix < t0Unix || tsUnix > t1Unix) return;
+      const r = parseRacechronoRow(c);
+      if (r) rows.push(r);
+    },
+    complete() {
+      addFileTag(file.name, `racechrono (${rows.length} rows)`);
+      mergeAndRender(rows);
+    }
+  });
+}
+
+function mergeAndRender(newRows) {
+  state.catbus = [...state.catbus, ...newRows]
+    .filter(r => !isNaN(r.ts.getTime()) && r.ts.getFullYear() >= 2020)
+    .sort((a, b) => a.ts - b.ts);
+  state.catbus = filterGpsOutliers(state.catbus);
+  onDataLoaded();
+}
+
+function parseVBOFile(text) {
+  const lines = text.split('\n').map(l => l.trim());
+
+  // Extract date from [comments]: "UTC Date Started : 07/05/2025 15:07"
+  let sessionDate = null;
+  let section = '';
+  for (const line of lines) {
+    if (line.startsWith('[')) { section = line; continue; }
+    if (section === '[comments]') {
+      const m = line.match(/UTC Date Started\s*:\s*(\d{2})\/(\d{2})\/(\d{4})/);
+      if (m) { sessionDate = { d: +m[1], mo: +m[2], y: +m[3] }; break; }
+    }
+  }
+
+  // Find [column names] — single space-separated line after the section header
+  let colNames = null;
+  section = '';
+  for (const line of lines) {
+    if (line.startsWith('[')) { section = line; continue; }
+    if (section === '[column names]' && line) { colNames = line.split(/\s+/); break; }
+  }
+  if (!colNames) return [];
+
+  const ci = name => colNames.indexOf(name);
+  const iTime = ci('time'), iLat = ci('lat'), iLng = ci('lng');
+  const iVel  = ci('velocity'), iLonG = ci('LongAcc'), iLatG = ci('LatAcc'), iAlt = ci('height');
+
+  // Parse [data] rows
+  const rows = [];
+  let inData = false, prevHour = -1, dayOffset = 0;
+
+  for (const line of lines) {
+    if (line === '[data]') { inData = true; continue; }
+    if (inData && line.startsWith('[')) break;
+    if (!inData || !line) continue;
+
+    const c = line.split(/\s+/);
+    if (c.length <= Math.max(iTime, iLat, iLng)) continue;
+
+    // Time: HHMMSS.SS
+    const t = c[iTime];
+    const hh = +t.slice(0, 2), mm = +t.slice(2, 4), ss = parseFloat(t.slice(4));
+    if (prevHour > 20 && hh < 4) dayOffset++;
+    prevHour = hh;
+
+    const ts = sessionDate
+      ? new Date(Date.UTC(sessionDate.y, sessionDate.mo - 1, sessionDate.d + dayOffset, hh, mm, Math.floor(ss), Math.round((ss % 1) * 1000)))
+      : new Date(Date.UTC(2000, 0, 1 + dayOffset, hh, mm, Math.floor(ss), Math.round((ss % 1) * 1000)));
+
+    // Lat/lng in arc-minutes. VBO positive lat = North, negative lng = East.
+    const lat =  parseFloat(c[iLat]) / 60;
+    const lng = -parseFloat(c[iLng]) / 60;
+
+    const speed_kmh = iVel  >= 0 ? parseFloat(c[iVel])  || 0 : 0;
+    const lon_g     = iLonG >= 0 ? parseFloat(c[iLonG]) || 0 : 0;
+    const lat_g     = iLatG >= 0 ? parseFloat(c[iLatG]) || 0 : 0;
+    const alt       = iAlt  >= 0 ? parseFloat(c[iAlt])  || 0 : 0;
+
     rows.push({
-      ts:          new Date(tsUnix * 1000),
-      lat:         isNaN(lat) ? 0 : lat,
-      lng:         isNaN(lng) ? 0 : lng,
-      alt:         parseFloat(c[6])  || 0,
-      speed_mph:   speed_ms * 2.23694,
-      speed_kmh:   speed_ms * 3.6,
-      distance_km: (parseFloat(c[4]) || 0) / 1000,
-      lat_g:       parseFloat(c[17]) || 0,   // lateral_acc (G)
-      lon_g:       parseFloat(c[19]) || 0,   // longitudinal_acc (G)
+      ts, lat, lng, alt,
+      speed_kmh, speed_mph: speed_kmh * 0.621371,
+      lon_g, lat_g,
+      distance_km: 0,
       rpm: 0, coolant: 0, voltage: 0,
       fuel_1: 0, fuel_5: 0,
-      wfl: 0, wfr: 0, wrl: 0, wrr: 0,
-      wheel_lockup: 0,
+      wfl: 0, wfr: 0, wrl: 0, wrr: 0, wheel_lockup: 0,
       btn_l: 0, btn_r: 0, led_l: 0, led_r: 0, led_w: 0, led_s: 0,
-      _src: 'racechrono',
+      _src: 'vbo',
     });
   }
   return rows;
@@ -580,26 +828,41 @@ function detectLapsByClosestApproach(data, sfLat, sfLng) {
     return [{ start: data[0].ts, end: data[lastIdx].ts, idx0: 0, idx1: lastIdx, num: 1, type: 'flying' }];
   }
 
-  // Classify outlap/inlap: check if car was slow (< 10mph) for a stretch just before/after the lap
-  const SLOW_MPH = 10, SLOW_WINDOW_S = 20;
-  function hasSlowPeriod(idxCenter, lookBack) {
-    // Scan up to SLOW_WINDOW_S seconds before (lookBack=true) or after (lookBack=false) idxCenter
-    let slowCount = 0, totalCount = 0;
-    for (let i = idxCenter; lookBack ? i >= 0 : i < data.length; lookBack ? i-- : i++) {
-      const dt = Math.abs((data[i].ts - data[idxCenter].ts) / 1000);
-      if (dt > SLOW_WINDOW_S) break;
-      totalCount++;
-      if ((data[i].speed_mph || 0) < SLOW_MPH) slowCount++;
+  // Classify outlap/inlap by looking for time gaps between consecutive lap boundaries.
+  // A gap > PIT_GAP_S between the end of one lap and the start of the next means
+  // the car was in the pits — so the lap before is an inlap, the lap after is an outlap.
+  const PIT_GAP_S = 300; // 5 minutes
+
+  // Helper: is the car stationary in a window of seconds from a given data index?
+  // direction: +1 = scan forward, -1 = scan backward
+  function stationaryAtEdge(fromIdx, direction, windowS = 60) {
+    let slow = 0, total = 0;
+    for (let i = fromIdx; i >= 0 && i < data.length; i += direction) {
+      if (Math.abs((data[i].ts - data[fromIdx].ts) / 1000) > windowS) break;
+      total++;
+      if ((data[i].speed_mph || 0) < 5) slow++;
     }
-    return totalCount > 5 && slowCount / totalCount > 0.7;
+    return total > 3 && slow / total > 0.7;
   }
 
-  for (const lap of laps) {
-    const slowBefore = hasSlowPeriod(lap.idx0, true);
-    const slowAfter  = hasSlowPeriod(lap.idx1, false);
-    if (slowBefore && slowAfter) lap.type = 'outlap'; // full out-and-in, shouldn't happen but cover it
-    else if (slowBefore) lap.type = 'outlap';
-    else if (slowAfter)  lap.type = 'inlap';
+  // Gap before first lap — or car was stationary at session start
+  if (laps.length > 0) {
+    const preGap = (laps[0].start - data[0].ts) / 1000;
+    if (preGap > PIT_GAP_S || stationaryAtEdge(0, +1)) laps[0].type = 'outlap';
+  }
+  // Gaps between consecutive laps
+  for (let i = 0; i < laps.length - 1; i++) {
+    const gap = (laps[i + 1].start - laps[i].end) / 1000;
+    if (gap > PIT_GAP_S) {
+      laps[i].type = 'inlap';
+      laps[i + 1].type = 'outlap';
+    }
+  }
+  // Gap after last lap — or car was stationary at session end
+  if (laps.length > 0) {
+    const last = data.length - 1;
+    const postGap = (data[last].ts - laps[laps.length - 1].end) / 1000;
+    if (postGap > PIT_GAP_S || stationaryAtEdge(last, -1)) laps[laps.length - 1].type = 'inlap';
   }
 
   return laps;
@@ -1093,9 +1356,20 @@ function toggleLap(num, btn) {
       btn.classList.add('active');
     }
   }
+  updateCompareHint();
   renderAllGraphs();
   renderMap();
   if (document.getElementById('panel-analysis').classList.contains('visible')) renderAnalysis();
+}
+
+function updateCompareHint() {
+  const el = document.getElementById('compare-hint');
+  if (!state.compareMode) { el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  const n = state.selectedLaps.size;
+  if (n === 0)      el.textContent = 'Click lap buttons to select laps to compare';
+  else if (n === 1) el.textContent = 'Select one more lap, then view TELEMETRY to overlay';
+  else              el.innerHTML   = `${n} laps selected &mdash; view <b>TELEMETRY</b> to compare`;
 }
 
 document.getElementById('compare-mode-btn').onclick = function() {
@@ -1104,6 +1378,7 @@ document.getElementById('compare-mode-btn').onclick = function() {
   state.selectedLaps.clear();
   document.querySelectorAll('.lap-btn').forEach(b => { b.classList.remove('active','multi-active'); });
   document.getElementById('overlay-controls').style.display = state.compareMode ? 'flex' : 'none';
+  updateCompareHint();
   renderAllGraphs();
 };
 
@@ -1146,7 +1421,7 @@ document.getElementById('file-input').addEventListener('change', e => {
 document.body.addEventListener('dragover', e => e.preventDefault());
 document.body.addEventListener('drop', e => {
   e.preventDefault();
-  const files = [...e.dataTransfer.files].filter(f => f.name.endsWith('.csv'));
+  const files = [...e.dataTransfer.files].filter(f => f.name.endsWith('.csv') || f.name.endsWith('.vbo'));
   if (files.length > 0) loadFiles(files);
 });
 
@@ -1175,12 +1450,12 @@ function renderAnalysis() {
   const braking       = detectBrakingEvents(data);
   const cornerSummary = detectCornerEvents(data);  // for summary stats
   const wheelEvt      = detectWheelEvents(data);
-  const { canonical, byLap } = buildCornerAnalysis(activeLaps, state.catbus);
+  const { canonical, byLap, refLapData } = buildCornerAnalysis(activeLaps, state.catbus);
 
   renderSummary(data, braking, cornerSummary, wheelEvt, canonical.length);
   renderTractionCircle(data);
   renderBrakingTable(braking);
-  renderCornerMatrix(canonical, byLap, activeLaps);
+  renderCornerMatrix(canonical, byLap, activeLaps, refLapData);
   renderWheelTable(wheelEvt);
 }
 
@@ -1304,7 +1579,7 @@ function buildCornerAnalysis(laps, data) {
 
   // Reference: the lap with the most corners
   const refResult = lapResults.reduce((b, r) => r.corners.length > b.corners.length ? r : b, lapResults[0]);
-  if (refResult.corners.length === 0) return { canonical: [], byLap: {} };
+  if (refResult.corners.length === 0) return { canonical: [], byLap: {}, refLapData: [] };
 
   // Build canonical list from reference lap
   const track = state.sfZone;
@@ -1334,7 +1609,10 @@ function buildCornerAnalysis(laps, data) {
     }
   }
 
-  return { canonical, byLap };
+  const refLap = refResult.lap;
+  const refLapData = data.slice(refLap.idx0, refLap.idx1 + 1).filter(r => r.lat !== 0);
+
+  return { canonical, byLap, refLapData };
 }
 
 function wheelLockupFromSpeeds(r) {
@@ -1517,7 +1795,42 @@ function renderBrakingTable(events) {
   });
 }
 
-function renderCornerMatrix(canonical, byLap, laps) {
+function buildTrackMinimap(refLapData, canonical) {
+  if (!refLapData || refLapData.length < 10) return '';
+  const W = 400, H = 140, PAD = 18;
+  const lats = refLapData.map(r => r.lat), lngs = refLapData.map(r => r.lng);
+  const minLat = Math.min(...lats), maxLat = Math.max(...lats);
+  const minLng = Math.min(...lngs), maxLng = Math.max(...lngs);
+  const scaleX = (W - PAD * 2) / (maxLng - minLng || 1);
+  const scaleY = (H - PAD * 2) / (maxLat - minLat || 1);
+  const scale  = Math.min(scaleX, scaleY);
+  const offX   = PAD + ((W - PAD * 2) - (maxLng - minLng) * scale) / 2;
+  const offY   = PAD + ((H - PAD * 2) - (maxLat - minLat) * scale) / 2;
+  const toX = lng => offX + (lng - minLng) * scale;
+  const toY = lat => offY + (maxLat - lat) * scale;  // flip y
+
+  // Downsample track points for a clean polyline
+  const step = Math.max(1, Math.floor(refLapData.length / 300));
+  const pts = refLapData.filter((_, i) => i % step === 0).map(r => `${toX(r.lng).toFixed(1)},${toY(r.lat).toFixed(1)}`).join(' ');
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:${H}px;display:block;margin-bottom:8px">`;
+  svg += `<polyline points="${pts}" fill="none" stroke="#2a3f5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+  svg += `<polyline points="${pts}" fill="none" stroke="#4a6fa5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+
+  for (const c of canonical) {
+    if (!c.cLat || !c.cLng) continue;
+    const cx = toX(c.cLng).toFixed(1), cy = toY(c.cLat).toFixed(1);
+    const dirColor = c.dir === 'L' ? '#4ecca3' : '#f5a623';
+    svg += `<circle cx="${cx}" cy="${cy}" r="7" fill="#1a1a2e" stroke="${dirColor}" stroke-width="1.5"/>`;
+    svg += `<text x="${cx}" y="${cy}" dy="0.35em" text-anchor="middle" font-size="6" fill="${dirColor}" font-family="monospace">${c.num}</text>`;
+    // Tooltip via title element
+    svg += `<title>${c.num}: ${c.name}</title>`;
+  }
+  svg += '</svg>';
+  return svg;
+}
+
+function renderCornerMatrix(canonical, byLap, laps, refLapData) {
   const el = document.getElementById('an-corners');
   if (canonical.length === 0) {
     el.innerHTML = '<p style="color:#555;font-size:0.72rem">No corners detected — need at least one full lap.</p>';
@@ -1542,7 +1855,8 @@ function renderCornerMatrix(canonical, byLap, laps) {
     return `rgba(${red},${g},0,0.25)`;
   };
 
-  let html = '<table class="analysis-table" style="font-size:0.68rem"><thead><tr>';
+  let html = buildTrackMinimap(refLapData, canonical);
+  html += '<table class="analysis-table" style="font-size:0.68rem"><thead><tr>';
   html += '<th>Corner</th><th>Dir</th>';
   for (const lap of laps) {
     const dur = ((lap.end - lap.start) / 1000).toFixed(0);

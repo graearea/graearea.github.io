@@ -105,8 +105,13 @@ async function checkout() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: basket.map(i => ({ priceId: i.priceId, quantity: i.quantity })) }),
     });
-    const { url } = await res.json();
+    const { url, warning } = await res.json();
     if (url) {
+      if (warning && !confirm(warning + '\n\nContinue to checkout?')) {
+        btn.disabled = false;
+        btn.textContent = 'Checkout';
+        return;
+      }
       localStorage.removeItem('basket');
       window.location.href = url;
     } else {

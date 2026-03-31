@@ -72,6 +72,11 @@ export default {
       return new Response(JSON.stringify({ error: "No session URL", detail: session }), { status: 500, headers });
     }
 
-    return new Response(JSON.stringify({ url: session.url }), { headers });
+    const isUSCA = ["US", "CA"].includes(country);
+    const warning = isUSCA
+      ? "Heads up: US and Canadian orders will incur customs/import duties on arrival. I'll contact you after you order to arrange payment of these separately before I ship."
+      : null;
+
+    return new Response(JSON.stringify({ url: session.url, warning }), { headers });
   }
 };
