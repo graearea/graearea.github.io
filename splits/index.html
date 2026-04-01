@@ -22,14 +22,55 @@ body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0;
 #header .status { font-size: 0.75rem; color: #888; }
 #header .status span { color: #4ecca3; }
 
-#main { display: grid; grid-template-columns: 420px 1fr; flex: 1; overflow: hidden; gap: 0; }
+#main { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
 
-/* LEFT PANEL */
-#left-panel { display: flex; flex-direction: column; background: #16213e; border-right: 1px solid #0f3460; overflow: hidden; }
+/* LEFT PANEL — fixed overlay bottom-left */
+#left-panel {
+  position: fixed; bottom: 20px; left: 20px;
+  width: 280px; max-height: calc(100vh - 80px);
+  z-index: 200; border: 1px solid #0f3460; border-radius: 6px;
+  background: #16213e; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: max-height 0.2s, border-color 0.2s;
+  display: flex; flex-direction: column;
+}
+#left-panel.collapsed { max-height: 28px; }
+#left-panel-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 4px 8px; flex-shrink: 0; min-height: 28px;
+}
+#left-panel-title {
+  font-size: 0.65rem; color: #4ecca3; letter-spacing: 0.5px; pointer-events: none;
+}
+#left-panel-toggle {
+  background: rgba(15,52,96,0.85); border: none; color: #4ecca3;
+  font-size: 0.65rem; cursor: pointer; padding: 2px 6px; border-radius: 3px;
+  letter-spacing: 0.5px;
+}
 
-#map { flex: 1; min-height: 0; }
+#controls { padding: 8px 10px 10px; overflow-y: auto; flex: 1; }
 
-#controls { padding: 10px; background: #0f3460; border-top: 1px solid #16213e; flex-shrink: 0; }
+/* MAP OVERLAY — fixed bottom-right */
+#map {
+  position: fixed; bottom: 20px; right: 20px;
+  width: 360px; height: 270px;
+  z-index: 200; border: 1px solid #0f3460; border-radius: 6px;
+  overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+}
+#map.collapsed { height: 28px; }
+#map-toggle {
+  position: absolute; top: 4px; right: 6px; z-index: 201;
+  background: rgba(15,52,96,0.85); border: none; color: #4ecca3;
+  font-size: 0.65rem; cursor: pointer; padding: 2px 6px; border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+#map-title {
+  position: absolute; top: 4px; left: 8px; z-index: 201;
+  font-size: 0.65rem; color: #4ecca3; letter-spacing: 0.5px; pointer-events: none;
+  display: none;
+}
+#map.collapsed #map-title { display: block; }
 
 #drop-zone {
   border: 2px dashed #4ecca3;
@@ -76,10 +117,16 @@ body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0;
 #timeline-slider { height: 8px; }
 
 /* RIGHT PANEL — tab switcher */
-#right-panel { display: flex; flex-direction: column; overflow: hidden; background: #1a1a2e; }
-#panel-tabs { display: flex; background: #16213e; border-bottom: 1px solid #0f3460; flex-shrink: 0; }
+#right-panel { display: flex; flex-direction: column; overflow: hidden; background: #1a1a2e; flex: 1; }
+#panel-tabs { display: flex; align-items: center; background: #16213e; border-bottom: 1px solid #0f3460; flex-shrink: 0; gap: 0; }
 .panel-tab { padding: 6px 14px; font-size: 0.72rem; color: #888; cursor: pointer; border-bottom: 2px solid transparent; letter-spacing: 1px; }
 .panel-tab.active { color: #4ecca3; border-bottom-color: #4ecca3; }
+#xaxis-btns { display: flex; gap: 3px; margin-left: auto; padding-right: 10px; }
+#xaxis-btns button {
+  padding: 2px 8px; border-radius: 4px; border: 1px solid #555;
+  background: transparent; color: #888; cursor: pointer; font-size: 0.68rem;
+}
+#xaxis-btns button.active { border-color: #4ecca3; color: #4ecca3; }
 #panel-graphs { display: flex; flex-direction: column; overflow-y: auto; flex: 1; }
 #panel-analysis { display: none; flex-direction: column; overflow-y: auto; flex: 1; padding: 12px; gap: 12px; }
 #panel-analysis.visible { display: flex; }
@@ -162,56 +209,68 @@ body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0;
   <div class="status" style="margin-left:auto">cursor: <span id="hdr-cursor">—</span></div>
 </div>
 
-<div id="main">
-  <!-- LEFT -->
-  <div id="left-panel">
-    <div id="map">
-      <div id="empty-state">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-        </svg>
-        Drop a CSV to begin
-      </div>
+<div id="map">
+  <span id="map-title">MAP</span>
+  <button id="map-toggle">▼</button>
+  <div id="empty-state">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>
+    Drop a file to begin
+  </div>
+</div>
+
+<div id="left-panel">
+  <div id="left-panel-header">
+    <span id="left-panel-title">LAPS</span>
+    <button id="left-panel-toggle">▼</button>
+  </div>
+  <div id="controls">
+    <button id="load-example-btn" style="width:100%;margin-bottom:8px;padding:5px;border-radius:4px;border:1px solid #555;background:transparent;color:#888;cursor:pointer;font-size:0.72rem;letter-spacing:0.5px">Load example data</button>
+    <div id="drop-zone" id="dz">
+      <input type="file" id="file-input" multiple accept=".csv,.vbo">
+      <div>Drop CSV files here or <u>click to browse</u></div>
+      <div style="font-size:0.65rem;color:#888;margin-top:2px">CatBus + RaceBox formats supported</div>
     </div>
-    <div id="controls">
-      <div id="drop-zone" id="dz">
-        <input type="file" id="file-input" multiple accept=".csv,.vbo">
-        <div>Drop CSV files here or <u>click to browse</u></div>
-        <div style="font-size:0.65rem;color:#888;margin-top:2px">CatBus + RaceBox formats supported</div>
-      </div>
-      <div id="file-list"></div>
-      <div id="lap-controls">
-        <label>Laps:</label>
-        <button id="compare-mode-btn">Compare</button>
-        <button id="clear-laps-btn" style="padding:2px 8px;border-radius:4px;border:1px solid #555;background:transparent;color:#888;cursor:pointer;font-size:0.72rem">All</button>
-        <span id="overlay-controls" style="display:none;gap:4px;align-items:center">
-          <button id="overlay-time-btn" class="lap-btn active" data-align="time">Time</button>
-          <button id="overlay-dist-btn" class="lap-btn" data-align="dist">Dist</button>
-        </span>
-      </div>
-      <div id="lap-buttons"></div>
-      <div id="compare-hint" style="display:none;font-size:0.7rem;color:#888;padding:4px 0 2px 2px"></div>
-      <div id="offset-control">
-        <label>RaceBox offset: <span id="offset-val">0s</span></label>
-        <div id="offset-slider"></div>
-      </div>
-      <div id="scrubber-wrap">
-        <div id="scrubber-label"><span id="scrub-t0">—</span><span id="scrub-t1">—</span></div>
-        <div id="timeline-slider"></div>
-      </div>
+    <div id="file-list"></div>
+    <div id="lap-controls">
+      <label>Laps:</label>
+      <button id="compare-mode-btn">Compare</button>
+      <button id="clear-laps-btn" style="padding:2px 8px;border-radius:4px;border:1px solid #555;background:transparent;color:#888;cursor:pointer;font-size:0.72rem">All</button>
+      <span id="overlay-controls" style="display:none;gap:4px;align-items:center">
+        <button id="overlay-time-btn" class="lap-btn active" data-align="time">Time</button>
+        <button id="overlay-dist-btn" class="lap-btn" data-align="dist">Dist</button>
+      </span>
+    </div>
+    <div id="lap-buttons"></div>
+    <div id="compare-hint" style="display:none;font-size:0.7rem;color:#888;padding:4px 0 2px 2px"></div>
+    <div id="offset-control">
+      <label>RaceBox offset: <span id="offset-val">0s</span></label>
+      <div id="offset-slider"></div>
+    </div>
+    <div id="scrubber-wrap">
+      <div id="scrubber-label"><span id="scrub-t0">—</span><span id="scrub-t1">—</span></div>
+      <div id="timeline-slider"></div>
     </div>
   </div>
+</div>
 
-  <!-- RIGHT -->
+<div id="main">
   <div id="right-panel">
     <div id="panel-tabs">
       <div class="panel-tab active" data-panel="graphs">TELEMETRY</div>
       <div class="panel-tab" data-panel="analysis">ANALYSIS</div>
+      <div id="xaxis-btns">
+        <button id="xaxis-time-btn" class="active">Time</button>
+        <button id="xaxis-dist-btn">Distance</button>
+      </div>
     </div>
     <div id="panel-graphs">
-      <div class="graph-container" style="height:140px"><div class="graph-title">SPEED · RPM · COOLANT · VOLTAGE</div><div id="g-speed" class="plotly-graph" style="height:140px"></div></div>
-      <div class="graph-container" style="height:160px"><div class="graph-title">G-FORCES · INDICATORS</div><div id="g-gforce" class="plotly-graph" style="height:160px"></div></div>
-      <div class="graph-container" style="height:120px"><div class="graph-title">WHEEL SPEEDS</div><div id="g-wheels" class="plotly-graph" style="height:120px"></div></div>
+      <div class="graph-container" style="height:220px"><div class="graph-title">SPEED · RPM</div><div id="g-speed" class="plotly-graph" style="height:220px"></div></div>
+      <div class="graph-container" style="height:110px"><div class="graph-title">LATERAL G</div><div id="g-latg" class="plotly-graph" style="height:110px"></div></div>
+      <div class="graph-container" style="height:110px"><div class="graph-title">LONGITUDINAL G · INDICATORS</div><div id="g-long" class="plotly-graph" style="height:110px"></div></div>
+      <div class="graph-container" style="height:110px"><div class="graph-title">WHEEL SPEEDS</div><div id="g-wheels" class="plotly-graph" style="height:110px"></div></div>
+      <div class="graph-container" style="height:110px"><div class="graph-title">TEMPS · VOLTAGE</div><div id="g-temps" class="plotly-graph" style="height:110px"></div></div>
       <div class="graph-container" style="height:110px"><div class="graph-title">FUEL</div><div id="g-fuel" class="plotly-graph" style="height:110px"></div></div>
     </div>
     <div id="panel-analysis">
@@ -755,6 +814,13 @@ function parseVBOFile(text) {
       _src: 'vbo',
     });
   }
+  // Compute cumulative distance_km from GPS track
+  let cumDist = 0;
+  for (let i = 0; i < rows.length; i++) {
+    if (i > 0) cumDist += haversineM(rows[i-1].lat, rows[i-1].lng, rows[i].lat, rows[i].lng) / 1000;
+    rows[i].distance_km = cumDist;
+  }
+
   return { rows, vboSf };
 }
 
@@ -1060,6 +1126,8 @@ function onMapClick(e) {
 }
 
 // ─── Graphs ────────────────────────────────────────────────────────────────
+let xAxisMode = 'time'; // 'time' | 'distance'
+
 const PLOT_LAYOUT_BASE = {
   paper_bgcolor: 'rgba(0,0,0,0)',
   plot_bgcolor: 'rgba(0,0,0,0)',
@@ -1069,9 +1137,16 @@ const PLOT_LAYOUT_BASE = {
   legend: { font: { size: 9 }, bgcolor: 'rgba(0,0,0,0)', orientation: 'h', x: 0, y: 1.18, xanchor: 'left', yanchor: 'top' },
 };
 
+function getXAxis(override = {}) {
+  if (xAxisMode === 'distance') {
+    return Object.assign({ color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: 'km', titlefont: { size: 9 }, tickformat: '.2f' }, override);
+  }
+  return Object.assign({}, PLOT_LAYOUT_BASE.xaxis, override);
+}
+
 function makeLayout(extra = {}) {
   return Object.assign({}, PLOT_LAYOUT_BASE, extra, {
-    xaxis: Object.assign({}, PLOT_LAYOUT_BASE.xaxis, extra.xaxis || {}),
+    xaxis: Object.assign(getXAxis(), extra.xaxis || {}),
   });
 }
 
@@ -1086,7 +1161,7 @@ function renderLapOverlay() {
   if (laps.length === 0) return;
 
   const cfg = { responsive: true, displayModeBar: false };
-  const speedT = [], gfT = [], wheelT = [], fuelT = [];
+  const speedT = [], latgT = [], longT = [], wheelT = [], tempsT = [], fuelT = [];
 
   laps.forEach((lap, li) => {
     const ld = state.catbus.slice(lap.idx0, lap.idx1 + 1);
@@ -1094,7 +1169,7 @@ function renderLapOverlay() {
     const lbl = `L${lap.num}`;
 
     let xs;
-    if (overlayAlign === 'dist') {
+    if (xAxisMode === 'distance') {
       const d0 = ld[0].distance_km;
       xs = ld.map(r => (r.distance_km - d0).toFixed(3) * 1);
     } else {
@@ -1102,22 +1177,27 @@ function renderLapOverlay() {
       xs = ld.map(r => ((r.ts.getTime() - t0) / 1000));
     }
 
-    speedT.push({ x: xs, y: ld.map(r => r.speed_mph),  name: lbl,          line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
+    speedT.push({ x: xs, y: ld.map(r => r.speed_mph),  name: lbl,               line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
     speedT.push({ x: xs, y: ld.map(r => r.rpm / 100),  name: `${lbl} RPM÷100`, line: { color: col, width: 0.8, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
-    gfT.push(   { x: xs, y: ld.map(r => r.lat_g),      name: `${lbl} Lat`, line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
-    gfT.push(   { x: xs, y: ld.map(r => r.lon_g),      name: `${lbl} Lon`, line: { color: col, width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
+    latgT.push( { x: xs, y: ld.map(r => r.lat_g),      name: `${lbl} Lat`,      line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
+    longT.push( { x: xs, y: ld.map(r => r.lon_g),      name: `${lbl} Lon`,      line: { color: col, width: 1.5 }, type: 'scattergl', mode: 'lines' });
     wheelT.push({ x: xs, y: ld.map(r => (r.wfl + r.wfr) / 2), name: `${lbl} Front`, line: { color: col, width: 1 }, type: 'scattergl', mode: 'lines' });
     wheelT.push({ x: xs, y: ld.map(r => (r.wrl + r.wrr) / 2), name: `${lbl} Rear`,  line: { color: col, width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
-    fuelT.push( { x: xs, y: ld.map(r => r.fuel_1),     name: `${lbl} Fuel`, line: { color: col, width: 1 }, type: 'scattergl', mode: 'lines' });
+    tempsT.push({ x: xs, y: ld.map(r => r.coolant),    name: `${lbl} Cool`,     line: { color: col, width: 1 }, type: 'scattergl', mode: 'lines' });
+    fuelT.push( { x: xs, y: ld.map(r => r.fuel_1),     name: `${lbl} Fuel`,     line: { color: col, width: 1 }, type: 'scattergl', mode: 'lines' });
   });
 
-  const xLabel = overlayAlign === 'dist' ? 'Distance (km)' : 'Elapsed (s)';
+  const xLabel = xAxisMode === 'distance' ? 'Distance (km)' : 'Elapsed (s)';
   const xaxis  = { color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: xLabel, titlefont: { size: 9 } };
+  const yZero  = { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333' };
+  const yBase  = { color: '#555', gridcolor: '#1e2d4a', zeroline: false };
 
-  Plotly.react('g-speed',  speedT,  makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: 'mph', titlefont: { size: 9 } } }), cfg);
-  Plotly.react('g-gforce', gfT,     makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333' } }), cfg);
-  Plotly.react('g-wheels', wheelT,  makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
-  Plotly.react('g-fuel',   fuelT,   makeLayout({ xaxis, showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
+  Plotly.react('g-speed',  speedT,  makeLayout({ xaxis, showlegend: true, yaxis: { ...yBase, title: 'mph', titlefont: { size: 9 } } }), cfg);
+  Plotly.react('g-latg',   latgT,   makeLayout({ xaxis, showlegend: true, yaxis: yZero }), cfg);
+  Plotly.react('g-long',   longT,   makeLayout({ xaxis, showlegend: true, yaxis: yZero }), cfg);
+  Plotly.react('g-wheels', wheelT,  makeLayout({ xaxis, showlegend: true, yaxis: yBase }), cfg);
+  Plotly.react('g-temps',  tempsT,  makeLayout({ xaxis, showlegend: true, yaxis: { ...yBase, title: '°C', titlefont: { size: 9 } } }), cfg);
+  Plotly.react('g-fuel',   fuelT,   makeLayout({ xaxis, showlegend: true, yaxis: yBase }), cfg);
 
   graphsInitialized = true;
   setupGraphSync(); // reuses existing sync — applyXRange handles numeric ranges too
@@ -1132,47 +1212,26 @@ function renderAllGraphs() {
   const data = visibleData();
   if (data.length === 0) return;
 
-  const xs = data.map(r => r.ts);
+  const d0 = xAxisMode === 'distance' ? data[0].distance_km : 0;
+  const xs = xAxisMode === 'distance' ? data.map(r => r.distance_km - d0) : data.map(r => r.ts);
 
   // Speed graph
   const speedTraces = [
     { x: xs, y: data.map(r => r.speed_mph), name: 'Speed (mph)', line: { color: '#4ecca3', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
-    { x: xs, y: data.map(r => r.rpm / 100), name: 'RPM÷100', line: { color: '#f5a623', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
-    { x: xs, y: data.map(r => r.coolant), name: 'Coolant°C', line: { color: '#e94560', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y2' },
-    { x: xs, y: data.map(r => r.voltage), name: 'Voltage', line: { color: '#9b59b6', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y2' },
+    { x: xs, y: data.map(r => r.rpm / 100), name: 'RPM÷100', line: { color: '#f5a623', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y2' },
   ];
   if (state.racebox.length > 0) {
     const rb = raceboxVisible();
     speedTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.speed_mph), name: 'RB Speed', line: { color: '#3498db', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
   }
 
-  const speedLayout = makeLayout({
-    yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, title: 'mph', titlefont: { size: 9 } },
-    yaxis2: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, overlaying: 'y', side: 'right', title: '°C / V', titlefont: { size: 9 } },
-    showlegend: true,
-  });
-
-  // G-force graph (with indicators overlaid on secondary axis)
+  // Missed indicator cancel markers (built before latg/long traces that use them)
   const missedCancelXs = [], missedCancelYs = [];
   for (let i = 0; i < data.length; i++) {
     const singleIndicator = (data[i].led_l > 0) !== (data[i].led_r > 0);
     if (Math.abs(data[i].lat_g) > 0.3 && singleIndicator) {
-      missedCancelXs.push(data[i].ts); missedCancelYs.push(1.1);
+      missedCancelXs.push(xs[i]); missedCancelYs.push(1.1);
     }
-  }
-  const gfTraces = [
-    { x: xs, y: data.map(r => r.lat_g), name: 'Lateral G', line: { color: '#4ecca3', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
-    { x: xs, y: data.map(r => r.lon_g), name: 'Long G', line: { color: '#e94560', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
-    { x: xs, y: data.map(r => r.led_l), name: 'LED Left', fill: 'tozeroy', fillcolor: 'rgba(78,204,163,0.25)', line: { color: '#4ecca3', width: 1 }, type: 'scatter', mode: 'lines', yaxis: 'y2' },
-    { x: xs, y: data.map(r => r.led_r * 1.05), name: 'LED Right', fill: 'tozeroy', fillcolor: 'rgba(245,166,35,0.25)', line: { color: '#f5a623', width: 1 }, type: 'scatter', mode: 'lines', yaxis: 'y2' },
-  ];
-  if (missedCancelXs.length > 0) {
-    gfTraces.push({ x: missedCancelXs, y: missedCancelYs, name: 'Missed cancel?', mode: 'markers', marker: { color: '#e94560', size: 4, symbol: 'circle' }, type: 'scatter', yaxis: 'y2' });
-  }
-  if (state.racebox.length > 0) {
-    const rb = raceboxVisible();
-    gfTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.accx), name: 'RB AccX', line: { color: '#3498db', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines', yaxis: 'y' });
-    gfTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.accy), name: 'RB AccY', line: { color: '#f5a623', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines', yaxis: 'y' });
   }
 
   // Wheel speeds
@@ -1192,16 +1251,46 @@ function renderAllGraphs() {
     { x: xs, y: data.map(r => r.fuel_5), name: 'Fuel 5min', line: { color: '#f5a623', width: 1, dash: 'dash' }, type: 'scattergl', mode: 'lines' },
   ];
 
-  const cfg = { responsive: true, displayModeBar: false };
+  // Lateral G
+  const latgTraces = [
+    { x: xs, y: data.map(r => r.lat_g), name: 'Lateral G', line: { color: '#4ecca3', width: 1.5 }, type: 'scattergl', mode: 'lines' },
+  ];
+  if (state.racebox.length > 0) {
+    const rb = raceboxVisible();
+    latgTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.accx), name: 'RB LatG', line: { color: '#3498db', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines' });
+  }
 
-  Plotly.react('g-speed', speedTraces, speedLayout, cfg);
-  Plotly.react('g-gforce', gfTraces, makeLayout({
-    yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333' },
-    yaxis2: { color: '#555', gridcolor: '#1e2d4a', zeroline: false, overlaying: 'y', side: 'right', range: [-0.1, 1.3], showticklabels: false },
-    showlegend: true,
-  }), cfg);
-  Plotly.react('g-wheels', wheelTraces, makeLayout({ showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
-  Plotly.react('g-fuel', fuelTraces, makeLayout({ showlegend: true, yaxis: { color: '#555', gridcolor: '#1e2d4a', zeroline: false } }), cfg);
+  // Longitudinal G + indicators
+  const longTraces = [
+    { x: xs, y: data.map(r => r.lon_g), name: 'Long G', line: { color: '#e94560', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
+    { x: xs, y: data.map(r => r.led_l), name: 'LED Left', fill: 'tozeroy', fillcolor: 'rgba(78,204,163,0.25)', line: { color: '#4ecca3', width: 1 }, type: 'scatter', mode: 'lines', yaxis: 'y2' },
+    { x: xs, y: data.map(r => r.led_r * 1.05), name: 'LED Right', fill: 'tozeroy', fillcolor: 'rgba(245,166,35,0.25)', line: { color: '#f5a623', width: 1 }, type: 'scatter', mode: 'lines', yaxis: 'y2' },
+  ];
+  if (missedCancelXs.length > 0) {
+    longTraces.push({ x: missedCancelXs, y: missedCancelYs, name: 'Missed cancel?', mode: 'markers', marker: { color: '#e94560', size: 4, symbol: 'circle' }, type: 'scatter', yaxis: 'y2' });
+  }
+  if (state.racebox.length > 0) {
+    const rb = raceboxVisible();
+    longTraces.push({ x: rb.map(r => r.ts), y: rb.map(r => r.accy), name: 'RB LonG', line: { color: '#f5a623', width: 1, dash: 'dot' }, type: 'scattergl', mode: 'lines', yaxis: 'y' });
+  }
+
+  // Temps + voltage
+  const tempsTraces = [
+    { x: xs, y: data.map(r => r.coolant), name: 'Coolant°C', line: { color: '#e94560', width: 1.5 }, type: 'scattergl', mode: 'lines', yaxis: 'y' },
+    { x: xs, y: data.map(r => r.voltage), name: 'Voltage', line: { color: '#9b59b6', width: 1 }, type: 'scattergl', mode: 'lines', yaxis: 'y2' },
+  ];
+
+  const cfg = { responsive: true, displayModeBar: false };
+  const yBase = { color: '#555', gridcolor: '#1e2d4a', zeroline: false };
+  const yZero = { color: '#555', gridcolor: '#1e2d4a', zeroline: true, zerolinecolor: '#333' };
+  const yR    = { color: '#555', gridcolor: '#1e2d4a', zeroline: false, overlaying: 'y', side: 'right', showticklabels: false };
+
+  Plotly.react('g-speed',  speedTraces, makeLayout({ yaxis: { ...yBase, title: 'mph', titlefont: { size: 9 } }, yaxis2: { ...yR, title: 'rpm÷100', titlefont: { size: 9 } }, showlegend: true }), cfg);
+  Plotly.react('g-latg',   latgTraces,  makeLayout({ yaxis: { ...yZero }, showlegend: true }), cfg);
+  Plotly.react('g-long',   longTraces,  makeLayout({ yaxis: { ...yZero }, yaxis2: { ...yR, range: [-0.1, 1.3] }, showlegend: true }), cfg);
+  Plotly.react('g-wheels', wheelTraces, makeLayout({ yaxis: yBase, showlegend: true }), cfg);
+  Plotly.react('g-temps',  tempsTraces, makeLayout({ yaxis: { ...yBase, title: '°C', titlefont: { size: 9 } }, yaxis2: { ...yR, title: 'V', titlefont: { size: 9 } }, showlegend: true }), cfg);
+  Plotly.react('g-fuel',   fuelTraces,  makeLayout({ yaxis: yBase, showlegend: true }), cfg);
 
   graphsInitialized = true;
   setupGraphSync();
@@ -1247,7 +1336,7 @@ function raceboxVisible() {
 }
 
 // ─── Graph Sync ────────────────────────────────────────────────────────────
-const GRAPH_IDS = ['g-speed', 'g-gforce', 'g-wheels', 'g-fuel'];
+const GRAPH_IDS = ['g-speed', 'g-latg', 'g-long', 'g-wheels', 'g-temps', 'g-fuel'];
 // Use a generation counter instead of a boolean lock.
 // Each programmatic sync increments syncGen; event handlers ignore events
 // that were triggered by our own Plotly.relayout calls.
@@ -1424,6 +1513,56 @@ document.getElementById('overlay-dist-btn').onclick = function() {
   document.getElementById('overlay-dist-btn').classList.add('active');
   document.getElementById('overlay-time-btn').classList.remove('active');
   if (state.compareMode && state.selectedLaps.size > 1) renderAllGraphs();
+};
+
+// ─── Example data ──────────────────────────────────────────────────────────
+document.getElementById('load-example-btn').onclick = async function() {
+  if (location.protocol === 'file:') {
+    alert('Example data requires a web server.\nRun: python3 -m http.server 8080\nthen open http://localhost:8080/catbus-viz.html');
+    return;
+  }
+  this.textContent = 'Loading…';
+  this.disabled = true;
+  try {
+    const res = await fetch('session_20260330_160013_snetterton_300_laps1-6_v3.csv');
+    if (!res.ok) throw new Error(res.statusText);
+    const text = await res.text();
+    const file = new File([text], 'session_20260330_160013_snetterton_300_laps1-6_v3.csv', { type: 'text/csv' });
+    loadFiles([file]);
+  } catch(e) {
+    this.textContent = 'Load example data';
+    this.disabled = false;
+    console.error('Could not load example data:', e);
+  }
+};
+
+// ─── Left panel toggle ─────────────────────────────────────────────────────
+document.getElementById('left-panel-toggle').onclick = function() {
+  const panel = document.getElementById('left-panel');
+  panel.classList.toggle('collapsed');
+  this.textContent = panel.classList.contains('collapsed') ? '▲' : '▼';
+};
+
+// ─── Map toggle ────────────────────────────────────────────────────────────
+document.getElementById('map-toggle').onclick = function() {
+  const mapEl = document.getElementById('map');
+  mapEl.classList.toggle('collapsed');
+  this.textContent = mapEl.classList.contains('collapsed') ? '▲' : '▼';
+  if (!mapEl.classList.contains('collapsed')) state.map.invalidateSize();
+};
+
+// ─── X-axis mode ───────────────────────────────────────────────────────────
+document.getElementById('xaxis-time-btn').onclick = function() {
+  xAxisMode = 'time';
+  this.classList.add('active');
+  document.getElementById('xaxis-dist-btn').classList.remove('active');
+  renderAllGraphs();
+};
+document.getElementById('xaxis-dist-btn').onclick = function() {
+  xAxisMode = 'distance';
+  this.classList.add('active');
+  document.getElementById('xaxis-time-btn').classList.remove('active');
+  renderAllGraphs();
 };
 
 document.getElementById('clear-laps-btn').onclick = () => {
