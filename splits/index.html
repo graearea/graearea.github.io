@@ -750,26 +750,37 @@ function parseVBOFile(text) {
     if (section === '[laptiming]' && line) {
       const m = line.match(/([+-]\d+\.\d+)\s+([+-]\d+\.\d+)\s+([+-]\d+\.\d+)\s+([+-]\d+\.\d+)/);
       if (m) {
-        const lat = (parseFloat(m[1]) + parseFloat(m[3])) / 2 / 60;
-        const lng = -((parseFloat(m[2]) + parseFloat(m[4])) / 2) / 60;
+        // Auto-detect order: whichever value has larger absolute magnitude is latitude
+        // (UK lat ~3000 arc-min, lng ~0-300 arc-min — unambiguous)
+        const a = parseFloat(m[1]), b = parseFloat(m[2]), c2 = parseFloat(m[3]), d = parseFloat(m[4]);
+        const [rawLat1, rawLng1, rawLat2, rawLng2] = Math.abs(a) > Math.abs(b) ? [a, b, c2, d] : [b, a, d, c2];
+        const lat = (rawLat1 + rawLat2) / 2 / 60;
+        const lng = -((rawLng1 + rawLng2) / 2) / 60;
         const label = line.replace(/.*¬\s*/, '').trim() || 'Start / Finish';
         vboSf = { lat, lng, label };
       }
     }
   }
 
-  // Find [column names] — single space-separated line after the section header
-  let colNames = null;
+  // Find [column names] — supports both one-per-line (older VBO) and space-separated (newer VBO)
+  const colNameBuf = [];
   section = '';
   for (const line of lines) {
-    if (line.startsWith('[')) { section = line; continue; }
-    if (section === '[column names]' && line) { colNames = line.split(/\s+/); break; }
+    if (line.startsWith('[')) {
+      if (section === '[column names]' && colNameBuf.length) break;
+      section = line; continue;
+    }
+    if (section === '[column names]' && line) colNameBuf.push(...line.split(/\s+/).filter(Boolean));
   }
+  const colNames = colNameBuf.length ? colNameBuf : null;
   if (!colNames) return { rows: [], vboSf };
 
-  const ci = name => colNames.indexOf(name);
-  const iTime = ci('time'), iLat = ci('lat'), iLng = ci('lng');
-  const iVel  = ci('velocity'), iLonG = ci('LongAcc'), iLatG = ci('LatAcc'), iAlt = ci('height');
+  const ci = name => colNames.findIndex(c => c.toLowerCase() === name.toLowerCase());
+  const iTime = ci('time'), iLat = ci('lat');
+  const iLng  = ci('lng') >= 0 ? ci('lng') : ci('long');
+  const iVel  = ci('velocity'), iAlt = ci('height');
+  const iLonG = ci('longacc') >= 0 ? ci('longacc') : ci('LongAcc');
+  const iLatG = ci('latacc') >= 0 ? ci('latacc') : ci('LatAcc');
 
   // Parse [data] rows
   const rows = [];

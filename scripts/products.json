@@ -58,5 +58,11 @@
     "description": "Curved shims for fitting flat mirror brackets to aero screens",
     "amount": 1500,
     "currency": "gbp"
+  },
+  {
+    "name": "Lifeline Mirrors with Lifeline Bases",
+    "description": "Lifeline mirrors with Lifeline bases for Spa Mirrors",
+    "amount": 14000,
+    "currency": "gbp"
   }
 ]
