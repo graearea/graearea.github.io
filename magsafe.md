@@ -13,7 +13,7 @@ Video here from the me sliding off at Oulton park and the mount holding on:
 
 I can probably supply a decent (non-apple branded) magsafe charger as well. ask about this.
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_FIXED', 'Magsafe Phone Mount', 20, 'Fixed')">Add to basket – £20 + £3 P&P</button>
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_SWIVEL', 'Magsafe Phone Mount', 25, 'Swivel')">Add to basket – £25 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqIAhb23PF7gKwkm5brri', 'Magsafe Phone Mount', 20, 'Fixed')">Add to basket – £20 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqJAhb23PF7gK30HTDReA', 'Magsafe Phone Mount', 25, 'Swivel')">Add to basket – £25 + £3 P&P</button>
 
 {% include_relative delivery.md %}

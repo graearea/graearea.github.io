@@ -14,6 +14,6 @@ Please be aware, solidly mounting phones to vehicles can damage them. I've heard
 V2
 £25 + £3 P&P (+£3 for non-black colours)
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Quadlock Mount', 25)">Add to basket – £25 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqJAhb23PF7gK889A6C8c', 'Quadlock Mount', 25)">Add to basket – £25 + £3 P&P</button>
 
 {% include_relative delivery.md %}

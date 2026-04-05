@@ -60,8 +60,83 @@
     "currency": "gbp"
   },
   {
+    "name": "Quick Swap Mirror Mounts",
+    "description": "Mirror mounts that swap between windscreen and sidescreen with one hex key",
+    "amount": 6300,
+    "currency": "gbp"
+  },
+  {
+    "name": "Caterham Spa/Motamec Adapters",
+    "description": "Adapters to fit Spa or Motamec convex mirrors in original Caterham holes",
+    "amount": 4800,
+    "currency": "gbp"
+  },
+  {
+    "name": "Harness Strap Clips",
+    "description": "Clips to stop Caterham harness straps flapping in the wind",
+    "amount": 2800,
+    "currency": "gbp"
+  },
+  {
+    "name": "Lap-belt Bung",
+    "description": "Carbon-fibre ASA bung to cover the lap-belt hole",
+    "amount": 1500,
+    "currency": "gbp"
+  },
+  {
+    "name": "Pedal Extensions",
+    "description": "3D printed pedal extensions to improve heel-and-toe on Caterham",
+    "amount": 3300,
+    "currency": "gbp"
+  },
+  {
+    "name": "Large Pedal Extension",
+    "description": "Wider, longer 3D printed pedal extension for improved heel-and-toe on Caterham",
+    "amount": 4800,
+    "currency": "gbp"
+  },
+  {
+    "name": "Big Knob",
+    "description": "Extended heater knob for Caterham — easier to reach when strapped in",
+    "amount": 2300,
+    "currency": "gbp"
+  },
+  {
+    "name": "Rollcage Mirror Mounts",
+    "description": "Mounts for attaching rollcage mirrors (Longacre etc) to a 32mm or 38mm cage",
+    "amount": 3300,
+    "currency": "gbp"
+  },
+  {
+    "name": "BigCol LED Lights",
+    "description": "Fristom sequential LED rear light clusters for Caterham with custom cowls",
+    "prices": [
+      { "label": "Cowls + LEDs", "amount": 17300 },
+      { "label": "Cowls only",   "amount": 9300 }
+    ],
+    "currency": "gbp"
+  },
+  {
+    "name": "Westie LED Lights",
+    "description": "Fristom sequential LED rear light clusters for Westfield with custom cowls",
+    "prices": [
+      { "label": "Cowls + LEDs", "amount": 15300 },
+      { "label": "Cowls only",   "amount": 7300 }
+    ],
+    "currency": "gbp"
+  },
+  {
+    "name": "Lifeline Mirror Mounts",
+    "description": "Carbon-fibre-reinforced articulated mirror mounts for Lifeline mirrors on Caterham",
+    "prices": [
+      { "label": "Adapters only",      "amount": 10300 },
+      { "label": "With Lifeline mirrors", "amount": 15300 }
+    ],
+    "currency": "gbp"
+  },
+  {
     "name": "Lifeline Mirrors with Lifeline Bases",
-    "description": "Lifeline mirrors with Lifeline bases for Spa Mirrors",
+    "description": "Lifeline mirrors with Lifeline bases for Caterham side screens",
     "amount": 14000,
     "currency": "gbp"
   }

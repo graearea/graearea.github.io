@@ -33,7 +33,7 @@ discount for multiples (including delivery):
 but you really don't need 4 :D (ridiculous maybe, but I needed to test them)
 ![too-many](img/too-many-beers.jpeg)
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_330', 'Jamaican Bacon Clip', 15, '330ml')">Add to basket – £15 + £3 P&P</button>
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_440', 'Jamaican Bacon Clip', 17, '440ml')">Add to basket – £17 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqKAhb23PF7gKqtxjMAKJ', 'Jamaican Bacon Clip', 15, '330ml')">Add to basket – £15 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqKAhb23PF7gKDVw2txDc', 'Jamaican Bacon Clip', 17, '440ml')">Add to basket – £17 + £3 P&P</button>
 
 {% include_relative delivery.md %}

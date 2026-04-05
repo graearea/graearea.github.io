@@ -10,7 +10,7 @@ to 10000m^2 contact (lol)
 These fit into the crappy Spa and Motamec sockets to increase friction and adjustability<br/>
 £15 + £3 P&P (or free with any of my mirror mounts)
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_FRICTION_CUPS', 'Friction Cups', 15)">Add to basket – £15 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqLAhb23PF7gKoRjh9Pqu', 'Friction Cups', 15)">Add to basket – £15 + £3 P&P</button>
 
 ## Curved shims for Aero Screen mirrors
 ![gaskets](img/gasket.jpeg)<br/>
@@ -20,6 +20,6 @@ Fitting flat metal mirror brackets to a curved screen doesn't work without putti
 I can make them with the curve lengthways like in the photos, or widthways (be sure to mention which you want)
 £15 + £3 P&P
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER_SHIMS', 'Curved Shims', 15)">Add to basket – £15 + £3 P&P</button>
+<button onclick="addToBasket('price_1TIxqMAhb23PF7gKdV9QFq2D', 'Curved Shims', 15)">Add to basket – £15 + £3 P&P</button>
 
 {% include_relative delivery.md %}

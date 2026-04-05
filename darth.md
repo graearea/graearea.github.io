@@ -5,4 +5,4 @@ I HATE dust caps that you have to screw on your fingers get filthy so I just chu
 ![darth](img/darth.webp)<br/>
 £12
 
-<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Darth Schrader Caps', 12)">Add to basket – £12</button>
+<button onclick="addToBasket('price_1TIxqGAhb23PF7gKeGi899Fp', 'Darth Schrader Caps', 12)">Add to basket – £12</button>
