@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uber Niche — Caterham Parts</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f5f5;
+      --card-bg: #fff;
+      --header-bg: #1a1a1a;
+      --accent: #e53935;
+      --text: #1a1a1a;
+      --muted: #777;
+      --border: #e8e8e8;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,.08);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,.14);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--header-bg);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header img { height: 40px; width: auto; }
+    header h1 {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      opacity: .75;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--header-bg);
+      color: #fff;
+      padding: 3rem 2rem 3.5rem;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: .6rem;
+    }
+    .hero p {
+      opacity: .65;
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: .95rem;
+    }
+
+    /* ── Filter bar ── */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      justify-content: center;
+      padding: 1.5rem 2rem;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 64px;
+      z-index: 99;
+    }
+    .filter-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .35rem .9rem;
+      font-size: .82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .15s;
+      color: var(--muted);
+    }
+    .filter-btn:hover { border-color: var(--text); color: var(--text); }
+    .filter-btn.active { background: var(--text); border-color: var(--text); color: #fff; }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+      padding: 1.5rem 2rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card.hidden { display: none; }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: center;
+      background: #eee;
+      display: block;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: .4rem;
+    }
+
+    .card-category {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
+    }
+
+    .card-title {
+      font-size: .95rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: .8rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: .6rem;
+      padding-top: .6rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-price {
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    .card-cta {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    @media (max-width: 540px) {
+      .grid { padding: 1rem; gap: 1rem; }
+      .filters { top: 56px; }
+      header { padding: .75rem 1rem; }
+      .hero { padding: 2rem 1rem 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="/img/UN-02.png" alt="Uber Niche">
+  <h1>Caterham &amp; Kit Car Parts</h1>
+</header>
+
+<div class="hero">
+  <h2>Designed, tested &amp; track-proven</h2>
+  <p>3D-printed parts for Caterhams. Developed on track from Cadwell to the Nürburgring.</p>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="mirrors">Mirrors</button>
+  <button class="filter-btn" data-cat="pedals">Pedals</button>
+  <button class="filter-btn" data-cat="interior">Interior</button>
+  <button class="filter-btn" data-cat="phone">Phone Mounts</button>
+  <button class="filter-btn" data-cat="lights">LED Lights</button>
+  <button class="filter-btn" data-cat="other">Other</button>
+</div>
+
+<div class="grid">
+
+  <a class="card" href="/lifeline-mirror-mounts" data-cat="mirrors">
+    <img class="card-img" src="/img/lifeline-wide.jpg" alt="Lifeline Mirror Mounts">
+    <div class="card-body">
+      <span class="card-category">Mirrors</span>
+      <span class="card-title">Lifeline Mirror Mounts</span>
+      <span class="card-desc">Articulated carbon-reinforced mounts for Lifeline convex mirrors. Fits any sidescreen.</span>
+      <div class="card-footer">
+        <span class="card-price">from £100</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/quick-swap-mirror-mounts" data-cat="mirrors">
+    <img class="card-img" src="/img/quick-swap-title.jpg" alt="Quick Swap Mirror Mounts">
+    <div class="card-body">
+      <span class="card-category">Mirrors</span>
+      <span class="card-title">Quick Swap Mirror Mounts</span>
+      <span class="card-desc">Swap mirrors between windscreen and sidescreen with a single hex key.</span>
+      <div class="card-footer">
+        <span class="card-price">£60</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/caterham-spa-adapters" data-cat="mirrors">
+    <img class="card-img" src="/img/adapter-fitted.jpeg" alt="Spa/Motamec Mirror Adapters">
+    <div class="card-body">
+      <span class="card-category">Mirrors</span>
+      <span class="card-title">Spa &amp; Motamec Adapters</span>
+      <span class="card-desc">Simple adapters to fit convex Spa or Motamec mirrors in the original Caterham holes.</span>
+      <div class="card-footer">
+        <span class="card-price">£45</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/mirror-mounts" data-cat="mirrors">
+    <img class="card-img" src="/img/custom-mount.jpg" alt="Custom Mirror Mounts">
+    <div class="card-body">
+      <span class="card-category">Mirrors</span>
+      <span class="card-title">Custom Mirror Mounts</span>
+      <span class="card-desc">Fully custom stiff mounts braced in two dimensions, made to your sidescreen's dimensions.</span>
+      <div class="card-footer">
+        <span class="card-price">£80</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/momimo" data-cat="mirrors">
+    <img class="card-img" src="/img/momimo.jpeg" alt="Rollcage Mirror Mounts">
+    <div class="card-body">
+      <span class="card-category">Mirrors</span>
+      <span class="card-title">Rollcage Mirror Mounts</span>
+      <span class="card-desc">Compact mounts for Longacre-style cage mirrors on 32mm or 38mm rollcage tube.</span>
+      <div class="card-footer">
+        <span class="card-price">£30</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/large-pedals" data-cat="pedals">
+    <img class="card-img" src="/img/pedal-box-header.jpg" alt="Large Pedal Extension">
+    <div class="card-body">
+      <span class="card-category">Pedals</span>
+      <span class="card-title">Large Pedal Extension</span>
+      <span class="card-desc">Wider, taller extension for easier heel-and-toe. Track tested to 20,000 miles.</span>
+      <div class="card-footer">
+        <span class="card-price">£45</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/pedals" data-cat="pedals">
+    <img class="card-img" src="/img/pedals-fitted.jpeg" alt="Pedal Extension Plugs">
+    <div class="card-body">
+      <span class="card-category">Pedals</span>
+      <span class="card-title">Pedal Extension Plugs</span>
+      <span class="card-desc">S3 (10 &amp; 15mm) and SV (20 &amp; 30mm) variants to close the brake-to-throttle gap.</span>
+      <div class="card-footer">
+        <span class="card-price">£30</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/harness-strap-clips" data-cat="interior">
+    <img class="card-img" src="/img/multicolour-strap.jpeg" alt="Harness Strap Clips">
+    <div class="card-body">
+      <span class="card-category">Interior</span>
+      <span class="card-title">Harness Strap Clips</span>
+      <span class="card-desc">Tidy clips that stop your 3" harness top straps flapping about in the wind.</span>
+      <div class="card-footer">
+        <span class="card-price">£25</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/big-knob" data-cat="interior">
+    <img class="card-img" src="/img/big-knob.jpeg" alt="Big Knob">
+    <div class="card-body">
+      <span class="card-category">Interior</span>
+      <span class="card-title">Big Heater Knob</span>
+      <span class="card-desc">Extended 70mm or 100mm heater knob — reach it without loosening your harness.</span>
+      <div class="card-footer">
+        <span class="card-price">£20</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/lapbelt-bung" data-cat="interior">
+    <img class="card-img" src="/img/cap-carbon.jpg" alt="Lap-belt Bung">
+    <div class="card-body">
+      <span class="card-category">Interior</span>
+      <span class="card-title">Lap-belt Bung</span>
+      <span class="card-desc">Carbon-fibre ASA screw bung to cleanly cover the unused lap-belt hole in the chassis.</span>
+      <div class="card-footer">
+        <span class="card-price">£12</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/magsafe" data-cat="phone">
+    <img class="card-img" src="/img/magsafe-dash.jpg" alt="Apple MagSafe Mount">
+    <div class="card-body">
+      <span class="card-category">Phone Mounts</span>
+      <span class="card-title">Apple MagSafe Mount</span>
+      <span class="card-desc">Fixed or swivel. VHB tape to the scuttle. Tested at 80mph with an aeroscreen.</span>
+      <div class="card-footer">
+        <span class="card-price">from £20</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/maglock" data-cat="phone">
+    <img class="card-img" src="/img/maglock-dash.jpeg" alt="Maglock Phone Mount">
+    <div class="card-body">
+      <span class="card-category">Phone Mounts</span>
+      <span class="card-title">Maglock Phone Mount</span>
+      <span class="card-desc">Dual-stack magnetic mount with steel plate on the case. Survived the Karussell.</span>
+      <div class="card-footer">
+        <span class="card-price">£25</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/quadlock" data-cat="phone">
+    <img class="card-img" src="/img/v2-front.jpeg" alt="Quadlock Mount">
+    <div class="card-body">
+      <span class="card-category">Phone Mounts</span>
+      <span class="card-title">Quadlock Mount</span>
+      <span class="card-desc">Slots into scuttle bolts or VHB mount. V2 redesign for strength and easy fitting.</span>
+      <div class="card-footer">
+        <span class="card-price">£25</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/big-col-flashy-lights" data-cat="lights">
+    <img class="card-img" src="/img/big-col.jpeg" alt="Caterham LED Lights">
+    <div class="card-body">
+      <span class="card-category">LED Lights</span>
+      <span class="card-title">Rear LED Cluster — Caterham</span>
+      <span class="card-desc">Fristom sequential animated LED clusters with custom cowls. Drop-in for caravan lights.</span>
+      <div class="card-footer">
+        <span class="card-price">from £90</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/ben-westie-flashy-lights" data-cat="lights">
+    <img class="card-img" src="/img/west5.jpeg" alt="Westfield LED Lights">
+    <div class="card-body">
+      <span class="card-category">LED Lights</span>
+      <span class="card-title">Rear LED Cluster — Westfield</span>
+      <span class="card-desc">Same sequential LED clusters with cowls shaped for the flat rear wing of a Westfield.</span>
+      <div class="card-footer">
+        <span class="card-price">from £70</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/fuel-neck-shim" data-cat="other">
+    <img class="card-img" src="/img/fuel-shim.jpeg" alt="Fuel Filler Neck Shims">
+    <div class="card-body">
+      <span class="card-category">Other</span>
+      <span class="card-title">Fuel Filler Neck Shims</span>
+      <span class="card-desc">Wedge-shaped shims to correct a misaligned fuel filler neck and fix the warped bodywork.</span>
+      <div class="card-footer">
+        <span class="card-price">£25</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/other-stuff" data-cat="other">
+    <img class="card-img" src="/img/gasket.jpeg" alt="Aeroscreen Parts">
+    <div class="card-body">
+      <span class="card-category">Other</span>
+      <span class="card-title">Aeroscreen Parts</span>
+      <span class="card-desc">Spa mirror friction cups and curved shims for fitting flat brackets to a curved screen.</span>
+      <div class="card-footer">
+        <span class="card-price">from £15</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/jamaican-bacon" data-cat="other">
+    <img class="card-img" src="/img/bacon.jpg" alt="Jamaican Bacon Clip">
+    <div class="card-body">
+      <span class="card-category">Other</span>
+      <span class="card-title">Jamaican Bacon Clip</span>
+      <span class="card-desc">Quick-release bike can holder. Tested airborne over Sheet trails. 330ml and 440ml.</span>
+      <div class="card-footer">
+        <span class="card-price">from £15</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card" href="/darth" data-cat="other">
+    <img class="card-img" src="/img/darth.webp" alt="Darth Schrader Caps">
+    <div class="card-body">
+      <span class="card-category">Other</span>
+      <span class="card-title">Darth Schrader Caps</span>
+      <span class="card-desc">Push-fit valve dust caps. No screwing, no filthy fingers, no losing them.</span>
+      <div class="card-footer">
+        <span class="card-price">£12</span>
+        <span class="card-cta">View →</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat;
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      cards.forEach(card => {
+        card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
