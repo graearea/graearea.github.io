@@ -15,7 +15,7 @@ These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes 
 £100 + £3 P&P (adapters only) / £140 + £3 P&P (with Lifeline bases) / £160 + £3 P&P (with Lifeline mirrors)
 
 <button onclick="addToBasket('price_1SfgVFAhb23PF7gKZw0QrPSM', 'Lifeline Mirror Mounts', 100, 'Adapters only')">Add to basket – £100 + £3 P&P</button>
-<button onclick="addToBasket('price_1TIyB4Ahb23PF7gKS84uiq85', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors')">Add to basket – £160 + £3 P&P</button>
+<button onclick="addToBasket('price_1TJXJ5Ahb23PF7gKVRiS3VTo', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors')">Add to basket – £160 + £3 P&P</button>
 <button onclick="addToBasket('price_1TIxqVAhb23PF7gK9WKvvF4q', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases')">Add to basket – £140 + £3 P&P</button>
 
 ## Fitting instructions

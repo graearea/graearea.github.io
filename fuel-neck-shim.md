@@ -12,6 +12,6 @@ on my car, the end result is much better (yes, it desperately needs a clean):
 
 £25 + £3 P&P
 
-<button onclick="addToBasket('price_1TIxqHAhb23PF7gKjjYbMlh9', 'Fuel Filler Neck Shims', 25)">Add to basket – £25 + £3 P&P</button>
+<button onclick="addToBasket('price_1TJXIrAhb23PF7gKoCumkK3e', 'Fuel Filler Neck Shims', 25)">Add to basket – £25 + £3 P&P</button>
 
 {% include_relative delivery.md %}
