@@ -48,21 +48,44 @@
 
     /* ── Hero ── */
     .hero {
-      background: var(--header-bg);
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #fff;
-      padding: 3rem 2rem 3.5rem;
       text-align: center;
+      padding: 5rem 2rem;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('/img/jump-low.jpeg') center center / cover no-repeat;
+      transform: translateY(0);
+      will-change: transform;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.6) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
     .hero h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 700;
       margin-bottom: .6rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,.5);
     }
     .hero p {
-      opacity: .65;
+      opacity: .85;
       max-width: 520px;
       margin: 0 auto;
-      font-size: .95rem;
+      font-size: 1rem;
+      text-shadow: 0 1px 6px rgba(0,0,0,.5);
     }
 
     /* ── Filter bar ── */
@@ -194,8 +217,12 @@
 </header>
 
 <div class="hero">
-  <h2>Designed, tested &amp; track-proven</h2>
-  <p>3D-printed parts for Caterhams. Developed on track from Cadwell to the Nürburgring.</p>
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Designed, tested &amp; track-proven</h2>
+    <p>3D-printed parts for Caterhams. Developed on track from Cadwell to the Nürburgring.</p>
+  </div>
 </div>
 
 <div class="filters">
@@ -460,6 +487,7 @@
 </div>
 
 <script>
+  // Category filter
   const btns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.card');
 
@@ -473,6 +501,18 @@
       });
     });
   });
+
+  // Parallax hero
+  const heroBg = document.getElementById('hero-bg');
+  const hero = heroBg.closest('.hero');
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    const heroH = hero.offsetHeight;
+    if (scrollY <= heroH) {
+      heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+    }
+  }
+  window.addEventListener('scroll', updateParallax, { passive: true });
 </script>
 
 </body>
