@@ -18,8 +18,8 @@ If you want Spa Carbon Fibre Mirrors, get in touch as I don't hold stock but I c
 
 ![lifeline-hand2.png](img/lifeline-hand2.png)
 
-before you order, check the pins that act as hinges on your side-doors. if they are Silver (some SVs), pick Silver pins, otherwise if they are brass, pick Brass
-£160 + £3 P&P (with Lifeline mirrors) — Brass and Silver pin variants available / £100 + £3 P&P (brackets only) / £140 + £3 P&P (with Lifeline bases only, no mirrors)    
+Before you order, check the pins that act as hinges on your side-doors. if they are Silver (some SVs), pick Silver pins, otherwise if they are brass, pick Brass
+    
 
 ### Brass
 <button onclick="addToBasket('price_1TJaCfAhb23PF7gKjq1SicDm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Brass')">Add to basket – With Lifeline mirrors — Brass – £160 + £3 P&P</button><br/>
@@ -31,11 +31,10 @@ before you order, check the pins that act as hinges on your side-doors. if they 
 <button onclick="addToBasket('price_1TJaChAhb23PF7gK5ReBsiRy', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Silver')">Add to basket – With Lifeline bases only, no mirrors — Silver – £140 + £3 P&P</button><br/>
 
 ## Fitting instructions
-* tap the brass hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)
+* tap the brass/silver hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)
 * remove your hinge on the side screen, keep the washers and bolts.
 * unscrew the outer fitting of the base if it is attached.
 * offer up the articulated mount to the side-screen and push the bolts through to line it all up. then tighten up the inner part of the base with a spanner and hex-key (loctite it first), being careful to not move the parts. this can be tightened tightly. You can refit the small screw in the pivot (loctite it!).
 * refit the outer base with the mirror. you can tighten down the mirror with a 19mm spanner until the mirror is nice and tight but still adjustable. once you have this tight enough, screw in the grub/caphead screw into the base outer to lock the mirror's tension in place. don't over-tighten this as it's only aluminium and will strip.
-
 
 {% include_relative delivery.md %}
