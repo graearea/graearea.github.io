@@ -24,6 +24,17 @@ layout: default
     padding: 0;
   }
 
+  /* Sticky site header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+  }
+
+  /* Filter bar sits below the sticky header (~56px) */
+  .filters { top: 56px; }
+
   /* ── Hero ── */
   .hero {
     position: relative;

@@ -3,25 +3,29 @@
     "name": "Darth Schrader Dust Caps",
     "description": "Push-fit valve dust caps",
     "amount": 1200,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Fuel Filler Neck Shims",
     "description": "Wedge-shaped shims to correct a misaligned fuel filler neck",
     "amount": 2500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "iPhone MagSafe Mount",
     "description": "MagSafe phone mount for Caterham scuttle",
     "amount": 2500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Maglock Phone Mount",
     "description": "Magnetic phone mount for Caterham scuttle",
     "amount": 2500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Apple MagSafe Mount",
@@ -30,13 +34,15 @@
       { "label": "Fixed",  "amount": 2000 },
       { "label": "Swivel", "amount": 2500 }
     ],
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Quadlock Mount",
     "description": "Quadlock phone mount for Caterham scuttle",
     "amount": 2500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Jamaican Bacon Clip",
@@ -45,73 +51,85 @@
       { "label": "330ml", "amount": 1500 },
       { "label": "440ml", "amount": 1700 }
     ],
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Spa Mirror Friction Cups",
     "description": "Friction cups for Spa/Motamec mirror sockets",
     "amount": 1500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Aeroscreen Curved Shims",
     "description": "Curved shims for fitting flat mirror brackets to aero screens",
     "amount": 1500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Quick Swap Mirror Mounts",
     "description": "Mirror mounts that swap between windscreen and sidescreen with one hex key",
     "amount": 6000,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Caterham Spa/Motamec Adapters",
     "description": "Adapters to fit Spa or Motamec convex mirrors in original Caterham holes",
     "amount": 4500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Harness Strap Clips",
     "description": "Clips to stop Caterham harness straps flapping in the wind",
     "amount": 2500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Lap-belt Bung",
     "description": "Carbon-fibre ASA bung to cover the lap-belt hole",
     "amount": 1200,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Pedal Extensions S3",
     "description": "3D printed pedal extensions for S3 chassis (10mm and 15mm)",
     "amount": 3000,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Pedal Extensions SV",
     "description": "3D printed pedal extensions for SV chassis (20mm and 30mm)",
     "amount": 3000,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Large Pedal Extension",
     "description": "Wider, longer 3D printed pedal extension for improved heel-and-toe on Caterham",
     "amount": 4500,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Big Knob",
     "description": "Extended heater knob for Caterham — easier to reach when strapped in",
     "amount": 2000,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Rollcage Mirror Mounts",
     "description": "Mounts for attaching rollcage mirrors (Longacre etc) to a 32mm or 38mm cage",
     "amount": 3000,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "BigCol LED Lights",
@@ -120,7 +138,8 @@
       { "label": "Cowls + LEDs", "amount": 17000 },
       { "label": "Cowls only",   "amount": 9000 }
     ],
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Westie LED Lights",
@@ -129,7 +148,8 @@
       { "label": "Cowls + LEDs", "amount": 15000 },
       { "label": "Cowls only",   "amount": 7000 }
     ],
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Lifeline Mirror Mounts",
@@ -138,12 +158,14 @@
       { "label": "Adapters only",         "amount": 10000 },
       { "label": "With Lifeline mirrors", "amount": 16000 }
     ],
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   },
   {
     "name": "Lifeline Mirrors with Lifeline Bases",
     "description": "Lifeline mirrors with Lifeline bases for Caterham side screens",
     "amount": 14000,
-    "currency": "gbp"
+    "currency": "gbp",
+    "weightInGrams": 500
   }
 ]
