@@ -171,7 +171,7 @@ function buildClickAndDropOrder(session, shipping) {
     name: item.description || item.price?.product?.name || "Item",
     quantity: item.quantity,
     unitValue: Math.round((item.amount_subtotal ?? item.amount_total) / item.quantity) / 100,
-    unitWeightInGrams: 500,
+    unitWeightInGrams: parseInt(item.price?.product?.metadata?.weightInGrams ?? 500, 10),
   }));
 
   const pkg = {
