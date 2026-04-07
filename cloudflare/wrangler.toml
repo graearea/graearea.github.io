@@ -1,3 +1,7 @@
 name = "autumn-bread-f290"
 main = "worker.js"
 compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "uberniche.co.uk/api/checkout", zone_name = "uberniche.co.uk" }
+]

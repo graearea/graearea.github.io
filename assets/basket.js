@@ -1,4 +1,4 @@
-const WORKER_URL = 'https://autumn-bread-f290.uber-niche-parts.workers.dev/';
+const WORKER_URL = '/api/checkout';
 
 function getBasket() {
   try { return JSON.parse(localStorage.getItem('basket') || '[]'); }
