@@ -9,18 +9,14 @@ In my S3 chassis I have a 50mm gap in which I use a 15mm plug and in my size 8 d
 
 I also do a bigger version which [makes heel-and-toeing even easier](/large-pedals) 
 
-## how do I order?
-
-what is the distance between your brake and your accelerator?  
-![new](img/measure-s3.jpeg)
-
-* for an S3 chassis, 90% of people are happy with a 10-15mm plug so I'll send you a 10 and a 15.
-* for an SV chassis it is more variable. you need to tell me what you want and I'll send you a 20 and a 30 or something similar. 
+* for an S3 chassis I'll send 10 and a 15mm.
+* for an SV chassis I'll send you a 20 and a 30.
 
 ## How much are they?
 £30 + £3 P&P for 2 sizes, + £5 for extra sizes
 
-<button onclick="addToBasket('price_1RTVj6Ahb23PF7gKZ2yZZ66C', 'Pedal Extensions', 30)">Add to basket – £30 + £3 P&P</button>
+<button onclick="addToBasket('price_1TJYFOAhb23PF7gKlamyVSEC', 'Pedal Extensions S3', 30)">Add to basket – S3 chassis (10 & 15mm) – £30 + £3 P&P</button>
+<button onclick="addToBasket('price_1TJYFOAhb23PF7gK0ZXPpgdd', 'Pedal Extensions SV', 30)">Add to basket – SV chassis (20 & 30mm) – £30 + £3 P&P</button>
 
 ## Fitting
 * Fit the cap into the right hand side of the pedal (gogo-gadget arms help here)

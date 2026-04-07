@@ -84,8 +84,14 @@
     "currency": "gbp"
   },
   {
-    "name": "Pedal Extensions",
-    "description": "3D printed pedal extensions to improve heel-and-toe on Caterham",
+    "name": "Pedal Extensions S3",
+    "description": "3D printed pedal extensions for S3 chassis (10mm and 15mm)",
+    "amount": 3000,
+    "currency": "gbp"
+  },
+  {
+    "name": "Pedal Extensions SV",
+    "description": "3D printed pedal extensions for SV chassis (20mm and 30mm)",
     "amount": 3000,
     "currency": "gbp"
   },
