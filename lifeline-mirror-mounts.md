@@ -1,4 +1,4 @@
-# Lifeline Mirrors with Carbon-fibre-reinforced Adaptors 
+# Lifeline Mirrors with Carbon-fibre-reinforced Brackets 
 
 ![lifeline-wide.jpg](img/lifeline-wide.jpg)
 * Caterham's mirrors are terrible. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking because of the leverage on the 10cm long part.
@@ -8,15 +8,27 @@
 
 They are convex, externally adjustable and have short arms. The large M6 Bolt they use for stability means they won't go through the existing holes in the doors.
 
-These stiff, _articulated_ mirror mounts can fit the myriad dimensions of holes in Caterham side-screens. They have 2 pivots and can span a large range which fits any side screens. The mounts also stop the mirrors from clouting the windscreen when you open the door.
+### Brackets
+
+These stiff, _articulated_ mirror mounting brackets can fit the myriad dimensions of holes in Caterham side-screens. They have 2 pivots and can span a large range which fits any side screens. The mounts also stop the mirrors from clouting the windscreen when you open the door.
+
+if you have Spa Carbon Fibre Mirrors, you can buy the option below with Lifeline Bases Only, then unscrew your current crappy base from the Spa and screw it into the new Lifeline one for excellent adjustability and security. no more removing the whole thing to adjust the tension.
+
+If you want Spa Carbon Fibre Mirrors, get in touch as I don't hold stock but I can get them from the distributer pretty quickly. They're about £620 in total with brackets.
 
 ![lifeline-hand2.png](img/lifeline-hand2.png)
 
-£100 + £3 P&P (adapters only) / £140 + £3 P&P (with Lifeline bases) / £160 + £3 P&P (with Lifeline mirrors)
+before you order, check the pins that act as hinges on your side-doors. if they are Silver (some SVs), pick Silver pins, otherwise if they are brass, pick Brass
+£160 + £3 P&P (with Lifeline mirrors) — Brass and Silver pin variants available / £100 + £3 P&P (brackets only) / £140 + £3 P&P (with Lifeline bases only, no mirrors)    
 
-<button onclick="addToBasket('price_1SfgVFAhb23PF7gKZw0QrPSM', 'Lifeline Mirror Mounts', 100, 'Adapters only')">Add to basket – £100 + £3 P&P</button>
-<button onclick="addToBasket('price_1TJXJ5Ahb23PF7gKVRiS3VTo', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors')">Add to basket – £160 + £3 P&P</button>
-<button onclick="addToBasket('price_1TIxqVAhb23PF7gK9WKvvF4q', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases')">Add to basket – £140 + £3 P&P</button>
+### Brass
+<button onclick="addToBasket('price_1TJaCfAhb23PF7gKjq1SicDm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Brass')">Add to basket – With Lifeline mirrors — Brass – £160 + £3 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCfAhb23PF7gKURVSayML', 'Lifeline Mirror Mounts', 100, 'Brackets only — Brass')">Add to basket – Brackets only — Brass – £100 + £3 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCgAhb23PF7gKWa23J2e3', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Brass')">Add to basket – With Lifeline bases only, no mirrors— Brass – £140 + £3 P&P</button><br/>
+### Silver
+<button onclick="addToBasket('price_1TJaCgAhb23PF7gKfioOaBsv', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Silver')">Add to basket – With Lifeline mirrors — Silver – £160 + £3 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCfAhb23PF7gKSakHCbBa', 'Lifeline Mirror Mounts', 100, 'Brackets only — Silver')">Add to basket – Brackets only — Silver – £100 + £3 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaChAhb23PF7gK5ReBsiRy', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Silver')">Add to basket – With Lifeline bases only, no mirrors — Silver – £140 + £3 P&P</button><br/>
 
 ## Fitting instructions
 * tap the brass hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)
