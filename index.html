@@ -51,8 +51,6 @@ layout: default
     position: absolute;
     inset: 0;
     background: url('https://img.uberniche.co.uk/jump-low.jpeg') center center / cover no-repeat;
-    transform: translateY(0);
-    will-change: transform;
   }
   .hero-overlay {
     position: absolute;
@@ -490,5 +488,10 @@ layout: default
       heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
     }
   }
-  window.addEventListener('scroll', updateParallax, { passive: true });
+  const preload = new Image();
+  preload.onload = () => {
+    heroBg.style.willChange = 'transform';
+    window.addEventListener('scroll', updateParallax, { passive: true });
+  };
+  preload.src = 'https://img.uberniche.co.uk/jump-low.jpeg';
 </script>
