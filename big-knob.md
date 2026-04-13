@@ -11,8 +11,8 @@ they're made of PETG, so they'll take the heat under the dash, and they have a b
 
 I can do a bunch of colours
 
-£20 + £3 P&P
+£20 + £4 P&P
 
-<button onclick="addToBasket('price_1SVuOPAhb23PF7gK8RDgaBd5', 'Big Knob', 20)">Add to basket – £20 + £3 P&P</button>
+<button onclick="addToBasket('price_1SVuOPAhb23PF7gK8RDgaBd5', 'Big Knob', 20)">Add to basket – £20 + £4 P&P</button>
 
 {% include_relative delivery.md %}

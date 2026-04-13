@@ -13,10 +13,10 @@ I also do a bigger version which [makes heel-and-toeing even easier](/large-peda
 * for an SV chassis I'll send you a 20 and a 30.
 
 ## How much are they?
-£30 + £3 P&P for 2 sizes, + £5 for extra sizes
+£30 + £4 P&P for 2 sizes, + £5 for extra sizes
 
-<button onclick="addToBasket('price_1TJYFOAhb23PF7gKlamyVSEC', 'Pedal Extensions S3', 30)">Add to basket – S3 chassis (10 & 15mm) – £30 + £3 P&P</button>
-<button onclick="addToBasket('price_1TJYFOAhb23PF7gK0ZXPpgdd', 'Pedal Extensions SV', 30)">Add to basket – SV chassis (20 & 30mm) – £30 + £3 P&P</button>
+<button onclick="addToBasket('price_1TJYFOAhb23PF7gKlamyVSEC', 'Pedal Extensions S3', 30)">Add to basket – S3 chassis (10 & 15mm) – £30 + £4 P&P</button>
+<button onclick="addToBasket('price_1TJYFOAhb23PF7gK0ZXPpgdd', 'Pedal Extensions SV', 30)">Add to basket – SV chassis (20 & 30mm) – £30 + £4 P&P</button>
 
 ## Fitting
 * Fit the cap into the right hand side of the pedal (gogo-gadget arms help here)

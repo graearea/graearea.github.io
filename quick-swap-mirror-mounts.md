@@ -21,9 +21,9 @@ to swap back, simply remove the longer screw, unclip the mirror and replace the 
 all screws are included and are black or stainless, not the Titanium ones shown in the video.
 
 ## How much are they?
-**£60 + £3 P&P**.
+**£60 + £4 P&P**.
 
-<button onclick="addToBasket('price_1RT2fIAhb23PF7gKQDByKPnP', 'Quick Swap Mirror Mounts', 60)">Add to basket – £60 + £3 P&P</button>
+<button onclick="addToBasket('price_1RT2fIAhb23PF7gKQDByKPnP', 'Quick Swap Mirror Mounts', 60)">Add to basket – £60 + £4 P&P</button>
 
 ## What comes in the kit?
 * 2x sidescreen brackets 

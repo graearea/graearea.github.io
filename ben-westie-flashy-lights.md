@@ -7,11 +7,11 @@ Westfield's standard caravan rear lights are pretty terrible.  After seeing the 
 <script async src="//www.instagram.com/embed.js"></script> 
 
 ## How much?
-* I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for £150 + £3 P&P.
-<button onclick="addToBasket('price_1Ss8b1Ahb23PF7gKjcfJSPb0', 'Westie LED Lights', 150, 'Cowls + LEDs')">Add to basket – £150 + £3 P&P</button>
+* I can supply the cowls & led lamps with the econoseal or bullet connectors fitted for £150 + £4 P&P.
+<button onclick="addToBasket('price_1Ss8b1Ahb23PF7gKjcfJSPb0', 'Westie LED Lights', 150, 'Cowls + LEDs')">Add to basket – £150 + £4 P&P</button>
 
 * if you're outside of the UK I can help you find the LED lamps locally and just send you the cowls and fittings for £70
-<button onclick="addToBasket('price_1Ss8bfAhb23PF7gKjnJBYMI5', 'Westie LED Lights', 70, 'Cowls only')">Add to basket – £70 + £3 P&P</button>
+<button onclick="addToBasket('price_1Ss8bfAhb23PF7gKjnJBYMI5', 'Westie LED Lights', 70, 'Cowls only')">Add to basket – £70 + £4 P&P</button>
 
 ## What are they like size-wise?
 They're about the same size as the westfield caravan lights, but they have a cut-away to fit the edge of the westfield wing

@@ -10,8 +10,8 @@ They look like this, this one is in orange so you can see it!
 
 [Video here of what they look like](https://youtu.be/YTZIwV7VNT0)
 
-£30 + £3 P&P inc jubilees
+£30 + £4 P&P inc jubilees
 
-<button onclick="addToBasket('price_1SlrJLAhb23PF7gKMdIa34H4', 'Rollcage Mirror Mounts', 30)">Add to basket – £30 + £3 P&P</button>
+<button onclick="addToBasket('price_1SlrJLAhb23PF7gKMdIa34H4', 'Rollcage Mirror Mounts', 30)">Add to basket – £30 + £4 P&P</button>
 
 {% include_relative delivery.md %}

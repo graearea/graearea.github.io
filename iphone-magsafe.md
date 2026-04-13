@@ -8,10 +8,10 @@ Video here from the Karussell. if that doesn't make your phone drop off, nothing
 
 [![ROCK SOLID](https://img.youtube.com/vi/1NCZ1FxKUE0/0.jpg)](https://youtu.be/1NCZ1FxKUE0)
 
-£25 + £3 P&P (+£3 for non-black colours)
+£25 + £4 P&P (+£3 for non-black colours)
 
 ![maglock](img/maglock.jpeg)
 
-<button onclick="addToBasket('price_1TJXIrAhb23PF7gKxoNq3djC', 'Magsafe Phone Mount', 25)">Add to basket – £25 + £3 P&P</button>
+<button onclick="addToBasket('price_1TJXIrAhb23PF7gKxoNq3djC', 'Magsafe Phone Mount', 25)">Add to basket – £25 + £4 P&P</button>
 
 {% include_relative delivery.md %}

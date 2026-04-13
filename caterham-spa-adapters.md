@@ -15,9 +15,9 @@ they're half the price and no measuring needed! They attach nice and tightly. I 
 The original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge)
 
 ## How much are they?
-**£45 + £3 P&P and they come with hinges that stop your mirrors bouncing off your windscreen**
+**£45 + £4 P&P and they come with hinges that stop your mirrors bouncing off your windscreen**
 
-<button onclick="addToBasket('price_1SlqaAAhb23PF7gKKE5K7lgz', 'Spa/Motamec Adapters', 45)">Add to basket – £45 + £3 P&P</button>
+<button onclick="addToBasket('price_1SlqaAAhb23PF7gKKE5K7lgz', 'Spa/Motamec Adapters', 45)">Add to basket – £45 + £4 P&P</button>
 
 ## What comes in the kit?
 * 2x adapters, Spa or Motamec fitting

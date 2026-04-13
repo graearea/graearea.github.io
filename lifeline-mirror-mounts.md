@@ -22,13 +22,13 @@ Before you order, check the pins that act as hinges on your side-doors. if they 
     
 
 ### Brass
-<button onclick="addToBasket('price_1TJaCfAhb23PF7gKjq1SicDm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Brass')">Add to basket – With Lifeline mirrors — Brass – £160 + £3 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaCfAhb23PF7gKURVSayML', 'Lifeline Mirror Mounts', 100, 'Brackets only — Brass')">Add to basket – Brackets only — Brass – £100 + £3 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaCgAhb23PF7gKWa23J2e3', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Brass')">Add to basket – With Lifeline bases only, no mirrors— Brass – £140 + £3 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCfAhb23PF7gKjq1SicDm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Brass')">Add to basket – With Lifeline mirrors — Brass – £160 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCfAhb23PF7gKURVSayML', 'Lifeline Mirror Mounts', 100, 'Brackets only — Brass')">Add to basket – Brackets only — Brass – £100 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCgAhb23PF7gKWa23J2e3', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Brass')">Add to basket – With Lifeline bases only, no mirrors— Brass – £140 + £4 P&P</button><br/>
 ### Silver
-<button onclick="addToBasket('price_1TJaCgAhb23PF7gKfioOaBsv', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Silver')">Add to basket – With Lifeline mirrors — Silver – £160 + £3 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaCfAhb23PF7gKSakHCbBa', 'Lifeline Mirror Mounts', 100, 'Brackets only — Silver')">Add to basket – Brackets only — Silver – £100 + £3 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaChAhb23PF7gK5ReBsiRy', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Silver')">Add to basket – With Lifeline bases only, no mirrors — Silver – £140 + £3 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCgAhb23PF7gKfioOaBsv', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Silver')">Add to basket – With Lifeline mirrors — Silver – £160 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaCfAhb23PF7gKSakHCbBa', 'Lifeline Mirror Mounts', 100, 'Brackets only — Silver')">Add to basket – Brackets only — Silver – £100 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TJaChAhb23PF7gK5ReBsiRy', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Silver')">Add to basket – With Lifeline bases only, no mirrors — Silver – £140 + £4 P&P</button><br/>
 
 ## Fitting instructions
 * tap the brass/silver hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)

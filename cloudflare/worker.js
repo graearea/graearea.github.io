@@ -24,7 +24,7 @@ export default {
     const country = req.cf?.country ?? "GB";
     const isUK = country === "GB";
     const isEurope = EUROPE.includes(country);
-    const [shippingName, shippingPence] = isUK ? ["UK Shipping", 300] : isEurope ? ["Europe Shipping", 1200] : ["International Shipping", 1500];
+    const [shippingName, shippingPence] = isUK ? ["UK Shipping", 400] : isEurope ? ["Europe Shipping", 1200] : ["International Shipping", 1500];
 
     const params = new URLSearchParams({
       "payment_method_types[]": "card",
