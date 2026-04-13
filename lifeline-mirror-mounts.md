@@ -1,6 +1,6 @@
 # Lifeline Mirrors with Carbon-fibre-reinforced Brackets 
 
-![lifeline-wide.jpg](img/lifeline-wide.jpg)
+![lifeline-wide.jpg](https://img.uberniche.co.uk/lifeline-wide.jpg)
 * Caterham's mirrors are terrible. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking because of the leverage on the 10cm long part.
 * Spa Mirrors have a terrible mount that is not adjustable without entirely removing the mirror. I do offer some friction cups that help with this, but it's still an internal adjustment.
 
@@ -16,7 +16,7 @@ if you have Spa Carbon Fibre Mirrors, you can buy the option below with Lifeline
 
 If you want Spa Carbon Fibre Mirrors, get in touch as I don't hold stock but I can get them from the distributer pretty quickly. They're about £620 in total with brackets.
 
-![lifeline-hand2.png](img/lifeline-hand2.png)
+![lifeline-hand2.png](https://img.uberniche.co.uk/lifeline-hand2.png)
 
 Before you order, check the pins that act as hinges on your side-doors. if they are Silver (some SVs), pick Silver pins, otherwise if they are brass, pick Brass
     

@@ -1,6 +1,6 @@
 # Caterham to Spa & Motamec mirror adapters 
 
-![adapter-fitted.png](img/adapter-fitted.jpeg)
+![adapter-fitted.png](https://img.uberniche.co.uk/adapter-fitted.jpeg)
 
 ## The Problem.
 Caterham's mirrors are terrible. Seriously. They're enormous and because they're not convex, you can't see anything. The original Eccles mounts are only attached at the hinge so are prone to shaking because of the leverage on the 10cm long part. 
@@ -8,11 +8,11 @@ Caterham's mirrors are terrible. Seriously. They're enormous and because they're
 ## My solution
 These adapters are a simple solution to allow a Spa or Motamec convex mirror to be fitted in the original holes of the Caterham mirrors.
 they use a brass insert to give a strong anchor and the front bolt goes all the way through.  
-![img/adapter.jpeg](img/adapter.jpeg)
+![img/adapter.jpeg](https://img.uberniche.co.uk/adapter.jpeg)
 
 ## How do they compare to my custom mirrors?
 they're half the price and no measuring needed! They attach nice and tightly. I think the custom ones are a little stiffer as they're braced in 2 dimensions but I doubt there's a lot in it.
-The original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](img/hinge-short.jpeg)](/door-limit-hinge)
+The original Caterham hinges allow the doors to open too far so that the mirrors are constantly hitting the screen and so I can include a set of [![Hinge](https://img.uberniche.co.uk/hinge-short.jpeg)](/door-limit-hinge)
 
 ## How much are they?
 **£45 + £4 P&P and they come with hinges that stop your mirrors bouncing off your windscreen**

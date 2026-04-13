@@ -1,9 +1,9 @@
 # Quick Swap Windscreen Mirror Mounts
-![mounted](img/quick-swap-title.jpg)
+![mounted](https://img.uberniche.co.uk/quick-swap-title.jpg)
 
 ## Driving with side doors, or without and using the same mirrors with just 1 hex key needed to swap
 A couple of people asked me if I could supply mounts that would attach to the side of the windscreen so that when they're running with halfdoors/no doors they can use spa mirrors. I had a bit of a think and figured out I could create some mounts that would attach to the hinge that the sidescreen would fit into, and also be able to be attached to the sidescreen!
-![mounted](img/with nutholder.jpg)
+![mounted](https://img.uberniche.co.uk/with nutholder.jpg)
 
 
 ## How to work:
@@ -36,7 +36,7 @@ all screws are included and are black or stainless, not the Titanium ones shown 
 * 2x 30mm M5 countersunk bolts for the sidescreen bracket
 * 2x 20mm M5 countersunk bolts for the sidescreen bracket
 
-![bom](img/quick-bom.jpg)
+![bom](https://img.uberniche.co.uk/quick-bom.jpg)
 
 
 

@@ -1,5 +1,5 @@
 # Pedal Extensions
-![plugs](img/pedals-fitted.jpeg)
+![plugs](https://img.uberniche.co.uk/pedals-fitted.jpeg)
 
 3D printed plugs with brass threaded inserts that will fit into your Caterham's pedal to make it wider so that you can more easily "heel and toe". This is especially difficult in SV chassis cars where the gap can be up to 75mm.
 
@@ -26,7 +26,7 @@ I also do a bigger version which [makes heel-and-toeing even easier](/large-peda
 * if it doesn't go together you could use something to squeeze it together like an irwin grip or big channel pliers.
 * if this doesn't work you may need to remove the pedal which isn't a difficult job but will add a good half hour. the pedals sometimes ovalise with use and need a mallet to get the plugs into it. if you damage a plug fitting it, just get in touch and I'll send you another.
 NB. All pedals on Caterhams are _slightly_ different so you _might_ need 5 minutes of filing for it to fit.
-![pedal](img/pedal.jpeg)
+![pedal](https://img.uberniche.co.uk/pedal.jpeg)
 <br/>
 
 
@@ -50,21 +50,21 @@ NB. All pedals on Caterhams are _slightly_ different so you _might_ need 5 minut
 ### Some example pictures here:
 
 #### destructive testing meant I added the slots to make them stronger.
-![split](img/pedals-split.jpeg)
+![split](https://img.uberniche.co.uk/pedals-split.jpeg)
 saying that, I've never had anyone break any as far as I'm aware.
 
 #### S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3](img/measure-s3.jpeg)
+![S3](https://img.uberniche.co.uk/measure-s3.jpeg)
 ####  S3 chassis with 15mm adapter reducing 50mm gap to around 35mm
-![S3 feet](img/feet.jpeg)
+![S3 feet](https://img.uberniche.co.uk/feet.jpeg)
 
 #### Some video (click it) of heal & toe action
 [![how much room](http://img.youtube.com/vi/qONDC1MKcAo/0.jpg)](http://www.youtube.com/watch?v=qONDC1MKcAo "pedals")
 
 ### Some Happy Customers' pedals
 
-![nigel](img/collage/nigel.jpg)<br>
-![richard](img/collage/richard.JPG)<br>
-![someone](img/collage/someone.jpeg)<br>
+![nigel](https://img.uberniche.co.uk/collage/nigel.jpg)<br>
+![richard](https://img.uberniche.co.uk/collage/richard.JPG)<br>
+![someone](https://img.uberniche.co.uk/collage/someone.jpeg)<br>
 
 {% include_relative delivery.md %}

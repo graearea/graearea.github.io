@@ -1,5 +1,5 @@
 # Custom Mirror Mounts
-![mounted](img/mounted.jpeg)
+![mounted](https://img.uberniche.co.uk/mounted.jpeg)
 
 ## The Problem.
 Caterham's OEM homologated mirrors are terrible. They're enormous and because they're flat glass, you can't see anything. The original Eccles mounts, even though they're a great design are only attached at the hinge so are prone to shaking. 
@@ -28,13 +28,13 @@ here is a video here from the Karussell on the Nurburgring. If that doesn't make
 
 ## What do they look like?
 They are 3D printed, so they typically look like this with the carbon fibre weave effect:
-![Both](img/custom-mount.jpg)
+![Both](https://img.uberniche.co.uk/custom-mount.jpg)
 
 The front side has a pattern from the printing which you can make out in bright light, the back side is dull.
 
 ## Are they strong enough?
 Yes. They're much stronger than you'd think. I've snapped one, but it took a bench vice and a hammer. They look like this inside:
-![Honeycomb](img/honey.jpeg)
+![Honeycomb](https://img.uberniche.co.uk/honey.jpeg)
 
 ## How do I order?
 The instructions are in the form.  
@@ -65,7 +65,7 @@ The instructions are in the form.
 * enjoy worrying that now your rear-view mirror vibrates more than your wing mirrors (I have a solution for that!).
 * enjoy ignoring everything behind you anyway.
 
-![Back](img/back mounted.jpeg)
+![Back](https://img.uberniche.co.uk/back mounted.jpeg)
 
 ## Can I use either Motamec or Spa mirrors
 Yes, although I personally think the Spa mirrors are better as they're more convex and a little stiffer (comparison [here](https://www.caterhamlotus7.club/forum/techtalk/motamec-vs-spa-mirrors-0)). they are a bit more finicky to fit and adjust though. you'll need to countersink the bolt holes on your motamec mounts for the bolts to be the right length.

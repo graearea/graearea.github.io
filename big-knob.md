@@ -1,5 +1,5 @@
 # Big Knob 
-![big-knob](img/big-knob.jpeg)
+![big-knob](https://img.uberniche.co.uk/big-knob.jpeg)
 
 Can you pull your knob when you're in your strapped down tight?
 

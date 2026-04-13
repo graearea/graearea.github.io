@@ -1,6 +1,6 @@
 # Magsafe Phone Mount for iPhone
 
-![maglock-dash](img/magsafe-dash.jpeg)
+![maglock-dash](https://img.uberniche.co.uk/magsafe-dash.jpeg)
  it uses 3M VHB tape to fix to the scuttle. this can be removed cleanly using dental floss, but otherwise it is going nowhere.
 
 [Video here of what it looks like](https://youtu.be/bOc9bqDt7ds)
@@ -10,7 +10,7 @@ Video here from the Karussell. if that doesn't make your phone drop off, nothing
 
 £25 + £4 P&P (+£3 for non-black colours)
 
-![maglock](img/maglock.jpeg)
+![maglock](https://img.uberniche.co.uk/maglock.jpeg)
 
 <button onclick="addToBasket('price_1TJXIrAhb23PF7gKxoNq3djC', 'Magsafe Phone Mount', 25)">Add to basket – £25 + £4 P&P</button>
 

@@ -1,5 +1,5 @@
 # Yellow_Super_Seven's Flashy LED Lights for Westfields
-![west1](img/west5.jpeg)
+![west1](https://img.uberniche.co.uk/west5.jpeg)
 
 Westfield's standard caravan rear lights are pretty terrible.  After seeing the Caterham replacements I make, Ben [Yellow_Super_Seven](https://www.instagram.com/yellowsuperseven/) wanted some that would fit the flat part of his Westfield's wing and here they are: 
 
@@ -25,7 +25,7 @@ They're about the same size as the westfield caravan lights, but they have a cut
 * reconnect the econoseals or bullet connectors through the rear panel.
 * go out and drive!
 
-![westie-led](img/west3.jpeg)
+![westie-led](https://img.uberniche.co.uk/west3.jpeg)
 
 
 ## Gotchas:
@@ -35,7 +35,7 @@ They're about the same size as the westfield caravan lights, but they have a cut
 
 ## But I have a carbon-fiber fetish...
 Ok, then wrap them in carbon vinyl:
-![col-carbon.png](img/col-carbon.png)
+![col-carbon.png](https://img.uberniche.co.uk/col-carbon.png)
 
 ## How to order:
 To order,  [USE THIS FORM](https://forms.gle/DpTGsNrgPXGaVSZi8) pick westfield LED

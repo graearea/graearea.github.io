@@ -1,5 +1,5 @@
 # Jamaican Bacon Clip
-![plugs](img/bacon.jpg)
+![plugs](https://img.uberniche.co.uk/bacon.jpg)
 
 - Precision quick release clip for post-trail-line smashing or road-beer sipping
 - Tested and proven to cope with riding Sheet trails and Sandwich trails
@@ -12,7 +12,7 @@
 
 # How secure is it?
 this is midair over sheet trails last jump which has a 6 foot takeoff:
-![sheet](img/Beer%20can%20jump.jpg)
+![sheet](https://img.uberniche.co.uk/Beer%20can%20jump.jpg)
 which is from this video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Dp522QPF-HY?si=Jwde1ShAq1-ExYmz" frameborder="0" allowfullscreen></iframe>
 
@@ -31,7 +31,7 @@ discount for multiples (including delivery):
 - 4=£39
 
 but you really don't need 4 :D (ridiculous maybe, but I needed to test them)
-![too-many](img/too-many-beers.jpeg)
+![too-many](https://img.uberniche.co.uk/too-many-beers.jpeg)
 
 <button onclick="addToBasket('price_1TIxqKAhb23PF7gKqtxjMAKJ', 'Jamaican Bacon Clip', 15, '330ml')">Add to basket – £15 + £4 P&P</button>
 <button onclick="addToBasket('price_1TIxqKAhb23PF7gKDVw2txDc', 'Jamaican Bacon Clip', 17, '440ml')">Add to basket – £17 + £4 P&P</button>

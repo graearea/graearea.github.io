@@ -1,5 +1,5 @@
 # Large Pedal Extension
-![plugs](img/pedal-box-header.jpg)
+![plugs](https://img.uberniche.co.uk/pedal-box-header.jpg)
 
 ## Pedal Extensions to improve heel-and-toeing and comfort
 These are 3D printed extensions that fit into your Caterham's pedal to make it wider so that you can more easily "heel and toe". This is especially difficult in SV chassis cars where the gap can be up to 75mm.
@@ -12,8 +12,8 @@ In my S3 chassis I have a 45mm gap in which I use a 10mm plug and in my size 8 d
 
 To stop the pedal extensions rotating, they have a notch to increase the friction fit, but some loctite won't hurt
 
-![large-pedal-back.jpg](img/large-pedal-back.jpg)
-![large-pedal-front.jpg](img/large-pedal-front.jpg)
+![large-pedal-back.jpg](https://img.uberniche.co.uk/large-pedal-back.jpg)
+![large-pedal-front.jpg](https://img.uberniche.co.uk/large-pedal-front.jpg)
 
 for an S3 chassis, I recommend a 10 or 15mm extension. for an SV chassis I'd recommend a 20 or 30 or something similar. put your foot on the brake pedal and judge the gap to your pedal.
 
