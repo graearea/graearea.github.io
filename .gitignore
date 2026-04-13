@@ -2,5 +2,6 @@
 /_site/
 /.jekyll-cache/
 .DS_Store
-/cloudflare/.wrangler/
+.wrangler/
 /scripts/_site/
+*.VBO
