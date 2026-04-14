@@ -14,7 +14,7 @@ They tightly fit the standard Caterham (Luke?) 3" harness top straps. They are d
 
 £25 + £4 P&P (+£3 for different colours)
 
-<button onclick="addToBasket('price_1SPU67Ahb23PF7gKUp5OYxAd', 'Harness Strap Clips', 25)">Add to basket – £25 + £4 P&P</button>
+<button onclick="addToBasket('price_1TM6ozAhb23PF7gKVJVxbEpY', 'Harness Strap Clips', 25)">Add to basket – £25 + £4 P&P</button>
 
 please note, the finish of this has to be flat as pictured, not carbon-fibre effect.  
 

@@ -17,6 +17,6 @@ screw it gently in a couple of times to clear the thread then just tweak it up a
 
 £12 + £4 P&P
 
-<button onclick="addToBasket('price_1RT2geAhb23PF7gKoUtoSgRb', 'Lap-belt Bung', 12)">Add to basket – £12 + £4 P&P</button>
+<button onclick="addToBasket('price_1TM6p0Ahb23PF7gKOK3ahpfw', 'Lap-belt Bung', 12)">Add to basket – £12 + £4 P&P</button>
 
 {% include_relative delivery.md %}

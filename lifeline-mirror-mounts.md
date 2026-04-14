@@ -21,17 +21,16 @@ If you want Spa Carbon Fibre Mirrors, get in touch as I don't hold stock but I c
 
 ![lifeline-hand2.png](https://img.uberniche.co.uk/lifeline-hand2.png)
 
-Before you order, check the pins that act as hinges on your side-doors. if they are Silver (some SVs), pick Silver pins, otherwise if they are brass, pick Brass
-    
+Before you order, check which chassis you have — S3 or SV.
 
-### Brass
-<button onclick="addToBasket('price_1TJaCfAhb23PF7gKjq1SicDm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Brass')">Add to basket – With Lifeline mirrors — Brass – £160 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaCfAhb23PF7gKURVSayML', 'Lifeline Mirror Mounts', 100, 'Brackets only — Brass')">Add to basket – Brackets only — Brass – £100 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaCgAhb23PF7gKWa23J2e3', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Brass')">Add to basket – With Lifeline bases only, no mirrors— Brass – £140 + £4 P&P</button><br/>
-### Silver
-<button onclick="addToBasket('price_1TJaCgAhb23PF7gKfioOaBsv', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — Silver')">Add to basket – With Lifeline mirrors — Silver – £160 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaCfAhb23PF7gKSakHCbBa', 'Lifeline Mirror Mounts', 100, 'Brackets only — Silver')">Add to basket – Brackets only — Silver – £100 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TJaChAhb23PF7gK5ReBsiRy', 'Lifeline Mirror Mounts', 140, 'With Lifeline bases — Silver')">Add to basket – With Lifeline bases only, no mirrors — Silver – £140 + £4 P&P</button><br/>
+### S3
+<button onclick="addToBasket('price_1TM6pHAhb23PF7gKzOdOmMjm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — S3')">Add to basket – With Lifeline mirrors — S3 – £160 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TM6pHAhb23PF7gKDwUKztCc', 'Lifeline Mirror Mounts', 100, 'Adapters only — S3')">Add to basket – Adapters only — S3 – £100 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TM6pJAhb23PF7gKkdOHcMu4', 'Lifeline Mirrors with Lifeline Bases', 140, 'S3')">Add to basket – With Lifeline bases only, no mirrors — S3 – £140 + £4 P&P</button><br/>
+### SV
+<button onclick="addToBasket('price_1TM6pIAhb23PF7gKJHQspR5V', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — SV')">Add to basket – With Lifeline mirrors — SV – £160 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TM6pIAhb23PF7gK0vQHk5fE', 'Lifeline Mirror Mounts', 100, 'Adapters only — SV')">Add to basket – Adapters only — SV – £100 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1TM6pKAhb23PF7gKLKSrsE45', 'Lifeline Mirrors with Lifeline Bases', 140, 'SV')">Add to basket – With Lifeline bases only, no mirrors — SV – £140 + £4 P&P</button><br/>
 
 ## Fitting instructions
 * tap the brass/silver hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)

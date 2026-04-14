@@ -20,7 +20,7 @@ The original Caterham hinges allow the doors to open too far so that the mirrors
 ## How much are they?
 **£45 + £4 P&P and they come with hinges that stop your mirrors bouncing off your windscreen**
 
-<button onclick="addToBasket('price_1SlqaAAhb23PF7gKKE5K7lgz', 'Spa/Motamec Adapters', 45)">Add to basket – £45 + £4 P&P</button>
+<button onclick="addToBasket('price_1TM6owAhb23PF7gKZrYdi5f5', 'Spa/Motamec Adapters', 45)">Add to basket – £45 + £4 P&P</button>
 
 ## What comes in the kit?
 * 2x adapters, Spa or Motamec fitting

@@ -14,6 +14,6 @@ Video here from the Karussell. if that doesn't make your phone drop off, nothing
 
 ![maglock](https://img.uberniche.co.uk/maglock.jpeg)
 
-<button onclick="addToBasket('price_1TJXIsAhb23PF7gKwiR9kJKv', 'Maglock Phone Mount', 25)">Add to basket – £25 + £4 P&P</button>
+<button onclick="addToBasket('price_1TM6olAhb23PF7gKKoJrarYq', 'Maglock Phone Mount', 25)">Add to basket – £25 + £4 P&P</button>
 
 {% include_relative delivery.md %}

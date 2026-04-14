@@ -26,7 +26,7 @@ all screws are included and are black or stainless, not the Titanium ones shown 
 ## How much are they?
 **£60 + £4 P&P**.
 
-<button onclick="addToBasket('price_1RT2fIAhb23PF7gKQDByKPnP', 'Quick Swap Mirror Mounts', 60)">Add to basket – £60 + £4 P&P</button>
+<button onclick="addToBasket('price_1TM6ovAhb23PF7gKBiv9bFD3', 'Quick Swap Mirror Mounts', 60)">Add to basket – £60 + £4 P&P</button>
 
 ## What comes in the kit?
 * 2x sidescreen brackets 

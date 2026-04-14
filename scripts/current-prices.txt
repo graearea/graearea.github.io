@@ -1,29 +1,43 @@
 Fetching prices from Stripe...
 
-Product                                       Price ID                        Amount
-----------------------------------------------------------------------------------------------
-add an extra size                             price_1STn8eAhb23PF7gKNsvIe9KX  £10.00
-Big Knob                                      price_1SVuOPAhb23PF7gK8RDgaBd5  £20.00
-Custom Colour                                 price_1STme5Ahb23PF7gKorxPGejW  £5.00
-Harness-Strap Clips                           price_1SPU67Ahb23PF7gKUp5OYxAd  £25.00
-Lap-belt bung                                 price_1RT2geAhb23PF7gKoUtoSgRb  £12.00
-Large Pedal Extensions                        price_1RT2eAAhb23PF7gKZJcplwOP  £45.00
-LED lights with Cowls and econoseals          price_1Ss8YrAhb23PF7gKhWIb7cWu  £90.00
-LED lights with Cowls and econoseals          price_1SUXT9Ahb23PF7gKMKcSGgyE  £170.00
-Lifeline Mirrors and Adapters                 price_1SfgVFAhb23PF7gKZw0QrPSM  £100.00
-Lifeline Mirrors and Adapters                 price_1SS3yuAhb23PF7gK409khEPH  £150.00
-Lifeline Mirrors and Adapters                 price_1SGdLUAhb23PF7gK760qaRWo  £150.00
-Pedal Plugs                                   price_1RTVj6Ahb23PF7gKZ2yZZ66C  £30.00
-Pedal Plugs                                   price_1RT2fyAhb23PF7gKxTWzw6tT  £30.00
-Quick Swap Windscreen Mirror mounts           price_1RT2fIAhb23PF7gKQDByKPnP  £60.00
-Rollcage Mirror Brackets                      price_1SlrJLAhb23PF7gKMdIa34H4  £30.00
-Spa Mirror Adaptor                            price_1SlqaAAhb23PF7gKKE5K7lgz  £45.00
-Stainless Steel Bolts                         price_1STl6cAhb23PF7gKvE4ZCJGr  £0.00
-Steel hinge pins (SV) fitting                 price_1STl5JAhb23PF7gK6vnS4dYb  £0.00
-Test Prod 1                                   price_1T3k8OAhb23PF7gKtsmMmpJi  £0.00
-test prod 2                                   price_1T3kAhAhb23PF7gKJGh44Ah7  £0.00
-test prod 2                                   price_1T3k90Ahb23PF7gKrkIlUpiR  £0.00
-Westfield LED lights with Cowls and fittings  price_1Ss8bfAhb23PF7gKjnJBYMI5  £70.00
-Westfield LED lights with Cowls and fittings  price_1Ss8b1Ahb23PF7gKjcfJSPb0  £150.00
+Product                               Price ID                        Label                       Amount
+------------------------------------------------------------------------------------------------------------------
+Aeroscreen Curved Shims               price_1TM6otAhb23PF7gKgXPvKIy1                              £15.00
+Apple MagSafe Mount                   price_1TM6ooAhb23PF7gKgFKgK1U6  Swivel                      £25.00
+Apple MagSafe Mount                   price_1TM6onAhb23PF7gKJY9P6C19  Fixed                       £20.00
+Big Knob                              price_1TM6p9Ahb23PF7gKjAhiptzd                              £20.00
+BigCol LED Lights                     price_1TM6pCAhb23PF7gKeTxIRnMr  Cowls only                  £90.00
+BigCol LED Lights                     price_1TM6pCAhb23PF7gKGRVq2Mff  Cowls + LEDs                £170.00
+Caterham Spa/Motamec Adapters         price_1TM6owAhb23PF7gKZrYdi5f5                              £45.00
+Darth Schrader Dust Caps              price_1TM6oeAhb23PF7gK5FQ25Jhq                              £12.00
+Fuel Filler Neck Shims                price_1TM6ogAhb23PF7gKFLu5cAd0                              £25.00
+Harness Strap Clips                   price_1TM6ozAhb23PF7gKVJVxbEpY                              £25.00
+iPhone MagSafe Mount                  price_1TM6ojAhb23PF7gK2KZnG5ru                              £25.00
+Jamaican Bacon Clip                   price_1TM6oqAhb23PF7gKKkLd4PgY  440ml                       £17.00
+Jamaican Bacon Clip                   price_1TM6oqAhb23PF7gKS8KvadNb  330ml                       £15.00
+Lap-belt Bung                         price_1TM6p0Ahb23PF7gKOK3ahpfw                              £12.00
+Large Pedal Extension                 price_1TM6p5Ahb23PF7gK1JOnUra5  30mm                        £45.00
+Large Pedal Extension                 price_1TM6p5Ahb23PF7gKsFCdmo8x  20mm                        £45.00
+Large Pedal Extension                 price_1TM6p4Ahb23PF7gKQmYSlRZx  15mm                        £45.00
+Large Pedal Extension                 price_1TM6p4Ahb23PF7gKVxwulQuX  10mm                        £45.00
+Large Pedal Extension — Extra Size    price_1TM6p8Ahb23PF7gKmhs1oQoR  30mm                        £10.00
+Large Pedal Extension — Extra Size    price_1TM6p7Ahb23PF7gKskoM2Ub1  20mm                        £10.00
+Large Pedal Extension — Extra Size    price_1TM6p7Ahb23PF7gKvh8Dxj5c  15mm                        £10.00
+Large Pedal Extension — Extra Size    price_1TM6p6Ahb23PF7gKlH7Zv37e  10mm                        £10.00
+Lifeline Mirror Mounts                price_1TM6pIAhb23PF7gKJHQspR5V  With Lifeline mirrors — SV  £160.00
+Lifeline Mirror Mounts                price_1TM6pIAhb23PF7gK0vQHk5fE  Adapters only — SV          £100.00
+Lifeline Mirror Mounts                price_1TM6pHAhb23PF7gKzOdOmMjm  With Lifeline mirrors — S3  £160.00
+Lifeline Mirror Mounts                price_1TM6pHAhb23PF7gKDwUKztCc  Adapters only — S3          £100.00
+Lifeline Mirrors with Lifeline Bases  price_1TM6pKAhb23PF7gKLKSrsE45  SV                          £140.00
+Lifeline Mirrors with Lifeline Bases  price_1TM6pJAhb23PF7gKkdOHcMu4  S3                          £140.00
+Maglock Phone Mount                   price_1TM6olAhb23PF7gKKoJrarYq                              £25.00
+Pedal Extensions S3                   price_1TM6p1Ahb23PF7gKOjGczzq0                              £30.00
+Pedal Extensions SV                   price_1TM6p3Ahb23PF7gKSbOpLFQI                              £30.00
+Quadlock Mount                        price_1TM6opAhb23PF7gK22VBpd2d                              £25.00
+Quick Swap Mirror Mounts              price_1TM6ovAhb23PF7gKBiv9bFD3                              £60.00
+Rollcage Mirror Mounts                price_1TM6pAAhb23PF7gKJ82lsWeD                              £30.00
+Spa Mirror Friction Cups              price_1TM6osAhb23PF7gK5hcd8up1                              £15.00
+Westie LED Lights                     price_1TM6pFAhb23PF7gKlCMSJXAe  Cowls only                  £70.00
+Westie LED Lights                     price_1TM6pFAhb23PF7gKztfEIrk6  Cowls + LEDs                £150.00
 
-23 price(s) found.
+37 price(s) found.

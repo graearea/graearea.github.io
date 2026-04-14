@@ -69,7 +69,9 @@ def main():
 
     active = [
         p for p in prices
-        if p.get("product") and not p["product"].get("deleted")
+        if p.get("product")
+        and not p["product"].get("deleted")
+        and p["product"].get("active")
     ]
     active.sort(key=lambda p: p["product"]["name"].lower())
 
@@ -79,14 +81,16 @@ def main():
 
     col1 = max((len(p["product"]["name"]) for p in active), default=12) + 2
     col2 = max((len(p["id"]) for p in active), default=8) + 2
+    col3 = max((len(p.get("nickname") or "") for p in active), default=5) + 2
 
-    header = f"{'Product':<{col1}}{'Price ID':<{col2}}Amount"
+    header = f"{'Product':<{col1}}{'Price ID':<{col2}}{'Label':<{col3}}Amount"
     print(header)
     print("-" * (len(header) + 10))
 
     for price in active:
         name = price["product"]["name"]
         pid = price["id"]
+        label = price.get("nickname") or ""
         unit = price.get("unit_amount")
         if unit is not None:
             amount = f"\u00a3{unit / 100:.2f}"
@@ -94,7 +98,7 @@ def main():
             amount = "(tiered)"
         else:
             amount = "(variable)"
-        print(f"{name:<{col1}}{pid:<{col2}}{amount}")
+        print(f"{name:<{col1}}{pid:<{col2}}{label:<{col3}}{amount}")
 
     print(f"\n{len(active)} price(s) found.")
 

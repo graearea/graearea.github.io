@@ -16,6 +16,6 @@ I can do a bunch of colours
 
 £20 + £4 P&P
 
-<button onclick="addToBasket('price_1SVuOPAhb23PF7gK8RDgaBd5', 'Big Knob', 20)">Add to basket – £20 + £4 P&P</button>
+<button onclick="addToBasket('price_1TM6p9Ahb23PF7gKjAhiptzd', 'Big Knob', 20)">Add to basket – £20 + £4 P&P</button>
 
 {% include_relative delivery.md %}
