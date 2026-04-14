@@ -32,7 +32,6 @@ Notes:
   - if a product has a single price, use "amount"; for multiple prices use "prices"
 """
 
-import hashlib
 import json
 import os
 import subprocess
@@ -62,15 +61,25 @@ def get_key():
 STRIPE_BASE = "https://api.stripe.com/v1"
 
 
-def stripe_post(path, data, key, idempotency_key=None):
+def stripe_get(path, key, params=None):
+    url = f"{STRIPE_BASE}{path}"
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {key}"})
+    try:
+        with urllib.request.urlopen(req) as res:
+            return json.loads(res.read())
+    except urllib.error.HTTPError as e:
+        result = json.loads(e.read())
+        raise RuntimeError(result.get("error", {}).get("message", str(e)))
+
+
+def stripe_post(path, data, key):
     body = urllib.parse.urlencode(data).encode()
     headers = {
         "Authorization": f"Bearer {key}",
         "Content-Type": "application/x-www-form-urlencoded",
     }
-    if idempotency_key:
-        headers["Idempotency-Key"] = idempotency_key
-
     req = urllib.request.Request(f"{STRIPE_BASE}{path}", data=body, headers=headers, method="POST")
     try:
         with urllib.request.urlopen(req) as res:
@@ -84,18 +93,45 @@ def stripe_post(path, data, key, idempotency_key=None):
     return result
 
 
-def make_idempotency_key(*parts):
-    """Stable key based on content — safe to re-run without creating duplicates."""
-    combined = "|".join(str(p) for p in parts)
-    return hashlib.sha256(combined.encode()).hexdigest()[:32]
+def load_existing_products(key):
+    """Return a dict of {name: product_id} for all active Stripe products."""
+    existing = {}
+    params = {"limit": 100, "active": "true"}
+    while True:
+        page = stripe_get("/products", key, params)
+        for p in page["data"]:
+            # Keep the first one found if duplicates exist (oldest wins)
+            existing.setdefault(p["name"], p["id"])
+        if not page["has_more"]:
+            break
+        params["starting_after"] = page["data"][-1]["id"]
+    return existing
+
+
+def load_existing_prices(key):
+    """Return a set of (product_id, amount, currency, label) for all active prices."""
+    existing = set()
+    params = {"limit": 100, "active": "true", "expand[]": "data.product"}
+    while True:
+        page = stripe_get("/prices", key, params)
+        for p in page["data"]:
+            existing.add((p["product"]["id"] if isinstance(p["product"], dict) else p["product"],
+                          p["unit_amount"], p["currency"], p.get("nickname") or ""))
+        if not page["has_more"]:
+            break
+        params["starting_after"] = page["data"][-1]["id"]
+    return existing
 
 
 def create_product(name, description, key):
     data = {"name": name}
     if description:
         data["description"] = description
-    idem = make_idempotency_key("product", name)
-    return stripe_post("/products", data, key, idempotency_key=idem)
+    return stripe_post("/products", data, key)
+
+
+def update_product_image(product_id, image_url, key):
+    stripe_post(f"/products/{product_id}", {"images[]": image_url}, key)
 
 
 def create_price(product_id, amount, currency, label, key):
@@ -106,8 +142,7 @@ def create_price(product_id, amount, currency, label, key):
     }
     if label:
         data["nickname"] = label
-    idem = make_idempotency_key("price", product_id, amount, currency, label or "")
-    return stripe_post("/prices", data, key, idempotency_key=idem)
+    return stripe_post("/prices", data, key)
 
 
 def main():
@@ -122,7 +157,11 @@ def main():
     with open(input_file) as f:
         products = json.load(f)
 
-    print(f"Creating {len(products)} product(s) in Stripe...\n")
+    print(f"Syncing {len(products)} product(s) to Stripe...\n")
+    print("  Loading existing products and prices from Stripe...")
+    existing_products = load_existing_products(key)
+    existing_prices = load_existing_prices(key)
+    print(f"  Found {len(existing_products)} existing product(s), {len(existing_prices)} existing price(s).\n")
 
     results = []
     errors = []
@@ -131,6 +170,7 @@ def main():
         name = item["name"]
         description = item.get("description", "")
         currency = item.get("currency", "gbp")
+        image_url = item.get("image")
 
         # Normalise to a list of prices
         if "prices" in item:
@@ -139,16 +179,30 @@ def main():
             price_list = [(item.get("label", ""), item["amount"])]
 
         try:
-            product = create_product(name, description, key)
-            product_id = product["id"]
-            print(f"  Product: {name} ({product_id})")
+            if name in existing_products:
+                product_id = existing_products[name]
+                print(f"  Product: {name} ({product_id})  [exists]")
+            else:
+                product = create_product(name, description, key)
+                product_id = product["id"]
+                print(f"  Product: {name} ({product_id})  [created]")
+
+            if image_url:
+                update_product_image(product_id, image_url, key)
+                print(f"    Image:   {image_url}")
 
             for label, amount in price_list:
+                key_tuple = (product_id, amount, currency, label)
+                if key_tuple in existing_prices:
+                    # Find the price_id for display — fetch it from Stripe
+                    print(f"    Price [{label}]: (exists)  £{amount / 100:.2f}")
+                    # We don't have the price_id here so we skip adding to results
+                    continue
                 price = create_price(product_id, amount, currency, label, key)
                 price_id = price["id"]
                 display = f"£{amount / 100:.2f}"
                 tag = f" [{label}]" if label else ""
-                print(f"    Price{tag}: {price_id}  {display}")
+                print(f"    Price{tag}: {price_id}  {display}  [created]")
                 results.append((name, label, price_id, amount))
 
         except RuntimeError as e:

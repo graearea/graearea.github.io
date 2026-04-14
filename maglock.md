@@ -1,3 +1,6 @@
+---
+description: "Dual-stack magnetic phone mount for Caterham scuttles. VHB tape fitting. Survived the Karussell. Steel plate on case for total stability. £25."
+---
 # Maglock Phone Mount
 ![maglock-dash](https://img.uberniche.co.uk/maglock-dash.jpeg)
 Magnetic phone mount, I use this myself, and it is VERY solid. it uses 2x magnetic phone mounts stacked on top to provide total stability and a stick on steel plate on the phone case. I mount mine off-centre to be out of the way of the airflow past the aero-screen. it uses 3M VHB tape to fix to the scuttle. this can be removed cleanly using dental floss, but otherwise it is going nowhere.

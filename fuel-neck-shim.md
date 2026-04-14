@@ -1,3 +1,6 @@
+---
+description: "Wedge-shaped shims to correct a misaligned Caterham fuel filler neck and fix the warped bodywork. 2–12mm adjustment range. £25."
+---
 Fuel Filler Neck Shims
 ![fuel-shim.jpeg](https://img.uberniche.co.uk/fuel-shim.jpeg)
 

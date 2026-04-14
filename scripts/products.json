@@ -4,28 +4,32 @@
     "description": "Push-fit valve dust caps",
     "amount": 1200,
     "currency": "gbp",
-    "weightInGrams": 10
+    "weightInGrams": 10,
+    "image": "https://img.uberniche.co.uk/darth.webp"
   },
   {
     "name": "Fuel Filler Neck Shims",
     "description": "Wedge-shaped shims to correct a misaligned fuel filler neck",
     "amount": 2500,
     "currency": "gbp",
-    "weightInGrams": 10
+    "weightInGrams": 10,
+    "image": "https://img.uberniche.co.uk/fuel-shim.jpeg"
   },
   {
     "name": "iPhone MagSafe Mount",
     "description": "MagSafe phone mount for Caterham scuttle",
     "amount": 2500,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/magsafe-dash.jpg"
   },
   {
     "name": "Maglock Phone Mount",
     "description": "Magnetic phone mount for Caterham scuttle",
     "amount": 2500,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/maglock-dash.jpeg"
   },
   {
     "name": "Apple MagSafe Mount",
@@ -35,14 +39,16 @@
       { "label": "Swivel", "amount": 2500 }
     ],
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/magsafe-dash.jpg"
   },
   {
     "name": "Quadlock Mount",
     "description": "Quadlock phone mount for Caterham scuttle",
     "amount": 2500,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/v2-front.jpeg"
   },
   {
     "name": "Jamaican Bacon Clip",
@@ -52,84 +58,114 @@
       { "label": "440ml", "amount": 1700 }
     ],
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/bacon.jpg"
   },
   {
     "name": "Spa Mirror Friction Cups",
     "description": "Friction cups for Spa/Motamec mirror sockets",
     "amount": 1500,
     "currency": "gbp",
-    "weightInGrams": 5
+    "weightInGrams": 5,
+    "image": "https://img.uberniche.co.uk/cup.jpeg"
   },
   {
     "name": "Aeroscreen Curved Shims",
     "description": "Curved shims for fitting flat mirror brackets to aero screens",
     "amount": 1500,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/gasket.jpeg"
   },
   {
     "name": "Quick Swap Mirror Mounts",
     "description": "Mirror mounts that swap between windscreen and sidescreen with one hex key",
     "amount": 6000,
     "currency": "gbp",
-    "weightInGrams": 150
+    "weightInGrams": 150,
+    "image": "https://img.uberniche.co.uk/quick-swap-title.jpg"
   },
   {
     "name": "Caterham Spa/Motamec Adapters",
     "description": "Adapters to fit Spa or Motamec convex mirrors in original Caterham holes",
     "amount": 4500,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/adapter-fitted.jpeg"
   },
   {
     "name": "Harness Strap Clips",
     "description": "Clips to stop Caterham harness straps flapping in the wind",
     "amount": 2500,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/multicolour-strap.jpeg"
   },
   {
     "name": "Lap-belt Bung",
     "description": "Carbon-fibre ASA bung to cover the lap-belt hole",
     "amount": 1200,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/cap-carbon.jpg"
   },
   {
     "name": "Pedal Extensions S3",
     "description": "3D printed pedal extensions for S3 chassis (10mm and 15mm)",
     "amount": 3000,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/pedals-fitted.jpeg"
   },
   {
     "name": "Pedal Extensions SV",
     "description": "3D printed pedal extensions for SV chassis (20mm and 30mm)",
     "amount": 3000,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/pedals-fitted.jpeg"
   },
   {
     "name": "Large Pedal Extension",
     "description": "Wider, longer 3D printed pedal extension for improved heel-and-toe on Caterham",
-    "amount": 4500,
+    "prices": [
+      { "label": "10mm", "amount": 4500 },
+      { "label": "15mm", "amount": 4500 },
+      { "label": "20mm", "amount": 4500 },
+      { "label": "30mm", "amount": 4500 }
+    ],
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/pedal-box-header.jpg"
+  },
+  {
+    "name": "Large Pedal Extension — Extra Size",
+    "description": "Additional size for a Large Pedal Extension order",
+    "prices": [
+      { "label": "10mm", "amount": 1000 },
+      { "label": "15mm", "amount": 1000 },
+      { "label": "20mm", "amount": 1000 },
+      { "label": "30mm", "amount": 1000 }
+    ],
+    "currency": "gbp",
+    "weightInGrams": 30,
+    "image": "https://img.uberniche.co.uk/pedal-box-header.jpg"
   },
   {
     "name": "Big Knob",
     "description": "Extended heater knob for Caterham — easier to reach when strapped in",
     "amount": 2000,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/big-knob.jpeg"
   },
   {
     "name": "Rollcage Mirror Mounts",
     "description": "Mounts for attaching rollcage mirrors (Longacre etc) to a 32mm or 38mm cage",
     "amount": 3000,
     "currency": "gbp",
-    "weightInGrams": 50
+    "weightInGrams": 50,
+    "image": "https://img.uberniche.co.uk/momimo.jpeg"
   },
   {
     "name": "BigCol LED Lights",
@@ -139,7 +175,8 @@
       { "label": "Cowls only",   "amount": 9000 }
     ],
     "currency": "gbp",
-    "weightInGrams": 1000
+    "weightInGrams": 1000,
+    "image": "https://img.uberniche.co.uk/big-col.jpeg"
   },
   {
     "name": "Westie LED Lights",
@@ -149,7 +186,8 @@
       { "label": "Cowls only",   "amount": 7000 }
     ],
     "currency": "gbp",
-    "weightInGrams": 1000
+    "weightInGrams": 1000,
+    "image": "https://img.uberniche.co.uk/west5.jpeg"
   },
   {
     "name": "Lifeline Mirror Mounts",
@@ -161,7 +199,8 @@
       { "label": "With Lifeline mirrors — SV", "amount": 16000 }
     ],
     "currency": "gbp",
-    "weightInGrams": 500
+    "weightInGrams": 500,
+    "image": "https://img.uberniche.co.uk/lifeline-wide.jpg"
   },
   {
     "name": "Lifeline Mirrors with Lifeline Bases",
@@ -171,6 +210,7 @@
       { "label": "SV", "amount": 14000 }
     ],
     "currency": "gbp",
-    "weightInGrams": 500
+    "weightInGrams": 500,
+    "image": "https://img.uberniche.co.uk/lifeline-wide.jpg"
   }
 ]

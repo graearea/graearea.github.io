@@ -1,3 +1,6 @@
+---
+description: "Fully custom 3D-printed Caterham mirror mounts braced in two dimensions. Made to your sidescreen's exact dimensions. Track-tested 5,000+ miles. £80."
+---
 # Custom Mirror Mounts
 ![mounted](https://img.uberniche.co.uk/mounted.jpeg)
 

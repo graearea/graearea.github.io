@@ -1,3 +1,6 @@
+---
+description: "Tidy clips to stop your Caterham 3\" harness top straps flapping in the wind. Tight fit on Luke/standard harnesses. Available in multiple colours. £25."
+---
 # Harness-Strap clips
 ![clip](https://img.uberniche.co.uk/multicolour-strap.jpeg)
 

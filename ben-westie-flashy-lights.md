@@ -1,3 +1,6 @@
+---
+description: "Sequential animated Fristom LED rear light clusters for Westfields with 3D-printed cowls shaped for the flat rear wing. From £70."
+---
 # Yellow_Super_Seven's Flashy LED Lights for Westfields
 ![west1](https://img.uberniche.co.uk/west5.jpeg)
 

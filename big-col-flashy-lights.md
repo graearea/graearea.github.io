@@ -1,3 +1,6 @@
+---
+description: "Sequential animated LED rear light clusters for Caterhams with 3D-printed cowls. Drop-in replacement for caravan lights. Econoseal connectors fitted. From £90."
+---
 # BigCol's Flashy LED Lights
 ![big-col](https://img.uberniche.co.uk/big-col.jpeg)
 

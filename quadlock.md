@@ -1,3 +1,6 @@
+---
+description: "Quadlock phone mount for Caterhams. Slots into scuttle bolts or VHB tape. V2 redesign for strength and easy fitting. £25."
+---
 # Quadlock
 
 ![Quadlock Mount](https://img.uberniche.co.uk/v2-front.jpeg)

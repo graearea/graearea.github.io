@@ -1,3 +1,6 @@
+---
+description: "Extended 70mm or 100mm heater knob for Caterhams — reach the heater without loosening your harness. PETG with brass insert. Available in multiple colours. £20."
+---
 # Big Knob 
 ![big-knob](https://img.uberniche.co.uk/big-knob.jpeg)
 

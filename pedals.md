@@ -1,3 +1,6 @@
+---
+description: "3D-printed pedal extension plugs for Caterham S3 (10 & 15mm) and SV (20 & 30mm) chassis. Close the brake-to-throttle gap for easier heel-and-toe. £30."
+---
 # Pedal Extensions
 ![plugs](https://img.uberniche.co.uk/pedals-fitted.jpeg)
 

@@ -1,8 +1,11 @@
 theme: minima
 name: Uber Niche Printed Products for Caterhams
 header_pages: []
+url: https://uberniche.co.uk
+description: "3D-printed parts for Caterhams and kit cars. Mirror mounts, pedal extensions, phone mounts, LED lights and more. Designed, tested and track-proven from Cadwell to the Nürburgring."
 
 plugins:
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
   - jekyll-default-layout
+  - jekyll-sitemap

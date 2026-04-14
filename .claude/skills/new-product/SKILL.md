@@ -31,31 +31,16 @@ Create `<slug>.md` in the repo root. Follow the exact pattern used by existing p
 
 **Single price button pattern:**
 ```html
-<button onclick="checkout(this, 'PRICE_ID_PLACEHOLDER')">Buy – £XX delivered</button>
-
-<script>
-async function checkout(btn, priceId) {
-  btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = 'Loading...';
-  const res = await fetch('https://autumn-bread-f290.uber-niche-parts.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ priceId })
-  });
-  const { url } = await res.json();
-  if (url) {
-    window.location.href = url;
-  } else {
-    alert('Something went wrong, please try again.');
-    btn.disabled = false;
-    btn.textContent = orig;
-  }
-}
-</script>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Product Name', XX)">Add to basket – £XX + £4 P&P</button>
 ```
 
-**Multiple price buttons:** use multiple `<button>` elements with descriptive labels before a single shared `<script>` block.
+**Multiple price buttons** (variants, e.g. sizes or options):
+```html
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Product Name', XX, 'Variant A')">Add to basket – Variant A – £XX + £4 P&P</button>
+<button onclick="addToBasket('PRICE_ID_PLACEHOLDER', 'Product Name', XX, 'Variant B')">Add to basket – Variant B – £XX + £4 P&P</button>
+```
+
+`addToBasket(priceId, name, priceInPounds, optionalLabel)` is defined in `assets/basket.js` and is available on all pages. Do not add a `<script>` block — it is already loaded globally via `_includes/basket.html`.
 
 Show the user the draft page and ask them to confirm before continuing.
 

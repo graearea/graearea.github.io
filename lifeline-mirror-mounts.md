@@ -1,3 +1,6 @@
+---
+description: "3D-printed articulated mirror mounts for Lifeline convex mirrors on any Caterham sidescreen. Carbon-reinforced. Track-tested from Cadwell to the Nürburgring. From £100."
+---
 # Lifeline Mirrors with Carbon-fibre-reinforced Brackets 
 
 ![lifeline-wide.jpg](https://img.uberniche.co.uk/lifeline-wide.jpg)

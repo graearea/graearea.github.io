@@ -1,3 +1,6 @@
+---
+description: "3D-printed mounts to attach Longacre-style rollcage mirrors to 32mm or 38mm cage tube. Includes jubilee clips and rubber covers. £30."
+---
 # Motorsport Mirror Mounts (rollcage mounted)
 ![momimo-hand.jpeg](https://img.uberniche.co.uk/momimo-hand.jpeg)
 

@@ -1,3 +1,6 @@
+---
+description: "Carbon-fibre ASA screw bung to cover the unused lap-belt hole in your Caterham chassis. Clean, self-clearing thread. £12."
+---
 # Lap-belt Bung
 ![lapbelt-bung](https://img.uberniche.co.uk/lapbelt-bung.jpg)
 

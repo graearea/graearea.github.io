@@ -1,3 +1,6 @@
+---
+description: "Quick-release bike can holder for 330ml and 440ml cans. VHB or bottle boss mount. Tested airborne over Sheet trails. From £15."
+---
 # Jamaican Bacon Clip
 ![plugs](https://img.uberniche.co.uk/bacon.jpg)
 

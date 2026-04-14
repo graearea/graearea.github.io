@@ -1,3 +1,6 @@
+---
+description: "Wide 3D-printed pedal extension for easier heel-and-toe on Caterham S3 and SV chassis. Track-tested to 20,000 miles. From £45."
+---
 # Large Pedal Extension
 ![plugs](https://img.uberniche.co.uk/pedal-box-header.jpg)
 
@@ -18,9 +21,41 @@ To stop the pedal extensions rotating, they have a notch to increase the frictio
 for an S3 chassis, I recommend a 10 or 15mm extension. for an SV chassis I'd recommend a 20 or 30 or something similar. put your foot on the brake pedal and judge the gap to your pedal.
 
 ## How much are they?
-£45 + £4 P&P, extra sizes £10 each.
+£45 + £4 P&P. Extra sizes £10 each — add as many as you like.
 
-<button onclick="addToBasket('price_1RT2eAAhb23PF7gKZJcplwOP', 'Large Pedal Extension', 45)">Add to basket – £45 + £4 P&P</button>
+<div class="pedal-order">
+  <label>Size: <select id="lp-size">
+    <option value="price_1TM6p4Ahb23PF7gKVxwulQuX|10mm">10mm — S3 recommended</option>
+    <option value="price_1TM6p4Ahb23PF7gKQmYSlRZx|15mm">15mm — S3 recommended</option>
+    <option value="price_1TM6p5Ahb23PF7gKsFCdmo8x|20mm">20mm — SV recommended</option>
+    <option value="price_1TM6p5Ahb23PF7gK1JOnUra5|30mm">30mm — SV recommended</option>
+  </select></label>
+  <button onclick="lpAdd()">Add to basket – £45 + £4 P&P</button>
+</div>
+
+<div class="pedal-order">
+  <label>Extra size (+£10): <select id="lp-extra">
+    <option value="">— none —</option>
+    <option value="price_1TM6p6Ahb23PF7gKlH7Zv37e|10mm">10mm</option>
+    <option value="price_1TM6p7Ahb23PF7gKvh8Dxj5c|15mm">15mm</option>
+    <option value="price_1TM6p7Ahb23PF7gKskoM2Ub1|20mm">20mm</option>
+    <option value="price_1TM6p8Ahb23PF7gKmhs1oQoR|30mm">30mm</option>
+  </select></label>
+  <button onclick="lpAddExtra()">Add extra size – £10</button>
+</div>
+
+<script>
+function lpAdd() {
+  const [id, label] = document.getElementById('lp-size').value.split('|');
+  addToBasket(id, 'Large Pedal Extension', 45, label);
+}
+function lpAddExtra() {
+  const val = document.getElementById('lp-extra').value;
+  if (!val) return;
+  const [id, label] = val.split('|');
+  addToBasket(id, 'Large Pedal Extension — Extra Size', 10, label);
+}
+</script>
 
 any problems email john@uberniche.co.uk
 

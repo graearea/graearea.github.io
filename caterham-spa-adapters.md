@@ -1,3 +1,6 @@
+---
+description: "Simple 3D-printed adapters to fit Spa or Motamec convex mirrors into the original Caterham mirror holes. No measuring needed. Includes door-stop hinges. £45."
+---
 # Caterham to Spa & Motamec mirror adapters 
 
 ![adapter-fitted.png](https://img.uberniche.co.uk/adapter-fitted.jpeg)

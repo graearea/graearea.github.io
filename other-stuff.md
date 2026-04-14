@@ -1,3 +1,6 @@
+---
+description: "Spa/Motamec mirror friction cups and curved aeroscreen shims for Caterhams. Increase mirror adjustability or stress-free flat bracket fitting. From £15."
+---
 # Aeroscreen Stuff
 
 All prices + £4 P&P

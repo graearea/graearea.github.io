@@ -1,3 +1,6 @@
+---
+description: "Push-fit Schrader valve dust caps — no screwing, no filthy fingers, no losing them. Sith Black only. £12."
+---
 ## Darth Schrader:
 _"I find your lack of dust-caps disturbing"_
 <br/>
