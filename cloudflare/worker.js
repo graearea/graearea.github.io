@@ -47,6 +47,7 @@ export default {
       "shipping_address_collection[allowed_countries][13]": "ES",
       "shipping_address_collection[allowed_countries][14]": "SE",
       "shipping_address_collection[allowed_countries][15]": "CH",
+      "shipping_address_collection[allowed_countries][16]": "PL",
       "shipping_options[0][shipping_rate_data][type]": "fixed_amount",
       "shipping_options[0][shipping_rate_data][display_name]": shippingName,
       "shipping_options[0][shipping_rate_data][fixed_amount][amount]": String(shippingPence),
