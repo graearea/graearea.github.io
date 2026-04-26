@@ -14,19 +14,8 @@ They tightly fit the standard Caterham (Luke?) 3" harness top straps. They are d
 
 £25 + £4 P&P
 
-<div class="pedal-order">
-  <label><input type="checkbox" id="hs-colour"> Custom colour (+£5) — email me at john@uberniche.co.uk after ordering to specify</label>
-</div>
-<button onclick="hsAdd()">Add to basket – £25 + £4 P&P</button>
-
-<script>
-function hsAdd() {
-  addToBasket('price_1TM6ozAhb23PF7gKVJVxbEpY', 'Harness Strap Clips', 25);
-  if (document.getElementById('hs-colour').checked) {
-    addToBasket('price_1TQUOrAhb23PF7gKH5SrjGq0', 'Harness Strap Clips — Custom Colour', 5);
-  }
-}
-</script>
+<button onclick="addToBasket('price_1TM6ozAhb23PF7gKVJVxbEpY', 'Harness Strap Clips', 25)">Add to basket – £25 + £4 P&P</button>
+<button onclick="addToBasket('price_1TQUOrAhb23PF7gKH5SrjGq0', 'Harness Strap Clips — Custom Colour', 5)">Add custom colour – +£5</button>
 
 please note, the finish of this has to be flat as pictured, not carbon-fibre effect.  
 
