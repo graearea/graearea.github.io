@@ -103,7 +103,7 @@ async function checkout() {
     const res = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: basket.map(i => ({ priceId: i.priceId, quantity: i.quantity })) }),
+      body: JSON.stringify({ items: basket.map(i => ({ priceId: i.priceId, quantity: i.quantity, ...(i.label && { label: i.label }) })) }),
     });
     const { url, warning } = await res.json();
     if (url) {

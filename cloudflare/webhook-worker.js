@@ -165,14 +165,22 @@ function buildClickAndDropOrder(session, shipping) {
   // Click & Drop wants ISO 8601 without milliseconds
   const orderDate = new Date(session.created * 1000).toISOString().replace(/\.\d{3}Z$/, "Z");
 
+  // Parse size/variant labels stored in session metadata by the checkout worker
+  let itemLabels = {};
+  try { itemLabels = JSON.parse(session.metadata?.item_labels ?? "{}"); } catch {}
+
   // Line items for parcel contents — only included if expanded by Stripe
   const lineItems = session.line_items?.data ?? [];
-  const contents = lineItems.map((item) => ({
-    name: item.description || item.price?.product?.name || "Item",
-    quantity: item.quantity,
-    unitValue: Math.round((item.amount_subtotal ?? item.amount_total) / item.quantity) / 100,
-    unitWeightInGrams: parseInt(item.price?.product?.metadata?.weightInGrams ?? 500, 10),
-  }));
+  const contents = lineItems.map((item) => {
+    const label = itemLabels[item.price?.id];
+    const baseName = item.description || item.price?.product?.name || "Item";
+    return {
+      name: label ? `${baseName} (${label})` : baseName,
+      quantity: item.quantity,
+      unitValue: Math.round((item.amount_subtotal ?? item.amount_total) / item.quantity) / 100,
+      unitWeightInGrams: parseInt(item.price?.product?.metadata?.weightInGrams ?? 500, 10),
+    };
+  });
 
   const pkg = {
     weightInGrams: contents.length
