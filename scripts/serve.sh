@@ -16,6 +16,9 @@ if ! "$RUBY" -e "gem 'jekyll', '~> 4.3'" 2>/dev/null; then
   exit 1
 fi
 
+# Kill any running Jekyll server first
+pkill -f 'jekyll.*serve' 2>/dev/null && echo "Stopped existing Jekyll server." || true
+
 echo "Starting Jekyll — http://localhost:4000"
 "$RUBY" -e "gem 'jekyll', '~> 4.3'; load Gem.bin_path('jekyll', 'jekyll')" \
   -- serve --livereload --open-url 2>&1 | grep -v "DEPRECATION WARNING"
