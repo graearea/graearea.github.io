@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>France Telemetry – Speed Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; height:100%; width:100%; background:#111; font-family: sans-serif; }
+
+  #dropzone {
+    position: fixed; inset: 0; z-index: 2000;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: #111; color: #ccc;
+  }
+  #dropzone.drag-over { background: #1a2a1a; }
+  #dropzone h1 { font-size: 22px; font-weight: 600; color: #eee; margin: 0 0 8px; }
+  #dropzone p { font-size: 14px; color: #888; margin: 0 0 28px; }
+  #dropzone .drop-area {
+    border: 2px dashed #444; border-radius: 12px;
+    padding: 48px 64px; text-align: center; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  #dropzone .drop-area:hover, #dropzone.drag-over .drop-area { border-color: #00c840; background: rgba(0,200,64,0.05); }
+  #dropzone .drop-area svg { display: block; margin: 0 auto 16px; opacity: 0.5; }
+  #dropzone .drop-area span { font-size: 15px; color: #bbb; display: block; margin-bottom: 10px; }
+  #dropzone .drop-area small { font-size: 12px; color: #555; }
+  #file-input { display: none; }
+  #error-msg { color: #e05050; font-size: 13px; margin-top: 16px; display: none; }
+
+  #map { margin:0; padding:0; height:100%; width:100%; }
+  #legend {
+    position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+    background: rgba(0,0,0,0.78); padding: 12px 16px; border-radius: 8px;
+    color: #eee; font-size: 13px; pointer-events: none; display: none;
+  }
+  #legend .bar {
+    width: 160px; height: 14px;
+    background: linear-gradient(to right, #2060ff, #00c800, #ffb400, #dc0000);
+    border-radius: 3px; margin: 6px 0 4px;
+  }
+  #legend .labels { display:flex; justify-content:space-between; width:160px; }
+  #info {
+    position: fixed; top: 16px; right: 16px; z-index: 1000;
+    background: rgba(0,0,0,0.78); padding: 10px 14px; border-radius: 8px;
+    color: #aaa; font-size: 12px; display: none; line-height: 1.6;
+  }
+  .spd-tip {
+    background: rgba(0,0,0,0.82); border: none; border-radius: 6px;
+    color: #eee; font-family: sans-serif; font-size: 13px;
+    padding: 5px 10px; white-space: nowrap;
+  }
+  .spd-tip::before { display: none; }
+</style>
+</head>
+<body>
+
+<div id="dropzone">
+  <h1>Telemetry Speed Map</h1>
+  <p>Open a 1hz CSV file exported from your telemetry system</p>
+  <div class="drop-area" id="drop-area">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="17 8 12 3 7 8"/>
+      <line x1="12" y1="3" x2="12" y2="15"/>
+    </svg>
+    <span>Drop CSV file here</span>
+    <small>or click to browse</small>
+  </div>
+  <div id="error-msg"></div>
+  <input type="file" id="file-input" accept=".csv">
+</div>
+
+<div id="map"></div>
+<div id="legend">
+  <b>Speed (mph)</b>
+  <div class="bar"></div>
+  <div class="labels"><span>0</span><span>45</span><span>90</span><span>135+</span></div>
+</div>
+<div id="info"></div>
+
+<script>
+// ── File picker wiring ──────────────────────────────────────────────────────
+const dropzone  = document.getElementById('dropzone');
+const dropArea  = document.getElementById('drop-area');
+const fileInput = document.getElementById('file-input');
+const errorMsg  = document.getElementById('error-msg');
+
+dropArea.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', e => loadFile(e.target.files[0]));
+
+document.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag-over'); });
+document.addEventListener('dragleave', e => { if (!e.relatedTarget) dropzone.classList.remove('drag-over'); });
+document.addEventListener('drop', e => {
+  e.preventDefault();
+  dropzone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file) loadFile(file);
+});
+
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorMsg.style.display = 'block';
+}
+
+// ── CSV parsing ─────────────────────────────────────────────────────────────
+function parseCSV(text) {
+  const lines = text.split('\n').filter(l => l.trim() !== '');
+  if (lines.length < 2) throw new Error('File appears empty.');
+
+  // Header can appear on the first or last line
+  const firstCols = lines[0].split(',').map(h => h.trim());
+  const lastCols  = lines[lines.length - 1].split(',').map(h => h.trim());
+  let header, dataLines;
+  if (firstCols.includes('lat')) {
+    header = firstCols;
+    dataLines = lines.slice(1);
+  } else if (lastCols.includes('lat')) {
+    header = lastCols;
+    dataLines = lines.slice(0, -1);
+  } else {
+    throw new Error('Could not find a header row in the first or last line.');
+  }
+
+  const latIdx   = header.indexOf('lat');
+  const lngIdx   = header.indexOf('lng');
+  const spdIdx   = header.indexOf('speed_mph');
+  const tsIdx    = header.indexOf('timestamp_utc');
+  const distIdx  = header.indexOf('distance_km');
+
+  if (latIdx < 0 || lngIdx < 0 || spdIdx < 0) {
+    throw new Error('Could not find lat, lng, or speed_mph columns. Is this a telemetry CSV?');
+  }
+
+  const points = [];
+  const seenSeconds = new Set();
+  for (let i = 0; i < dataLines.length; i++) {
+    const cols = dataLines[i].split(',');
+    if (cols.length < 3) continue;
+    const lat   = parseFloat(cols[latIdx]);
+    const lng   = parseFloat(cols[lngIdx]);
+    const speed = parseFloat(cols[spdIdx]);
+    const ts    = tsIdx >= 0 ? cols[tsIdx] : '';
+    const dist  = distIdx >= 0 ? parseFloat(cols[distIdx]) : NaN;
+    if (isNaN(lat) || isNaN(lng) || isNaN(speed)) continue;
+    if (speed > 150) continue;  // filter GPS spikes (tunnels etc.)
+    if (speed < 5) continue;    // filter stationary / very slow points
+    // Downsample to 0.5hz: keep one point per even-numbered second
+    const secondStr = ts ? ts.split('.')[0] : null;  // e.g. "2026-05-15 13:38:04"
+    if (secondStr) {
+      const totalSeconds = Math.floor(new Date(secondStr).getTime() / 1000);
+      const bucket2s = Math.floor(totalSeconds / 2);  // changes every 2 seconds
+      if (seenSeconds.has(bucket2s)) continue;
+      seenSeconds.add(bucket2s);
+    }
+    // point: [lat, lng, speed, ts, dist_km]
+    points.push([lat, lng, Math.min(speed, 135), ts, isNaN(dist) ? null : dist]);
+  }
+  // Fix cumulative distance: distance_km resets to 0 each time the car is switched off.
+  // Accumulate a running offset so the tooltip shows true total trip distance.
+  let distOffset = 0;
+  let prevDist = null;
+  for (const p of points) {
+    if (p[4] === null) continue;
+    if (prevDist !== null && p[4] < prevDist - 0.5) {
+      // distance reset — add previous value to offset
+      distOffset += prevDist;
+    }
+    prevDist = p[4];
+    p[4] = p[4] + distOffset;
+  }
+  if (points.length === 0) throw new Error('No valid data rows found.');
+  return points;
+}
+
+// ── Map rendering ───────────────────────────────────────────────────────────
+let map = null;
+
+function renderMap(points) {
+  dropzone.style.display = 'none';
+  document.getElementById('legend').style.display = 'block';
+  document.getElementById('info').style.display   = 'block';
+
+  if (!map) {
+    map = L.map('map', { zoomControl: true });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap &amp; Carto',
+      maxZoom: 19
+    }).addTo(map);
+  } else {
+    map.eachLayer(l => { if (l instanceof L.Polyline) map.removeLayer(l); });
+  }
+
+  function speedColor(speed) {
+    // Blue -> Green -> Yellow -> Red across 0–135 mph
+    const t = Math.min(speed / 135, 1);
+    let r, g, b;
+    if (t < 0.33) {
+      // Blue -> Green
+      const s = t / 0.33;
+      r = 0;
+      g = Math.round(200 * s);
+      b = Math.round(255 * (1 - s));
+    } else if (t < 0.66) {
+      // Green -> Yellow
+      const s = (t - 0.33) / 0.33;
+      r = Math.round(255 * s);
+      g = 200;
+      b = 0;
+    } else {
+      // Yellow -> Red
+      const s = (t - 0.66) / 0.34;
+      r = 220;
+      g = Math.round(200 * (1 - s));
+      b = 0;
+    }
+    return `rgb(${r},${g},${b})`;
+  }
+
+  const BUCKET = 5;
+  let segments = [], seg = [points[0]];
+  for (let i = 1; i < points.length; i++) {
+    const prev = points[i-1], cur = points[i];
+    if (Math.floor(prev[2]/BUCKET) === Math.floor(cur[2]/BUCKET)) {
+      seg.push(cur);
+    } else {
+      seg.push(cur);
+      segments.push(seg);
+      seg = [cur];
+    }
+  }
+  if (seg.length > 1) segments.push(seg);
+
+  for (const s of segments) {
+    const midIdx = Math.floor(s.length/2);
+    const midSpeed = s[midIdx][2];
+    const midDist  = s[midIdx][4];
+    const distMiles = midDist !== null ? (midDist * 0.621371) : null;
+    const tooltip = distMiles !== null
+      ? `${s[midIdx][2].toFixed(1)} mph &nbsp;|&nbsp; ${distMiles.toFixed(1)} mi`
+      : `${s[midIdx][2].toFixed(1)} mph`;
+    L.polyline(s.map(p => [p[0], p[1]]), {
+      color: speedColor(midSpeed), weight: 3, opacity: 0.85
+    }).bindTooltip(tooltip, { sticky: true, className: 'spd-tip' }).addTo(map);
+  }
+
+  // Blue dots where the date changes
+  let prevDate = null;
+  for (const p of points) {
+    if (!p[3]) continue;
+    const dateStr = p[3].split(' ')[0];  // "2026-05-15"
+    if (prevDate && dateStr !== prevDate) {
+      L.circleMarker([p[0], p[1]], {
+        radius: 7, color: '#fff', weight: 1.5,
+        fillColor: '#3399ff', fillOpacity: 1
+      }).bindTooltip(`New day: ${dateStr}`, { className: 'spd-tip' }).addTo(map);
+    }
+    prevDate = dateStr;
+  }
+
+  const lats = points.map(p=>p[0]), lngs = points.map(p=>p[1]);
+  map.fitBounds([[Math.min(...lats), Math.min(...lngs)], [Math.max(...lats), Math.max(...lngs)]]);
+
+  const maxSpd = Math.max(...points.map(p=>p[2])).toFixed(1);
+  const avgSpd = (points.reduce((a,p)=>a+p[2],0)/points.length).toFixed(1);
+  document.getElementById('info').innerHTML =
+    `${points.length.toLocaleString()} points &nbsp;|&nbsp; max ${maxSpd} mph &nbsp;|&nbsp; avg ${avgSpd} mph`;
+}
+
+// ── Load file ───────────────────────────────────────────────────────────────
+function loadFile(file) {
+  if (!file) return;
+  errorMsg.style.display = 'none';
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const points = parseCSV(e.target.result);
+      renderMap(points);
+    } catch(err) {
+      showError(err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+</script>
+</body>
+</html>
