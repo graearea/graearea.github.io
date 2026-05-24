@@ -1,5 +1,5 @@
 ---
-description: "3D-printed articulated mirror mounts for Lifeline convex mirrors on any Caterham sidescreen. Carbon-reinforced. Track-tested from Cadwell to the Nürburgring. From £100."
+description: "3D-printed articulated mirror mounts for Lifeline convex mirrors on any Caterham sidescreen. Carbon-reinforced. Track-tested from Cadwell to the Nürburgring. From £110."
 ---
 # Lifeline Mirrors with Carbon-fibre-reinforced Brackets 
 
@@ -24,13 +24,13 @@ If you want Spa Carbon Fibre Mirrors, get in touch as I don't hold stock but I c
 Before you order, check which chassis you have — S3 or SV.
 
 ### S3
-<button onclick="addToBasket('price_1TM6pHAhb23PF7gKzOdOmMjm', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — S3')">Add to basket – With Lifeline mirrors — S3 – £160 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TM6pHAhb23PF7gKDwUKztCc', 'Lifeline Mirror Mounts', 100, 'Adapters only — S3')">Add to basket – Adapters only — S3 – £100 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TM6pJAhb23PF7gKkdOHcMu4', 'Lifeline Mirrors with Lifeline Bases', 140, 'S3')">Add to basket – With Lifeline bases only, no mirrors — S3 – £140 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1Tac8jAhb23PF7gK7iC5ib5U', 'Lifeline Mirror Mounts', 170, 'With Lifeline mirrors — S3')">Add to basket – With Lifeline mirrors — S3 – £170 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1Tac8jAhb23PF7gK9ZhM7pmW', 'Lifeline Mirror Mounts', 110, 'Adapters only — S3')">Add to basket – Adapters only — S3 – £110 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1Tac8kAhb23PF7gKvJ6vz8r4', 'Lifeline Mirrors with Lifeline Bases', 150, 'S3')">Add to basket – With Lifeline bases only, no mirrors — S3 – £150 + £4 P&P</button><br/>
 ### SV
-<button onclick="addToBasket('price_1TM6pIAhb23PF7gKJHQspR5V', 'Lifeline Mirror Mounts', 160, 'With Lifeline mirrors — SV')">Add to basket – With Lifeline mirrors — SV – £160 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TM6pIAhb23PF7gK0vQHk5fE', 'Lifeline Mirror Mounts', 100, 'Adapters only — SV')">Add to basket – Adapters only — SV – £100 + £4 P&P</button><br/>
-<button onclick="addToBasket('price_1TM6pKAhb23PF7gKLKSrsE45', 'Lifeline Mirrors with Lifeline Bases', 140, 'SV')">Add to basket – With Lifeline bases only, no mirrors — SV – £140 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1Tac8kAhb23PF7gKGOBBni3j', 'Lifeline Mirror Mounts', 170, 'With Lifeline mirrors — SV')">Add to basket – With Lifeline mirrors — SV – £170 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1Tac8jAhb23PF7gKyAy8QqCz', 'Lifeline Mirror Mounts', 110, 'Adapters only — SV')">Add to basket – Adapters only — SV – £110 + £4 P&P</button><br/>
+<button onclick="addToBasket('price_1Tac8lAhb23PF7gKP8hEcQI0', 'Lifeline Mirrors with Lifeline Bases', 150, 'SV')">Add to basket – With Lifeline bases only, no mirrors — SV – £150 + £4 P&P</button><br/>
 
 ## Fitting instructions
 * tap the brass/silver hinge pins out of the original hinges (or simply mount the hinge with the pin on the stanchion)

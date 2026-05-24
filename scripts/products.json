@@ -193,10 +193,10 @@
     "name": "Lifeline Mirror Mounts",
     "description": "Carbon-fibre-reinforced articulated mirror mounts for Lifeline mirrors on Caterham",
     "prices": [
-      { "label": "Adapters only — S3",         "amount": 10000 },
-      { "label": "With Lifeline mirrors — S3", "amount": 16000 },
-      { "label": "Adapters only — SV",         "amount": 10000 },
-      { "label": "With Lifeline mirrors — SV", "amount": 16000 }
+      { "label": "Adapters only — S3",         "amount": 11000 },
+      { "label": "With Lifeline mirrors — S3", "amount": 17000 },
+      { "label": "Adapters only — SV",         "amount": 11000 },
+      { "label": "With Lifeline mirrors — SV", "amount": 17000 }
     ],
     "currency": "gbp",
     "weightInGrams": 500,
@@ -206,8 +206,8 @@
     "name": "Lifeline Mirrors with Lifeline Bases",
     "description": "Lifeline mirrors with Lifeline bases for Caterham side screens",
     "prices": [
-      { "label": "S3", "amount": 14000 },
-      { "label": "SV", "amount": 14000 }
+      { "label": "S3", "amount": 15000 },
+      { "label": "SV", "amount": 15000 }
     ],
     "currency": "gbp",
     "weightInGrams": 500,
