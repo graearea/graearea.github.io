@@ -78,6 +78,7 @@ function renderBasketItems() {
   if (totalEl) totalEl.textContent = `£${total.toFixed(2)}`;
   const btn = document.getElementById('basket-checkout-btn');
   if (btn) btn.disabled = false;
+  if (typeof renderUpsells === 'function') renderUpsells();
 }
 
 function openBasket() {
@@ -109,7 +110,7 @@ async function checkout() {
     if (url) {
       if (warning && !confirm(warning + '\n\nContinue to checkout?')) {
         btn.disabled = false;
-        btn.textContent = 'Checkout';
+        btn.textContent = 'Ferment Dinosaurs';
         return;
       }
       localStorage.removeItem('basket');
@@ -120,7 +121,7 @@ async function checkout() {
   } catch {
     alert('Something went wrong, please try again.');
     btn.disabled = false;
-    btn.textContent = 'Checkout';
+    btn.textContent = 'Ferment Dinosaurs';
   }
 }
 

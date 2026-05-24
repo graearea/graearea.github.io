@@ -159,6 +159,33 @@
 }
 #basket-checkout-btn:hover:not(:disabled) { background: #111; }
 #basket-checkout-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+#basket-upsells { display: none; border-top: 1px solid #eee; padding-top: 1rem; margin-top: 0.5rem; }
+#basket-upsells.has-items { display: block; }
+.upsell-heading { font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 0.6rem; }
+.upsell-card {
+  display: flex;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.15s;
+}
+.upsell-card:last-child { margin-bottom: 0; }
+.upsell-card:hover { border-color: #aaa; }
+.upsell-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.upsell-card-body { display: flex; flex-direction: column; justify-content: center; gap: 0.15rem; }
+.upsell-card-name { font-weight: bold; font-size: 0.85rem; }
+.upsell-card-price { font-size: 0.8rem; color: #555; }
 </style>
 
 <button id="basket-toggle" onclick="openBasket()" aria-label="Open basket">
@@ -174,13 +201,18 @@
     <button id="basket-close" onclick="closeBasket()" aria-label="Close basket">&#10005;</button>
   </div>
   <div id="basket-items"></div>
+  <div id="basket-upsells">
+    <p class="upsell-heading">Your car would like</p>
+    <div id="upsell-list"></div>
+  </div>
   <div class="basket-footer">
     <div class="basket-total-row">
-      <span class="basket-total-label">Total</span>
+      <span class="basket-total-label">Super-Unleaded Fund</span>
       <span id="basket-total"></span>
     </div>
-    <button id="basket-checkout-btn" onclick="checkout()" disabled>Checkout</button>
+    <button id="basket-checkout-btn" onclick="checkout()" disabled>Ferment Dinosaurs</button>
   </div>
 </div>
 
 <script src="/assets/basket.js"></script>
+<script src="/assets/upsell.js"></script>
