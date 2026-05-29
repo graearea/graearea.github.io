@@ -151,17 +151,6 @@ function buildClickAndDropOrder(session, shipping) {
   // orderReference max 40 chars — keep it short
   const orderRef = `stripe-${session.id.slice(-8)}`;
 
-  // Put custom field values (size selection, notes) into specialInstructions (max 500 chars)
-  const customFields = session.custom_fields ?? [];
-  const specialInstructions = customFields
-    .map((f) => {
-      const label = f.label?.custom ?? f.key;
-      const value = f.type === "dropdown" ? f.dropdown?.value : f.text?.value;
-      return value ? `${label}: ${value}` : null;
-    })
-    .filter(Boolean)
-    .join(" | ") || undefined;
-
   // Click & Drop wants ISO 8601 without milliseconds
   const orderDate = new Date(session.created * 1000).toISOString().replace(/\.\d{3}Z$/, "Z");
 
@@ -181,6 +170,24 @@ function buildClickAndDropOrder(session, shipping) {
       unitWeightInGrams: parseInt(item.price?.product?.metadata?.weightInGrams ?? 500, 10),
     };
   });
+
+  // Build specialInstructions: item summary first (so variant is always visible in C&D),
+  // then any custom field values (size notes etc). Max 500 chars.
+  const itemSummaryParts = contents.map((c) =>
+    c.quantity > 1 ? `${c.quantity}x ${c.name}` : c.name
+  );
+  const customFields = session.custom_fields ?? [];
+  const customFieldParts = customFields
+    .map((f) => {
+      const label = f.label?.custom ?? f.key;
+      const value = f.type === "dropdown" ? f.dropdown?.value : f.text?.value;
+      return value ? `${label}: ${value}` : null;
+    })
+    .filter(Boolean);
+  const allInstructionParts = [...itemSummaryParts, ...customFieldParts];
+  const specialInstructions = allInstructionParts.length
+    ? allInstructionParts.join(" | ").slice(0, 500)
+    : undefined;
 
   const pkg = {
     weightInGrams: contents.length
