@@ -1,5 +1,5 @@
 ---
-description: "Swap Spa mirrors between your Caterham windscreen and sidescreen with a single hex key. Fits all sidescreens. No spanner needed. £80, or £155 with Spa mirrors."
+description: "Swap Spa mirrors between your Caterham windscreen and sidescreen with a single hex key. Fits all sidescreens. No spanner needed. £90, or £165 with Spa mirrors."
 ---
 # Quick Swap Windscreen Mirror Mounts
 ![mounted](https://img.uberniche.co.uk/quick-swap-title.jpg)
@@ -24,10 +24,15 @@ to swap back, simply remove the longer screw, unclip the mirror and replace the 
 all screws are included and are black or stainless, not the Titanium ones shown in the video.
 
 ## How much are they?
-**£80 + £4 P&P** — or **£155 + £4 P&P** bundled with a pair of Spa mirrors.
 
-<button onclick="addToBasket('price_1TQUOsAhb23PF7gKe1JWwJ6s', 'Quick Swap Mirror Mounts', 80)">Add to basket – mounts only – £80 + £4 P&P</button>
-<button onclick="addToBasket('price_1TQUOsAhb23PF7gKVtnxnGxR', 'Quick Swap Mirror Mounts + Spa Mirrors', 155)">Add to basket – mounts + Spa mirrors – £155 + £4 P&P</button>
+> **Note:** If you want brackets with mirrors, please [get in touch](mailto:john.rae@gmail.com) before ordering — I don't always have mirror stock.
+
+**£90 + £4 P&P** — or **£165 + £4 P&P** bundled with a pair of Spa mirrors.
+
+<button onclick="addToBasket('price_1Tcmh2Ahb23PF7gK2CYGJGq7', 'Quick Swap Mirror Mounts', 90)">Add to basket – mounts only – £90 + £4 P&P</button>
+<button onclick="addToBasket('price_1Tcmh2Ahb23PF7gKwDkFSCGw', 'Quick Swap Mirror Mounts + Spa Mirrors', 165)">Add to basket – mounts + Spa mirrors – £165 + £4 P&P</button>
+
+> **Mounts + mirrors:** Please [contact me](mailto:john.rae@gmail.com) before ordering — I don't always have mirror stock.
 
 ## What comes in the kit?
 * 2x sidescreen brackets 

@@ -80,7 +80,10 @@
   {
     "name": "Quick Swap Mirror Mounts",
     "description": "Mirror mounts that swap between windscreen and sidescreen with one hex key",
-    "amount": 6000,
+    "prices": [
+      { "label": "Mounts only",         "amount": 9000 },
+      { "label": "Mounts + Spa mirrors", "amount": 16500 }
+    ],
     "currency": "gbp",
     "weightInGrams": 150,
     "image": "https://img.uberniche.co.uk/quick-swap-title.jpg"
