@@ -12,10 +12,10 @@ I can also print them in multiple colours (not all shown here) in ABS.
 
 They tightly fit the standard Caterham (Luke?) 3" harness top straps. They are designed with arms that pinch the straps and with teeth in the arms that will hold nice and tight.
 
-£25 + £4 P&P
+£25 + £4 P&P for 2 pairs
 
 <button onclick="addToBasket('price_1TM6ozAhb23PF7gKVJVxbEpY', 'Harness Strap Clips', 25)">Add to basket – £25 + £4 P&P</button>
-<button onclick="addToBasket('price_1TQUOrAhb23PF7gKH5SrjGq0', 'Harness Strap Clips — Custom Colour', 5)">Add custom colour – +£5</button>
+<button onclick="addToBasket('price_1TQUOrAhb23PF7gKH5SrjGq0', 'Harness Strap Clips — Custom Colour', 5)">Add custom colour – +£15</button>
 
 please note, the finish of this has to be flat as pictured, not carbon-fibre effect.  
 
