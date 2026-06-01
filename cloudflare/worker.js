@@ -39,8 +39,16 @@ export default {
       "shipping_options[0][shipping_rate_data][fixed_amount][currency]": "gbp",
     });
     const labelMeta = {};
-    items.forEach(({ priceId, quantity, label }, i) => {
-      params.set(`line_items[${i}][price]`, priceId);
+    items.forEach(({ priceId, quantity, label, amount, name }, i) => {
+      if (label && amount) {
+        // Use price_data so Stripe shows the variant name on the checkout page
+        params.set(`line_items[${i}][price_data][currency]`, "gbp");
+        params.set(`line_items[${i}][price_data][unit_amount]`, String(amount));
+        params.set(`line_items[${i}][price_data][product_data][name]`, `${name} \u2014 ${label}`);
+        params.set(`line_items[${i}][price_data][tax_behavior]`, "unspecified");
+      } else {
+        params.set(`line_items[${i}][price]`, priceId);
+      }
       params.set(`line_items[${i}][quantity]`, String(quantity ?? 1));
       if (label) labelMeta[priceId] = label;
     });
