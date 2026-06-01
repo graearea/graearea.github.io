@@ -41,7 +41,9 @@ Run `STRIPE_SECRET_KEY=sk_live_xxx node scripts/stripe-prices.js` to list all ac
 - `STRIPE_WEBHOOK_SECRET` — from Stripe Dashboard → Webhooks → your endpoint → Signing secret
 - `CLICK_AND_DROP_API_KEY` — from Click & Drop → Settings → Integrations → Click & Drop API
 
-**Deployment steps:**
+**Deployment:** Both Cloudflare Workers (`cloudflare/worker.js` and `cloudflare/webhook-worker.js`) are automatically deployed via GitHub Actions (`.github/workflows/deploy-workers.yml`) on every push to `main` that touches files under `cloudflare/` or `assets/basket.js`. No manual deployment is needed.
+
+**Initial setup steps** (one-time, already done):
 1. Deploy `cloudflare/webhook-worker.js` as a new Cloudflare Worker and note its URL
 2. In Stripe Dashboard: Webhooks → Add endpoint → set URL to the worker → listen for `checkout.session.completed` → copy the Signing secret
 3. Add all three env vars to the Cloudflare Worker settings
