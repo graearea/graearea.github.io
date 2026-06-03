@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+.page-content {
+  padding-top: 0;
+}
+
+
 .page-heading {
   display: none;
 }
