@@ -45,38 +45,38 @@ export default {
 
     const session = event.data.object;
 
-    // 2. Fetch full session details from Stripe (line items + shipping)
-    const fullSession = await stripeGet(
-      `/checkout/sessions/${session.id}?expand[]=line_items&expand[]=line_items.data.price.product`,
-      env.STRIPE_SECRET_KEY
-    );
-
-    // Stripe 2025-03-31.basil moves shipping into collected_information.shipping_details.
-    // Fall back through older top-level field, then billing address as last resort.
-    const shipping =
-      fullSession.collected_information?.shipping_details?.address
-        ? fullSession.collected_information.shipping_details
-        : fullSession.shipping_details?.address
-          ? fullSession.shipping_details
-          : fullSession.customer_details?.address
-            ? { name: fullSession.customer_details.name, address: fullSession.customer_details.address }
-            : null;
-
-    if (!shipping) {
-      // Can't create a shipment without an address — log and ack so Stripe doesn't retry
-      console.error("No address on session", session.id, JSON.stringify(fullSession));
-      return new Response("No address — skipped", { status: 200 });
-    }
-
-    // 3. Build Click & Drop order
-    const order = buildClickAndDropOrder(fullSession, shipping);
-
+    // 2–3. Fetch session, build order, submit to Click & Drop.
+    // All wrapped in a single try/catch: any failure (Stripe API error, C&D error,
+    // network timeout) must still return 200 so Stripe does not retry a completed
+    // payment and risk creating a duplicate shipment.
     try {
+      const fullSession = await stripeGet(
+        `/checkout/sessions/${session.id}?expand[]=line_items&expand[]=line_items.data.price.product`,
+        env.STRIPE_SECRET_KEY
+      );
+
+      // Stripe 2025-03-31.basil moves shipping into collected_information.shipping_details.
+      // Fall back through older top-level field, then billing address as last resort.
+      const shipping =
+        fullSession.collected_information?.shipping_details?.address
+          ? fullSession.collected_information.shipping_details
+          : fullSession.shipping_details?.address
+            ? fullSession.shipping_details
+            : fullSession.customer_details?.address
+              ? { name: fullSession.customer_details.name, address: fullSession.customer_details.address }
+              : null;
+
+      if (!shipping) {
+        console.error("No address on session", session.id, JSON.stringify(fullSession));
+        return new Response("No address — skipped", { status: 200 });
+      }
+
+      const order = buildClickAndDropOrder(fullSession, shipping);
       const result = await createClickAndDropOrder(order, env.CLICK_AND_DROP_API_KEY);
       console.log("Click & Drop order created:", JSON.stringify(result));
     } catch (err) {
-      // Log the failure but still return 200 — Stripe must not retry fulfilled payments
-      console.error("Click & Drop failed:", err.message);
+      // Log but still return 200 — Stripe must not retry fulfilled payments
+      console.error("Processing failed:", err.message);
     }
 
     return new Response("OK", { status: 200 });

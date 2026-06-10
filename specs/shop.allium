@@ -1,0 +1,316 @@
+-- allium: 3
+
+-- Scope: Full shop flow — product catalogue through to Click & Drop submission
+-- Includes: Product catalogue, basket, Stripe checkout, payment, fulfilment
+-- Excludes:
+--   Jekyll static site generation and HTML/CSS styling
+--   Upsell/cross-sell recommendations (product discovery, not purchase)
+--   Stripe-internal payment processing
+
+config {
+    uk_shipping:            Money = 4.00
+    europe_shipping:        Money = 12.00
+    international_shipping: Money = 20.00
+    webhook_max_age:        Duration = 5.minutes
+    default_weight_grams:   Integer = 500
+}
+
+-- ============================================================================
+-- Catalogue
+-- ============================================================================
+
+entity Product {
+    name:         String
+    description:  String
+    weight_grams: Integer
+    kind:         Simple | Configurable | CustomWork
+}
+
+-- A fixed-price product. A single Stripe price ID exists for this product.
+variant Simple : Product {
+    amount: Money
+}
+
+-- A product offered at two or more priced variants the customer selects from.
+-- e.g. "Fixed / Swivel", "10mm / 15mm / 20mm / 30mm", "Cowls only / Cowls + LEDs"
+variant Configurable : Product {
+    options: List<PriceOption>
+}
+
+-- An ad-hoc product for bespoke work agreed directly with the customer.
+-- Amount and context are set per-order, not fixed in the catalogue.
+-- e.g. "£25 custom colour harness clips" agreed beforehand via message.
+variant CustomWork : Product {
+    amount:  Money
+    context: String?    -- description of the agreed work; visible in C&D specialInstructions
+}
+
+value PriceOption {
+    label:  String    -- e.g. "Fixed", "10mm", "Cowls + LEDs"
+    amount: Money
+}
+
+-- ============================================================================
+-- Basket (ephemeral, stored client-side in localStorage)
+-- ============================================================================
+
+entity BasketItem {
+    product:    Product
+    option:     PriceOption?    -- required when product.kind = Configurable; null otherwise
+    quantity:   Integer
+    unit_amount: Money          -- option.amount when option present; product.amount when Simple or CustomWork
+    line_total:  Money          -- unit_amount * quantity
+}
+
+entity Basket {
+    items:    BasketItem with basket = this
+    is_empty: items.count = 0
+    -- item_total: sum of item.line_total across all items
+}
+
+invariant ConfigurableItemRequiresOption {
+    for item in BasketItem:
+        item.product.kind = Configurable implies item.option != null
+}
+
+-- ============================================================================
+-- Shipping
+-- ============================================================================
+
+-- Shipping tier is inferred from the customer's IP country at session creation.
+-- It is applied as the sole shipping option in Stripe Checkout.
+-- It is NOT re-verified against the shipping address the customer enters in Stripe.
+-- See open question: ShippingAddressMismatch
+value ShippingTier {
+    region: uk | europe | international
+    label:  String
+    cost:   Money
+}
+
+-- ============================================================================
+-- Checkout and Payment
+-- ============================================================================
+
+entity CheckoutSession {
+    basket:   Basket
+    shipping: ShippingTier
+    ref:      String       -- Stripe session ID (cs_live_xxx or cs_test_xxx)
+    status:   pending | completed | expired
+
+    transitions status {
+        pending -> completed
+        pending -> expired
+        terminal: completed, expired
+    }
+}
+
+entity Shipment {
+    session:   CheckoutSession
+    order_ref: String    -- "stripe-{last 8 chars of session.ref}"; max 40 chars
+    status:    created | dispatched
+
+    -- The order_ref contains only the last 8 characters of the Stripe session ID.
+    -- Reverse-lookup from a C&D order to the originating Stripe session requires
+    -- searching Stripe by this suffix — it cannot be done programmatically.
+    -- See open question: AuditReference
+
+    transitions status {
+        created -> dispatched
+        terminal: dispatched
+    }
+}
+
+value Address {
+    full_name:    String
+    line1:        String
+    line2:        String?
+    city:         String
+    county:       String?
+    postcode:     String
+    country_code: String
+}
+
+-- ============================================================================
+-- Actors
+-- ============================================================================
+
+actor Customer {
+    identified_by: browser_session
+}
+
+actor StripeWebhooks {
+    identified_by: HMAC-SHA256 signature over raw request body verified against STRIPE_WEBHOOK_SECRET
+}
+
+-- ============================================================================
+-- Rules
+-- ============================================================================
+
+rule AddToBasket {
+    when: CustomerAddsItem(product, option, basket)
+    requires: product.kind = Configurable implies option != null
+    requires: product.kind != Configurable implies option = null
+
+    let existing = basket.items where product = product and option = option
+
+    ensures:
+        if existing.count > 0:
+            existing.first.quantity = existing.first.quantity + 1
+        else:
+            BasketItem.created(
+                product:     product,
+                option:      option,
+                quantity:    1,
+                unit_amount: option?.amount ?? product.amount,
+                basket:      basket
+            )
+}
+
+rule InitiateCheckout {
+    when: CustomerInitiatesCheckout(basket, ip_country)
+    requires: not basket.is_empty
+
+    let shipping =
+        if ip_country = "GB":
+            ShippingTier(region: uk, label: "UK Shipping", cost: config.uk_shipping)
+        else if ip_country in EuropeanCountries:
+            ShippingTier(region: europe, label: "Europe Shipping", cost: config.europe_shipping)
+        else:
+            ShippingTier(region: international, label: "International Shipping", cost: config.international_shipping)
+
+    ensures: CheckoutSession.created(
+        basket:   basket,
+        shipping: shipping,
+        status:   pending
+    )
+    ensures: CheckoutSessionReadyForStripe(session: created_session)
+
+    @guidance
+        -- EuropeanCountries is the list of EU members plus NO, CH, IS, LI used in the checkout worker.
+        -- A US or Canadian customer is shown a customs/import-duty warning before being redirected.
+}
+
+-- Stripe confirms the session and returns the hosted checkout URL.
+-- The browser is redirected to that URL; the basket is cleared client-side on redirect.
+rule StripeSessionCreated {
+    when: CheckoutSessionReadyForStripe(session)
+    ensures: session.ref = stripe_response.id
+    -- Customer browser redirects to stripe_response.url
+}
+
+rule PaymentCompleted {
+    when: StripeWebhookReceived(event)
+    requires: event.type = "checkout.session.completed"
+    requires: now - event.timestamp <= config.webhook_max_age
+    requires: event.signature_valid
+
+    let checkout = CheckoutSession where ref = event.session.id
+    ensures: checkout.status = completed
+    ensures: ShipmentShouldBeCreated(checkout: checkout, stripe_session: event.session)
+}
+
+-- Builds and submits the Click & Drop order.
+-- If C&D submission fails, the failure is logged and Stripe is still acknowledged
+-- with a success response so it does not retry a completed payment.
+-- See open question: ShipmentFailureRecovery
+rule CreateShipment {
+    when: ShipmentShouldBeCreated(checkout, stripe_session)
+
+    let order_ref = "stripe-" + stripe_session.id.last(8)
+
+    ensures: Shipment.created(
+        session:   checkout,
+        order_ref: order_ref,
+        status:    created
+    )
+    ensures: ClickAndDropOrderSubmitted(
+        order_ref:  order_ref,
+        recipient:  stripe_session.shipping_address,
+        contents:   stripe_session.line_items,
+        notes:      stripe_session.item_label_summary + stripe_session.custom_field_values
+    )
+
+    @guidance
+        -- notes is built by concatenating two sources, separated by " | ", max 500 characters:
+        --   1. item label summary: e.g. "Quick Swap Mirror Mounts (Mounts + Spa mirrors)"
+        --   2. any Stripe custom_fields on the session (currently always empty — see CustomerNotes)
+        -- stripe_session.item_labels are stored in session metadata by the checkout worker
+        -- and decoded in the webhook worker.
+}
+
+-- ============================================================================
+-- Surfaces
+-- ============================================================================
+
+surface ProductPage {
+    facing visitor: Customer
+    context product: Product
+
+    exposes:
+        product.name
+        product.description
+        product.weight_grams
+
+    provides:
+        CustomerAddsItem(product, option, basket)
+}
+
+surface BasketDrawer {
+    facing visitor: Customer
+    context basket: Basket
+
+    exposes:
+        for item in basket.items:
+            item.product.name
+            item.option?.label
+            item.unit_amount
+            item.quantity
+            item.line_total
+
+    provides:
+        CustomerInitiatesCheckout(basket, ip_country)
+            when not basket.is_empty
+}
+
+surface CheckoutWorker {
+    facing visitor: Customer
+
+    provides:
+        InitiateCheckout(basket, ip_country)
+
+    @guarantee SessionCreationAuthenticity
+        -- Sessions are only created via this worker using the live Stripe secret key.
+        -- The browser cannot construct a valid Stripe session URL directly.
+}
+
+surface WebhookWorker {
+    facing visitor: StripeWebhooks
+
+    provides:
+        StripeWebhookReceived(event)
+
+    @guarantee ReplayProtection
+        -- Events older than webhook_max_age are rejected before any processing.
+        -- The worker always responds 200 to Stripe after a completed payment,
+        -- so C&D failures cannot be resolved by Stripe replay.
+}
+
+-- ============================================================================
+-- Open questions
+-- ============================================================================
+
+open question "AuditReference — The C&D order_ref stores only the last 8 characters of the Stripe session ID (e.g. 'stripe-a1b2c3d4'). Should the full session ID or payment intent ID be stored to allow unambiguous reverse-lookup? The C&D orderReference field is capped at 40 characters; a full cs_live_ session ID is ~66 chars but a payment intent ID (pi_xxx) is shorter and stable."
+
+open question "CustomerNotes — Stripe Checkout supports custom_fields on a session, and the webhook worker already reads them and appends values to C&D specialInstructions. But the checkout worker does not include custom_fields in session creation, so customers currently have no way to leave a note. Should a free-text notes field be added to the Stripe Checkout session?"
+
+open question "ShippingAddressMismatch — Shipping cost is set from the customer's IP at session creation, before they enter a shipping address in Stripe. A UK resident ordering while abroad would be charged the wrong tier. Should the worker verify the tier against the shipping address Stripe collects, and if there is a mismatch, hold the order or charge a correction?"
+
+open question "TestingStrategy — No end-to-end test mode exists. Stripe supports test API keys and test card numbers. Options: (a) a test Cloudflare Worker pointing at Stripe test mode + a test C&D account; (b) a £0 catalogue SKU (Stripe permits zero-amount line items but shipping must also be £0 for the session to complete); (c) a Stripe test clock for temporal rule testing. Which path covers the desired round-trip: session creation → payment → C&D push?"
+
+open question "CustomWorkCatalogue — For bespoke jobs, the seller needs to take payment for an agreed amount (e.g. £25). Options: (a) pre-defined denomination slots (£5, £10, £15, £20, £25) assembled by the customer like stamps; (b) a private admin page that generates a one-off Stripe Payment Link; (c) a URL parameter the seller texts the customer that pre-populates a basket with an arbitrary CustomWork amount."
+
+open question "TimeTracking — No mechanism for recording time spent per product or order exists. Should this be captured as Stripe order metadata, a separate spreadsheet, or a lightweight admin log, and what is the primary intended use: margin analysis, pricing decisions, or capacity planning?"
+
+open question "PostageServiceCode — All shipments use TOLP48 (Royal Mail Tracked 48) regardless of destination or weight. Should the service code vary by region (e.g. international parcels need a different code) or be set per product using Stripe product metadata?"
+
+open question "ShipmentFailureRecovery — If the C&D API call fails after a confirmed Stripe payment, only a console log is emitted. There is no alert to the seller and no automatic retry. How should failed C&D submissions surface for manual recovery, and what is the acceptable window before an order is considered missed?"
