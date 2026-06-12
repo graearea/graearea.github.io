@@ -1,3 +1,9 @@
+## Contact email
+
+The shop contact email is **john@uberniche.co.uk**. NEVER use john.rae@gmail.com anywhere in this codebase — not in mailto links, not in comments, not in scripts.
+
+---
+
 ## Stripe Checkout
 
 Payments use Stripe Checkout sessions rather than Stripe Payment Links.
