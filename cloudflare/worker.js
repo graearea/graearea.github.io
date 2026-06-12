@@ -20,11 +20,16 @@ export default {
       return new Response(JSON.stringify({ error: "No items" }), { status: 400, headers });
     }
 
+    const allCustomWork = items.every(i => typeof i.priceId === "string" && i.priceId.startsWith("custom-work-"));
+
     const EUROPE = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","NO","CH","IS","LI"];
     const country = req.cf?.country ?? "GB";
     const isUK = country === "GB";
     const isEurope = EUROPE.includes(country);
-    const [shippingName, shippingPence] = isUK ? ["UK Shipping", 400] : isEurope ? ["Europe Shipping", 1200] : ["International Shipping", 2000];
+    const [shippingName, shippingPence] = allCustomWork ? ["Free Delivery", 0]
+      : isUK ? ["UK Shipping", 400]
+      : isEurope ? ["Europe Shipping", 1200]
+      : ["International Shipping", 2000];
 
     const params = new URLSearchParams({
       "payment_method_types[]": "card",
