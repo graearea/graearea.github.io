@@ -12,7 +12,7 @@ Video here from the me sliding off at Oulton park and the mount holding on:
 
 £20 + £4 P&P (fixed)
 £25 + £4 P&P (swivel)
-+£3 for non-black
++£15 for non-black
 
 I can probably supply a decent (non-apple branded) magsafe charger as well. ask about this.
 
