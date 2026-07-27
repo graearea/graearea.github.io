@@ -32,7 +32,6 @@ all screws are included and are black or stainless, not the Titanium ones shown 
 <button onclick="addToBasket('price_1Tcmh2Ahb23PF7gK2CYGJGq7', 'Quick Swap Mirror Mounts', 90)">Add to basket – mounts only – £90 + £4 P&P</button>
 <button onclick="addToBasket('price_1Tcmh2Ahb23PF7gKwDkFSCGw', 'Quick Swap Mirror Mounts + Spa Mirrors', 165)">Add to basket – mounts + Spa mirrors – £165 + £4 P&P</button>
 
-> **Mounts + mirrors:** Please [contact me](mailto:john@uberniche.co.uk) before ordering — I don't always have mirror stock.
 
 ## What comes in the kit?
 * 2x sidescreen brackets 
