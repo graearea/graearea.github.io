@@ -1,0 +1,66 @@
+<style>
+#away-notice-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+#away-notice-overlay.open { display: flex; }
+
+#away-notice-box {
+  background: white;
+  border-radius: 8px;
+  max-width: 380px;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  text-align: center;
+}
+#away-notice-box p {
+  margin: 0 0 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+#away-notice-close {
+  padding: 0.6rem 1.4rem;
+  background: #424242;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+#away-notice-close:hover { background: #111; }
+</style>
+
+<div id="away-notice-overlay">
+  <div id="away-notice-box" role="dialog" aria-label="Away notice">
+    <p>I&rsquo;m away in Madrid to see the eclipse &mdash; orders will be worked on from 15th August.</p>
+    <button id="away-notice-close" onclick="closeAwayNotice()">Got it</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'awayNoticeSeen_2026-08-15';
+  var END_DATE = new Date('2026-08-15T00:00:00+01:00');
+
+  if (new Date() >= END_DATE) return;
+  if (localStorage.getItem(STORAGE_KEY)) return;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('away-notice-overlay').classList.add('open');
+    localStorage.setItem(STORAGE_KEY, '1');
+  });
+})();
+
+function closeAwayNotice() {
+  document.getElementById('away-notice-overlay').classList.remove('open');
+}
+</script>
