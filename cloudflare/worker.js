@@ -61,6 +61,20 @@ export default {
       params.set("metadata[item_labels]", JSON.stringify(labelMeta));
     }
 
+    const isUS = country === "US";
+    if (isUS) {
+      const subtotalPence = items.reduce((sum, i) => sum + Math.round((i.amount ?? 0) * (i.quantity ?? 1)), 0);
+      const tariffPence = Math.round(subtotalPence * 0.10);
+      if (tariffPence > 0) {
+        const idx = items.length;
+        params.set(`line_items[${idx}][price_data][currency]`, "gbp");
+        params.set(`line_items[${idx}][price_data][unit_amount]`, String(tariffPence));
+        params.set(`line_items[${idx}][price_data][product_data][name]`, "Tariffs Prepaid");
+        params.set(`line_items[${idx}][price_data][tax_behavior]`, "unspecified");
+        params.set(`line_items[${idx}][quantity]`, "1");
+      }
+    }
+
     const stripeRes = await fetch("https://api.stripe.com/v1/checkout/sessions", {
       method: "POST",
       headers: {
@@ -76,9 +90,10 @@ export default {
       return new Response(JSON.stringify({ error: "No session URL", detail: session }), { status: 500, headers });
     }
 
-    const isUSCA = ["US", "CA"].includes(country);
-    const warning = isUSCA
-      ? "Heads up: US and Canadian orders will incur customs/import duties on arrival. I'll contact you after you order to arrange payment of these separately before I ship."
+    const warning = isUS
+      ? "Heads up: a 10% customs tariff has been added to your order total and prepaid, so there should be nothing further to pay on arrival."
+      : country === "CA"
+      ? "Heads up: Canadian orders will incur customs/import duties on arrival. I'll contact you after you order to arrange payment of these separately before I ship."
       : null;
 
     return new Response(JSON.stringify({ url: session.url, warning }), { headers });
