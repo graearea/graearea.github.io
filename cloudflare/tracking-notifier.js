@@ -46,25 +46,30 @@ export default {
 async function pollAndNotify(env) {
   const startDateTime = new Date(Date.now() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000).toISOString();
   let continuationToken;
+  let ordersSeen = 0, trackingNumbersSeen = 0, sent = 0;
 
   do {
     const page = await fetchOrdersPage(env.CLICK_AND_DROP_API_KEY, startDateTime, continuationToken);
     continuationToken = page.continuationToken;
 
     for (const order of page.orders ?? []) {
+      ordersSeen++;
       const packages = order.packages?.length ? order.packages : [{ trackingNumber: order.trackingNumber }];
       for (const pkg of packages) {
         if (!pkg.trackingNumber) continue;
-        await notifyIfNew(env, order, pkg.trackingNumber);
+        trackingNumbersSeen++;
+        if (await notifyIfNew(env, order, pkg.trackingNumber)) sent++;
       }
     }
   } while (continuationToken);
+
+  console.log(`Poll complete: ${ordersSeen} orders seen, ${trackingNumbersSeen} tracking numbers found, ${sent} new emails sent`);
 }
 
 async function notifyIfNew(env, order, trackingNumber) {
   const dedupKey = `notified:${order.orderIdentifier}:${trackingNumber}`;
   const alreadyNotified = await env.ORDER_TRACKING.get(dedupKey);
-  if (alreadyNotified) return;
+  if (alreadyNotified) return false;
 
   const email = (await env.ORDER_TRACKING.get(`order-email:${order.orderIdentifier}`)) ?? "unknown";
 
@@ -77,8 +82,10 @@ async function notifyIfNew(env, order, trackingNumber) {
     // Only mark as notified once the email actually sent, so a Resend failure
     // gets retried on the next poll instead of being silently dropped.
     await env.ORDER_TRACKING.put(dedupKey, "1", { expirationTtl: 90 * 24 * 60 * 60 });
+    return true;
   } catch (err) {
     console.error(`Failed to notify for order ${order.orderIdentifier} / ${trackingNumber}:`, err.message);
+    return false;
   }
 }
 
