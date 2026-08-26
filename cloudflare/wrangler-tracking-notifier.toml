@@ -1,6 +1,9 @@
-name = "webhook-worker"
-main = "webhook-worker.js"
+name = "tracking-notifier"
+main = "tracking-notifier.js"
 compatibility_date = "2024-01-01"
+
+[triggers]
+crons = ["0 * * * *"]
 
 [[kv_namespaces]]
 binding = "ORDER_TRACKING"

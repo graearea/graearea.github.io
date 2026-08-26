@@ -58,6 +58,33 @@ Run `STRIPE_SECRET_KEY=sk_live_xxx node scripts/stripe-prices.js` to list all ac
 
 ---
 
+## Click & Drop tracking-number notifier
+
+**File:** `cloudflare/tracking-notifier.js` — a third Cloudflare Worker, deployed separately, triggered hourly by a Cron Trigger (not HTTP).
+
+Royal Mail's Click & Drop API has **no webhooks**. A tracking number only appears on an order once its label is actually printed — a manual step done later in the Click & Drop dashboard, separate from order creation — so the only way to find out is to poll `GET /orders`.
+
+**Flow:**
+1. Every hour, the worker polls Click & Drop's `GET /orders` (last 14 days, paginated via `continuationToken`) for orders that now have a `trackingNumber`
+2. For each tracking number it hasn't seen before, it looks up the customer's email (stashed in KV by `webhook-worker.js` at order-creation time, since Click & Drop never returns it back to us) and emails **auto@uberniche.co.uk** with the customer email + tracking code + order reference
+3. **Not sent to customers yet** — this is an internal notification only, first cut
+
+**State:** Since Workers are stateless and orders aren't guaranteed to be processed in order, both workers share a KV namespace bound as `ORDER_TRACKING`:
+- `webhook-worker.js` writes `order-email:{orderIdentifier}` → customer email (60-day TTL) after creating each Click & Drop order
+- `tracking-notifier.js` writes `notified:{orderIdentifier}:{trackingNumber}` (90-day TTL) as a dedup marker once it has successfully sent the email, so the same tracking number isn't emailed twice on the next poll
+
+**Required environment variables** (set in Cloudflare Workers dashboard, never in code):
+- `CLICK_AND_DROP_API_KEY` — same key as the webhook worker
+- `RESEND_API_KEY` — Resend API key (same Resend account used by ApexHunterWeb; sends from `noreply@mail.uberniche.co.uk`)
+- `TEST_TRIGGER_SECRET` — optional; if set, allows manually triggering a poll via `curl` with `Authorization: Bearer <secret>` for testing. Without it the HTTP fetch handler always returns 401 (the real trigger is the cron)
+
+**Initial setup steps** (one-time, not yet done):
+1. Create a KV namespace (`wrangler kv namespace create ORDER_TRACKING`) and put its id into the `id` field of the `[[kv_namespaces]]` block in both `cloudflare/wrangler-webhook.toml` and `cloudflare/wrangler-tracking-notifier.toml`
+2. Add `RESEND_API_KEY`, `CLICK_AND_DROP_API_KEY`, and (optionally) `TEST_TRIGGER_SECRET` to the `tracking-notifier` Worker's environment variables in the Cloudflare dashboard
+3. Confirm `mail.uberniche.co.uk` is verified in Resend (it already is, for ApexHunterWeb)
+
+---
+
 ## Scripts
 
 **`scripts/stripe-prices.js`** — lists all active Stripe prices with product names and IDs.

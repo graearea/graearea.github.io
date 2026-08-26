@@ -31,3 +31,11 @@ jobs:
           workingDirectory: cloudflare
           wranglerVersion: '3'
           command: deploy --config wrangler-webhook.toml
+
+      - name: Deploy tracking notifier worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: cloudflare
+          wranglerVersion: '3'
+          command: deploy --config wrangler-tracking-notifier.toml

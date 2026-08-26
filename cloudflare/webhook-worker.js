@@ -11,6 +11,11 @@
  *   STRIPE_WEBHOOK_SECRET   - from Stripe Dashboard → Webhooks → your endpoint → Signing secret
  *   CLICK_AND_DROP_API_KEY  - from Click & Drop → Settings → Integrations → Click & Drop API
  *
+ * Required KV binding:
+ *   ORDER_TRACKING - shared with tracking-notifier.js. This worker writes
+ *     order-email:{orderIdentifier} -> customer email so the notifier can
+ *     include it later, since the Click & Drop API never returns it back to us.
+ *
  * Deploy this as a separate Worker. Then in Stripe Dashboard:
  *   Webhooks → Add endpoint → set URL to this worker's URL
  *   → listen for: checkout.session.completed
@@ -74,6 +79,16 @@ export default {
       const order = buildClickAndDropOrder(fullSession, shipping);
       const result = await createClickAndDropOrder(order, env.CLICK_AND_DROP_API_KEY);
       console.log("Click & Drop order created:", JSON.stringify(result));
+
+      // Stash the customer email against the C&D order id so the tracking
+      // notifier can look it up later — Click & Drop never gives it back to us.
+      const orderIdentifier = result.createdOrders?.[0]?.orderIdentifier;
+      const email = fullSession.customer_details?.email;
+      if (orderIdentifier && email && env.ORDER_TRACKING) {
+        await env.ORDER_TRACKING.put(`order-email:${orderIdentifier}`, email, {
+          expirationTtl: 60 * 24 * 60 * 60, // 60 days — plenty of time for a label to be printed
+        });
+      }
     } catch (err) {
       // Log but still return 200 — Stripe must not retry fulfilled payments
       console.error("Processing failed:", err.message);
