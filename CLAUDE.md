@@ -60,12 +60,12 @@ Run `STRIPE_SECRET_KEY=sk_live_xxx node scripts/stripe-prices.js` to list all ac
 
 ## Click & Drop tracking-number notifier
 
-**File:** `cloudflare/tracking-notifier.js` — a third Cloudflare Worker, deployed separately, triggered hourly by a Cron Trigger (not HTTP).
+**File:** `cloudflare/tracking-notifier.js` — a third Cloudflare Worker, deployed separately, triggered every 15 minutes by a Cron Trigger (not HTTP).
 
 Royal Mail's Click & Drop API has **no webhooks**. A tracking number only appears on an order once its label is actually printed — a manual step done later in the Click & Drop dashboard, separate from order creation — so the only way to find out is to poll `GET /orders`.
 
 **Flow:**
-1. Every hour, the worker polls Click & Drop's `GET /orders` (last 14 days, paginated via `continuationToken`) for orders that now have a `trackingNumber`
+1. Every 15 minutes, the worker polls Click & Drop's `GET /orders` (last 14 days, paginated via `continuationToken`) for orders that now have a `trackingNumber`
 2. For each tracking number it hasn't seen before, it looks up the customer's email (stashed in KV by `webhook-worker.js` at order-creation time, since Click & Drop never returns it back to us) and emails **auto@uberniche.co.uk** with the customer email + tracking code + order reference
 3. **Not sent to customers yet** — this is an internal notification only, first cut
 
