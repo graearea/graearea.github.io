@@ -29,7 +29,7 @@ The original Caterham hinges allow the doors to open too far so that the mirrors
 * 2x 25mm M5 countersunk bolts 
 * 2x 6mm M5 countersunk bolts 
 * 2x 14mm M5 countersunk bolts 
-* 2x friction shims for Spa mirrors (if you're ordering spa mirrors) as found [here](https://uberniche.co.uk/other-stuff)
+* 2x friction cups for Spa mirrors (if you're ordering spa mirrors) as found [here](https://uberniche.co.uk/spa-friction-cups)
 
 ## What do I need?
 * 2x Spa/Motomec/CBS mirrors (buy the convex spa ones [here](https://www.merlinmotorsport.co.uk/s/mirrors/spa-mirrors/spa-formula-and-caterham-mirrors) or [here](https://www.demon-tweeks.com/uk/spa-design-formula-high-impact-nylon-race-mirror-246438/) or the motamecs [here](https://www.motamec.com/motamec-racing-formula-f1-car-wing-mirror-x2-convex-glass-swivel-mount-black.html ) (note that https://www.kitcardirect.co.uk/spa-style-formula-f1-wing-mirror-carbon-pair.html seem to be motamecs)
