@@ -3,6 +3,7 @@ description: "Epoxy-bonded 3D-printed screen mount for wide Longacre-style mirro
 ---
 # Screen Mount for Wideangle Mirror
 ![graham 2.jpeg](img/graham%202.jpeg)
+
 A few people have asked for a mount for wide Longacre-style mirrors. Graham tested these and got them to work for me, for which I'm super-grateful. He bonded them to the screen with epoxy, as VHB just isn't up to the job.
 
 This from Graham:
