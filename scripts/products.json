@@ -173,7 +173,10 @@
   {
     "name": "Rollcage Mirror Mounts",
     "description": "Mounts for attaching rollcage mirrors (Longacre etc) to a 32mm or 38mm cage",
-    "amount": 3000,
+    "prices": [
+      { "label": "32mm", "amount": 3000 },
+      { "label": "38mm", "amount": 3000 }
+    ],
     "currency": "gbp",
     "weightInGrams": 50,
     "image": "https://img.uberniche.co.uk/momimo.jpeg"
