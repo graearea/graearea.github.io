@@ -8,7 +8,18 @@ on:
       - 'assets/basket.js'
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # `npm test` only runs the pure/offline unit tests — the other `npm run
+      # test:*` scripts hit live services and need locally-stored secrets, so
+      # they stay manual-only (see package.json).
+      - name: Run unit tests
+        run: npm test
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     defaults:
       run:

@@ -1,0 +1,12 @@
+{
+  "name": "uberniche-shop",
+  "private": true,
+  "description": "No build step (plain Jekyll + ES modules). This just wires up test scripts.",
+  "scripts": {
+    "test": "node scripts/test-order-builder.js && node scripts/test-tracking-notifier.js",
+    "test:webhook-auth": "node scripts/test-webhook-auth.js",
+    "test:checkout-worker": "node scripts/test-checkout-worker.js",
+    "test:clickanddrop": "node scripts/test-clickanddrop.js",
+    "probe:clickanddrop": "node scripts/probe-clickanddrop.js"
+  }
+}

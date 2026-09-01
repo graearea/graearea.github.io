@@ -78,14 +78,32 @@ Royal Mail's Click & Drop API has **no webhooks**. A tracking number only appear
 - `RESEND_API_KEY` — Resend API key (same Resend account used by ApexHunterWeb; sends from `noreply@mail.uberniche.co.uk`)
 - `TEST_TRIGGER_SECRET` — optional; if set, allows manually triggering a poll via `curl` with `Authorization: Bearer <secret>` for testing. Without it the HTTP fetch handler always returns 401 (the real trigger is the cron)
 
-**Initial setup steps** (one-time, not yet done):
-1. Create a KV namespace (`wrangler kv namespace create ORDER_TRACKING`) and put its id into the `id` field of the `[[kv_namespaces]]` block in both `cloudflare/wrangler-webhook.toml` and `cloudflare/wrangler-tracking-notifier.toml`
-2. Add `RESEND_API_KEY`, `CLICK_AND_DROP_API_KEY`, and (optionally) `TEST_TRIGGER_SECRET` to the `tracking-notifier` Worker's environment variables in the Cloudflare dashboard
+**Initial setup steps** (one-time):
+1. ✅ Done — KV namespace created, id `57adf558900e40b9ada8cca9494ef920` set in both `cloudflare/wrangler-webhook.toml` and `cloudflare/wrangler-tracking-notifier.toml`
+2. ✅ Done — `RESEND_API_KEY`, `CLICK_AND_DROP_API_KEY`, and `TEST_TRIGGER_SECRET` are set on the `tracking-notifier` Worker in the Cloudflare dashboard
 3. Confirm `mail.uberniche.co.uk` is verified in Resend (it already is, for ApexHunterWeb)
+
+**Known-fixed bug (2026-09-01):** Click & Drop puts `trackingNumber` on the order object
+itself, never on entries in `packages` (those only ever carry a `packageNumber`). The
+notifier originally checked `packages[].trackingNumber` first and never fell back, so
+every poll found 0 tracking numbers despite labels being printed — see
+`extractTrackingNumbers()` in `tracking-notifier.js` and its tests in
+`scripts/test-tracking-notifier.js`.
 
 ---
 
 ## Scripts
+
+**Run tests:** `npm test` — runs the pure/offline unit test scripts (`test-order-builder.js`,
+`test-tracking-notifier.js`). This is also a required check in `deploy-workers.yml`; a
+push to `main` under `cloudflare/**` won't deploy if it fails.
+
+Other scripts hit live services and need locally-stored secrets, so they stay manual-only
+— run with `npm run <name>` (see `package.json`):
+- `test:webhook-auth` — posts to the live webhook worker (no real Stripe payments)
+- `test:checkout-worker` — creates real (uncompleted) Stripe checkout sessions
+- `test:clickanddrop` — creates a real test order in Click & Drop
+- `probe:clickanddrop` — lists recent live orders with full details
 
 **`scripts/stripe-prices.js`** — lists all active Stripe prices with product names and IDs.
 Usage: `STRIPE_SECRET_KEY=sk_live_xxx node scripts/stripe-prices.js`

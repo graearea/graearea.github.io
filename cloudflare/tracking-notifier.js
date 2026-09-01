@@ -54,16 +54,24 @@ async function pollAndNotify(env) {
 
     for (const order of page.orders ?? []) {
       ordersSeen++;
-      const packages = order.packages?.length ? order.packages : [{ trackingNumber: order.trackingNumber }];
-      for (const pkg of packages) {
-        if (!pkg.trackingNumber) continue;
+      for (const trackingNumber of extractTrackingNumbers(order)) {
         trackingNumbersSeen++;
-        if (await notifyIfNew(env, order, pkg.trackingNumber)) sent++;
+        if (await notifyIfNew(env, order, trackingNumber)) sent++;
       }
     }
   } while (continuationToken);
 
   console.log(`Poll complete: ${ordersSeen} orders seen, ${trackingNumbersSeen} tracking numbers found, ${sent} new emails sent`);
+}
+
+// Click & Drop puts trackingNumber on the order itself, not on entries in
+// `packages` (those only ever carry a packageNumber) — but fall back to a
+// per-package trackingNumber in case a future multi-package order has one.
+function extractTrackingNumbers(order) {
+  const packages = order.packages?.length ? order.packages : [{}];
+  return packages
+    .map((pkg) => pkg.trackingNumber ?? order.trackingNumber)
+    .filter(Boolean);
 }
 
 async function notifyIfNew(env, order, trackingNumber) {
