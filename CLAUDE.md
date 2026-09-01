@@ -66,21 +66,21 @@ Royal Mail's Click & Drop API has **no webhooks**. A tracking number only appear
 
 **Flow:**
 1. Every 15 minutes, the worker polls Click & Drop's `GET /orders` (last 14 days, paginated via `continuationToken`) for orders that now have a `trackingNumber`
-2. For each tracking number it hasn't seen before, it looks up the customer's email (stashed in KV by `webhook-worker.js` at order-creation time, since Click & Drop never returns it back to us) and emails **auto@uberniche.co.uk** with the customer email + tracking code + order reference
-3. **Not sent to customers yet** — this is an internal notification only, first cut
+2. Click & Drop never gives back the customer's name, email, or line items/prices — only order identifiers and dates — so for each new tracking number, the worker looks those up directly from Stripe: it takes the order's `orderReference` (`stripe-` + last 8 chars of the Stripe checkout session id) and `orderDate` (Stripe's `session.created`, submitted verbatim by the webhook worker), lists Stripe checkout sessions in a ±10-minute window around that timestamp, and matches by the 8-char id suffix
+3. Emails **auto@uberniche.co.uk** with the customer's name, email, itemized order contents + prices, and a tracking link
+4. **Not sent to customers yet** — this is an internal notification only, first cut
 
-**State:** Since Workers are stateless and orders aren't guaranteed to be processed in order, both workers share a KV namespace bound as `ORDER_TRACKING`:
-- `webhook-worker.js` writes `order-email:{orderIdentifier}` → customer email (60-day TTL) after creating each Click & Drop order
-- `tracking-notifier.js` writes `notified:{orderIdentifier}:{trackingNumber}` (90-day TTL) as a dedup marker once it has successfully sent the email, so the same tracking number isn't emailed twice on the next poll
+**State:** `tracking-notifier.js` writes `notified:{orderIdentifier}:{trackingNumber}` (90-day TTL) to the shared `ORDER_TRACKING` KV namespace as a dedup marker once it has successfully sent the email, so the same tracking number isn't emailed twice on the next poll. This is the *only* thing it writes to KV — no order data is stashed at creation time; it's looked up live from Stripe on each new tracking number instead.
 
 **Required environment variables** (set in Cloudflare Workers dashboard, never in code):
 - `CLICK_AND_DROP_API_KEY` — same key as the webhook worker
 - `RESEND_API_KEY` — Resend API key (same Resend account used by ApexHunterWeb; sends from `noreply@mail.uberniche.co.uk`)
+- `STRIPE_SECRET_KEY` — read-only Stripe lookup of name/email/line items by order reference (see Flow above)
 - `TEST_TRIGGER_SECRET` — optional; if set, allows manually triggering a poll via `curl` with `Authorization: Bearer <secret>` for testing. Without it the HTTP fetch handler always returns 401 (the real trigger is the cron)
 
 **Initial setup steps** (one-time):
 1. ✅ Done — KV namespace created, id `57adf558900e40b9ada8cca9494ef920` set in both `cloudflare/wrangler-webhook.toml` and `cloudflare/wrangler-tracking-notifier.toml`
-2. ✅ Done — `RESEND_API_KEY`, `CLICK_AND_DROP_API_KEY`, and `TEST_TRIGGER_SECRET` are set on the `tracking-notifier` Worker in the Cloudflare dashboard
+2. ✅ Done — `RESEND_API_KEY`, `CLICK_AND_DROP_API_KEY`, `STRIPE_SECRET_KEY`, and `TEST_TRIGGER_SECRET` are set on the `tracking-notifier` Worker in the Cloudflare dashboard
 3. Confirm `mail.uberniche.co.uk` is verified in Resend (it already is, for ApexHunterWeb)
 
 **Known-fixed bug (2026-09-01):** Click & Drop puts `trackingNumber` on the order object
@@ -89,6 +89,18 @@ notifier originally checked `packages[].trackingNumber` first and never fell bac
 every poll found 0 tracking numbers despite labels being printed — see
 `extractTrackingNumbers()` in `tracking-notifier.js` and its tests in
 `scripts/test-tracking-notifier.js`.
+
+**Known live-infra gap (found 2026-09-01, not yet resolved):** Stripe's actual webhook
+endpoint points at `flat-dew-e131` — an untracked Worker that exists in the Cloudflare
+account but not in this repo, not covered by CI or `npm test`. It has real
+`STRIPE_SECRET_KEY`/`STRIPE_WEBHOOK_SECRET`/`CLICK_AND_DROP_API_KEY` secrets and is what's
+actually creating Click & Drop orders. Meanwhile this repo's `cloudflare/webhook-worker.js`
+— the one CI deploys — has **zero secrets set** and, as far as we can tell, never receives
+real Stripe traffic. It still works fine as *documentation* of the intended logic (kept in
+sync via `scripts/test-order-builder.js`), and the tracking-notifier's direct Stripe lookup
+above sidesteps needing it fixed. But if `webhook-worker.js` is ever meant to actually run
+in production, someone needs to either point a new Stripe webhook endpoint at it (with a
+fresh signing secret) and retire `flat-dew-e131`, or reconcile the two some other way.
 
 ---
 
