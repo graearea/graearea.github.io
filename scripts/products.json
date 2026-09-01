@@ -182,6 +182,13 @@
     "image": "https://img.uberniche.co.uk/momimo.jpeg"
   },
   {
+    "name": "Screen Mount for Wideangle Mirror",
+    "description": "Epoxy-bonded screen mount for wide Longacre-style mirrors",
+    "amount": 2500,
+    "currency": "gbp",
+    "weightInGrams": 50
+  },
+  {
     "name": "BigCol LED Lights",
     "description": "Fristom sequential LED rear light clusters for Caterham with custom cowls",
     "prices": [
