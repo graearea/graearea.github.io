@@ -4,7 +4,7 @@ redirect_from:
   - /momimo
 ---
 # Motorsport Mirror Mounts (rollcage mounted)
-![Screenshot 2026-08-31 at 19.42.49.png](img/Screenshot%202026-08-31%20at%2019.42.49.png)
+![Screenshot 2026-08-31 at 19.42.49.png](img/slimline-mount.png)
 Centre Mirror mounts to hold a longacre-style motorsport mirror onto your 32/38mm rollcage.
 
 note my gold Ti bolts aren't included, just plain blackened steel ones as here:
